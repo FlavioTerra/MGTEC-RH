@@ -1,4 +1,4 @@
 <?php
-  echo "Sistema de RH pronto". "Selecione o candidato: Fernando";
+  echo "Sistema de RH pronto". "Selecione o candidato: Flavio";
 	
 ?>
