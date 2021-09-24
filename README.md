@@ -1,2 +1,2 @@
 # MGTEC-RH
-Repositório do trabalho de conclusão de curso
+Repositório do trabalho de conclusão de curso.
