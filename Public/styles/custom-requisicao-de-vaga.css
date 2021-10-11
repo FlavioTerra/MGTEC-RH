@@ -1,0 +1,67 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+
+/*Experiências / Competências / Formações*/
+.add-div-exp, .add-div-comp, .add-div-form{
+    margin-top: 30px;
+}
+
+.form-select{
+    margin-left: 10px;
+    margin-right: 11px;
+    height: 25px;
+    font-size: 15px;
+    padding: 0 2.25rem 0 0.75rem;
+    color: #212529;
+}
+
+.form-select:focus{
+    box-shadow: 0 0 5px #9a5ec9;
+    border-color: #ced4da;
+}
+
+.number{
+    flex-grow: 0.28;
+}
+
+.exp-label{
+    margin-bottom: 0;
+    margin-left: 1px;
+}
+
+.btn-area-exp{
+    margin-top: 0;
+    margin-bottom: 3.5vh;
+}
+
+.add-form-select{
+    margin-top: 1vh;
+    margin-bottom: 3.5vh;
+}
+
+.btn-form{
+    padding-right: 5px;
+}
+
+.btn-form:hover{
+    cursor: pointer;
+}
+
+.btn-form:active{
+    transform: scale(1.1);
+}
+
+@media screen and (min-width:576px){
+    /*forms*/
+    .dual{
+        margin-left: 0;
+    }
+
+    .number .form-control{
+        margin-left: -1px;
+    }
+
+    .add, .add-form-select{
+        margin-top: 1vh;
+    }
+}
