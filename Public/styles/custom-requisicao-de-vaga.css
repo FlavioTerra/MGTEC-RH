@@ -6,6 +6,13 @@
     margin-top: 30px;
 }
 
+.numExp, .numComp, .numForm{
+    color: #7a2cb6;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
 .form-select{
     margin-left: 10px;
     margin-right: 11px;
@@ -29,7 +36,7 @@
     margin-left: 1px;
 }
 
-.btn-area-exp{
+.btn-area-exp, .btn-area-comp, .btn-area-form{
     margin-top: 0;
     margin-bottom: 3.5vh;
 }

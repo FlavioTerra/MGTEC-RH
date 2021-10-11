@@ -15,8 +15,14 @@ function addExp() {
     //adiciona o html na nova div
     div.innerHTML = content;
 
+    //incrementa número da experiencia
+    addNumExp(div);
+
     //incrementa id nos botões
     addIdsButtons(div);
+
+    //incrementa os names
+    addNamesExp(div);
 
     //anexa a div criada dentro da classe exp
     i.appendChild(div);
@@ -28,6 +34,8 @@ function addExp() {
 //remove nova experiência
 function removeExp() {
     j--;
+    numExp--;
+    contExp--;
 
     //cria array das divs adicionadas
     let divs = document.getElementsByClassName('add-div-exp');
@@ -40,6 +48,34 @@ function removeExp() {
 
     //retorna os botões antigos
     addBtnExp();
+}
+
+//incrementa número da experiencia
+let numExp = 2;
+
+function addNumExp(div) {
+    let h3Exp = div.getElementsByClassName('numExp');
+
+    h3Exp[0].innerHTML = numExp;
+
+    numExp++;
+}
+
+let contExp = 2;
+
+function addNamesExp(div) {
+    /*Experiencia*/
+    let nameFormacaoExp = div.getElementsByClassName('cl-exp-formacao');
+    let nameStatusExp = div.getElementsByClassName('cl-exp-status');
+    let nameAnosExp = div.getElementsByClassName('cl-exp-anos-experiencia');
+
+    nameFormacaoExp[0].setAttribute('name', `exp-formacao-${contExp}`);
+    nameStatusExp[0].setAttribute('name', `exp-status-${contExp}`);
+    nameAnosExp[0].setAttribute('name', `exp-anos-experiencia-${contExp}`);
+
+    contExp++;
+
+    return;
 }
 
 
@@ -90,8 +126,14 @@ function addComp() {
     //adiciona o html na nova div
     divComp.innerHTML = contentComp;
 
+    //incrementa número da competencia
+    addNumComp(divComp);
+
     //incrementa id nos botões
     addIdsButtonsComp(divComp);
+
+    //incrementa os names
+    addNamesComp(divComp);
 
     //anexa a div criada dentro da classe comp
     comp.appendChild(divComp);
@@ -103,6 +145,8 @@ function addComp() {
 //remove nova competencia
 function removeComp() {
     jComp--;
+    numComp--;
+    contComp--;
 
     //cria array das divs adicionadas
     let divs = document.getElementsByClassName('add-div-comp');
@@ -117,6 +161,33 @@ function removeComp() {
     addBtnComp();
 }
 
+let contComp = 2;
+
+function addNamesComp(divComp) {
+    /*Competencia*/
+    let nameNomeComp = divComp.getElementsByClassName('cl-comp-nome');
+    let nameGrauComp = divComp.getElementsByClassName('cl-comp-grau');
+    let nameStatusComp = divComp.getElementsByClassName('cl-comp-status');
+
+    nameNomeComp[0].setAttribute('name', `comp-nome-${contComp}`);
+    nameGrauComp[0].setAttribute('name', `comp-grau-${contComp}`);
+    nameStatusComp[0].setAttribute('name', `comp-status-${contComp}`);
+
+    contComp++;
+
+    return;
+}
+
+//incrementa número da competencia
+let numComp = 2;
+
+function addNumComp(divComp) {
+    let h3Comp = divComp.getElementsByClassName('numComp');
+
+    h3Comp[0].innerHTML = numComp;
+
+    numComp++;
+}
 
 /*botões de competencia*/
 
@@ -156,7 +227,7 @@ let form = document.getElementById("Form");
 //pega o html dentro da primeira classe
 let contentForm = form.innerHTML;
 
-//adiciona nova competencia
+//adiciona nova formação
 function addForm() {
     //cria a nova div e seta a classe que contem tudo para adicionar
     let divForm = document.createElement('div');
@@ -165,8 +236,14 @@ function addForm() {
     //adiciona o html na nova div
     divForm.innerHTML = contentForm;
 
+    //incrementa número da formação
+    addNumForm(divForm);
+
     //incrementa id nos botões
     addIdsButtonsForm(divForm);
+
+    //incrementa os names
+    addNamesForm(divForm);
 
     //anexa a div criada dentro da classe form
     form.appendChild(divForm);
@@ -178,6 +255,8 @@ function addForm() {
 //remove nova formação
 function removeForm() {
     jForm--;
+    numForm--;
+    contForm--;
 
     //cria array das divs adicionadas
     let divs = document.getElementsByClassName('add-div-form');
@@ -192,6 +271,35 @@ function removeForm() {
     addBtnForm();
 }
 
+let contForm = 2;
+
+function addNamesForm(divForm) {
+    let nameTipoForm = divForm.getElementsByClassName('cl-form-tipo');
+    let nameStatusForm = divForm.getElementsByClassName('cl-form-status');
+    let nameNomeForm = divForm.getElementsByClassName('cl-form-nome');
+    let nameGrauForm = divForm.getElementsByClassName('cl-form-grau');
+
+    nameTipoForm[0].setAttribute('name', `form-tipo-${contForm}`);
+    nameStatusForm[0].setAttribute('name', `form-status-${contForm}`);
+    nameNomeForm[0].setAttribute('name', `form-nome-${contForm}`);
+    nameGrauForm[0].setAttribute('name', `form-grau-${contForm}`);
+
+    contForm++;
+
+    return;
+}
+
+
+//incrementa número da formação
+let numForm = 2;
+
+function addNumForm(divForm) {
+    let h3Form = divForm.getElementsByClassName('numForm');
+
+    h3Form[0].innerHTML = numForm;
+
+    numForm++;
+}
 
 /*botões de formação*/
 

@@ -91,6 +91,20 @@ html body{
     border-color: #ced4da;
 }
 
+select[name="vinculo-empregaticio"] {
+    margin-left: 0;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+    display: none;
+}
+
+input[type="time"]{
+    padding: 0;
+    text-align: center;
+}
+
 .col-sm-10{
     width: 45vw;
     padding: 0;
@@ -121,7 +135,7 @@ html body{
     display: flex;
     text-align: center;
     justify-content: space-evenly;
-    margin: 20px 20vw 0 20vw;
+    margin: 0 20vw 0 20vw;
 }
 
 .btn{
@@ -137,7 +151,7 @@ html body{
     border-color: #7a2cb6;
 }
 
-.btn:focus{
+.btn:focus, .btn:focus:active{
     box-shadow: 0 0 0 0;
 }
 
@@ -172,6 +186,10 @@ html body{
     }
 
     .form-control{
+        margin-left: 10px;
+    }
+
+    select[name="vinculo-empregaticio"] {
         margin-left: 10px;
     }
 

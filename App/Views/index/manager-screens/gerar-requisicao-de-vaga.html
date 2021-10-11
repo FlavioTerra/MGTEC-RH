@@ -39,244 +39,253 @@
     </nav>
 
     <!--body-->
-    <div class="container">
+    <form action="requisitante.php" method="post">
+        <div class="container">
 
-        <div class="title">
-            <h1 class="title-1">Gerar Requisição de Vaga</h1>
-        </div>
-
-        <!--Dados de Solicitaçao-->
-        <div class="title">
-            <h2 class="title-2">Dados de Solicitação</h2>
-            <img src="../images/global/info.svg">
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="colFormLabel" placeholder="">
+            <div class="title">
+                <h1 class="title-1">Gerar Requisição de Vaga</h1>
             </div>
-        </div>
 
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <!--Dados de Vaga-->
-        <div class="title">
-            <h2 class="title-2">Dados de Vaga</h2>
-            <img src="../images/global/info.svg">
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Tipo da Vaga</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
-            <div class="col-sm-10 input-1">
-                <input type="text" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-            <label for="colFormLabel" class="col label-middle">à</label>
-            <div class="col-sm-10 input-2">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
-            <div class="col-sm-12 mb-3">
-                <textarea class="form-control" id="textarea" rows="3"></textarea>
-            </div>
-        </div>
-
-        <!--Experiências-->
-        <div class="title">
-            <h2 class="title-2">Experiências</h2>
-            <img src="../images/global/info.svg">
-        </div>
-
-        <div id="Exp">
-            <div class="subtitle">
-                <h3 class="title-3">Experiência</h3>
-                <h3 class="title-3" id="idExp">1</h3>
+            <!--Dados de Solicitaçao-->
+            <div class="title">
+                <h2 class="title-2">Dados de Solicitação</h2>
+                <img src="../images/global/info.svg">
             </div>
 
             <div class="row mb-3">
-                <select class="col form-select" aria-label="Formação">
-                    <option selected>Formação</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
-
-                <select class="col form-select" aria-label="Status">
-                    <option selected>Status</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
-            </div>
-
-            <div class="row">
-                <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
-                <div class="col number">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="00">
+                <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="requisitante">
                 </div>
             </div>
 
-            <div id="btn-area-0" class="btn-area-exp">
-                <img src="../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addExp()">
-                <img src="../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeExp()">
-            </div>
-        </div>
-
-        <!--Competências-->
-        <div class="title">
-            <h2 class="title-2">Competências</h2>
-            <img src="../images/global/info.svg">
-        </div>
-
-        <div id="Comp">
-            <div class="subtitle">
-                <h3 class="title-3">Competência</h3>
-                <h3 class="title-3" id="idComp">1</h3>
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="responsável">
+                </div>
             </div>
 
             <div class="row mb-3">
-                <select class="col form-select" aria-label="Nome">
-                    <option selected>Nome</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
-
-                <select class="col form-select" aria-label="Grau">
-                    <option selected>Grau</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
+                <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="data-de-solicitacao">
+                </div>
             </div>
 
-            <div class="row">
-                <select class="col form-select" aria-label="Status">
-                    <option selected>Status</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
-            </div>
-
-            <div id="btn-area-comp-0" class="btn-area-comp">
-                <img src="../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addComp()">
-                <img src="../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeComp()">
-            </div>
-        </div>
-
-        <!--Formações-->
-        <div class="title">
-            <h2 class="title-2">Formações</h2>
-            <img src="../images/global/info.svg">
-        </div>
-
-        <div id="Form">
-            <div class="subtitle">
-                <h3 class="title-3">Formação</h3>
-                <h3 class="title-3" id="idForm">1</h3>
+            <!--Dados de Vaga-->
+            <div class="title">
+                <h2 class="title-2">Dados de Vaga</h2>
+                <img src="../images/global/info.svg">
             </div>
 
             <div class="row mb-3">
-                <select class="col form-select" aria-label="Tipo">
-                    <option selected>Tipo</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
-
-                <select class="col form-select" aria-label="Status">
-                    <option selected>Status</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
+                <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cargo">
+                </div>
             </div>
 
-            <div class="row">
-                <select class="col form-select" aria-label="Nome">
-                    <option selected>Nome</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
-
-                <select class="col form-select" aria-label="Grau">
-                    <option selected>Grau</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="departamento">
+                </div>
             </div>
 
-            <div id="btn-area-form-0" class="btn-area-form">
-                <img src="../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addForm()">
-                <img src="../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeForm()">
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Tipo da Vaga</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="tipo-da-vaga">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
+                <div class="col-sm-10">
+                    <select class="col form-select" aria-label="Formação" name="vinculo-empregaticio">
+                        <option selected></option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="salario" min="0">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
+                <div class="col-sm-10 input-1">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-inicio">
+                </div>
+                <label for="colFormLabel" class="col label-middle">à</label>
+                <div class="col-sm-10 input-2">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-fim">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="numero-de-vagas"
+                        min="0">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
+                <div class="col-sm-12 mb-3">
+                    <textarea type="text" class="form-control" id="textarea" rows="3" name="funcao"></textarea>
+                </div>
+            </div>
+
+            <!--Experiências-->
+            <div class="title">
+                <h2 class="title-2">Experiências</h2>
+                <img src="../images/global/info.svg">
+            </div>
+
+            <div id="Exp">
+                <div class="subtitle">
+                    <h3 class="title-3">Experiência</h3>
+                    <h3 class="numExp">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-exp-formacao" aria-label="Formação" name="exp-fomacao-1">
+                        <option selected>Formação</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <select class="col form-select cl-exp-status" aria-label="Status" name="exp-status-1">
+                        <option selected>Status</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
+                    <div class="col number">
+                        <input type="number" class="form-control cl-exp-anos-experiencia" id="colFormLabel"
+                            placeholder="00" name="exp-anos-experiencia-1">
+                    </div>
+                </div>
+
+                <div id="btn-area-0" class="btn-area-exp">
+                    <img src="../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addExp()">
+                    <img src="../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeExp()">
+                </div>
+            </div>
+
+            <!--Competências-->
+            <div class="title">
+                <h2 class="title-2">Competências</h2>
+                <img src="../images/global/info.svg">
+            </div>
+
+            <div id="Comp">
+                <div class="subtitle">
+                    <h3 class="title-3">Competência</h3>
+                    <h3 class="numComp">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-comp-nome" aria-label="Nome" name="comp-nome-1">
+                        <option selected>Nome</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <select class="col form-select cl-comp-grau" aria-label="Grau" name="comp-grau-1">
+                        <option selected>Grau</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <select class="col form-select cl-comp-status" aria-label="Status" name="comp-status-1">
+                        <option selected>Status</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div id="btn-area-comp-0" class="btn-area-comp">
+                    <img src="../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addComp()">
+                    <img src="../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeComp()">
+                </div>
+            </div>
+
+            <!--Formações-->
+            <div class="title">
+                <h2 class="title-2">Formações</h2>
+                <img src="../images/global/info.svg">
+            </div>
+
+            <div id="Form">
+                <div class="subtitle">
+                    <h3 class="title-3">Formação</h3>
+                    <h3 class="numForm">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-form-tipo" aria-label="Tipo" name="form-tipo-1">
+                        <option selected>Tipo</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <select class="col form-select cl-form-status" aria-label="Status" name="form-status-1">
+                        <option selected>Status</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <select class="col form-select cl-form-nome" aria-label="Nome" name="form-nome-1">
+                        <option selected>Nome</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <select class="col form-select cl-form-grau" aria-label="Grau" name="form-grau-1">
+                        <option selected>Grau</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div id="btn-area-form-0" class="btn-area-form">
+                    <img src="../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addForm()">
+                    <img src="../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeForm()">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                <button type="submit" class="btn btn-outline-primary mb-5">Gerar</button>
             </div>
         </div>
-
-        <div class="buttons">
-            <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-            <button type="button" class="btn btn-outline-primary mb-5">Gerar</button>
-        </div>
-    </div>
+    </form>
 
     <!--Footer-->
     <footer class="footer">
