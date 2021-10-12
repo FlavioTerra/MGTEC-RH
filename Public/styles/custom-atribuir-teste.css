@@ -1,0 +1,25 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+
+.text-area {
+    height: 5rem;
+    margin-left: 0;
+}
+
+.form-label-t-test {
+    width: 41vw;
+}
+
+.questions textarea {
+    margin: 1rem 0 0.5rem 1rem;
+}
+
+.questions textarea + label {
+    font-size: 15px;
+    margin-left: 1rem;
+}
+
+.btn-area-form{
+    margin-top: 0;
+    margin-bottom: 3.5vh;
+}
