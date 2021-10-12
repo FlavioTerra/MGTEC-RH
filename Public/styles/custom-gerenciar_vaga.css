@@ -1,0 +1,26 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+
+.card-link{
+    border: 2px solid #7a18c5;
+    border-radius: 10px;
+    padding:5px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+
+.card{
+    margin: 20px;
+    border: 2px solid #7a18c5;
+    border-radius: 0px;
+}
+
+.card-link:hover{
+    background-color: #7a18c5;
+    color: white;
+}
+
+.btn btn-outline-primary mb-5{
+    margin: 10px;
+}
