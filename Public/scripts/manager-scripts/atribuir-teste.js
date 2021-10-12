@@ -15,7 +15,7 @@ function addPergunta() {
     document.querySelector('#btn-area-form-0').remove();
     document.getElementById('questions').appendChild(buttons);
 
-    document.querySelector(`#question_${contQuestions} .title-2`).innerHTML = `${contQuestions}. <img src="../images/global/edit.svg" alt="edit">`;
+    document.querySelector(`#question_${contQuestions} .title-2`).innerHTML = `${contQuestions}. <img src="../../../../Public/images/global/edit.svg" alt="edit">`;
 
     document.querySelector(`#question_${contQuestions} [name=question_title_${contQuestions-1}]`).setAttribute('name', `question_title_${contQuestions}`);
 

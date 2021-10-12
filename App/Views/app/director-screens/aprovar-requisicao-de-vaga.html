@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap / CSS -->
+    <link rel="stylesheet" href="../../../../Public/styles/custom-aprovar-requisicao-de-vaga.css">
+
+    <title>Aprovar Requisição de Vaga</title>
+</head>
+
+<body>
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+        <div class="container-fluid background-navbar">
+            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Gestor</a>
+                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Requisições</a>
+                    <a class="nav-link" href="#">Vagas</a>
+                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Suporte</a>
+                    <a class="nav-link" href="#">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--body-->
+    <form action="requisitante.php" method="post">
+        <div class="container">
+
+            <div class="title">
+                <h1 class="title-1">Aprovar Requisição de Vaga</h1>
+            </div>
+
+            <!--Dados de Solicitaçao-->
+            <div class="title">
+                <h2 class="title-2">Dados de Solicitação</h2>
+                <img src="../../../../Public/images/global/info.svg">
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="requisitante"
+                        readonly tabindex="-1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="responsável" readonly
+                        tabindex="-1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="data-de-solicitacao"
+                        readonly tabindex="-1">
+                </div>
+            </div>
+
+            <!--Dados de Vaga-->
+            <div class="title">
+                <h2 class="title-2">Dados de Vaga</h2>
+                <img src="../../../../Public/images/global/info.svg">
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cargo" readonly
+                        tabindex="-1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="departamento"
+                        readonly tabindex="-1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Tipo da Vaga</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="tipo-da-vaga"
+                        readonly tabindex="-1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
+                <div class="col-sm-10">
+                    <input class="col form-control" aria-label="Formação" name="vinculo-empregaticio" readonly
+                        tabindex="-1" placeholder="">
+                    </input>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="salario" min="0"
+                        readonly tabindex="-1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
+                <div class="col-sm-10 input-1">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-inicio"
+                        readonly tabindex="-1">
+                </div>
+                <label for="colFormLabel" class="col label-middle">à</label>
+                <div class="col-sm-10 input-2">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-fim"
+                        readonly tabindex="-1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="numero-de-vagas"
+                        min="0" readonly tabindex="-1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
+                <div class="col-sm-12 mb-3">
+                    <textarea type="text" class="form-control" id="textarea" rows="3" name="funcao" readonly
+                        tabindex="-1"></textarea>
+                </div>
+            </div>
+
+            <!--Experiências-->
+            <div class="title">
+                <h2 class="title-2">Experiências</h2>
+                <img src="../../../../Public/images/global/info.svg">
+            </div>
+
+            <div id="Exp">
+                <div class="subtitle">
+                    <h3 class="title-3">Experiência</h3>
+                    <h3 class="numExp">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <input class="col form-control cl-exp-formacao form-ident-left" aria-label="Formação"
+                        name="exp-fomacao-1" readonly tabindex="-1" placeholder="">
+                    </input>
+
+                    <input class="col form-control cl-exp-status form-ident-right" aria-label="Status"
+                        name="exp-status-1" readonly tabindex="-1" placeholder="">
+                    </input>
+                </div>
+
+                <div class="row mb-4">
+                    <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
+                    <div class="col number">
+                        <input type="number" class="form-control cl-exp-anos-experiencia" id="colFormLabel"
+                            placeholder="" name="exp-anos-experiencia-1" readonly tabindex="-1">
+                        </input>
+                    </div>
+                </div>
+            </div>
+
+            <!--Competências-->
+            <div class="title">
+                <h2 class="title-2">Competências</h2>
+                <img src="../../../../Public/images/global/info.svg">
+            </div>
+
+            <div id="Comp">
+                <div class="subtitle">
+                    <h3 class="title-3">Competência</h3>
+                    <h3 class="numComp">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <input class="col form-control cl-comp-nome form-ident-left" aria-label="Nome" name="comp-nome-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
+
+                    <input class="col form-control cl-comp-grau form-ident-right" aria-label="Grau" name="comp-grau-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
+                </div>
+
+                <div class="row mb-4">
+                    <input class="col form-control cl-comp-status form-ident-middle" aria-label="Status"
+                        name="comp-status-1" readonly tabindex="-1" placeholder="">
+                    </input>
+                </div>
+            </div>
+
+            <!--Formações-->
+            <div class="title">
+                <h2 class="title-2">Formações</h2>
+                <img src="../../../../Public/images/global/info.svg">
+            </div>
+
+            <div id="Form">
+                <div class="subtitle">
+                    <h3 class="title-3">Formação</h3>
+                    <h3 class="numForm">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <input class="col form-control cl-form-tipo form-ident-left" aria-label="Tipo" name="form-tipo-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
+
+                    <input class="col form-control cl-form-status form-ident-right" aria-label="Status"
+                        name="form-status-1" readonly tabindex="-1" placeholder="">
+                    </input>
+                </div>
+
+                <div class="row mb-4">
+                    <input class="col form-control cl-form-nome form-ident-left" aria-label="Nome" name="form-nome-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
+
+                    <input class="col form-control cl-form-grau form-ident-right" aria-label="Grau" name="form-grau-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="title">
+                <h2 class="title-2">Fazer Comentários</h2>
+                <img src="../../../../Public/images/global/info.svg">
+            </div>
+
+            <div class="row mb-3">
+                <img src="../../../../Public/images/global/edit.svg" class="img-edit">
+                <div class="col-sm-12 mb-3">
+                    <textarea type="text" class="form-control" id="textarea" rows="3" name="comentario"></textarea>
+                </div>
+            </div>
+
+            <div class="buttons-director">
+                <button type="submit" class="btn-aprovar btn-outline-primary mb-4">Aprovar</button>
+                <button type="submit" class="btn-reprovar btn-outline-primary mb-4">Reprovar</button>
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+            </div>
+        </div>
+    </form>
+
+    <!--Footer-->
+    <footer class="footer">
+        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <label class="label-footer">+55 (15) 5555-5555</label>
+    </footer>
+
+    <!--Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+    <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+</body>
+
+</html>
