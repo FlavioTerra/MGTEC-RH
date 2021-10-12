@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../../Public/styles/custom-requisicao-de-vaga.css">
+    <link rel="stylesheet" href="../../../../../Public/styles/custom-aprovar-requisicao-de-vaga.css">
 
-    <title>Gerar Requisição de Vaga</title>
+    <title>Aprovar Requisição de Vaga</title>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
         <div class="container">
 
             <div class="title">
-                <h1 class="title-1">Gerar Requisição de Vaga</h1>
+                <h1 class="title-1">Aprovar Requisição de Vaga</h1>
             </div>
 
             <!--Dados de Solicitaçao-->
@@ -55,21 +55,24 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="requisitante">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="requisitante"
+                        readonly tabindex="-1">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="responsável">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="responsável" readonly
+                        tabindex="-1">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="data-de-solicitacao">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="data-de-solicitacao"
+                        readonly tabindex="-1">
                 </div>
             </div>
 
@@ -82,51 +85,54 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cargo">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cargo" readonly
+                        tabindex="-1">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="departamento">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="departamento"
+                        readonly tabindex="-1">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Tipo da Vaga</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="tipo-da-vaga">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="tipo-da-vaga"
+                        readonly tabindex="-1">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
                 <div class="col-sm-10">
-                    <select class="col form-select" aria-label="Formação" name="vinculo-empregaticio">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input class="col form-control" aria-label="Formação" name="vinculo-empregaticio" readonly
+                        tabindex="-1" placeholder="">
+                    </input>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="salario" min="0">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="salario" min="0"
+                        readonly tabindex="-1">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
                 <div class="col-sm-10 input-1">
-                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-inicio">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-inicio"
+                        readonly tabindex="-1">
                 </div>
                 <label for="colFormLabel" class="col label-middle">à</label>
                 <div class="col-sm-10 input-2">
-                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-fim">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-fim"
+                        readonly tabindex="-1">
                 </div>
             </div>
 
@@ -134,14 +140,15 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control" id="colFormLabel" placeholder="" name="numero-de-vagas"
-                        min="0">
+                        min="0" readonly tabindex="-1">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
                 <div class="col-sm-12 mb-3">
-                    <textarea type="text" class="form-control" id="textarea" rows="3" name="funcao"></textarea>
+                    <textarea type="text" class="form-control" id="textarea" rows="3" name="funcao" readonly
+                        tabindex="-1"></textarea>
                 </div>
             </div>
 
@@ -158,32 +165,22 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-exp-formacao" aria-label="Formação" name="exp-fomacao-1">
-                        <option selected>Formação</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input class="col form-control cl-exp-formacao form-ident-left" aria-label="Formação"
+                        name="exp-fomacao-1" readonly tabindex="-1" placeholder="">
+                    </input>
 
-                    <select class="col form-select cl-exp-status" aria-label="Status" name="exp-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input class="col form-control cl-exp-status form-ident-right" aria-label="Status"
+                        name="exp-status-1" readonly tabindex="-1" placeholder="">
+                    </input>
                 </div>
 
-                <div class="row">
+                <div class="row mb-4">
                     <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
                     <div class="col number">
                         <input type="number" class="form-control cl-exp-anos-experiencia" id="colFormLabel"
-                            placeholder="00" name="exp-anos-experiencia-1">
+                            placeholder="" name="exp-anos-experiencia-1" readonly tabindex="-1">
+                        </input>
                     </div>
-                </div>
-
-                <div id="btn-area-0" class="btn-area-exp">
-                    <img src="../../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addExp()">
-                    <img src="../../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeExp()">
                 </div>
             </div>
 
@@ -200,33 +197,19 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-comp-nome" aria-label="Nome" name="comp-nome-1">
-                        <option selected>Nome</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input class="col form-control cl-comp-nome form-ident-left" aria-label="Nome" name="comp-nome-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
 
-                    <select class="col form-select cl-comp-grau" aria-label="Grau" name="comp-grau-1">
-                        <option selected>Grau</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input class="col form-control cl-comp-grau form-ident-right" aria-label="Grau" name="comp-grau-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
                 </div>
 
-                <div class="row">
-                    <select class="col form-select cl-comp-status" aria-label="Status" name="comp-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
-                </div>
-
-                <div id="btn-area-comp-0" class="btn-area-comp">
-                    <img src="../../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addComp()">
-                    <img src="../../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeComp()">
+                <div class="row mb-4">
+                    <input class="col form-control cl-comp-status form-ident-middle" aria-label="Status"
+                        name="comp-status-1" readonly tabindex="-1" placeholder="">
+                    </input>
                 </div>
             </div>
 
@@ -243,46 +226,47 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-form-tipo" aria-label="Tipo" name="form-tipo-1">
-                        <option selected>Tipo</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input class="col form-control cl-form-tipo form-ident-left" aria-label="Tipo" name="form-tipo-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
 
-                    <select class="col form-select cl-form-status" aria-label="Status" name="form-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input class="col form-control cl-form-status form-ident-right" aria-label="Status"
+                        name="form-status-1" readonly tabindex="-1" placeholder="">
+                    </input>
                 </div>
 
-                <div class="row">
-                    <select class="col form-select cl-form-nome" aria-label="Nome" name="form-nome-1">
-                        <option selected>Nome</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                <div class="row mb-4">
+                    <input class="col form-control cl-form-nome form-ident-left" aria-label="Nome" name="form-nome-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
 
-                    <select class="col form-select cl-form-grau" aria-label="Grau" name="form-grau-1">
-                        <option selected>Grau</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input class="col form-control cl-form-grau form-ident-right" aria-label="Grau" name="form-grau-1"
+                        readonly tabindex="-1" placeholder="">
+                    </input>
                 </div>
+            </div>
 
-                <div id="btn-area-form-0" class="btn-area-form">
-                    <img src="../../images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addForm()">
-                    <img src="../../images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeForm()">
+            <hr>
+
+            <div class="title">
+                <h2 class="title-2">Fazer Comentários</h2>
+                <img src="../../images/global/info.svg">
+            </div>
+
+            <div class="row mb-3">
+                <img src="../../images/global/edit.svg" class="img-edit">
+                <div class="col-sm-12 mb-3">
+                    <textarea type="text" class="form-control" id="textarea" rows="3" name="comentario"></textarea>
                 </div>
+            </div>
+
+            <div class="buttons-director">
+                <button type="submit" class="btn-aprovar btn-outline-primary mb-4">Aprovar</button>
+                <button type="submit" class="btn-reprovar btn-outline-primary mb-4">Reprovar</button>
             </div>
 
             <div class="buttons">
                 <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-                <button type="submit" class="btn btn-outline-primary mb-5">Gerar</button>
             </div>
         </div>
     </form>

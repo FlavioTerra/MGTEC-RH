@@ -130,6 +130,16 @@ input[type="time"]{
     height: 60px;
 }
 
+.form-control:disabled, .form-control[readonly]{
+    background-color: #f5f5f5;
+}
+
+select[readonly], input[readonly]{
+    background-color: #f5f5f5;
+    pointer-events: none;
+    touch-action: none;
+}
+
 /*buttons*/
 .buttons{
     display: flex;
