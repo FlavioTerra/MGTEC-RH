@@ -23,3 +23,9 @@
     margin-top: 0;
     margin-bottom: 3.5vh;
 }
+
+@media (max-width: 576px) {
+    .questions textarea {
+        width: 95%;
+    }
+}
