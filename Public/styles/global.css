@@ -134,7 +134,7 @@ input[type="time"]{
     background-color: #f5f5f5;
 }
 
-select[readonly], input[readonly]{
+select[readonly], input[readonly], textarea[readonly]{
     background-color: #f5f5f5;
     pointer-events: none;
     touch-action: none;
