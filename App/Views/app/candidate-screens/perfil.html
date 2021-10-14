@@ -42,127 +42,162 @@
     <form action="requisitante.php" method="post">
         <div class="container">
 
-            <div class="row perfil-box">
-                <div class="img-perfil"></div>
+            <!--parte de cima do perfil-->
+            <div class="row d-flex justify-content-center perfil-box">
 
-                <div class="col">
-                    <h1 class="nome-perfil">Nome Perfil</h1>
-                    <h2 class="nome-usuario">nome_usuario</h2>
+                <div class="row row-img-names">
+                    <div class="img-perfil"></div>
 
-                    <p class="descricao-perfil">
-                        Aqui fica o sua descrição do perfil personalizada, diga-nos um pouco
-                        sobre você. Aqui fica o sua descrição do perfil personalizada, diga-nos um pouco
-                        sobre você. Aqui fica o sua descrição do perfil personalizada, diga-nos um pouco
-                        sobre você.
-                    </p>
+                    <div class="names">
+                        <h1 class="nome-perfil">Nome Perfil</h1>
+                        <h2 class="nome-usuario">nome_usuario</h2>
+                    </div>
+                </div>
+
+                <p class="mb-3 descricao-perfil">
+                    Aqui fica a descrição do perfil personalizada, diga-nos um pouco
+                    sobre você. Aqui fica a sua descrição do perfil personalizada, diga-nos um pouco
+                    sobre você. Aqui fica a sua descrição do perfil personalizada, diga-nos um pouco
+                    sobre você.
+                </p>
+
+                <div class="buttons">
+                    <button type="button" class="btn btn-outline-primary mb-2">Editar Perfil</button>
+                    <button type="button" class="btn btn-outline-primary mb-2">Vagas Candidatadas</button>
                 </div>
             </div>
 
-            <hr>
+            <hr class="mb-4">
 
-            <!--Dados de Solicitaçao-->
+            <!--parte de baixo do perfil-->
+
+            <!--dados pessoais-->
             <div class="title">
-                <h2 class="title-2">Dados de Solicitação</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <h2 class="title-2">Dados Pessoais</h2>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
+                <label for="colFormLabel" class="colsm-2 form-label">Data de Nascimento</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="requisitante">
+                    <input type="date" class="form-control" id="colFormLabel" placeholder="" name="data-de-nascimento"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
+                <label for="colFormLabel" class="colsm-2 form-label">Sexo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="responsável">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="sexo" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
+                <label for="colFormLabel" class="col-sm-2 form-label">CPF</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="data-de-solicitacao">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cpf" readonly>
                 </div>
             </div>
 
-            <!--Dados de Vaga-->
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">CNPJ</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cnpj" readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Disponibilidade</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="disponibilidade"
+                        readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Status</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="status" readonly>
+                </div>
+            </div>
+
+            <!--contato-->
+
             <div class="title">
-                <h2 class="title-2">Dados de Vaga</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <h2 class="title-2">Contato</h2>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
+                <label for="colFormLabel" class="colsm-2 form-label">Telefone</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cargo">
+                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="telefone" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
+                <label for="colFormLabel" class="colsm-2 form-label">Celular</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="departamento">
+                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="sexo" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Tipo da Vaga</label>
+                <label for="colFormLabel" class="col-sm-2 form-label">E-mail</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="tipo-da-vaga">
+                    <input type="email" class="form-control" id="colFormLabel" placeholder="" name="email" readonly>
                 </div>
             </div>
 
+            <!--residencia-->
+
+            <div class="title">
+                <h2 class="title-2">Residência</h2>
+            </div>
+
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
+                <label for="colFormLabel" class="colsm-2 form-label">CEP</label>
                 <div class="col-sm-10">
-                    <select class="col form-select" aria-label="Formação" name="vinculo-empregaticio">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cep" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
+                <label for="colFormLabel" class="colsm-2 form-label">Estado</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="salario" min="0">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="estado" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
-                <div class="col-sm-10 input-1">
-                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-inicio">
-                </div>
-                <label for="colFormLabel" class="col label-middle">à</label>
-                <div class="col-sm-10 input-2">
-                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-fim">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
+                <label for="colFormLabel" class="col-sm-2 form-label">Cidade</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="numero-de-vagas"
-                        min="0">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
-                <div class="col-sm-12 mb-3">
-                    <textarea type="text" class="form-control" id="textarea" rows="3" name="funcao"></textarea>
+                <label for="colFormLabel" class="col-sm-2 form-label">Bairro</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="bairro" readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Rua</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="rua" readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Número</label>
+                <div class="col-sm-10 mb-3">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly>
                 </div>
             </div>
 
             <!--Experiências-->
             <div class="title">
                 <h2 class="title-2">Experiências</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Exp">
@@ -172,41 +207,25 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-exp-formacao" aria-label="Formação" name="exp-fomacao-1">
-                        <option selected>Formação</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="formacao"
+                        readonly>
 
-                    <select class="col form-select cl-exp-status" aria-label="Status" name="exp-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="status"
+                        readonly>
                 </div>
 
                 <div class="row">
                     <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
-                    <div class="col number">
+                    <div class="col number mb-3">
                         <input type="number" class="form-control cl-exp-anos-experiencia" id="colFormLabel"
-                            placeholder="00" name="exp-anos-experiencia-1">
+                            placeholder="" name="exp-anos-experiencia-1" readonly>
                     </div>
-                </div>
-
-                <div id="btn-area-0" class="btn-area-exp">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addExp()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeExp()">
                 </div>
             </div>
 
             <!--Competências-->
             <div class="title">
                 <h2 class="title-2">Competências</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Comp">
@@ -216,42 +235,23 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-comp-nome" aria-label="Nome" name="comp-nome-1">
-                        <option selected>Nome</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="nome"
+                        readonly>
 
-                    <select class="col form-select cl-comp-grau" aria-label="Grau" name="comp-grau-1">
-                        <option selected>Grau</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="grau"
+                        readonly>
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-comp-status" aria-label="Status" name="comp-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
-                </div>
-
-                <div id="btn-area-comp-0" class="btn-area-comp">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addComp()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeComp()">
+                    <div class="col mb-3">
+                        <input type="text" class="form-control" id="colFormLabel" placeholder="" name="status" readonly>
+                    </div>
                 </div>
             </div>
 
             <!--Formações-->
             <div class="title">
                 <h2 class="title-2">Formações</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Form">
@@ -261,48 +261,54 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-form-tipo" aria-label="Tipo" name="form-tipo-1">
-                        <option selected>Tipo</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="tipo"
+                        readonly>
 
-                    <select class="col form-select cl-form-status" aria-label="Status" name="form-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="status"
+                        readonly>
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-form-nome" aria-label="Nome" name="form-nome-1">
-                        <option selected>Nome</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="nome"
+                        readonly>
 
-                    <select class="col form-select cl-form-grau" aria-label="Grau" name="form-grau-1">
-                        <option selected>Grau</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
-                </div>
-
-                <div id="btn-area-form-0" class="btn-area-form">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addForm()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeForm()">
+                    <input type="text" class="col form-control dual mb-3" id="colFormLabel" placeholder="" name="grau"
+                        readonly>
                 </div>
             </div>
 
+            <!--Currículo-->
+            <div class="title">
+                <h2 class="title-2">Currículo</h2>
+            </div>
+
+            <div class="row">
+                <div class="col col-pdf">
+                    <img class="pdf" src="../../../../Public/images/custom-perfil/pdf.svg">
+                </div>
+
+                <div class="col col-btns">
+                    <div class="buttons">
+                        <button type="button" class="btn btn-outline-primary mb-2">
+                            <img src="../../../../Public/images/custom-perfil/upload.svg">
+                            Upload</button>
+                    </div>
+                    <div class="buttons">
+                        <button type="button" class="btn btn-outline-primary mb-2">
+                            <img src="../../../../Public/images/custom-perfil/download.svg">
+                            Download</button>
+                    </div>
+                    <div class="buttons">
+                        <button type="button" class="btn btn-outline-primary mb-5">
+                            <img src="../../../../Public/images/custom-perfil/view.svg">
+                            Visualizar</button>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="buttons">
                 <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-                <button type="submit" class="btn btn-outline-primary mb-5">Gerar</button>
             </div>
         </div>
     </form>
