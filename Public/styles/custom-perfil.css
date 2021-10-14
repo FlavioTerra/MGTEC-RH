@@ -1,0 +1,52 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+
+/*parte de cima do perfil*/
+.perfil-box{
+    margin-left: 0px;
+}
+
+.nome-perfil{
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+    margin: 15px 0 0 5px;
+}
+
+.nome-usuario{
+    font-size: 19px;
+    color: #a8a8a8;
+    margin: 0 0 5px 5px;
+}
+
+.descricao-perfil{
+    display: -webkit-box;
+    max-width: 53vw;
+    height: 60px;
+    margin: 0 0 0 5px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #1d1d1d;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.descricao-perfil:hover{
+    display: block;
+    height: auto;
+    overflow: visible;
+}
+
+/*images*/
+.img-perfil{
+    border: 1px solid #7A18C5;
+    margin-top: 10px;
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    background-image: url(../images/custom-perfil/no-picture.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
