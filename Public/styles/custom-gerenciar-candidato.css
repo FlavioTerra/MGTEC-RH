@@ -37,21 +37,18 @@
     padding: 0;
 }
 
-.card-text{
-    margin-top: -15px;
-    padding-top: 4px;
-}
-
 .card-text-status{
     text-decoration: underline;
     color: #7a18c5;
-    padding-top: 0px;
+    display: inline;
+    padding-left: 10px;
 }
 
 .card-img{
-    width: 120px;
+    width: 80px;
     height: auto;
-    border-right: 1px solid #7a18c5;
+    border-radius: 50%;
+    border-color: #7a18c5;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Requisições de Vagas Aprovadas e Reprovadas</title>
+    <title>Marcar Entrevist</title>
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-requisicoes-de-vagas-aprovadas-e-reprovadas.css">
+    <link rel="stylesheet" href="../../../../Public/styles/custom-marcar-entrevista.css">
 
 </head>
 
@@ -41,27 +41,56 @@
 
         <div class="container">
             <div class="title">
-                <h1 class="title-1">Requisições de Vagas</h1>
+                <h1 class="title-1">Marcar Entrevista</h1>
             </div>
 
             <!--Pesquisa-->
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
+                <label for="colFormLabel" class="col-sm-2 form-label">Nome do Candidato</label>
                 <div class="col-sm-10">
-                    <select class="col form-select" aria-label="Departamento" name="departamento">
-                        <option selected>Todos</option>
+                    <select class="col form-select" aria-label="nome-candidato" name="nome-candidato">
+                        <option selected></option>
                         <option value="1">#</option>
                         <option value="2">#</option>
                         <option value="3">#</option>
                     </select>
                 </div>
-            </div>
 
-            <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
+                <label for="colFormLabel" class="col-sm-2 form-label">Cago</label>
                 <div class="col-sm-10">
-                    <select class="col form-select" aria-label="Cargo" name="cargo">
-                        <option selected>Todos</option>
+                    <select class="col form-select" aria-label="cargo" name="cargo">
+                        <option selected></option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <label for="colFormLabel" class="col-sm-2 form-label">Data</label>
+                <div class="col-sm-10">
+                    <select class="col form-select" aria-label="data" name="data">
+                        <option selected></option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <label for="colFormLabel" class="col-sm-2 form-label">Hora</label>
+                <div class="col-sm-10">
+                    <select class="col form-select" aria-label="hora-antes" name="hora-antes">
+                        <option selected></option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <label>às</label>
+                </div>
+
+                <div class="col-sm-10">
+                    <select class="col form-select" aria-label="hora-depos" name="hora-depois">
+                        <option selected></option>
                         <option value="1">#</option>
                         <option value="2">#</option>
                         <option value="3">#</option>
@@ -73,60 +102,20 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Organizar por</label>
 
                 <select class="col-sm-10 form-select" aria-label="organizar-por" name="organizar-por">
-                    <option selected>Reprovadas</option>
-                    <option value="1">Aprovadas</option>
+                    <option selected>#</option>
+                    <option value="1">#</option>
                 </select>
             </div>
 
             <hr>
 
-            <!--Resposta-->
-            <div class="depto-recursos-humanos">
-                <div class="card">
-                    <div class="card-img"></div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">Departamento de Recursos Humanos</h4>
-                        <p class="card-text">#</p>
-                    </div>
-                </div>
-
-                <button type="button" class="btn btn-outline-primary mb-4">Visualizar</button>
-            </div>
-
-            <div class="depto-engenharia-eletrica">
-                <div class="card">
-                    <div class="card-img"></div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">Departamento de Engenharia Elétrica</h4>
-                        <p class="card-text">#</p>
-                    </div>
-                </div>
-
-                <button type="button" class="btn btn-outline-primary mb-4">Visualizar</button>
-            </div>
-
-            <div class="depto-financas">
-                <div class="card">
-                    <div class="card-img"></div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">Departamento de Finanças</h4>
-                        <p class="card-text">#</p>
-                    </div>
-                </div>
-
-                <button type="button" class="btn btn-outline-primary mb-4">Visualizar</button>
-            </div>
-
-            <hr>
-
             <div class="buttons">
+                <button type="button" class="btn btn-outline-primary mb-5">Marcar</button>
                 <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
             </div>
 
-        </div>
+            
+
 
     <!--Footer-->
     <footer class="footer">
@@ -142,7 +131,7 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
 
-    <script src="../../../../Public/scripts/manager-scripts/atribuir-teste.js"></script>
+    <script src="../../../../Public/scripts/manager-scripts/marcar-entrevista.js"></script>
 </body>
 
 </html>
