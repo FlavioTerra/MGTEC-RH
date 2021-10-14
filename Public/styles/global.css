@@ -151,7 +151,9 @@ select[readonly], input[readonly], textarea[readonly]{
 .btn{
     color: #222121;
     border: 2px solid #7a2cb6;
-    border-radius: 0.50rem;
+    border-radius: 23px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .btn:hover{
