@@ -149,7 +149,7 @@ select[readonly], input[readonly], textarea[readonly]{
 }
 
 .btn{
-    color: #222121;
+    color: #000000;
     border: 2px solid #7a2cb6;
     border-radius: 23px;
     padding-left: 1rem;
