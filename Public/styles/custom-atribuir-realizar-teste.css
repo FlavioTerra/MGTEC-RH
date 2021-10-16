@@ -20,8 +20,23 @@
 }
 
 .btn-area-form{
-    margin-top: 0;
+    margin-top: 0.5rem;
     margin-bottom: 3.5vh;
+}
+
+.buttons {
+    gap: 0.5rem;
+}
+
+.buttons-test{
+    padding: 0.7rem;
+    gap: 1rem;
+}
+
+input[type="radio"] {
+    -ms-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 @media (max-width: 576px) {

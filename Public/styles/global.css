@@ -264,7 +264,19 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+.form-select{
+    margin-left: 10px;
+    margin-right: 11px;
+    height: 25px;
+    font-size: 15px;
+    padding: 0 2.25rem 0 0.75rem;
+    color: #212529;
+}
 
+.form-select:focus{
+    box-shadow: 0 0 5px #9a5ec9;
+    border-color: #ced4da;
+}
 
 /*@media screens*/
 @media screen and (min-width:576px){

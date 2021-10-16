@@ -1,0 +1,24 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+
+.title {
+    width: 100%;
+    gap: 10px
+}
+
+div .text-area {
+    height: 5rem;
+    width: 93%;
+    margin-left: 0.6rem;
+}
+
+.buttons {
+    gap: 0.5rem;
+    padding: 0.7rem;
+}
+
+@media (max-width: 576px) {
+    .form-select {
+        margin-left: 0;
+    }
+}
