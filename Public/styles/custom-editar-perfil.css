@@ -1,0 +1,110 @@
+@import url(./custom-perfil.css);
+
+/*parte de cima*/
+.img-perfil{
+    opacity: 0.68;
+}
+
+.img-edit{
+    width: 20%;
+    margin: 12px 0 0 12px;
+    cursor: pointer;
+}
+
+.img-edit-2{
+    width: 9%;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+.img-edit-3{
+    width: 40px;
+    margin-bottom: -12px;
+    margin-right: 85%;
+    cursor: pointer;
+}
+
+.img-info{
+    width: 8%;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.img-info-2{
+    width: 40px;
+    margin-left: 85%;
+}
+
+.names{
+    width: 200px;
+}
+
+.nome-perfil{
+    color: #B8B8B8;
+}
+
+.nome-usuario{
+    color: #B8B8B8;
+}
+
+.descricao-perfil{
+    color: #B8B8B8;
+}
+
+.select{
+    color: #f5f5f5;
+    background-color: #7a2cb6;
+    border-color: #7a2cb6;
+}
+
+.select:hover{
+    transform: scale(1);
+    cursor:auto;
+}
+
+/*parte de baixo*/
+.asterisco{
+    display: block;
+    color: red;
+    font-size: 30px;
+    height: 5px;
+    margin-right: 5px;
+}
+
+.asterisco-2{
+    color: red;
+}
+
+.descricao-edicao{
+    color: red;
+    font-size: 14px;
+    margin-left: 14px;
+}
+
+.edit{
+    color: #B8B8B8;
+}
+
+.edit:focus{
+    color: #212529;
+}
+
+@media screen and (min-width:700px){
+    .img-edit-3{
+        margin-right: 92%;
+    }
+
+    .img-info-2{
+        margin-left: 90%;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .img-edit-3{
+        margin-right: 95%;
+    }
+
+    .img-info-2{
+        margin-left: 93%;
+    }
+}
