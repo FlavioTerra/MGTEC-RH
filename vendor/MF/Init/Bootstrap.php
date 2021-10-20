@@ -29,7 +29,7 @@
                     $class = 'App\\controllers\\' . ucfirst($route['controller']);
                    
                     $action = $route['action'];
-                    
+ 
                     $controller = new $class;
 
                     $controller->$action(); 

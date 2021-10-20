@@ -27,8 +27,7 @@
             $currentClass = explode('\\', $currentClass);
             $folderPath = strtolower(str_replace('Controller', '', $currentClass[2]));
 
-            // require_once "../App/Views/app/" . $folderPath . "/" . $this->view->page . ".phtml";
-            echo $folderPath;
+            require_once "../App/Views/app/" . $folderPath . "/" . $this->view->page . ".phtml";
         }
     }    
 

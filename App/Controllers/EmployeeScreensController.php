@@ -10,12 +10,12 @@
     use App\Models\Info;
  
 
-    class IndexController extends Action {
+    class EmployeeScreensController extends Action {
         public function index() {
-            
+            echo 'teste';
         }
 
-        public function ProcessoSeletivo() {
+        public function processoSeletivo() {
             $this->render('processo-seletivo');
         }
     }   
