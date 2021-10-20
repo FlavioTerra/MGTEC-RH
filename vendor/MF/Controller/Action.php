@@ -10,7 +10,8 @@
             $this->view = new \stdClass();
         }
 
-        protected function render($view, $layout) {
+        protected function render($view) {
+            $layout = NULL;
             
             $this->view->page = $view;
 
@@ -26,7 +27,8 @@
             $currentClass = explode('\\', $currentClass);
             $folderPath = strtolower(str_replace('Controller', '', $currentClass[2]));
 
-            require_once "../App/Views/" . $folderPath . "/" . $this->view->page . ".phtml";
+            // require_once "../App/Views/app/" . $folderPath . "/" . $this->view->page . ".phtml";
+            echo $folderPath;
         }
     }    
 

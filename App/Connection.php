@@ -5,7 +5,7 @@
     class Connection {
 
         private static $host = 'localhost';
-        private static $dbname = 'mvc';
+        private static $dbname = 'mgtec_rh';
         private static $user = 'root';
         private static $pass = '';
         private static $charset = 'utf8';
