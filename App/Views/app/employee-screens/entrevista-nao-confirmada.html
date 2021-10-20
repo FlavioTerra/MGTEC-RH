@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Entrevistas</title>
+
+    <!-- Bootstrap / CSS -->
+    <link rel="stylesheet" href="../../../../Public/styles/entrevista.css">
+
+</head>
+
+<body>
+
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+        <div class="container-fluid background-navbar">
+            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Gestor</a>
+                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Requisições</a>
+                    <a class="nav-link" href="#">Vagas</a>
+                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Suporte</a>
+                    <a class="nav-link" href="#">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <form action="" method="post">
+        <div class="container">
+            <div class="title">
+                <h1 class="title-1">Gerenciar Entrevistas</h1>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Processo Seletivo</label>
+                <input type="text" name="processo-seletivo" id="processo-seletivo">
+            </div>
+            <div class="form-group">
+                </select>
+                <label for="exampleInputPassword1">Organizar por</label>
+                <select id="cargos" name="cargos">
+                    <option value="Todos">Mais recente</option>
+                </select>
+            </div>
+        <div class="buttons">
+            <button type="button" class="btn btn-outline-primary mb-5">Registradas</button>
+            <button type="button" class="btn btn-outline-primary mb-5" id="non-registered">Não Registradas</button>
+        </div>
+        <div class="title">
+            <h2 class="title-1">Candidatos</h2>
+        </div>
+        <div class="card">
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="4" fill="black" />
+              </svg>
+            <div class="card-body">
+                <h4 class="card-title">Pessoa 1</h4>
+                <p class="card-text"><small>@pessoa_1</small></p>
+                <p class="card-text"><strong>Data: 13/07/2020</strong></p>
+                <p class="card-text"><strong>Hora: 13:20 às 14:20</strong></p>
+                <a href="#" class="card-link">Visualizar</a>
+                <a href="#" class="card-link">Marcar</a>
+            </div>
+        </div>
+        </div>
+        
+        
+    </form>
+
+    
+
+    <!--Footer-->
+    <footer class="footer">
+        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <label class="label-footer">+55 (15) 5555-5555</label>
+    </footer>
+
+
+    <!--Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+    <script src="../../../../Public/scripts/manager-scripts/atribuir-teste.js"></script>
+</body>
+
+</html>
