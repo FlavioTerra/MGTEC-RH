@@ -39,15 +39,7 @@
     width: 200px;
 }
 
-.nome-perfil{
-    color: #B8B8B8;
-}
-
-.nome-usuario{
-    color: #B8B8B8;
-}
-
-.descricao-perfil{
+.nome-perfil, .nome-usuario, .descricao-perfil{
     color: #B8B8B8;
 }
 
@@ -63,20 +55,18 @@
 }
 
 /*parte de baixo*/
+.asterisco, .asterisco-2, .descricao-edicao{
+    color: red;
+}
+
 .asterisco{
     display: block;
-    color: red;
     font-size: 30px;
     height: 5px;
     margin-right: 5px;
 }
 
-.asterisco-2{
-    color: red;
-}
-
 .descricao-edicao{
-    color: red;
     font-size: 14px;
     margin-left: 14px;
 }
