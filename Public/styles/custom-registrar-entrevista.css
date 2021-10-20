@@ -21,3 +21,9 @@
 textarea.form-control {
     margin-left: 0;
 }
+
+@media (max-width: 576px) {
+    .title-interview {
+        width: 44vw;
+    }
+}

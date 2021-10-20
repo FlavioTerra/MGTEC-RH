@@ -33,21 +33,23 @@ function addExp() {
 
 //remove nova experiência
 function removeExp() {
-    j--;
-    numExp--;
-    contExp--;
-
-    //cria array das divs adicionadas
-    let divs = document.getElementsByClassName('add-div-exp');
-
-    //pega a ultima div
-    let last = divs.length - 1;
-
-    //remove a ultima div
-    i.removeChild(divs[last]);
-
-    //retorna os botões antigos
-    addBtnExp();
+    if(contExp > 2) {
+        j--;
+        numExp--;
+        contExp--;
+    
+        //cria array das divs adicionadas
+        let divs = document.getElementsByClassName('add-div-exp');
+    
+        //pega a ultima div
+        let last = divs.length - 1;
+    
+        //remove a ultima div
+        i.removeChild(divs[last]);
+    
+        //retorna os botões antigos
+        addBtnExp();
+    }
 }
 
 //incrementa número da experiencia
@@ -144,21 +146,23 @@ function addComp() {
 
 //remove nova competencia
 function removeComp() {
-    jComp--;
-    numComp--;
-    contComp--;
-
-    //cria array das divs adicionadas
-    let divs = document.getElementsByClassName('add-div-comp');
-
-    //pega a ultima div
-    let last = divs.length - 1;
-
-    //remove a ultima div
-    comp.removeChild(divs[last]);
-
-    //retorna os botões antigos
-    addBtnComp();
+    if(contComp > 2) {
+        jComp--;
+        numComp--;
+        contComp--;
+    
+        //cria array das divs adicionadas
+        let divs = document.getElementsByClassName('add-div-comp');
+    
+        //pega a ultima div
+        let last = divs.length - 1;
+    
+        //remove a ultima div
+        comp.removeChild(divs[last]);
+    
+        //retorna os botões antigos
+        addBtnComp();
+    }
 }
 
 let contComp = 2;
@@ -254,21 +258,23 @@ function addForm() {
 
 //remove nova formação
 function removeForm() {
-    jForm--;
-    numForm--;
-    contForm--;
-
-    //cria array das divs adicionadas
-    let divs = document.getElementsByClassName('add-div-form');
-
-    //pega a ultima div
-    let last = divs.length - 1;
-
-    //remove a ultima div
-    form.removeChild(divs[last]);
-
-    //retorna os botões antigos
-    addBtnForm();
+    if(contForm > 2) {
+        jForm--;
+        numForm--;
+        contForm--;
+    
+        //cria array das divs adicionadas
+        let divs = document.getElementsByClassName('add-div-form');
+    
+        //pega a ultima div
+        let last = divs.length - 1;
+    
+        //remove a ultima div
+        form.removeChild(divs[last]);
+    
+        //retorna os botões antigos
+        addBtnForm();
+    }
 }
 
 let contForm = 2;
