@@ -38,8 +38,18 @@
                 </div>
             </div>
         </nav>
+        <?php 
+            if(isset($_GET['cadastroProcSeletivo'])){ 
+        ?>
 
-        <form action="" method="post">
+            <script>
+                alert("Cadastro do Processo Seletivo Realizado com Sucesso!");
+            </script>
+ 
+        <?php 
+            }
+        ?>
+        <form action="/processo_seletivo_cadastrar" method="post">
             <div class="container">
                 <div class="title">
                     <h1 class="title-1">Processo Seletivo</h1>
@@ -53,7 +63,7 @@
                 <div class="row mb-3">
                     <label for="colFormLabel" class="colsm-2 form-label title-interview">Título do Processo Seletivo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="colFormLabel" placeholder="" name="procSeletivo">
+                        <input type="text" class="form-control" id="colFormLabel" placeholder="" name="tituloProcSeletivo">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -99,12 +109,12 @@
                 <div class="row mb-3">
                     <label for="teste_Title" class="col-sm-2 form-label form-label">Regra de Classificação</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="colFormLabel" placeholder="" name="classification-rule" min="1">
+                        <input type="number" class="form-control" id="colFormLabel" placeholder="" name="classification-rule" min="0" max="1">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="teste_Title" class="col-sm-2 form-label form-label">Descrição</label>
-                    <textarea type="text" class="form-control text-area"></textarea>
+                    <textarea type="text" class="form-control text-area" name="descProc"></textarea>
                 </div>
 
                 <button type="button" class="btn btn-outline-primary">Atribuir Teste</button>

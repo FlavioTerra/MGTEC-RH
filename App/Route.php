@@ -19,6 +19,13 @@
                 'action'=>'processoSeletivo'
             );
 
+            $routes['processo_seletivo_cadastrar'] = array(
+                'route'=>'/processo_seletivo_cadastrar',
+                'controller'=>'employeeScreensController',
+                'action'=>'processoSeletivoCadastrar'
+            );
+
+
             $this->setRoutes($routes);
         }    
     }
