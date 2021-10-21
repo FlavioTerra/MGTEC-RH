@@ -11,13 +11,10 @@
  
 
     class EmployeeScreensController extends Action {
-        public function index() {
-            
+        public function index() {  
         }
 
         public function processoSeletivo() {
-
-
             $this->render('processo-seletivo');
         }
 
@@ -38,9 +35,7 @@
 
             $processoSeletivo->save();
 
-            header('Location:/processo_seletivo?cadastroProcSeletivo=sucess');
-
-           
+            header('Location:/processo_seletivo?cadastroProcSeletivo=sucess');   
         }
     }   
 

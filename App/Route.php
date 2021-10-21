@@ -25,6 +25,18 @@
                 'action'=>'processoSeletivoCadastrar'
             );
 
+            $routes['entrevista'] = array(
+                'route'=>'/entrevista',
+                'controller'=>'employeeScreensController',
+                'action'=>'entrevista'
+            );
+
+            $routes['entrevista_registrar'] = array(
+                'route'=>'/entrevista_registrar',
+                'controller'=>'employeeScreensController',
+                'action'=>'entrevistaRegistrar'
+            );
+
 
             $this->setRoutes($routes);
         }    
