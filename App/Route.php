@@ -37,6 +37,18 @@
                 'action'=>'entrevistaCandidatoRegistrar'
             );
 
+            $routes['entrevista_marcar'] = array(
+                'route'=>'/entrevista_marcar',
+                'controller'=>'employeeScreensController',
+                'action'=>'entrevistaMarcar'
+            );
+
+            $routes['entrevista_candidato_marcar'] = array(
+                'route'=>'/entrevista_candidato_marcar',
+                'controller'=>'employeeScreensController',
+                'action'=>'entrevistaCandidatoMarcar'
+            );
+
 
             $this->setRoutes($routes);
         }    

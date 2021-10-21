@@ -37,6 +37,23 @@
 
             header('Location:/processo_seletivo?cadastroProcSeletivo=sucess');   
         }
+
+        public function marcarEntrevista() {
+            $this->render('marcar-entrevista');
+        }
+
+        public function marcarEntrevistaCadastrar() {
+            $entrevista = Container::getModel('EntrevistaMarcar');
+            // id_entrevista	id_user	titulo_entrevista	descricao	
+
+            
+            
+            $entrevista->__set('titulo_proc',$_POST['tituloProcSeletivo']);
+
+            $entrevista->save();
+
+            header('Location:/marcar_entrevista?entrevistaMarcar=sucess');   
+        }
     }   
 
 ?>
