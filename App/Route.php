@@ -25,16 +25,16 @@
                 'action'=>'processoSeletivoCadastrar'
             );
 
-            $routes['entrevista'] = array(
-                'route'=>'/entrevista',
-                'controller'=>'employeeScreensController',
-                'action'=>'entrevista'
-            );
-
             $routes['entrevista_registrar'] = array(
                 'route'=>'/entrevista_registrar',
                 'controller'=>'employeeScreensController',
                 'action'=>'entrevistaRegistrar'
+            );
+
+            $routes['entrevista_candidato_registrar'] = array(
+                'route'=>'/entrevista_candidato_registrar',
+                'controller'=>'employeeScreensController',
+                'action'=>'entrevistaCandidatoRegistrar'
             );
 
 
