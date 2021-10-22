@@ -46,9 +46,9 @@
             $entrevista = Container::getModel('EntrevistaMarcar');
             // id_entrevista	id_user	titulo_entrevista	descricao	
 
+            // ta faltando campos tanto no phtml tanto no banco
             
-            
-            $entrevista->__set('titulo_proc',$_POST['tituloProcSeletivo']);
+            $entrevista->__set('id_user',$_POST['nome-candidato']);
 
             $entrevista->save();
 

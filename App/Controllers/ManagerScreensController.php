@@ -19,7 +19,7 @@
         }
 
         public function registrarEntrevistaCadastrar() {
-            $entrevista = Container::getModel('EntrevistaRegistrar');
+            $entrevista = Container::getModel('RegistrarEntrevista');
 
             $entrevista->__set('id_candidato',$_POST['applpicant']);
 
