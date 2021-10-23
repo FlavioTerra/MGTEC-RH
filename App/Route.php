@@ -49,6 +49,31 @@
                 'action'=>'entrevistaCandidatoMarcar'
             );
 
+            // Requisição de Vaga
+            $routes['gerar_requisicao_vaga'] = array(
+                'route'=>'/gerar_requisicao_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'gerarRequisicaoVaga'
+            );
+
+            $routes['gerar_vaga'] = array(
+                'route'=>'/gerar_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'gerarVaga'
+            );
+
+            // Teste
+            $routes['atribuir_teste'] = array(
+                'route'=>'/atribuir_teste',
+                'controller'=>'employeeScreensController',
+                'action'=>'atribuirTeste'
+            );
+
+            $routes['cadastrar_teste'] = array(
+                'route'=>'/cadastrar_teste',
+                'controller'=>'employeeScreensController',
+                'action'=>'cadastrarTeste'
+            );
 
             $this->setRoutes($routes);
         }    

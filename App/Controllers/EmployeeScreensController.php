@@ -6,9 +6,6 @@
     use MF\Model\Container;
 
     //Models
-    use App\Models\Produto;
-    use App\Models\Info;
- 
 
     class EmployeeScreensController extends Action {
         public function index() {  
@@ -53,6 +50,19 @@
             $entrevista->save();
 
             header('Location:/marcar_entrevista?entrevistaMarcar=sucess');   
+        }
+
+        public function atribuirTeste() {
+
+            $this->render('atribuir-teste');
+        }
+
+        public function cadastrarTeste() {
+            $entrevista = Container::getModel('AtribuirTeste');
+
+            echo '<pre>';
+                print_r($_POST);
+            echo '<pre>';
         }
     }   
 

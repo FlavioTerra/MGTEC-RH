@@ -7,7 +7,8 @@
         <title>Atribuir Teste</title>
 
         <!-- Bootstrap / CSS -->
-        <link rel="stylesheet" href="../../../../Public/styles/custom-atribuir-realizar-teste.css">
+        <!--  <link rel="stylesheet" href="../../../../Public/styles/custom-atribuir-realizar-teste.css"> -->
+        <link rel="stylesheet" href="/styles/custom-atribuir-realizar-teste.css">
 
     </head>
     <body>
@@ -15,11 +16,13 @@
         <!--Header-->
         <nav class="navbar navbar-expand-lg navbar-dark" id="header">
             <div class="container-fluid background-navbar">
-                <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
-
+                
+                <!-- <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a> -->
+                <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+                    <!-- <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button"> -->
+                    <img src="/images/global/navbar-button.svg" class="navbar-button">
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -37,7 +40,7 @@
             </div>
         </nav>
 
-        <form action="" method="post">
+        <form action="/cadastrar_teste" method="post">
             <div class="container">
                 <div class="title">
                     <h1 class="title-1">Atribuir Teste</h1>
@@ -61,13 +64,14 @@
 
                 <div class="title"> 
                     <h2 class="title-2">Perguntas</h2>
-                    <img src="../../../../Public/images/global/info.svg">
+                    <!-- <img src="../../../../Public/images/global/info.svg"> -->
+                    <img src="/images/global/info.svg">
                 </div>
 
                 <div class="questions" id="questions">
                     <div id="question_1">  
                         <div class="title">
-                            <h2 class="title-2">1. <img src="../../../../Public/images/global/edit.svg" alt="edit" ></h2>            
+                            <h2 class="title-2">1. <img src="/images/global/edit.svg" alt="edit" ></h2>            
                         </div>
         
                         <div class="row mb-3">
@@ -115,8 +119,10 @@
                         </div>
                     </div>  
                     <div id="btn-area-form-0" class="btn-area-form">
-                        <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addPergunta()">
-                        <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removePergunta()">
+                        <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addPergunta()">
+                        <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removePergunta()"> -->
+                        <img src="/images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addPergunta()">
+                        <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removePergunta()">
                     </div>
                 </div>
                 <div class="buttons">
@@ -128,9 +134,12 @@
 
         <!--Footer-->
         <footer class="footer">
-            <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
+            <!-- <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
             <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-            <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+            <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick=""> -->
+            <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
+            <img src="/images/global/facebook.svg" class="img-footer" onclick="">
+            <img src="/images/global/email.svg" class="img-footer" onclick="">
             <label class="label-footer">+55 (15) 5555-5555</label>
         </footer>
 
@@ -139,6 +148,7 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
 
-        <script src="../../../../Public/scripts/employee-scripts/atribuir-teste.js"></script>
+        <!-- <script src="../../../../Public/scripts/employee-scripts/atribuir-teste.js"></script> -->
+        <script src="/scripts/employee-scripts/atribuir-teste.js"></script>
     </body>
 </html>

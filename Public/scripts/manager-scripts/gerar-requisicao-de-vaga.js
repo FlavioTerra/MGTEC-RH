@@ -335,3 +335,17 @@ function addBtnForm() {
     //pega a div de botão anterior
     document.getElementById(`btn-area-form-${jForm}`).style.display = "block";
 }
+
+// Pega o Departamento selecionado e insere os options dos cargos daquele departamento
+function atribuitDept(obj) {
+    const dept = obj.value;
+
+    cargos.forEach(element => {
+        if(dept == element.id_departamento) {
+            let elementForm = document.createElement('option');
+            elementForm.value = element.id_cargo;
+            elementForm.innerHTML = element.nome_cargo;
+            document.querySelector('[name=cargo]').appendChild(elementForm);
+        }
+    });
+}

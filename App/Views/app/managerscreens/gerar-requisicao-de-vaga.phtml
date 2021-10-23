@@ -1,26 +1,29 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-requisicao-de-vaga.css">
+    <link rel="stylesheet" href="/styles/custom-requisicao-de-vaga.css">
 
     <title>Gerar Requisição de Vaga</title>
+
+    <script type="text/javascript">
+        let cargos = <?php echo json_encode($this->view->cargos) ?>;
+    </script>
 </head>
 
 <body>
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+                <img src="/images/global/navbar-button.svg" class="navbar-button">
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -39,7 +42,7 @@
     </nav>
 
     <!--body-->
-    <form action="requisitante.php" method="post">
+    <form action="/gerar_vaga" method="post">
         <div class="container">
 
             <div class="title">
@@ -49,13 +52,13 @@
             <!--Dados de Solicitaçao-->
             <div class="title">
                 <h2 class="title-2">Dados de Solicitação</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="images/global/info.svg">
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label title-interview">Título da Vaga</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="vaga">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="titulo_vaga">
                 </div>
             </div>
 
@@ -69,24 +72,24 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="colFormLabel" placeholder="" name="data-de-solicitacao">
+                    <input type="date" class="form-control" id="colFormLabel" placeholder="" name="data_solicitacao">
                 </div>
             </div>
 
             <!--Dados de Vaga-->
             <div class="title">
                 <h2 class="title-2">Dados de Vaga</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="/images/global/info.svg">
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
                 <div class="col-sm-10">
-                    <select class="col form-select" name="departamento">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select" name="departamento" onchange="atribuitDept(this)">
+                            <option selected>--Selecione--</option>
+                            <?php foreach ($this->view->departamentos as $key => $departamento) { ?>
+                                <option value="<?=$departamento->id_departamento?>"><?= $departamento->nome_departamento ?></option>
+                            <?php } ?>
                     </select>
                 </div>
             </div>
@@ -95,10 +98,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
                 <div class="col-sm-10">
                     <select class="col form-select" name="cargo">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                        <option selected>--Selecione--</option>
                     </select>
                 </div>
             </div>
@@ -106,11 +106,11 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
                 <div class="col-sm-10">
-                    <select class="col form-select" aria-label="Formação" name="vinculo-empregaticio">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select" aria-label="Formação" name="vinculo_empregaticio">
+                        <option selected>--Selecione--</option>
+                        <option value="1">CLT</option>
+                        <option value="2">PJ</option>
+                        <option value="3">Estágio</option>
                     </select>
                 </div>
             </div>
@@ -125,18 +125,18 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
                 <div class="col-sm-10 input-1">
-                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-inicio">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora_trab_inicio">
                 </div>
                 <label for="colFormLabel" class="col label-middle">à</label>
                 <div class="col-sm-10 input-2">
-                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-fim">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora_trab_fim">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="numero-de-vagas"
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="numero_vagas"
                         min="0">
                 </div>
             </div>
@@ -151,7 +151,7 @@
             <!--Experiências-->
             <div class="title">
                 <h2 class="title-2">Experiências</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="/images/global/info.svg">
             </div>
 
             <div id="Exp">
@@ -185,9 +185,9 @@
                 </div>
 
                 <div id="btn-area-0" class="btn-area-exp">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addExp()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeExp()">
                 </div>
             </div>
@@ -195,7 +195,7 @@
             <!--Competências-->
             <div class="title">
                 <h2 class="title-2">Competências</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="/images/global/info.svg">
             </div>
 
             <div id="Comp">
@@ -230,9 +230,9 @@
                 </div>
 
                 <div id="btn-area-comp-0" class="btn-area-comp">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addComp()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeComp()">
                 </div>
             </div>
@@ -240,7 +240,7 @@
             <!--Formações-->
             <div class="title">
                 <h2 class="title-2">Formações</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="/images/global/info.svg">
             </div>
 
             <div id="Form">
@@ -282,9 +282,9 @@
                 </div>
 
                 <div id="btn-area-form-0" class="btn-area-form">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addForm()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeForm()">
                 </div>
             </div>
@@ -298,9 +298,9 @@
 
     <!--Footer-->
     <footer class="footer">
-        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="/images/global/email.svg" class="img-footer" onclick="">
         <label class="label-footer">+55 (15) 5555-5555</label>
     </footer>
 
@@ -309,7 +309,7 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
 
-    <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
 </body>
 
 </html>
