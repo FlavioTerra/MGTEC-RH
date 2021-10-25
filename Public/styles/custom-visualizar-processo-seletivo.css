@@ -1,8 +1,29 @@
 @import url(./bootstrap.min.css);
 @import url(./global.css);
-@import url(./custom-requisicoes-de-vagas-aprovadas-e-reprovadas.css);
 
 /*tittle*/
 .title{
     width: 90%;
+    margin-left: 15mm;
+}
+
+.title-2{
+    margin-left: 15mm;
+}
+
+/*input e label*/
+.input-1{
+    height: 25px;
+    font-size: 15px;
+    padding: 0 2.25rem 0 0.75rem;
+    color: #212529;
+}
+
+.mb-2{
+    margin-left: 15mm;
+}
+
+/*buttons*/
+.btn{
+    margin-left: 15mm;
 }
