@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-visualizar-processo-seletivo.css">
+    <link rel="stylesheet" href="../../../../Public/styles/custom-editar-processo-seletivo.css">
 
-    <title>Processos Seletivos Registrados</title>
+    <title>Editar Processo Seletivo</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
     <div class="principal" id="body">
 
         <div class="title">
-            <h1 class="title-1">Visualizar Processo Seletivo</h1>
+            <h1 class="title-1">Editar Processo Seletivo</h1>
         </div>
         <br>
 
@@ -50,21 +50,21 @@
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Teste</label>
             <div class="col-sm-10">
-                <input name="Teste" type="text" class="input-1" readonly />
+                <input name="Teste" type="text" class="input-1"/>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Entrevista</label>
             <div class="col-sm-10">
-                <input name="Entrevista" type="text" class="input-1" readonly />
+                <input name="Entrevista" type="text" class="input-1"/>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Responsável</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly />
+                <input name="Responsavel" type="text" class="input-1"/>
             </div>
         </div>
         <br>
@@ -73,35 +73,35 @@
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Departamento</label>
             <div class="col-sm-10">
-                <input name="Departamento" type="text" class="input-1" readonly />
+                <input name="Departamento" type="text" class="input-1"/>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Cargo</label>
             <div class="col-sm-10">
-                <input name="Cargo" type="text" class="input-1" readonly />
+                <input name="Cargo" type="text" class="input-1"/>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Data de Início</label>
             <div class="col-sm-10">
-                <input name="DtInic" type="time" class="input-1" readonly />
+                <input name="DtInic" type="time" class="input-1"/>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Data de Término</label>
             <div class="col-sm-10">
-                <input name="DtTerm" type="time" class="input-1" readonly />
+                <input name="DtTerm" type="time" class="input-1"/>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Regra de Classificação</label>
             <div class="col-sm-10">
-                <input name="RegraClass" type="text" class="input-1" readonly />
+                <input name="RegraClass" type="text" class="input-1"/>
             </div>
         </div>
 
@@ -109,20 +109,25 @@
             <label for="colFormLabel" class="label">Descrição</label>
             <div class="col-sm-10">
                 <textarea name="Descr" cols="50" rows="8" class="textarea" id="Descr"
-                 input="" value="" readonly></textarea>
+                 input="" value=""></textarea>
             </div>
         </div>
 
         <input name="AtrTeste" type="button" value="Atribuir Teste"
         class="btn btn-outline-primary mb-5">
 
-            <div class="buttons">
-                <a href="./gerenciar-processo-seletivo.html"><input name="Voltar"
-                 type="button" value="Voltar" class="btn btn-outline-primary mb-5"></a>
+        <center>
+            <input name="Salvar" type="button" value="Salvar"
+             class="btn btn-outline-primary mb-5 verde">
+                
+            <input name="Excluir" type="button" value="Excluir"
+             class="btn btn-outline-primary mb-5 vermelho">
+        </center>
 
-                <a href="./editar-processo-seletivo.html"><input name="Editar"
-                 type="button" value="Editar" class="btn btn-outline-primary mb-5"></a>
-            </div>
+        <center>
+            <a href="./gerenciar-processo-seletivo.html"><input name="Voltar"
+             type="button" value="Voltar" class="btn btn-outline-primary mb-5"></a>
+        </center>
 
         </div>
     </form>

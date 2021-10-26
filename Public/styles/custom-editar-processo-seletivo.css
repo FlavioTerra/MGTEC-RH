@@ -1,0 +1,11 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+@import url(./custom-visualizar-processo-seletivo.css);
+
+.verde{
+    border-color: green;
+}
+
+.vermelho{
+    border-color: red;
+}
