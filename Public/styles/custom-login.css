@@ -90,6 +90,10 @@ form{
     margin-right: 5px;
 }
 
+input::-ms-reveal, input::-ms-clear {
+    display: none;
+}
+
 /*botões*/
 .btn-link{
     text-decoration: none;
