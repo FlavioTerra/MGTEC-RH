@@ -1,5 +1,6 @@
 @import url(global.css);
 
+/*layout*/
 form{
     height: 90vh;
 }
@@ -21,6 +22,7 @@ form{
     bottom: 0%;
 }
 
+/*text box*/
 .login-content{
     margin-top: -50px;
     width: 280px;
@@ -44,10 +46,6 @@ form{
     border-bottom: 1px solid #7A18C5;
 }
 
-.txt{
-    margin-bottom: 15px;
-}
-
 .textbox img{
     width: 20px;
     float: left;
@@ -63,6 +61,39 @@ form{
     width: 80%;
     float: left;
     margin: 0 10px;
+}
+
+.txt{
+    margin-bottom: 20px;
+}
+
+/*esqueci minha senha*/
+.trocar-senha{
+    text-align: right;
+    margin-bottom: 12px;
+}
+
+.txt-trocar-senha{
+    cursor: pointer;
+    font-size: 13px;
+    border-bottom: 1px solid rgb(163, 163, 163);
+    color: rgb(163, 163, 163);
+}
+
+.txt-trocar-senha:hover{
+    color: white;
+    border-color: white;
+}
+
+.txt-trocar-senha:active{
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/*botões*/
+.btn-link{
+    text-decoration: none;
+    color: white;
 }
 
 .btn{
@@ -127,21 +158,4 @@ form{
     z-index: 10;
     margin-top: 7px;
     margin-left: 105px;
-}
-
-/*@media screens*/
-@media screen and (min-width:576px){
-
-}
-
-@media screen and (min-width:700px){
-
-}
-
-@media screen and (min-width:900px){
-
-}
-
-@media screen and (min-width:1250px){
-
 }

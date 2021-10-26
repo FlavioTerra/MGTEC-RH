@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-login.css">
+    <link rel="stylesheet" href="../../../../Public/styles/custom-recuperar-senha-security.css">
 
-    <title>Login</title>
+    <title>Recuperar Senha (Código de Segurança)</title>
 </head>
 
 <body>
@@ -42,39 +42,38 @@
     <form action="requisitante.php" method="post">
         <div class="container">
             <div class="login-content">
-                <h1>Login</h1>
+                <h1>Recuperar Senha</h1>
 
                 <div class="textbox">
                     <img src="../../../../Public/images/login/user.svg">
-                    <input type="text" placeholder="Nome de Usuário/E-mail" name="login">
+                    <input type="text" placeholder="Nome de Usuário" name="nome-usuario">
                 </div>
 
                 <div class="textbox">
-                    <img src="../../../../Public/images/login/lock.svg">
-                    <input type="password" placeholder="Senha" name="login">
+                    <img class="img-email" src="../../../../Public/images/global/email.svg">
+                    <input type="text" placeholder="E-mail" name="email">
                 </div>
 
-                <div class="trocar-senha">
-                    <a class="btn-link" href="./recuperar-senha-security.html">
-                        <span class="txt-trocar-senha">Esqueci minha senha</span>
-                    </a>
+                <div class="textbox txt">
+                    <img src="../../../../Public/images/login/lock.svg">
+                    <input type="text" placeholder="Código de Segurança" name="codigo-seguranca">
                 </div>
 
                 <a class="btn-link" href="#">
                     <div class="effect">
-                        <span>Entrar</span>
+                        <span class="txt-codigo">Enviar Código ao E-mail</span>
                         <input class="btn" type="button" disabled>
                     </div>
                 </a>
 
-                <a class="btn-link" href="./registro.html">
+                <a class="btn-link" href="#">
                     <div class="effect">
                         <span>Registrar</span>
                         <input class="btn" type="button" disabled>
                     </div>
                 </a>
 
-                <a class="btn-link" href="#">
+                <a class="btn-link" href="./login.html">
                     <div class="effect">
                         <span>Voltar</span>
                         <input class="btn" type="button" disabled>

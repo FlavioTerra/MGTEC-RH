@@ -1,0 +1,9 @@
+@import url(./custom-login.css);
+
+.login-content h1{
+    margin-bottom: 25px;
+}
+
+.img-email{
+padding-top: 5px;
+}
