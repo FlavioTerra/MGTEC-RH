@@ -1,0 +1,58 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+
+/*title*/
+.title{
+    margin-left: 15mm;
+}
+
+.title-1{
+    margin-left: 15mm;
+}
+
+.cargo{
+    margin-left: 15mm;
+}
+
+/*inputs e labels*/
+
+.input-1{
+    margin-left: 15mm;
+}
+
+.form-select{
+    margin-left: 15mm;
+    width: 70mm;
+}
+
+.label{
+    margin-left: 12mm;
+}
+
+.a{
+    margin-right: 50mm;
+}
+
+/*table*/
+
+.roxo{
+    background-color: #8145A7;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid #ffffff;
+    color: white;
+}
+
+.cinza{
+    background-color: #A69AB7;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid #ffffff;
+    color: white;
+}
+
+.TB{
+    margin-left: 15mm;
+    border-style: ridge;
+    border-color: black;
+}
