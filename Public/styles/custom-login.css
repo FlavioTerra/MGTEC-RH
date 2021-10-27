@@ -60,11 +60,18 @@ form{
     font-size: 18px;
     width: 80%;
     float: left;
-    margin: 0 10px;
+    margin: 0 0 0 10px;
 }
 
 .txt{
     margin-bottom: 20px;
+}
+
+.textbox .eye{
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+    width: 20px;
 }
 
 /*esqueci minha senha*/
