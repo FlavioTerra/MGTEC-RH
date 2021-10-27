@@ -5,7 +5,11 @@
     use MF\Model\Model;
 
     Class EntrevistaRegistrar extends Model{
-        private $id_proc;	
+        private $id_candidato;
+        private $id_entrevista;	
+        private $est_comp;	
+        private $pontos_pos;	
+        private $pontos_neg;		
 
         public function __get($attribute){
             return $this->$attribute;
@@ -16,8 +20,8 @@
         }
 
         public function save(){
-            $query = 'INSERT INTO tb_entrevista_candidato (id_candidato, id_entrevista, est_comp, pontos_pos, pontos_neg) 
-            VALUES(:id_candidato, NULL, :est_comp, :pontos_pos, :pontos_neg)';
+            $query = 'INSERT INTO tb_entrevista_candidato (id_entrevista, id_candidato, est_comp, pontos_pos, pontos_neg) 
+            VALUES(NULL, :id_candidato, :est_comp, :pontos_pos, :pontos_neg)';
 
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(':id_candidato',$this->__get('id_candidato'));

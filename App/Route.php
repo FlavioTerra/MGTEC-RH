@@ -9,43 +9,46 @@
         protected function initRoutes() {
             $routes['home'] = array(
                 'route'=>'/',
-                'controller'=>'employeeScreensController',
+                'controller'=>'EmployeeScreensController',
                 'action'=>'index'
             );
 
             $routes['processo_seletivo'] = array(
                 'route'=>'/processo_seletivo',
-                'controller'=>'employeeScreensController',
+                'controller'=>'EmployeeScreensController',
                 'action'=>'processoSeletivo'
             );
 
             $routes['processo_seletivo_cadastrar'] = array(
                 'route'=>'/processo_seletivo_cadastrar',
-                'controller'=>'employeeScreensController',
+                'controller'=>'EmployeeScreensController',
                 'action'=>'processoSeletivoCadastrar'
             );
 
+
+            //Registrar Entrevista
             $routes['entrevista_registrar'] = array(
                 'route'=>'/entrevista_registrar',
-                'controller'=>'employeeScreensController',
+                'controller'=>'ManagerScreensController',
                 'action'=>'entrevistaRegistrar'
             );
 
             $routes['entrevista_candidato_registrar'] = array(
                 'route'=>'/entrevista_candidato_registrar',
-                'controller'=>'employeeScreensController',
+                'controller'=>'ManagerScreensController',
                 'action'=>'entrevistaCandidatoRegistrar'
             );
 
+            // Marcar Entrevista
             $routes['entrevista_marcar'] = array(
                 'route'=>'/entrevista_marcar',
-                'controller'=>'employeeScreensController',
+                'controller'=>'EmployeeScreensController',
                 'action'=>'entrevistaMarcar'
             );
 
             $routes['entrevista_candidato_marcar'] = array(
                 'route'=>'/entrevista_candidato_marcar',
-                'controller'=>'employeeScreensController',
+                'controller'=>'EmployeeScreensController',
                 'action'=>'entrevistaCandidatoMarcar'
             );
 
@@ -65,14 +68,27 @@
             // Teste
             $routes['atribuir_teste'] = array(
                 'route'=>'/atribuir_teste',
-                'controller'=>'employeeScreensController',
+                'controller'=>'EmployeeScreensController',
                 'action'=>'atribuirTeste'
             );
 
             $routes['cadastrar_teste'] = array(
                 'route'=>'/cadastrar_teste',
-                'controller'=>'employeeScreensController',
+                'controller'=>'EmployeeScreensController',
                 'action'=>'cadastrarTeste'
+            );
+
+            // Perfil Candidato
+            $routes['editar_perfil'] = array(
+                'route'=>'/editar_perfil',
+                'controller'=>'CandidateScreensController',
+                'action'=>'editarPerfil'
+            );
+
+            $routes['editar_perfil_salvar'] = array(
+                'route'=>'/editar_perfil_salvar',
+                'controller'=>'CandidateScreensController',
+                'action'=>'editarPerfilSalvar'
             );
 
             $this->setRoutes($routes);

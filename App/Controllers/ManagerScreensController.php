@@ -13,16 +13,14 @@
 
         }
 
-        public function registrarEntrevista() {
-            $this->render('registrar-entrevista');
+        public function entrevistaRegistrar() {
+            $this->render('entrevista-registrar');
         }
 
-        public function registrarEntrevistaCadastrar() {
-            $entrevista = Container::getModel('RegistrarEntrevista');
+        public function entrevistaCandidatoRegistrar() {
+            $entrevista = Container::getModel('EntrevistaRegistrar');
 
             $entrevista->__set('id_candidato',$_POST['applpicant']);
-
-            // $entrevista->__set('id_entrevista',$_POST['role']); role é o processo seletivo e não o id da entrevista
 
             $entrevista->__set('est_comp',$_POST['behavioral_style']);
 
@@ -32,7 +30,7 @@
 
             $entrevista->save();
 
-            header('Location:/registrar_entrevista?entrevistaRegistrar=sucess');   
+            header('Location:/entrevista_registrar?entrevistaRegistrar=sucess');   
         }
 
         public function gerarRequisicaoVaga() {
