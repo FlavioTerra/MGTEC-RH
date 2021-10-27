@@ -50,14 +50,21 @@
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Teste</label>
             <div class="col-sm-10">
-                <input name="Teste" type="text" class="input-1"/>
+                <select class="col-sm-10 form-select" aria-label="teste" name="teste">
+                    <option selected>Sim</option>
+                    <option value="1">Não</option>
+                </select>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Entrevista</label>
             <div class="col-sm-10">
-                <input name="Entrevista" type="text" class="input-1"/>
+                <select class="col-sm-10 form-select" aria-label="entrevista"
+                 name="entrevista">
+                    <option selected>Sim</option>
+                    <option value="1">Não</option>
+                </select>
             </div>
         </div>
 
@@ -73,35 +80,49 @@
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Departamento</label>
             <div class="col-sm-10">
-                <input name="Departamento" type="text" class="input-1"/>
+                <select class="col-sm-10 form-select" aria-label="departamento"
+                 name="departamento">
+                    <option selected>#</option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Cargo</label>
             <div class="col-sm-10">
-                <input name="Cargo" type="text" class="input-1"/>
+                <select class="col-sm-10 form-select" aria-label="cargo" name="cargo">
+                    <option selected>#</option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Data de Início</label>
             <div class="col-sm-10">
-                <input name="DtInic" type="time" class="input-1"/>
+                <input type="date" class="form-control edit" id="colFormLabel"
+                 placeholder="" name="data-de-inicio">
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Data de Término</label>
             <div class="col-sm-10">
-                <input name="DtTerm" type="time" class="input-1"/>
+                <input type="date" class="form-control edit" id="colFormLabel"
+                 placeholder="" name="data-de-termino">
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Regra de Classificação</label>
             <div class="col-sm-10">
-                <input name="RegraClass" type="text" class="input-1"/>
+                <input type="number" class="form-control cl-exp-anos-experiencia edit"
+                 id="colFormLabel" placeholder="00" name="regra de classificacao">
             </div>
         </div>
 
@@ -114,7 +135,7 @@
         </div>
 
         <input name="AtrTeste" type="button" value="Atribuir Teste"
-        class="btn btn-outline-primary mb-5">
+        class="btn btn-outline-primary mb-5 atr">
 
         <center>
             <input name="Salvar" type="button" value="Salvar"
