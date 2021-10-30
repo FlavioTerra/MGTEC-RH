@@ -27,8 +27,8 @@
 
             $routes['entrevista_registrar'] = array(
                 'route'=>'/entrevista_registrar',
-                'controller'=>'employeeScreensController',
-                'action'=>'entrevistaRegistrar'
+                'controller'=>'ManagerScreensController',
+                'action'=>'registrarEntrevista'
             );
 
             $routes['entrevista_candidato_registrar'] = array(
@@ -60,6 +60,18 @@
                 'route'=>'/gerar_vaga',
                 'controller'=>'ManagerScreensController',
                 'action'=>'gerarVaga'
+            );
+
+            $routes['visualizar_requisicao'] = array(
+                'route'=>'/visualizar_requisicao',
+                'controller'=>'ManagerScreensController',
+                'action'=>'visualizarRequisicao'
+            );
+
+            $routes['requisicoes_vaga'] = array(
+                'route'=>'/requisicoes_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'requisicoesVagas'
             );
 
             // Teste

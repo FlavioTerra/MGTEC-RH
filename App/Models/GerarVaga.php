@@ -64,6 +64,23 @@
 
             $stmt->execute();
         }
+
+        public function getAll() {
+            $query = 'select v.id_vaga,  
+                             v.titulo_vaga,
+                             v.num_vagas,
+                             c.nome_cargo,
+                             d.nome_departamento
+                             from tb_vaga v 
+                  inner join tb_cargo c        on v.id_cargo = c.id_cargo
+                  inner join tb_departamento d on d.id_departamento = c.id_departamento';
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+            
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
     }
 
 ?>
