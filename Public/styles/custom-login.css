@@ -60,11 +60,18 @@ form{
     font-size: 18px;
     width: 80%;
     float: left;
-    margin: 0 10px;
+    margin: 0 0 0 10px;
 }
 
 .txt{
     margin-bottom: 20px;
+}
+
+.textbox .eye{
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+    width: 20px;
 }
 
 /*esqueci minha senha*/
@@ -88,6 +95,10 @@ form{
 .txt-trocar-senha:active{
     font-size: 12px;
     margin-right: 5px;
+}
+
+input::-ms-reveal, input::-ms-clear {
+    display: none;
 }
 
 /*botões*/

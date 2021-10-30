@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-editar-perfil.css">
+    <link rel="stylesheet" href="/styles/custom-editar-perfil.css">
 
     <title>Perfil Candidato</title>
 </head>
@@ -16,11 +16,11 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+                <img src="/images/global/navbar-button.svg" class="navbar-button">
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -38,6 +38,18 @@
         </div>
     </nav>
 
+    <?php
+        if (isset($_GET['editarPerfilSalvar'])) {
+        ?>
+    
+            <script>
+                alert("Perfil Salvo com Sucesso!");
+            </script>
+    
+        <?php
+        }
+    ?>
+
     <!--body-->
     <form action="requisitante.php" method="post">
         <div class="container">
@@ -47,24 +59,24 @@
 
                 <div class="row row-img-names">
                     <div class="img-perfil">
-                        <img src="../../../../Public/images/global/edit.svg" class="img-edit">
+                        <img src="/images/global/edit.svg" class="img-edit">
                     </div>
 
                     <div class="names">
                         <h1 class="nome-perfil">
-                            <img src="../../../../Public/images/global/edit.svg" class="img-edit-2">
+                            <img src="/images/global/edit.svg" class="img-edit-2">
                             Nome Perfil
-                            <img src="../../../../Public/images/global/info.svg" class="img-info">
+                            <img src="/images/global/info.svg" class="img-info">
                         </h1>
                         <h2 class="nome-usuario">
-                            <img src="../../../../Public/images/global/edit.svg" class="img-edit-2">
+                            <img src="/images/global/edit.svg" class="img-edit-2">
                             nome_usuario
                         </h2>
                     </div>
                 </div>
 
-                <img src="../../../../Public/images/global/edit.svg" class="img-edit-3">
-                <img src="../../../../Public/images/global/info.svg" class="img-info-2">
+                <img src="/images/global/edit.svg" class="img-edit-3">
+                <img src="/images/global/info.svg" class="img-info-2">
                 <p class="mb-3 descricao-perfil">
                     Aqui fica a descrição do perfil personalizada, diga-nos um pouco
                     sobre você. Aqui fica a sua descrição do perfil personalizada, diga-nos um pouco
@@ -162,7 +174,7 @@
                     <span class="asterisco-2">*</span>
                 </label>
                 <div class="col-sm-10">
-                    <input type="tel" class="form-control edit" id="colFormLabel" placeholder="" name="sexo">
+                    <input type="tel" class="form-control edit" id="colFormLabel" placeholder="" name="celular">
                 </div>
             </div>
 
@@ -225,14 +237,14 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Número</label>
                 <div class="col-sm-10 mb-3">
-                    <input type="number" class="form-control edit" id="colFormLabel" placeholder="" name="cidade">
+                    <input type="number" class="form-control edit" id="colFormLabel" placeholder="" name="numero">
                 </div>
             </div>
 
             <!--Experiências-->
             <div class="title">
                 <h2 class="title-2">Experiências</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="/images/global/info.svg">
             </div>
 
             <div id="Exp">
@@ -266,9 +278,9 @@
                 </div>
 
                 <div id="btn-area-0" class="btn-area-exp">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addExp()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeExp()">
                 </div>
             </div>
@@ -276,7 +288,7 @@
             <!--Competências-->
             <div class="title">
                 <h2 class="title-2">Competências</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="/images/global/info.svg">
             </div>
 
             <div id="Comp">
@@ -311,9 +323,9 @@
                 </div>
 
                 <div id="btn-area-comp-0" class="btn-area-comp">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addComp()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeComp()">
                 </div>
             </div>
@@ -321,7 +333,7 @@
             <!--Formações-->
             <div class="title">
                 <h2 class="title-2">Formações</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="/images/global/info.svg">
             </div>
 
             <div id="Form">
@@ -363,9 +375,9 @@
                 </div>
 
                 <div id="btn-area-form-0" class="btn-area-form">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addForm()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeForm()">
                 </div>
             </div>
@@ -379,23 +391,23 @@
 
             <div class="row">
                 <div class="col col-pdf">
-                    <img class="pdf" src="../../../../Public/images/custom-perfil/pdf.svg">
+                    <img class="pdf" src="/images/custom-perfil/pdf.svg">
                 </div>
 
                 <div class="col col-btns">
                     <div class="buttons">
                         <button type="button" class="btn btn-outline-primary mb-2">
-                            <img src="../../../../Public/images/custom-perfil/upload.svg">
+                            <img src="/images/custom-perfil/upload.svg">
                             Upload</button>
                     </div>
                     <div class="buttons">
                         <button type="button" class="btn btn-outline-primary mb-2">
-                            <img src="../../../../Public/images/custom-perfil/download.svg">
+                            <img src="/images/custom-perfil/download.svg">
                             Download</button>
                     </div>
                     <div class="buttons">
                         <button type="button" class="btn btn-outline-primary mb-5">
-                            <img src="../../../../Public/images/custom-perfil/view.svg">
+                            <img src="/images/custom-perfil/view.svg">
                             Visualizar</button>
                     </div>
                 </div>
@@ -404,16 +416,16 @@
 
             <div class="buttons">
                 <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-                <button type="button" class="btn btn-outline-primary mb-5">Concluir</button>
+                <button type="submit" class="btn btn-outline-primary mb-5">Concluir</button>
             </div>
         </div>
     </form>
 
     <!--Footer-->
     <footer class="footer">
-        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="/images/global/email.svg" class="img-footer" onclick="">
         <label class="label-footer">+55 (15) 5555-5555</label>
     </footer>
 
@@ -422,7 +434,7 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
 
-    <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
 </body>
 
 </html>
