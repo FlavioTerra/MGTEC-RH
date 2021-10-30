@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-registro.css">
+    <link rel="stylesheet" href="/styles/custom-registro.css">
 
     <title>Registro</title>
 </head>
@@ -16,11 +16,11 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+                <img src="/images/global/navbar-button.svg" class="navbar-button">
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -38,61 +38,77 @@
         </div>
     </nav>
 
+    <?php
+    if (isset($_GET['usuarioCadastrar'])) {
+    ?>
+
+        <script>
+            alert("Usuário Salvo com Sucesso!");
+        </script>
+
+    <?php
+    }
+    ?>
+
     <!--body-->
-    <form action="requisitante.php" method="post">
+    <form action="/usuario_cadastrar_salvar" method="post">
         <div class="container">
             <div class="login-content">
                 <h1>Registro</h1>
 
                 <div class="textbox">
-                    <img src="../../../../Public/images/login/user.svg">
+                    <img src="/images/login/user.svg">
                     <input type="text" placeholder="Nome de UsuÃ¡rio/E-mail" name="login">
                 </div>
 
                 <div class="textbox">
-                    <img class="img-email" src="../../../../Public/images/global/email.svg">
+                    <img class="img-email" src="/images/global/email.svg">
                     <input type="text" placeholder="E-mail" name="email">
                 </div>
 
                 <div class="textbox">
-                    <img class="img-email" src="../../../../Public/images/global/email.svg">
+                    <img class="img-email" src="/images/global/email.svg">
                     <input type="text" placeholder="Repetir E-mail" name="email-repetido">
                 </div>
 
                 <div class="textbox">
-                    <img src="../../../../Public/images/login/lock.svg">
+                    <img src="/images/login/user.svg">
+                    <input type="textbox" placeholder="Nome" name="nome" id="nome">
+                </div>
+
+                <div class="textbox">
+                    <img src="/images/login/lock.svg">
                     <input type="password" placeholder="Senha" name="senha" id="password">
-                    <img src="../../../../Public/images/login/eye-off.svg" id="eye-img" class="eye">
+                    <img src="/images/login/eye-off.svg" id="eye-img" class="eye">
                 </div>
 
                 <div class="textbox txt">
-                    <img src="../../../../Public/images/login/lock.svg">
+                    <img src="/images/login/lock.svg">
                     <input type="password" placeholder="Repetir Senha" name="senha-repetida" id="password-2">
-                    <img src="../../../../Public/images/login/eye-off.svg" id="eye-img-2" class="eye">
+                    <img src="/images/login/eye-off.svg" id="eye-img-2" class="eye">
                 </div>
 
-                <a class="btn-link" href="#">
-                    <div class="effect">
-                        <span>Registrar</span>
-                        <input class="btn" type="button" disabled>
+                    <!-- arrumar mais tarde o button (com input nao funciona o submit) -->
+                    <div class="">
+                        <button type="submit" class="btn btn-outline-primary mb-5">Cadastrar</button>
                     </div>
-                </a>
 
                 <a class="btn-link" href="./login.html">
                     <div class="effect">
                         <span>Voltar</span>
-                        <input class="btn" type="button" disabled>
+                        <input class="btn" type="button">
                     </div>
                 </a>
+
             </div>
         </div>
     </form>
 
     <!--Footer-->
     <footer class="footer">
-        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="/images/global/email.svg" class="img-footer" onclick="">
         <label class="label-footer">+55 (15) 5555-5555</label>
     </footer>
 
@@ -101,7 +117,7 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
 
-    <script src="../../../../Public/scripts/general-scripts/login.js"></script>
+    <script src="/scripts/general-scripts/login.js"></script>
 </body>
 
 </html>

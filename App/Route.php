@@ -91,6 +91,19 @@
                 'action'=>'editarPerfilSalvar'
             );
 
+            // Cadastro Usuário
+            $routes['usuario_cadastrar'] = array(
+                'route'=>'/usuario_cadastrar',
+                'controller'=>'GeneralScreensController',
+                'action'=>'usuarioCadastrar'
+            );
+
+            $routes['usuario_cadastrar_salvar'] = array(
+                'route'=>'/usuario_cadastrar_salvar',
+                'controller'=>'GeneralScreensController',
+                'action'=>'usuarioCadastrarSalvar'
+            );
+
             $this->setRoutes($routes);
         }    
     }

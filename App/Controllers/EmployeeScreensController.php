@@ -40,7 +40,7 @@
         }
 
         public function entrevistaCandidatoMarcar() {
-            $entrevista = Container::getModel('MarcarEntrevista');
+            $entrevista = Container::getModel('EntrevistaMarcar');
    
             $entrevista->__set('titulo_entrevista',$_POST['titulo']);
 
