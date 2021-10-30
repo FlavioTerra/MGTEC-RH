@@ -23,7 +23,7 @@
 
         public function save(){
             $query = 'INSERT INTO tb_usuario (id_user, email_user, login_user, senha_user, situacao_user, tipo_user, nome) 
-            VALUES(NULL, :email_user, :login_user, :senha_user, NULL, NULL, :nome) ';
+            VALUES(NULL, :email_user, :login_user, :senha_user, NULL, NULL, :nome)';
 
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(':email_user',$this->__get('email_user'));

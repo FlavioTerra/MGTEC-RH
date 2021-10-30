@@ -10,7 +10,7 @@
         private $est_comp;	
         private $pontos_pos;	
         private $pontos_neg;		
-
+        // id_candidato  id_proc  id_estado  nome  data_nasc  sexo  bairro  cep  num_casa  rua  cadastro_pessoa  disponibilidade  telefone  celular  sobre  tipo_pessoa  curriculo  c_status
         public function __get($attribute){
             return $this->$attribute;
         }

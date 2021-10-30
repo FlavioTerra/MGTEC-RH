@@ -19,6 +19,7 @@
 
         public function editarPerfilSalvar() {
             $entrevista = Container::getModel('EditarPerfil');
+            // id_candidato  id_proc  id_estado  nome  data_nasc  sexo  bairro  cep  num_casa  rua  cadastro_pessoa  disponibilidade  telefone  celular  sobre  tipo_pessoa  curriculo  c_status
 
             $entrevista->__set('id_candidato',$_POST['applpicant']);
 
