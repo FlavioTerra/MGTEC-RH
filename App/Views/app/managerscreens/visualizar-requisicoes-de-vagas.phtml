@@ -57,24 +57,31 @@
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
+                <label for="colFormLabel" class="colsm-2 form-label title-interview">Título da Vaga</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="requisitante">
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="titulo_vaga" value="<?= $this->view->detalhesVaga->titulo_vaga ?>" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
+                <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="requisitante" value="<?= $this->view->detalhesVaga->nome ?>" readonly>
+                </div>
+            </div>
+
+            <!-- <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="responsável">
                 </div>
-            </div>
+            </div> -->
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="data-de-solicitacao">
+                        name="data-de-solicitacao" value="<?= $this->view->detalhesVaga->data_solic ?>" readonly>
                 </div>
             </div>
 
@@ -88,33 +95,30 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cargo">
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cargo" value="<?= $this->view->detalhesVaga->nome_cargo ?>" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="departamento">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Tipo da Vaga</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="tipo-da-vaga">
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="departamento" value="<?= $this->view->detalhesVaga->nome_departamento ?>" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
                 <div class="col-sm-10">
-                    <select class="col form-select edit" aria-label="Formação" name="vinculo-empregaticio">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <?php
+                        if($this->view->detalhesVaga->vinculo_emp == 1) {
+                            $vinculo = 'CLT';
+                        } else if($this->view->detalhesVaga->vinculo_emp == 2) {
+                            $vinculo = 'PJ';
+                        } else {
+                            $vinculo = 'Estágio';
+                        }
+                    ?>
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="vinculo_empregaticio" value="<?= $vinculo ?>" readonly>
                 </div>
             </div>
 
@@ -122,7 +126,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control edit" id="colFormLabel" placeholder="" name="salario"
-                        min="0">
+                        min="0" value="<?= $this->view->detalhesVaga->salario ?>" readonly>
                 </div>
             </div>
 
@@ -130,11 +134,11 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
                 <div class="col-sm-10 input-1">
                     <input type="time" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="hora-trab-inicio">
+                        name="hora-trab-inicio" value="<?= $this->view->detalhesVaga->hora_inicio ?>" readonly>
                 </div>
                 <label for="colFormLabel" class="col label-middle">à</label>
                 <div class="col-sm-10 input-2">
-                    <input type="time" class="form-control edit" id="colFormLabel" placeholder="" name="hora-trab-fim">
+                    <input type="time" class="form-control edit" id="colFormLabel" placeholder="" name="hora-trab-fim" value="<?= $this->view->detalhesVaga->hora_fim ?>" readonly>
                 </div>
             </div>
 
@@ -142,14 +146,14 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="numero-de-vagas" min="0">
+                        name="numero-de-vagas" min="0" value="<?= $this->view->detalhesVaga->num_vagas ?>" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
                 <div class="col-sm-12 mb-3">
-                    <textarea type="text" class="form-control edit" id="textarea" rows="3" name="funcao"></textarea>
+                    <textarea type="text" class="form-control edit" id="textarea" rows="3" name="funcao" readonly><?= $this->view->detalhesVaga->funcao ?></textarea>
                 </div>
             </div>
 
@@ -326,7 +330,7 @@
             </div>
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                <a href="/requisicoes_vaga" class="btn btn-outline-primary mb-5">Voltar</a>
                 <button type="submit" class="btn btn-outline-primary mb-5">Gerar</button>
             </div>
         </div>

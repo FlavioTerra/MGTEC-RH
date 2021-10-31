@@ -84,17 +84,20 @@
             
             <!--Resposta-->
             <?php foreach($this->view->todasRequisicoes as $key => $requisicao) {?>
-                <div class="depto-recursos-humanos">
-                    <div class="card">
-                        <div class="card-img"></div>
+                <form action="/visualizar_requisicao" method="post">
+                    <div class="depto-recursos-humanos">
+                        <div class="card">
+                            <div class="card-img"></div>
 
-                        <div class="card-body">
-                            <h4 class="card-title">Departamento: <?= $requisicao->nome_departamento ?> </h4>
-                            <h6 class="card-text"><?= $requisicao->titulo_vaga ?></h6>
+                            <div class="card-body">
+                                <h4 class="card-title">Departamento: <?= $requisicao->nome_departamento ?> </h4>
+                                <h6 class="card-text"><?= $requisicao->titulo_vaga ?></h6>
+                            </div>
                         </div>
+                        <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
+                        <input type="hidden" name="id_vaga" value="<?= $requisicao->id_vaga ?>">
                     </div>
-                    <button type="button" class="btn btn-outline-primary mb-4">Visualizar</button>
-                </div>
+                </form>
             <?php } ?>                
 
             <hr>

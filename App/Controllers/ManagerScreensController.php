@@ -63,6 +63,12 @@
         }
 
         public function visualizarRequisicao() {
+            $viewRequisicao = Container::getModel('GerarVaga');
+
+            $viewRequisicao->__set('id_vaga', $_POST['id_vaga']);
+
+            $this->view->detalhesVaga = $viewRequisicao->getVaga();
+
             $this->render('visualizar-requisicoes-de-vagas');
         }
 

@@ -67,9 +67,7 @@
         public function cadastrarTeste() {
             $entrevista = Container::getModel('AtribuirTeste');
 
-            echo '<pre>';
-                print_r($_POST);    
-            echo '<pre>';
+            
         }
     }   
 
