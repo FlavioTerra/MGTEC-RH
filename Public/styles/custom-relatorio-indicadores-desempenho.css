@@ -1,0 +1,69 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+
+/*title*/
+.title-1{
+    margin-left: 15mm;
+}
+
+/*label e input*/
+.label{
+    margin-left: 15mm;
+}
+
+.form-control{
+    margin-left: 15mm;
+    width: 100mm;
+}
+
+.a{
+    margin-right: 15mm;
+}
+
+.input-1{
+    margin-left: 15mm;
+}
+
+/*gráfico de pizza*/
+.Assunto{
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+.Val{
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+.Cor1{
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background-color: green;
+}
+
+.Cor2{
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background-color: blue;
+}
+
+.Cor3{
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background-color: red;
+}
+
+.TB{
+    margin-left: 5px;
+    border: 2px thin black;
+}
+
+.TB-Barras{
+    margin-left: 5px;
+    border: 2px thin black;
+}

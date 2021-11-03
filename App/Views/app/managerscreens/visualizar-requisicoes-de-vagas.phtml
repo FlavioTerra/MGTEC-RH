@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-visualizar-requisicoes-de-vagas.css">
-
+    <!-- <link rel="stylesheet" href="../../../../Public/styles/custom-visualizar-requisicoes-de-vagas.css"> -->
+    <link rel="stylesheet" href="styles/custom-visualizar-requisicoes-de-vagas.css">
+    
     <title>Visualizar Requisições de Vagas</title>
 </head>
 
@@ -16,11 +17,13 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+            <!-- <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a> -->
+            <a class="navbar-brand" href="#"><img src="images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+                <!-- <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button"> -->
+                <img src="images/global/navbar-button.svg" class="navbar-button">
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -49,67 +52,73 @@
             <!--Dados de Solicitaçao-->
             <div class="title">
                 <h2 class="title-2">Dados de Solicitação</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <!-- <img src="../../../../Public/images/global/info.svg"> -->
+                <img src="images/global/info.svg">
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="colsm-2 form-label title-interview">Título da Vaga</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="titulo_vaga" value="<?= $this->view->detalhesVaga->titulo_vaga ?>" readonly>
+                </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="requisitante">
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="requisitante" value="<?= $this->view->detalhesVaga->nome ?>" readonly>
                 </div>
             </div>
 
-            <div class="row mb-3">
+            <!-- <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="responsável">
                 </div>
-            </div>
+            </div> -->
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="data-de-solicitacao">
+                        name="data-de-solicitacao" value="<?= $this->view->detalhesVaga->data_solic ?>" readonly>
                 </div>
             </div>
 
             <!--Dados de Vaga-->
             <div class="title">
                 <h2 class="title-2">Dados de Vaga</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <!-- <img src="../../../../Public/images/global/info.svg"> -->
+                <img src="images/global/info.svg">
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cargo">
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cargo" value="<?= $this->view->detalhesVaga->nome_cargo ?>" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="departamento">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Tipo da Vaga</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="tipo-da-vaga">
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="departamento" value="<?= $this->view->detalhesVaga->nome_departamento ?>" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
                 <div class="col-sm-10">
-                    <select class="col form-select edit" aria-label="Formação" name="vinculo-empregaticio">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
+                    <?php
+                        if($this->view->detalhesVaga->vinculo_emp == 1) {
+                            $vinculo = 'CLT';
+                        } else if($this->view->detalhesVaga->vinculo_emp == 2) {
+                            $vinculo = 'PJ';
+                        } else {
+                            $vinculo = 'Estágio';
+                        }
+                    ?>
+                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="vinculo_empregaticio" value="<?= $vinculo ?>" readonly>
                 </div>
             </div>
 
@@ -117,7 +126,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control edit" id="colFormLabel" placeholder="" name="salario"
-                        min="0">
+                        min="0" value="<?= $this->view->detalhesVaga->salario ?>" readonly>
                 </div>
             </div>
 
@@ -125,11 +134,11 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
                 <div class="col-sm-10 input-1">
                     <input type="time" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="hora-trab-inicio">
+                        name="hora-trab-inicio" value="<?= $this->view->detalhesVaga->hora_inicio ?>" readonly>
                 </div>
                 <label for="colFormLabel" class="col label-middle">à</label>
                 <div class="col-sm-10 input-2">
-                    <input type="time" class="form-control edit" id="colFormLabel" placeholder="" name="hora-trab-fim">
+                    <input type="time" class="form-control edit" id="colFormLabel" placeholder="" name="hora-trab-fim" value="<?= $this->view->detalhesVaga->hora_fim ?>" readonly>
                 </div>
             </div>
 
@@ -137,21 +146,22 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="numero-de-vagas" min="0">
+                        name="numero-de-vagas" min="0" value="<?= $this->view->detalhesVaga->num_vagas ?>" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
                 <div class="col-sm-12 mb-3">
-                    <textarea type="text" class="form-control edit" id="textarea" rows="3" name="funcao"></textarea>
+                    <textarea type="text" class="form-control edit" id="textarea" rows="3" name="funcao" readonly><?= $this->view->detalhesVaga->funcao ?></textarea>
                 </div>
             </div>
 
             <!--Experiências-->
             <div class="title">
                 <h2 class="title-2">Experiências</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <!-- <img src="../../../../Public/images/global/info.svg"> -->
+                <img src="images/global/info.svg">
             </div>
 
             <div id="Exp">
@@ -185,9 +195,13 @@
                 </div>
 
                 <div id="btn-area-0" class="btn-area-exp">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                        onclick="addExp()"> -->
+                        <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addExp()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                        onclick="removeExp()"> -->
+                        <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeExp()">
                 </div>
             </div>
@@ -195,7 +209,8 @@
             <!--Competências-->
             <div class="title">
                 <h2 class="title-2">Competências</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <!-- <img src="../../../../Public/images/global/info.svg"> -->
+                <img src="images/global/info.svg">
             </div>
 
             <div id="Comp">
@@ -230,9 +245,13 @@
                 </div>
 
                 <div id="btn-area-comp-0" class="btn-area-comp">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                        onclick="addComp()"> -->
+                        <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addComp()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                        onclick="removeComp()"> -->
+                        <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeComp()">
                 </div>
             </div>
@@ -240,7 +259,8 @@
             <!--Formações-->
             <div class="title">
                 <h2 class="title-2">Formações</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <!-- <img src="../../../../Public/images/global/info.svg"> -->
+                <img src="images/global/info.svg">
             </div>
 
             <div id="Form">
@@ -282,9 +302,13 @@
                 </div>
 
                 <div id="btn-area-form-0" class="btn-area-form">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                        onclick="addForm()"> -->
+                        <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
                         onclick="addForm()">
-                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                        onclick="removeForm()"> -->
+                        <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
                         onclick="removeForm()">
                 </div>
             </div>
@@ -294,7 +318,8 @@
             <!--Comentário do Líder-->
             <div class="title">
                 <h2 class="title-2">Comentários</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <!-- <img src="../../../../Public/images/global/info.svg"> -->
+                <img src="images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -305,7 +330,7 @@
             </div>
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                <a href="/requisicoes_vaga" class="btn btn-outline-primary mb-5">Voltar</a>
                 <button type="submit" class="btn btn-outline-primary mb-5">Gerar</button>
             </div>
         </div>
@@ -313,9 +338,12 @@
 
     <!--Footer-->
     <footer class="footer">
-        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
+        <!-- <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
         <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick=""> -->
+        <img src="images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="images/global/email.svg" class="img-footer" onclick="">
         <label class="label-footer">+55 (15) 5555-5555</label>
     </footer>
 
@@ -324,7 +352,8 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
 
-    <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <!-- <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script> -->
+    <script src="scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
 </body>
 
 </html>

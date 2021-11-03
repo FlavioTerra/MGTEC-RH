@@ -13,16 +13,14 @@
 
         }
 
-        public function registrarEntrevista() {
-            $this->render('registrar-entrevista');
+        public function entrevistaRegistrar() {
+            $this->render('entrevista-registrar');
         }
 
-        public function registrarEntrevistaCadastrar() {
-            $entrevista = Container::getModel('RegistrarEntrevista');
+        public function entrevistaCandidatoRegistrar() {
+            $entrevista = Container::getModel('EntrevistaRegistrar');
 
             $entrevista->__set('id_candidato',$_POST['applpicant']);
-
-            // $entrevista->__set('id_entrevista',$_POST['role']); role é o processo seletivo e não o id da entrevista
 
             $entrevista->__set('est_comp',$_POST['behavioral_style']);
 
@@ -32,7 +30,7 @@
 
             $entrevista->save();
 
-            header('Location:/registrar_entrevista?entrevistaRegistrar=sucess');   
+            header('Location:/entrevista_registrar?entrevistaRegistrar=sucess');   
         }
 
         public function gerarRequisicaoVaga() {
@@ -48,6 +46,7 @@
 
         public function gerarVaga() {
             $requisicaoVaga = Container::getModel('GerarVaga');
+
             $requisicaoVaga->__set('id_cargo' , $_POST['cargo']);
             $requisicaoVaga->__set('titulo_vaga' , $_POST['titulo_vaga']);
             $requisicaoVaga->__set('num_vagas' , $_POST['numero_vagas']);
@@ -57,9 +56,28 @@
             $requisicaoVaga->__set('funcao' , $_POST['funcao']);
             $requisicaoVaga->__set('hora_inicio' , $_POST['hora_trab_inicio']);
             $requisicaoVaga->__set('hora_fim' , $_POST['hora_trab_fim']);
+            
             $requisicaoVaga->save();
 
             header('Location:/gerar_requisicao_vaga');
+        }
+
+        public function visualizarRequisicao() {
+            $viewRequisicao = Container::getModel('GerarVaga');
+
+            $viewRequisicao->__set('id_vaga', $_POST['id_vaga']);
+
+            $this->view->detalhesVaga = $viewRequisicao->getVaga();
+
+            $this->render('visualizar-requisicoes-de-vagas');
+        }
+
+        public function requisicoesVagas() {
+            $requisicoes = Container::getModel('GerarVaga');
+
+            $this->view->todasRequisicoes = $requisicoes->getAll();
+            
+            $this->render('requisicoes-de-vagas-aprovadas-e-reprovadas');
         }
     }   
 

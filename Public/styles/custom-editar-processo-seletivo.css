@@ -9,3 +9,20 @@
 .vermelho{
     border-color: red;
 }
+
+.input-1{
+    margin-left: 3mm;
+    width: 150mm;
+}
+
+.textarea{
+    margin-left: 3mm;
+}
+
+.atr{
+    margin-right: 6mm;
+}
+
+.title-1{
+    margin-left: 3mm;
+}

@@ -35,21 +35,28 @@
             header('Location:/processo_seletivo?cadastroProcSeletivo=sucess');   
         }
 
-        public function marcarEntrevista() {
-            $this->render('marcar-entrevista');
+        public function entrevistaMarcar() {
+            $this->render('entrevista-marcar');
         }
 
-        public function marcarEntrevistaCadastrar() {
+        public function entrevistaCandidatoMarcar() {
             $entrevista = Container::getModel('EntrevistaMarcar');
-            // id_entrevista	id_user	titulo_entrevista	descricao	
+   
+            $entrevista->__set('titulo_entrevista',$_POST['titulo']);
 
-            // ta faltando campos tanto no phtml tanto no banco
-            
+            $entrevista->__set('descricao',$_POST['desc']);
+
             $entrevista->__set('id_user',$_POST['nome-candidato']);
+
+            $entrevista->__set('responsavel',$_POST['resp']);
+
+            $entrevista->__set('data_entrevista',$_POST['date']);
+
+            $entrevista->__set('hora_entrevista',$_POST['hora']);
 
             $entrevista->save();
 
-            header('Location:/marcar_entrevista?entrevistaMarcar=sucess');   
+            header('Location:/entrevista_marcar?entrevistaMarcar=sucess');   
         }
 
         public function atribuirTeste() {
@@ -60,9 +67,7 @@
         public function cadastrarTeste() {
             $entrevista = Container::getModel('AtribuirTeste');
 
-            echo '<pre>';
-                print_r($_POST);
-            echo '<pre>';
+            
         }
     }   
 
