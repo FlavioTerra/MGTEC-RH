@@ -5,8 +5,6 @@
     use MF\Controller\Action;
     use MF\Model\Container;
 
-    //Models
-
     class EmployeeScreensController extends Action {
         public function index() {  
         }
@@ -65,9 +63,40 @@
         }
 
         public function cadastrarTeste() {
-            $entrevista = Container::getModel('AtribuirTeste');
+            $teste = Container::getModel('AtribuirTeste');
 
+            $teste->__set('id_proc', 1); //<- Ver como pegar o id do processo seletivo
+            $teste->__set('tipo_teste', $_POST['test_Title']);
+            $teste->__set('descricao', $_POST['description']);
+
+            $idTeste = $teste->saveTeste();
             
+            $cont = 1;
+            while(isset($_POST['question_title_' . $cont])) {
+                $teste->__set('Pergunta', $_POST['question_title_' . $cont]);
+                $teste->__set('id_teste', $idTeste->id_teste);
+                
+                for($cont2 = 1; $cont2 < 5; $cont2++) {
+                    if(isset($_POST['check_quest_' . $cont . '_answer_' . $cont2])) {
+                        $teste->__set('resposta_certa', $_POST['quest_' . $cont . '_answer_' . $cont2]);
+                        break;
+                    }
+                }
+                
+                $cont3 = 1;
+                $auxiliar = 1;
+                while($cont3 < 5 ) {
+                    if($cont3 != $cont2) {
+                        $teste->__set('resposta_er' . $auxiliar, $_POST['quest_' . $cont . '_answer_' . $cont3]);
+                        $auxiliar++;
+                    }
+                    $cont3++;
+                }
+                $cont++;
+                $teste->savePerguntas();
+
+                header('Location:/atribuir_teste?atribuir_teste=sucess');   
+            }
         }
     }   
 
