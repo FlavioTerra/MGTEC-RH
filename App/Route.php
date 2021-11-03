@@ -13,6 +13,7 @@
                 'action'=>'index'
             );
 
+            // Cadastrar Processo Seletivo
             $routes['processo_seletivo'] = array(
                 'route'=>'/processo_seletivo',
                 'controller'=>'EmployeeScreensController',
@@ -23,6 +24,18 @@
                 'route'=>'/processo_seletivo_cadastrar',
                 'controller'=>'EmployeeScreensController',
                 'action'=>'processoSeletivoCadastrar'
+            );
+
+            $routes['gerenciar_processo_seletivo'] = array(
+                'route'=>'/gerenciar_processo_seletivo',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'gerenciarProcessoSeletivo'
+            );
+
+            $routes['visualizar_processo_seletivo'] = array(
+                'route'=>'/visualizar_processo_seletivo',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'visualizarProcessoSeletivo'
             );
 
 
