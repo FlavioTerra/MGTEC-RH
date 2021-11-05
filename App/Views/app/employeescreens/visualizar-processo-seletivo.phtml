@@ -45,7 +45,7 @@
             <h1 class="title-1">Visualizar Processo Seletivo</h1>
         </div>
         <br>
-
+<!-- 
         <h3 class="title-2"> Dados de Cadastro</h3>
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Teste</label>
@@ -59,12 +59,12 @@
             <div class="col-sm-10">
                 <input name="Entrevista" type="text" class="input-1" readonly />
             </div>
-        </div>
+        </div> -->
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Responsável</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly />
+                <input name="Responsavel" type="text" class="input-1" value="<?= $this->view->detalhesProcessoSeletivo->titulo_proc ?>" readonly />
             </div>
         </div>
         <br>
@@ -94,21 +94,28 @@
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Data de Início</label>
             <div class="col-sm-10">
-                <input name="DtInic" type="time" class="input-1" readonly />
+                <input name="DtInic" type="time" class="input-1" value="<?= $this->view->detalhesVaga->data_inicio ?>" readonly />
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Data de Término</label>
             <div class="col-sm-10">
-                <input name="DtTerm" type="time" class="input-1" readonly />
+                <input name="DtTerm" type="time" class="input-1" value="<?= $this->view->detalhesProcessoSeletivo->data_termino ?>" readonly />
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Status</label>
+            <div class="col-sm-10">
+                <input name="RegraClass" type="text" class="input-1" value="<?= $this->view->detalhesProcessoSeletivo->status_proc ?>" readonly />
             </div>
         </div>
 
         <div class="row mb-2">
             <label for="colFormLabel" class="label">Regra de Classificação</label>
             <div class="col-sm-10">
-                <input name="RegraClass" type="text" class="input-1" readonly />
+                <input name="RegraClass" type="text" class="input-1" value="<?= $this->view->detalhesProcessoSeletivo->regra_class ?>" readonly />
             </div>
         </div>
 
@@ -116,7 +123,7 @@
             <label for="colFormLabel" class="label">Descrição</label>
             <div class="col-sm-10">
                 <textarea name="Descr" cols="50" rows="8" class="textarea" id="Descr"
-                 input="" value="" readonly></textarea>
+                 input="" value="<?= $this->view->detalhesProcessoSeletivo->descricao ?>" readonly></textarea>
             </div>
         </div>
 
