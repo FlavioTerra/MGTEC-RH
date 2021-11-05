@@ -97,8 +97,11 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
                 <div class="col-sm-10">
-                    <select class="col form-select" name="cargo">
-                        <option selected>--Selecione--</option>
+                <select class="col form-select" name="departamento" onchange="atribuitDept(this)">
+                            <option selected>--Selecione--</option>
+                            <?php foreach ($this->view->cargos as $key => $cargo) { ?>
+                                <option value="<?=$cargo->id_cargo?>"><?= $cargo->nome_cargo ?></option>
+                            <?php } ?>
                     </select>
                 </div>
             </div>

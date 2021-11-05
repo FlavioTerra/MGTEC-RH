@@ -32,6 +32,20 @@
 
             return $stmt->fetchAll(\PDO::FETCH_OBJ);
         }
+
+        function getUsuarios() {
+            $query = 'select id_user, 
+                            login_user, 
+                            situacao_user,
+                            nome
+                        from tb_usuario';
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
     }
 
 ?>
