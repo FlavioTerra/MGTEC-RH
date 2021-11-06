@@ -120,8 +120,32 @@
 
             <hr>
 
+            <!--Resposta-->
+            <?php foreach($this->view->todasEntrevistasCandidato as $key => $entrevistaCandidato) {?>
+                <form action="/visualizar_entrevista_candidato" method="post">
+                    <div class="depto-recursos-humanos">
+                        <div class="card">
+                            <div class="card-img"></div>
+
+                            <div class="card-body">
+                                <!-- <h4 class="card-title">Departamento: <?= $entrevistaCandidato->nome_departamento ?> </h4> -->
+                                <h6 class="card-text" style="padding-top: 5px;"><?= $entrevistaCandidato->id_user ?></h6>
+                                <h6 class="card-text"><?= $entrevistaCandidato->hora_entrevista ?></h6>
+                                <h6 class="card-text"><?= $entrevistaCandidato->data_entrevista ?></h6>
+                            </div>
+                        </div>
+                        <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
+                        <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
+                        <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
+                    </div>
+                </form>
+            <?php } ?>  
+
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                <button type="button" class="btn btn-outline-primary mb-5"
+                onclick="window.location.href = 'http://localhost:3000/entrevista-marcar'">Marcar</button>
+                <button type="button" class="btn btn-outline-primary mb-5" 
+                onclick="window.location.href = 'http://localhost:3000/home'">Voltar</button>
             </div>
 
         </div>

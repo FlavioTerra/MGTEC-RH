@@ -620,6 +620,131 @@ body, html{
     }
 }
 
+@media screen and (min-width:1550px){
+    /*slide area*/
+    .slide img{
+        height: 95vh;
+    }
+
+    /*slides*/
+    #radio2:checked ~ .first{
+        margin-left: -120%;
+    }
+
+    #radio3:checked ~ .first{
+        margin-left: -250%;
+    }
+
+    #radio4:checked ~ .first{
+        margin-left: -365%;
+    }
+
+    /*btn slide*/
+    .navigation-manual, .navigation-auto{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width:1600px){
+    /*slide area*/
+    .slide img{
+        height: 95vh;
+    }
+
+    /*slides*/
+    #radio2:checked ~ .first{
+        margin-left: -135%;
+    }
+
+    #radio3:checked ~ .first{
+        margin-left: -265%;
+    }
+
+    #radio4:checked ~ .first{
+        margin-left: -380%;
+    }
+
+    /*btn slide*/
+    .navigation-manual, .navigation-auto{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width:1700px){
+    /*slide area*/
+    .slide img{
+        height: 95vh;
+    }
+
+    /*slides*/
+    #radio2:checked ~ .first{
+        margin-left: -145%;
+    }
+
+    #radio3:checked ~ .first{
+        margin-left: -280%;
+    }
+
+    #radio4:checked ~ .first{
+        margin-left: -405%;
+    }
+
+    /*btn slide*/
+    .navigation-manual, .navigation-auto{
+        width: 75%;
+    }
+}
+
+@media screen and (min-width:1800px){
+    /*slide area*/
+    .slide img{
+        height: 95vh;
+    }
+
+    /*slides*/
+    #radio2:checked ~ .first{
+        margin-left: -155%;
+    }
+
+    #radio3:checked ~ .first{
+        margin-left: -295%;
+    }
+
+    #radio4:checked ~ .first{
+        margin-left: -430%;
+    }
+
+    /*btn slide*/
+    .navigation-manual, .navigation-auto{
+        width: 70%;
+    }
+}
+
+@media screen and (min-width:1920px){
+    /*slide area*/
+    .slide img{
+        height: 95vh;
+    }
+
+    /*slides*/
+    #radio2:checked ~ .first{
+        margin-left: -165%;
+    }
+
+    #radio3:checked ~ .first{
+        margin-left: -315%;
+    }
+
+    #radio4:checked ~ .first{
+        margin-left: -455%;
+    }
+
+    /*btn slide*/
+    .navigation-manual, .navigation-auto{
+        width: 65%;
+    }
+}
+
 /********************************/
 /********* About Area **********/
 /******************************/

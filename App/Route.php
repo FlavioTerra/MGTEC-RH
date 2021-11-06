@@ -8,8 +8,8 @@
         
         protected function initRoutes() {
             $routes['home'] = array(
-                'route'=>'/',
-                'controller'=>'EmployeeScreensController',
+                'route'=>'/home',
+                'controller'=>'GeneralScreensController',
                 'action'=>'index'
             );
 
@@ -63,6 +63,18 @@
                 'route'=>'/entrevista_candidato_marcar',
                 'controller'=>'EmployeeScreensController',
                 'action'=>'entrevistaCandidatoMarcar'
+            );
+
+            $routes['gerenciar_entrevista_candidato'] = array(
+                'route'=>'/gerenciar_entrevista_candidato',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'gerenciarEntrevistaCandidato'
+            );
+
+            $routes['visualizar_entrevista_candidato'] = array(
+                'route'=>'/visualizar_entrevista_candidato',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'visualizarEntrevistaCandidato'
             );
 
             // Requisição de Vaga

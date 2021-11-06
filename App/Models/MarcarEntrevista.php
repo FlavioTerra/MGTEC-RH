@@ -4,7 +4,7 @@
 
     use MF\Model\Model;
 
-    Class MarcarEntrevista extends Model{
+    Class EntrevistaMarcar extends Model{
         private $id_entrevista;
         private $id_user;
         private $responsavel;
@@ -34,6 +34,40 @@
             $stmt->bindValue(':descricao',$this->__get('descricao'));
 
             $stmt->execute();
+        }
+
+        public function getAll() {
+            $query = 'select e.id_entrevista,  
+                        e.responsavel,
+                        e.data_entrevista,
+                        e.titulo_entrevista,
+                        e.hora_entrevista,
+                        e.descricao
+                        from tb_entrevista e';
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+            
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        public function getEntrevistaCandidato() {
+            $query = 'select e.id_entrevista,  
+                      e.responsavel,
+                      e.data_entrevista,
+                      e.titulo_entrevista,
+                      e.hora_entrevista,
+                      e.descricao
+                      from tb_entrevista e';
+  
+                
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_proc',$this->__get('id_proc'));
+        
+            $stmt->execute();
+            
+            return $stmt->fetch(\PDO::FETCH_OBJ);
         }
     }
 

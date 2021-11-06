@@ -15,7 +15,7 @@
 
     class GeneralScreensController extends Action {
         public function index() {  
-
+            $this->render('home');
         }
 
         public function usuarioCadastrar() {
