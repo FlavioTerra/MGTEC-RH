@@ -32,7 +32,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="#">Gestor</a>
                     <a class="nav-link" href="#">Gerar Vaga</a>
-                    <a class="nav-link" href="#">RequisiÃ§Ãµes</a>
+                    <a class="nav-link" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
                     <a class="nav-link" href="#">Sobre</a>
                     <a class="nav-link" href="#">Suporte</a>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="colsm-2 form-label title-interview">TÃ­tulo do Processo Seletivo</label>
+                <label for="colFormLabel" class="colsm-2 form-label title-interview">Título do Processo Seletivo</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="tituloProcSeletivo">
                 </div>
@@ -80,11 +80,13 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="responsible" class="col-sm-2 form-label form-label">ResponsÃ¡vel</label>
+                <label for="responsible" class="col-sm-2 form-label form-label">Responsável</label>
                 <div class="col-sm-10">
-                    <select class="col form-select" name="responsible">
-                        <option selected></option>
-                        <option value="1">#</option>
+                <select class="col form-select" name="responsible" onchange="atribuitDept(this)">
+                            <option selected>--Selecione--</option>
+                            <?php foreach ($this->view->usuarios as $key => $usuario) { ?>
+                                <option value="<?=$usuario->id_user?>"><?= $usuario->nome ?></option>
+                            <?php } ?>
                     </select>
                 </div>
             </div>
@@ -96,24 +98,24 @@
             </div>
 
             <div class="row mb-3">
-                <label for="start_date" class="col-sm-2 form-label form-label">Data de InÃ­cio</label>
+                <label for="start_date" class="col-sm-2 form-label form-label">Data de Início</label>
                 <div class="col-sm-10">
                     <input type="date" class="form-control" name="start_date">
                 </div>
                 <div class="row mb-3">
-                    <label for="end_date" class="col-sm-2 form-label form-label">Data de TÃ©rmino</label>
+                    <label for="end_date" class="col-sm-2 form-label form-label">Data de Término</label>
                     <div class="col-sm-10">
                         <input type="date" class="form-control" name="end_date">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="teste_Title" class="col-sm-2 form-label form-label">Regra de ClassificaÃ§Ã£o</label>
+                    <label for="teste_Title" class="col-sm-2 form-label form-label">Regra de Classificação</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" id="colFormLabel" placeholder="" name="classification-rule" min="0" max="1">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="teste_Title" class="col-sm-2 form-label form-label">DescriÃ§Ã£o</label>
+                    <label for="teste_Title" class="col-sm-2 form-label form-label">Descrição</label>
                     <textarea type="text" class="form-control text-area" name="descProc"></textarea>
                 </div>
             </div>

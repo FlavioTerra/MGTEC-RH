@@ -1,4 +1,6 @@
-/*slider*/
+/********************/
+/*******slider******/
+/******************/
 
 let counter = 1;
 
@@ -26,7 +28,10 @@ function setCounter(element) {
     }
 }
 
-/*jobs*/
+/********************/
+/********jobs*******/
+/******************/
+
 let count = 1;
 let qtdeNaTela = 0;
 
@@ -70,6 +75,10 @@ function windowSize() {
             document.getElementById(count + 2).style.display = 'none';
             qtdeNaTela -= 1;
         }
+    }
+
+    if (!document.getElementById('1')) {
+        document.getElementById('jobs').style.display = 'none';
     }
 }
 
@@ -122,3 +131,18 @@ function preCard() {
 window.addEventListener('resize', function () {
     windowSize();
 });
+
+
+
+/********************/
+/******contact******/
+/******************/
+
+function verificar() {
+    if (document.getElementById("email").value) {
+        document.getElementById("label-email").className = "levantar-label";
+    }
+    else {
+        document.getElementById("label-email").classList.remove("levantar-label");
+    }
+}

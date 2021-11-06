@@ -1,0 +1,13 @@
+@import url(../styles/custom-aprovar-requisicao-de-vaga.css);
+
+.buttons{
+    margin: 0 15vw 0 15vw;
+}
+
+.btn:last-child{
+    border-color: green;
+}
+
+.btn:active:last-child, .btn:hover:last-child{
+    background-color: green;
+}
