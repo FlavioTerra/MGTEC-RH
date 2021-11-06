@@ -84,7 +84,6 @@
 
         public function getVaga() {
             $query = "select v.id_vaga,
-                             ps.titulo_proc,
                              c.nome_cargo,
                              d.nome_departamento,
                              u.nome,
@@ -97,7 +96,6 @@
                              v.hora_inicio,
                              v.hora_fim
                         from tb_vaga v 
-                  inner join tb_processo_seletivo ps on v.id_proc = ps.id_proc
                   inner join tb_cargo c on v.id_cargo = c.id_cargo
                   inner join tb_departamento d on c.id_departamento = d.id_departamento
                   inner join tb_usuario u on v.id_solicitante = u.id_user
