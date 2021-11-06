@@ -76,7 +76,7 @@
             $requisicoes = Container::getModel('GerarVaga');
 
             $this->view->todasRequisicoes = $requisicoes->getAll();
-            
+
             $this->render('requisicoes-de-vagas-aprovadas-e-reprovadas');
         }
     }   

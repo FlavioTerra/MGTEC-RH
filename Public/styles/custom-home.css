@@ -844,7 +844,7 @@ body, html{
     font-size: large;
 }
 
-@media screen and (min-width:990px){
+@media screen and (min-width:992px){
     .quem-somos-area{
         flex-direction: row;
         text-align: center;
@@ -871,7 +871,7 @@ body, html{
     }
 }
 
-@media screen and (min-width:1350px){
+@media screen and (min-width:1400px){
     .dark-block{
         padding: 20px 170px 10px 150px;
     }
@@ -880,8 +880,6 @@ body, html{
         margin-right: 100px;
     }
 }
-
-
 /********************************/
 /********** Card Area **********/
 /******************************/

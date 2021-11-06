@@ -55,17 +55,22 @@
         }
 
         public function getProcessoSeletivo() {
-            $query = 'select ps.id_proc,  
-                      ps.titulo_proc,
-                      ps.status_proc,
-                      ps.data_inicio,
-                      ps.data_termino,
-                      ps.regra_class,
-                      ps.descricao
-                      from tb_processo_seletivo ps';
+            $query = "select ps.id_proc,  
+                             ps.titulo_proc,
+                             u.nome,
+                             ps.status_proc,
+                             DATE_FORMAT(ps.data_inicio,'%d/%m/%Y') as data_inicio,
+                             DATE_FORMAT(ps.data_termino,'%d/%m/%Y') as data_termino,
+                             ps.regra_class,
+                             ps.descricao
+                        from tb_processo_seletivo ps
+                  inner join tb_usuario u on ps.id_responsavel = id_user    
+                       where ps.id_proc = :id_proc";
   
-                
+            // Fazer junção com vaga mais tarde
+
             $stmt = $this->db->prepare($query);
+            
             $stmt->bindValue(':id_proc',$this->__get('id_proc'));
         
             $stmt->execute();
