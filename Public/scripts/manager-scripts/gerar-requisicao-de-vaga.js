@@ -340,6 +340,12 @@ function addBtnForm() {
 function atribuitDept(obj) {
     const dept = obj.value;
 
+    document.querySelector('[name=cargo]').innerHTML = '';
+
+    let elementForm = document.createElement('option');
+    elementForm.innerHTML = '--Selecione--';
+    document.querySelector('[name=cargo]').appendChild(elementForm);
+
     cargos.forEach(element => {
         if(dept == element.id_departamento) {
             let elementForm = document.createElement('option');

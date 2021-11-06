@@ -18,14 +18,14 @@
         }
 
         public function usuarioCadastrarSalvar() {
-            $entrevista = Container::getModel('UsuarioCadastrar');
+            $usuario = Container::getModel('UsuarioCadastrar');
           
-            $entrevista->__set('login_user',$_POST['login']);
-            $entrevista->__set('email_user',$_POST['email']);
-            $entrevista->__set('senha_user',$_POST['senha']);
-            $entrevista->__set('nome',$_POST['nome']);
+            $usuario->__set('login_user',$_POST['login']);
+            $usuario->__set('email_user',$_POST['email']);
+            $usuario->__set('senha_user',$_POST['senha']);
+            $usuario->__set('nome',$_POST['nome']);
 
-            $entrevista->save();
+            $usuario->save();
 
             header('Location:/usuario_cadastrar?usuarioCadastrar=sucess');   
         }

@@ -5,12 +5,29 @@
     use MF\Model\Model;
 
     Class EditarPerfil extends Model{
-        private $id_candidato;
-        private $id_entrevista;	
-        private $est_comp;	
-        private $pontos_pos;	
-        private $pontos_neg;		
-        // id_candidato  id_proc  id_estado  nome  data_nasc  sexo  bairro  cep  num_casa  rua  cadastro_pessoa  disponibilidade  telefone  celular  sobre  tipo_pessoa  curriculo  c_status
+    private $id_candidato;
+    private $id_proc;
+    private $id_estado;
+    private $nome; 
+    private $email; 
+    private $foto; 
+    private $cpf; 
+    private $cnpf; 
+    private $data_nasc; 
+    private $sexo;
+    private $bairro; 
+    private $cep; 
+    private $num_casa; 
+    private $rua; 
+    private $cadastro_pessoa; 
+    private $disponibilidade; 
+    private $telefone; 
+    private $celular; 
+    private $sobre; 
+    private $tipo_pessoa; 
+    private $curriculo; 
+    private $c_status; 
+
         public function __get($attribute){
             return $this->$attribute;
         }
@@ -20,14 +37,30 @@
         }
 
         public function save(){
-            $query = 'INSERT INTO tb_entrevista_candidato (id_entrevista, id_candidato, est_comp, pontos_pos, pontos_neg) 
-            VALUES(NULL, :id_candidato, :est_comp, :pontos_pos, :pontos_neg)';
+            $query = 'INSERT INTO tb_candidato (id_candidato, id_proc, id_estado, nome, email, foto, cpf, cnpf, data_nasc, sexo, bairro, cep, num_casa, rua, cadastro_pessoa, 
+            disponibilidade, telefone, celular, sobre, tipo_pessoa, curriculo, c_status) 
+            VALUES(NULL, NULL, :id_estado, :nome, NULL, :foto, :cpf, NULL, :data_nasc, :sexo, :bairro, :cep, :num_casa, :rua, :cadastro_pessoa, 
+            :disponibilidade, :telefone, :celular, :sobre, :tipo_pessoa, :curriculo, :c_status)';
 
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(':id_candidato',$this->__get('id_candidato'));
-            $stmt->bindValue(':est_comp',$this->__get('est_comp'));
-            $stmt->bindValue(':pontos_pos',$this->__get('pontos_pos'));
-            $stmt->bindValue(':pontos_neg',$this->__get('pontos_neg'));
+            $stmt->bindValue(':id_estado',$this->__get('id_estado'));
+            $stmt->bindValue(':nome',$this->__get('nome'));
+            $stmt->bindValue(':foto',$this->__get('foto'));
+            $stmt->bindValue(':cpf',$this->__get('cpf'));
+            $stmt->bindValue(':data_nasc',$this->__get('data_nasc'));
+            $stmt->bindValue(':sexo',$this->__get('sexo'));
+            $stmt->bindValue(':bairro',$this->__get('bairro'));
+            $stmt->bindValue(':cep',$this->__get('cep'));
+            $stmt->bindValue(':num_casa',$this->__get('num_casa'));
+            $stmt->bindValue(':rua',$this->__get('rua'));
+            $stmt->bindValue(':cadastro_pessoa',$this->__get('cadastro_pessoa'));
+            $stmt->bindValue(':disponibilidade',$this->__get('disponibilidade'));
+            $stmt->bindValue(':telefone',$this->__get('telefone'));
+            $stmt->bindValue(':celular',$this->__get('celular'));
+            $stmt->bindValue(':sobre',$this->__get('sobre'));
+            $stmt->bindValue(':tipo_pessoa',$this->__get('tipo_pessoa'));
+            $stmt->bindValue(':curriculo',$this->__get('curriculo'));
+            $stmt->bindValue(':c_status',$this->__get('c_status'));
 
             $stmt->execute();
         }

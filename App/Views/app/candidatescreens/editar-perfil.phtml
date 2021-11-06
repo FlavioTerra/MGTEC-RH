@@ -51,7 +51,7 @@
     ?>
 
     <!--body-->
-    <form action="requisitante.php" method="post">
+    <form action="editar_perfil_salvar" method="post">
         <div class="container">
 
             <!--parte de cima do perfil-->
@@ -59,7 +59,7 @@
 
                 <div class="row row-img-names">
                     <div class="img-perfil">
-                        <img src="/images/global/edit.svg" class="img-edit">
+                        <input type="file" name="foto"/>
                     </div>
 
                     <div class="names">
@@ -77,12 +77,14 @@
 
                 <img src="/images/global/edit.svg" class="img-edit-3">
                 <img src="/images/global/info.svg" class="img-info-2">
-                <p class="mb-3 descricao-perfil">
-                    Aqui fica a descrição do perfil personalizada, diga-nos um pouco
-                    sobre você. Aqui fica a sua descrição do perfil personalizada, diga-nos um pouco
-                    sobre você. Aqui fica a sua descrição do perfil personalizada, diga-nos um pouco
-                    sobre você.
-                </p>
+                <div>
+                    <div class="title">
+                        <h2 class="title-2">Sobre <img src="/images/global/edit.svg" alt="edit"></h2>            
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <textarea type="text" class="form-control text-area" name="sobre"></textarea>
+                    </div>
+                </div>
 
 
                 <div class="buttons">
@@ -136,6 +138,30 @@
                     <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cnpj">
                 </div>
             </div>
+            
+            <div class="row mb-3">
+                    <label for="role" class="col-sm-2 form-label form-label-interview">Cadastro de Pessoa</label>
+                    <div class="col-sm-10">
+                        <select class="col form-select" name="cadastro-pessoa">
+                            <option selected></option>
+                            <option value="1">#</option>
+                            <option value="2">#</option>
+                            <option value="3">#</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="role" class="col-sm-2 form-label form-label-interview">Tipo Pessoa</label>
+                    <div class="col-sm-10">
+                        <select class="col form-select" name="tipo_pessoa">
+                            <option selected></option>
+                            <option value="1">#</option>
+                            <option value="2">#</option>
+                            <option value="3">#</option>
+                        </select>
+                    </div>
+                </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Disponibilidade
@@ -148,12 +174,15 @@
             </div>
 
             <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Status
-                    <span class="asterisco-2">*</span>
-                </label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="status">
-                </div>
+                    <label for="role" class="col-sm-2 form-label form-label-interview">Status</label>
+                    <div class="col-sm-10">
+                        <select class="col form-select" name="c_status">
+                            <option selected></option>
+                            <option value="1">#</option>
+                            <option value="2">#</option>
+                            <option value="3">#</option>
+                        </select>
+                    </div>
             </div>
 
             <!--contato-->
@@ -397,8 +426,7 @@
                 <div class="col col-btns">
                     <div class="buttons">
                         <button type="button" class="btn btn-outline-primary mb-2">
-                            <img src="/images/custom-perfil/upload.svg">
-                            Upload</button>
+                            <input type="file" name="curriculo"/>
                     </div>
                     <div class="buttons">
                         <button type="button" class="btn btn-outline-primary mb-2">

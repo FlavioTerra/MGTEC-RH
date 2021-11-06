@@ -98,6 +98,35 @@
                 header('Location:/atribuir_teste?atribuir_teste=sucess');   
             }
         }
+
+        public function gerarProcessoSeletivo() {
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $this->render('processo-seletivo');
+        }
+
+        public function visualizarProcessoSeletivo() {
+            $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
+
+            $viewProcessoSeletivo->__set('id_proc', $_POST['id_proc']);
+
+            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
+
+            $this->render('visualizar-processo-seletivo');
+        }
+
+        public function gerenciarProcessoSeletivo() {
+            $processosSeletivos = Container::getModel('ProcessoSeletivo');
+
+            $this->view->todosProcessoSeletivos = $processosSeletivos->getAll();
+            
+            $this->render('gerenciar-processo-seletivo');
+        }
     }   
 
 ?>
