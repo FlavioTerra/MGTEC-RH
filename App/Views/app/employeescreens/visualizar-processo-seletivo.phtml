@@ -1,21 +1,22 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Processo Seletivo</title>
 
     <!-- Bootstrap / CSS -->
     <!--<link rel="stylesheet" href="../../../../Public/styles/custom-cadastrar-processo-seletivo.css">-->
     <link rel="stylesheet" href="/styles/custom-cadastrar-processo-seletivo.css">
-
-    <title>Processos Seletivos Registrados</title>
+    
 </head>
 
 <body>
-   <!--Header-->
-   <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
             <!--<a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>-->
             <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
@@ -55,19 +56,19 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label title-interview">Título do Processo Seletivo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" value="<?=$this->view->detalhesProcessoSeletivo->titulo_proc ?>" name="tituloProcSeletivo" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" value="<?= $this->view->detalhesProcessoSeletivo->titulo_proc ?>" placeholder="" name="tituloProcSeletivo">
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="vacancy" class="col-sm-2 form-label form-label">Vaga</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" value="" name="vacancy" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" value=""  name="vacancy">
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="responsible" class="col-sm-2 form-label form-label">Responsável</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" value="<?=$this->view->detalhesProcessoSeletivo->nome ?>" name="responsible" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" value="<?= $this->view->detalhesProcessoSeletivo->nome ?>" name="responsible">  
                 </div>
             </div>
 
@@ -80,23 +81,23 @@
             <div class="row mb-3">
                 <label for="start_date" class="col-sm-2 form-label form-label">Data de Início</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="start_date" value="<?=$this->view->detalhesProcessoSeletivo->data_inicio ?>" readonly>
+                    <input type="text" class="form-control" value="<?= $this->view->detalhesProcessoSeletivo->data_inicio ?>" name="start_date">
                 </div>
                 <div class="row mb-3">
                     <label for="end_date" class="col-sm-2 form-label form-label">Data de Término</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="end_date" value="<?=$this->view->detalhesProcessoSeletivo->data_termino ?>" readonly>
+                        <input type="text" class="form-control" value="<?= $this->view->detalhesProcessoSeletivo->data_termino ?>" name="end_date">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="teste_Title" class="col-sm-2 form-label form-label">Regra de Classificação</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="colFormLabel" value="<?=$this->view->detalhesProcessoSeletivo->regra_class ?>" name="classification-rule" readonly>
+                        <input type="number" class="form-control" id="colFormLabel" value="<?= $this->view->detalhesProcessoSeletivo->regra_class ?>" name="classification-rule" min="0" max="1">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="teste_Title" class="col-sm-2 form-label form-label">Descrição</label>
-                    <textarea type="text" class="form-control text-area" name="descProc"><?=$this->view->detalhesProcessoSeletivo->descricao?></textarea>
+                    <textarea type="text" class="form-control text-area" name="descProc"><?=$this->view->detalhesProcessoSeletivo->descricao ?></textarea>
                 </div>
             </div>
 

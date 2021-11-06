@@ -38,6 +38,7 @@
 
         public function getAll() {
             $query = 'select e.id_entrevista,  
+                        e.id_user,
                         e.responsavel,
                         e.data_entrevista,
                         e.titulo_entrevista,
@@ -54,12 +55,13 @@
 
         public function getEntrevistaCandidato() {
             $query = 'select e.id_entrevista,  
-                      e.responsavel,
-                      e.data_entrevista,
-                      e.titulo_entrevista,
-                      e.hora_entrevista,
-                      e.descricao
-                      from tb_entrevista e';
+                        e.id_user,
+                        e.responsavel,
+                        e.data_entrevista,
+                        e.titulo_entrevista,
+                        e.hora_entrevista,
+                        e.descricao
+                        from tb_entrevista e';
   
                 
             $stmt = $this->db->prepare($query);

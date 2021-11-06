@@ -63,9 +63,9 @@
                              DATE_FORMAT(ps.data_termino,'%d/%m/%Y') as data_termino,
                              ps.regra_class,
                              ps.descricao
-                        from tb_processo_seletivo ps
-                  inner join tb_usuario u on ps.id_responsavel = id_user    
-                       where ps.id_proc = :id_proc";
+                            from tb_processo_seletivo ps
+                            inner join tb_usuario u on ps.id_responsavel = id_user    
+                            where ps.id_proc = :id_proc";
   
             // Fazer junção com vaga mais tarde
 
