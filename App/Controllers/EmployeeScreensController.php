@@ -11,8 +11,41 @@
         public function index() {  
         }
 
+        // Processo Seletivo
         public function processoSeletivo() {
             $this->render('processo-seletivo');
+        }
+
+        public function gerarProcessoSeletivo() {
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
+            $this->render('processo-seletivo');
+        }
+
+        public function visualizarProcessoSeletivo() {
+            $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
+
+            $viewProcessoSeletivo->__set('id_proc', $_POST['id_proc']);
+
+            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
+
+            $this->render('visualizar-processo-seletivo');
+        }
+
+        public function gerenciarProcessoSeletivo() {
+            $processosSeletivos = Container::getModel('ProcessoSeletivo');
+
+            $this->view->todosProcessoSeletivos = $processosSeletivos->getAll();
+            
+            $this->render('gerenciar-processo-seletivo');
         }
 
         public function processoSeletivoCadastrar() {
@@ -35,6 +68,7 @@
             header('Location:/processo_seletivo?cadastroProcSeletivo=sucess');   
         }
 
+        // Marcar Entrevista
         public function entrevistaMarcar() {
             $this->render('entrevista-marcar');
         }
@@ -59,6 +93,39 @@
             header('Location:/entrevista_marcar?entrevistaMarcar=sucess');   
         }
 
+        public function visualizarEntrevistaCandidato() {
+            $viewEntrevistasCandidato = Container::getModel('EntrevistaMarcar');
+
+            $viewEntrevistasCandidato->__set('id_entrevista', $_POST['id_entrevista']);
+
+            $this->view->detalhesEntrevistaCandidato = $viewEntrevistasCandidato->getEntrevistaCandidato(); 
+
+            $this->render('visualizar-entrevista');
+        }
+
+        public function gerenciarEntrevistaCandidato() {
+            $entrevistasCandidato = Container::getModel('EntrevistaMarcar');
+
+            $this->view->todasEntrevistasCandidato = $entrevistasCandidato->getAll();
+            
+            $this->render('gerenciar-entrevista');
+        }
+
+        public function gerarEntrevistaCandidato() {
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
+            $this->render('entrevista-marcar');
+        }
+
+        // Atribuir Teste
         public function atribuirTeste() {
 
             $this->render('atribuir-teste');
@@ -70,34 +137,6 @@
             
         }
 
-        public function gerarProcessoSeletivo() {
-
-            $departametos = Container::getModel('InformacoesGlobais');
-            $this->view->departamentos = $departametos->getDepartamentos();
-
-            $cargos = Container::getModel('InformacoesGlobais');
-            $this->view->cargos = $cargos->getCargos();
-
-            $this->render('processo-seletivo');
-        }
-
-        public function visualizarProcessoSeletivo() {
-            $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
-
-            $viewProcessoSeletivo->__set('id_proc', $_POST['id_proc']);
-
-            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
-
-            $this->render('visualizar-processo-seletivo');
-        }
-
-        public function gerenciarProcessoSeletivo() {
-            $processosSeletivos = Container::getModel('ProcessoSeletivo');
-
-            $this->view->todosProcessoSeletivos = $processosSeletivos->getAll();
-            
-            $this->render('gerenciar-processo-seletivo');
-        }
     }   
 
 ?>
