@@ -117,6 +117,21 @@
 
             $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
 
+            /*
+            stdClass Object
+            (
+                [id_proc] => 1
+                [titulo_proc] => Processo Seletivo 1
+                [nome] => usuario teste
+                [status_proc] => Aberto
+                [data_inicio] => 05/11/2021
+                [data_termino] => 06/11/2021
+                [regra_class] => 1.00
+                [descricao] => aetasfasasfassf
+            )
+
+            */
+
             $this->render('visualizar-processo-seletivo');
         }
 
