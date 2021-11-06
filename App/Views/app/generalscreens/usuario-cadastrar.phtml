@@ -43,7 +43,7 @@
     ?>
 
         <script>
-            alert("Usu�rio Salvo com Sucesso!");
+            alert("Usu�rio Salvo com Sucesso!");
         </script>
 
     <?php
@@ -51,24 +51,24 @@
     ?>
 
     <!--body-->
-    <form action="/usuario_cadastrar_salvar" method="post">
+    <form action="/usuario_cadastrar_salvar" method="post" id="myForm">
         <div class="container">
             <div class="login-content">
                 <h1>Registro</h1>
 
                 <div class="textbox">
                     <img src="/images/login/user.svg">
-                    <input type="text" placeholder="Nome de Usuário/E-mail" name="login">
+                    <input type="text" placeholder="Nome de Usuário/E-mail" name="login" id="login">
                 </div>
 
                 <div class="textbox">
                     <img class="img-email" src="/images/global/email.svg">
-                    <input type="text" placeholder="E-mail" name="email">
+                    <input type="email" placeholder="E-mail" name="email" id="email">
                 </div>
 
                 <div class="textbox">
                     <img class="img-email" src="/images/global/email.svg">
-                    <input type="text" placeholder="Repetir E-mail" name="email-repetido">
+                    <input type="email" placeholder="Repetir E-mail" name="email-repetido" id="email-2">
                 </div>
 
                 <div class="textbox">
@@ -89,9 +89,12 @@
                 </div>
 
                     <!-- arrumar mais tarde o button (com input nao funciona o submit) -->
-                    <div class="">
-                        <button type="submit" class="btn btn-outline-primary mb-5">Cadastrar</button>
+                <a class="btn-link" onclick="enviar()">
+                    <div class="effect">
+                        <span>Cadastrar</span>
+                        <input class="btn" type="submit">
                     </div>
+                </a>
 
                 <a class="btn-link" href="./login.html">
                     <div class="effect">
