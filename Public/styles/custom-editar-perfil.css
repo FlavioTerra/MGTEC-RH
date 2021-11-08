@@ -3,6 +3,11 @@
 /*parte de cima*/
 .img-perfil{
     opacity: 0.68;
+    cursor: pointer;
+}
+
+.btn-over{
+    display: none;
 }
 
 .img-edit{
@@ -31,16 +36,24 @@
 }
 
 .img-info-2{
-    width: 40px;
-    margin-left: 85%;
+    width: 15px;
+    margin-left: 5px;
+    margin-top: -5px;
 }
 
 .names{
     width: 200px;
 }
 
-.nome-perfil, .nome-usuario, .descricao-perfil{
-    color: #B8B8B8;
+.sobre-area .title{
+    margin-bottom: 0;
+    margin-left: 3px;
+}
+
+.sobre-area .text-area{
+    resize: none;
+    height: 40px;
+    margin-bottom: 20px;
 }
 
 .select{
@@ -79,22 +92,32 @@
     color: #212529;
 }
 
-@media screen and (min-width:700px){
-    .img-edit-3{
-        margin-right: 92%;
+.dados .form-select{
+    margin: 0;
+}
+
+@media screen and (min-width:576px){
+    .sobre-area .text-area{
+        margin-left: 0;
     }
 
-    .img-info-2{
-        margin-left: 90%;
+    .dados .form-select{
+        margin-left: 10px;
+    }
+
+    .row-img-names{
+        padding-left: 10px;
     }
 }
 
-@media screen and (min-width:1200px){
-    .img-edit-3{
-        margin-right: 95%;
+@media screen and (min-width:768px){
+    .sobre-area .text-area{
+        width: 45vw;
     }
+}
 
-    .img-info-2{
-        margin-left: 93%;
+@media screen and (min-width:1150px){
+    .sobre-area .text-area{
+        margin-left: 0;
     }
 }

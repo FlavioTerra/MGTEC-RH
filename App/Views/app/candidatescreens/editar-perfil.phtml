@@ -58,28 +58,21 @@
             <div class="row d-flex justify-content-center perfil-box">
 
                 <div class="row row-img-names">
-                    <div class="img-perfil">
-                        <input type="file" name="foto"/>
+                    <div class="img-perfil" onClick="acionarBtn()">
+                        <img src="/images/global/edit.svg" class="img-edit">
+                        <input type="file" name="foto" id="btn-foto" class="btn-over"/>
                     </div>
 
                     <div class="names">
-                        <h1 class="nome-perfil">
-                            <img src="/images/global/edit.svg" class="img-edit-2">
-                            Nome Perfil
-                            <img src="/images/global/info.svg" class="img-info">
-                        </h1>
-                        <h2 class="nome-usuario">
-                            <img src="/images/global/edit.svg" class="img-edit-2">
-                            nome_usuario
-                        </h2>
+                        <h1 class="nome-perfil">Nome Perfil</h1>
+                        <h2 class="nome-usuario">nome_usuario</h2>
                     </div>
                 </div>
 
-                <img src="/images/global/edit.svg" class="img-edit-3">
-                <img src="/images/global/info.svg" class="img-info-2">
-                <div>
+                <div class="sobre-area">
                     <div class="title">
-                        <h2 class="title-2">Sobre <img src="/images/global/edit.svg" alt="edit"></h2>            
+                        <h2 class="title-2">Sobre <img src="/images/global/edit.svg" alt="edit"></h2>  
+                        <img src="/images/global/info.svg" class="img-info-2">          
                     </div>
                     <div class="col-sm-12 mb-3">
                         <textarea type="text" class="form-control text-area" name="sobre"></textarea>
@@ -139,7 +132,7 @@
                 </div>
             </div>
             
-            <div class="row mb-3">
+            <div class="row mb-3 dados">
                     <label for="role" class="col-sm-2 form-label form-label-interview">Cadastro de Pessoa</label>
                     <div class="col-sm-10">
                         <select class="col form-select" name="cadastro-pessoa">
@@ -151,7 +144,7 @@
                     </div>
                 </div>
 
-                <div class="row mb-3">
+                <div class="row mb-3 dados">
                     <label for="role" class="col-sm-2 form-label form-label-interview">Tipo Pessoa</label>
                     <div class="col-sm-10">
                         <select class="col form-select" name="tipo_pessoa">
@@ -173,7 +166,7 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
+            <div class="row mb-3 dados">
                     <label for="role" class="col-sm-2 form-label form-label-interview">Status</label>
                     <div class="col-sm-10">
                         <select class="col form-select" name="c_status">
@@ -425,8 +418,11 @@
 
                 <div class="col col-btns">
                     <div class="buttons">
-                        <button type="button" class="btn btn-outline-primary mb-2">
-                            <input type="file" name="curriculo"/>
+                        <button type="button" class="btn btn-outline-primary mb-2" onClick="acionarBtn2()">
+                            <img src="/images/custom-perfil/upload.svg">
+                            Upload</button>
+
+                            <input type="file" name="curriculo" class="btn-over" id="btn-curriculo"/>
                     </div>
                     <div class="buttons">
                         <button type="button" class="btn btn-outline-primary mb-2">
@@ -463,6 +459,7 @@
         crossorigin="anonymous"></script>
 
     <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="/scripts/candidate-scripts/editar-perfil.js"></script>
 </body>
 
 </html>
