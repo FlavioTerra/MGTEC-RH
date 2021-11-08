@@ -1,27 +1,54 @@
 @import url(./bootstrap.min.css);
 @import url(./global.css);
 
+.digitar-titulo{
+    max-width: 260px;
+}
+
 .text-area {
     height: 5rem;
     margin-left: 0;
+    resize: none;
+    max-width: 516px;
+}
+
+.titulo{
+    height: 3rem;
 }
 
 .form-label-t-test {
-    width: 41vw;
+    width: 126px;
+    padding-right: 0;
+}
+
+.title{
+    margin-bottom: 0;
+}
+
+.title img{
+    width: 15px;
+    cursor: pointer;
+}
+
+.letra{
+    color: #7a2cb6;
+    margin-left: 3px;
+    margin-bottom: 2px;
 }
 
 .questions textarea {
-    margin: 1rem 0 0.5rem 1rem;
+    margin: 0 0 10px 0;
 }
 
 .questions textarea + label {
     font-size: 15px;
-    margin-left: 1rem;
+    margin-left: 3px;
 }
 
 .btn-area-form{
     margin-top: 0.5rem;
     margin-bottom: 3.5vh;
+    margin-left: 3px;
 }
 
 .buttons {
@@ -40,7 +67,5 @@ input[type="radio"] {
 }
 
 @media (max-width: 576px) {
-    .questions textarea {
-        width: 95%;
-    }
+    
 }

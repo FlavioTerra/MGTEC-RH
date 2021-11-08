@@ -7,7 +7,6 @@
         <title>Atribuir Teste</title>
 
         <!-- Bootstrap / CSS -->
-        <!--  <link rel="stylesheet" href="../../../../Public/styles/custom-atribuir-realizar-teste.css"> -->
         <link rel="stylesheet" href="/styles/custom-atribuir-realizar-teste.css">
 
     </head>
@@ -17,11 +16,9 @@
         <nav class="navbar navbar-expand-lg navbar-dark" id="header">
             <div class="container-fluid background-navbar">
                 
-                <!-- <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a> -->
                 <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <!-- <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button"> -->
                     <img src="/images/global/navbar-button.svg" class="navbar-button">
                 </button>
 
@@ -43,13 +40,13 @@
         <form action="/cadastrar_teste" method="post">
             <div class="container">
                 <div class="title">
-                    <h1 class="title-1">Atribuir Teste</h1>
+                    <h1 class="title-1 mb-4">Atribuir Teste</h1>
                 </div>
 
                 <div class="row mb-3">
                     <label for="test_Title" class="col-sm-2 form-label form-label-t-test">Título do Teste</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="test_Title">
+                        <input type="text" class="form-control digitar-titulo" name="test_Title">
                     </div>
                 </div>
 
@@ -76,8 +73,8 @@
         
                         <div class="row mb-3">
                             <label class="form-label">Título da Pergunta</label>
-                            <div class="col-sm-12 mb-3">
-                                <textarea type="text" class="form-control text-area" name="question_title_1"></textarea>
+                            <div class="col-sm-12">
+                                <textarea type="text" class="form-control text-area titulo" name="question_title_1"></textarea>
                             </div>
                         </div>
                         
@@ -85,23 +82,28 @@
                             <h2 class="title-2">Respostas</h2>            
                         </div>
 
-                        <div>
+                        <div class="mb-3">
+                            <label class="letra">A)</label>
                             <textarea type="text" class="form-control text-area" name="quest_1_answer_1"></textarea>
                             <label>Resposta Correta:</label>
                             <label class="switch">
                                 <input type="checkbox" name="check_quest_1_answer_1">
                                 <span class="slider round"></span>
                             </label>
-                        </div>                        
-                        <div>
+                        </div> 
+
+                        <div class="mb-3">
+                            <label class="letra">B)</label>
                             <textarea type="text" class="form-control text-area" name="quest_1_answer_2"></textarea>
                             <label>Resposta Correta: </label>
                             <label class="switch">
                                 <input type="checkbox" name="check_quest_1_answer_2">
                                 <span class="slider round"></span>
                             </label>
-                        </div>                    
-                        <div>
+                        </div> 
+
+                        <div class="mb-3">
+                            <label class="letra">C)</label>
                             <textarea type="text" class="form-control text-area" name="quest_1_answer_3"></textarea>
                             <label>Resposta Correta: </label>
                             <label class="switch">
@@ -109,7 +111,9 @@
                                 <span class="slider round"></span>
                             </label>
                         </div>
-                        <div>
+
+                        <div class="mb-3">
+                            <label class="letra">D)</label>
                             <textarea type="text" class="form-control text-area" name="quest_1_answer_4"></textarea>
                             <label>Resposta Correta: </label>
                             <label class="switch">
@@ -119,8 +123,6 @@
                         </div>
                     </div>  
                     <div id="btn-area-form-0" class="btn-area-form">
-                        <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addPergunta()">
-                        <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removePergunta()"> -->
                         <img src="/images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addPergunta()">
                         <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removePergunta()">
                     </div>
@@ -134,9 +136,6 @@
 
         <!--Footer-->
         <footer class="footer">
-            <!-- <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
-            <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-            <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick=""> -->
             <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
             <img src="/images/global/facebook.svg" class="img-footer" onclick="">
             <img src="/images/global/email.svg" class="img-footer" onclick="">
