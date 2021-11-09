@@ -9,19 +9,7 @@
         public function index() {  
         }
 
-        // Processo Seletivo
         public function processoSeletivo() {
-            $this->render('processo-seletivo');
-        }
-
-        public function gerarProcessoSeletivo() {
-
-            $departametos = Container::getModel('InformacoesGlobais');
-            $this->view->departamentos = $departametos->getDepartamentos();
-
-            $cargos = Container::getModel('InformacoesGlobais');
-            $this->view->cargos = $cargos->getCargos();
-
             $usuarios = Container::getModel('InformacoesGlobais');
             $this->view->usuarios = $usuarios->getUsuarios();
 

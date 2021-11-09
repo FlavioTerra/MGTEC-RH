@@ -1,5 +1,10 @@
 <?php
 
+    // 1 => Usuario comum
+    // 2 => Usuario funcionario
+    // 3 => Usuario gestor
+    // 4 => Usuario chefe rh
+
     namespace App\Models;
 
     use MF\Model\Model;
@@ -37,8 +42,10 @@
             $query = 'select id_user, 
                             login_user, 
                             situacao_user,
+                            tipo_user,
                             nome
-                        from tb_usuario';
+                        from tb_usuario
+                        where tipo_user="3";';
             
             $stmt = $this->db->prepare($query);
 
