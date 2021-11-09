@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
@@ -43,9 +42,9 @@
     if (isset($_GET['entrevistaMarcar'])) {
     ?>
 
-        <script>
-            alert("Entrevista Salva com Sucesso!");
-        </script>
+    <script>
+        alert("Entrevista Salva com Sucesso!");
+    </script>
 
     <?php
     } 
@@ -57,75 +56,74 @@
             </div>
 
             <!--Pesquisa-->
-            <div class="col-sm-10">
-                    <label for="sdate" class="col-sm-2 form-label form-label">TÌtulo</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="titulo">
-                        </div>
-                </div>
+            <div class="row">
+                <label class="label1">T√≠tulo</label>
 
-                <div class="col-sm-10">
-                    <label for="sdate" class="col-sm-2 form-label form-label">DescriÁ„o</label>
-                        <div class="col-sm-10">
-                        <textarea type="text" class="form-control" id="textarea" rows="3" name="desc"></textarea>
-                        </div>
-                </div>
+                <input type="text" class="form-control" name="titulo">
+            </div>
 
-            <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Nome do Candidato</label>
-                <div class="col-sm-10">
-                    <select class="col form-select" aria-label="nome-candidato" name="nome-candidato">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
-                </div>
+            <div class="row">
+                <label class="label1">Descri√ß√£o</label>
 
-                <label for="colFormLabel" class="col-sm-2 form-label">Respons√°vel</label>
-                <div class="col-sm-10">
-                    <select class="col form-select" aria-label="resp" name="resp">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
-                </div>
+                <textarea type="text" class="form-control" id="textarea" rows="3" name="desc"></textarea>
+            </div>
 
-                <label for="colFormLabel" class="col-sm-2 form-label">Processo Seletivo</label>
-                <div class="col-sm-10">
-                    <select class="col form-select" aria-label="processo-seletivo" name="processo-seletivo">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
-                    </select>
-                </div>
+            <div class="row">
+                <label for="sdate" class="label1">Data</label>
 
-                <div class="col-sm-10">
-                    <label for="sdate" class="col-sm-2 form-label form-label">Data</label>
-                        <div class="col-sm-10">
-                            <input type="date" class="form-control" name="date">
-                        </div>
-                </div>
+                <input type="date" class="form-control" name="date">
+            </div>
 
-                <div class="col-sm-10">
-                    <label for="hora" class="col-sm-2 form-label form-label">Hora</label>
-                        <div class="col-sm-10">
-                            <input type="time" class="form-control" name="hora">
-                        </div>
-                </div>
+            <div class="row">
+                <label for="hora" class="label1">Hora</label>
+
+                <input type="time" class="form-control" name="hora">
+            </div>
+
+            <div class="row">
+                <label class="label2">Candidato</label>
+
+                <select class="form-select" aria-label="nome-candidato" name="nome-candidato">
+                    <option selected></option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label class="label2">Respons√°vel</label>
+
+                <select class="form-select" aria-label="resp" name="resp">
+                    <option selected></option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
+            </div>
+
+
+            <div class="row">
+                <label class="label2">Processo Seletivo</label>
+
+                <select class="form-select" aria-label="processo-seletivo" name="processo-seletivo">
+                    <option selected></option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
             </div>
 
             <hr>
 
             <div class="buttons">
-                <button type="submit" class="btn btn-outline-primary mb-5">Marcar</button>
                 <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                <button type="submit" class="btn btn-outline-primary mb-5">Marcar</button>
             </div>
-        </form>
+        </div>
+    </form>
 
-            
+
 
 
     <!--Footer-->
