@@ -183,7 +183,7 @@ select[readonly], input[readonly], textarea[readonly]{
 
 /*footer*/
 .footer{
-    display: absolute;
+    display: flex;
     justify-content: space-around;
     align-items: center;
     height: 40px;
@@ -337,7 +337,7 @@ input:checked + .slider:before {
 
     .label-footer{
         position: absolute;
-        margin-left: 65vw;
+        margin-left: 45vw;
     }
 }
 
