@@ -74,7 +74,11 @@
     background-image: url(../images/custom-requisicao-de-vaga/depto-financas.jpeg);
 }
 
-
+.footer{
+    position: absolute;
+    width: 100%;
+    bottom: -1px;
+}
 
 /*separação*/
 hr{
@@ -120,9 +124,4 @@ hr{
     .footer{
         margin-top: 70px;
     }
-}
-
-.footer{
-    position: absolute;
-    width: 100%
 }
