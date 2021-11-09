@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Processo Seletivo</title>
+    <title>Visualizar Processo Seletivo</title>
 
     <!-- Bootstrap / CSS -->
     <!--<link rel="stylesheet" href="../../../../Public/styles/custom-cadastrar-processo-seletivo.css">-->
     <link rel="stylesheet" href="/styles/custom-cadastrar-processo-seletivo.css">
+    <link rel="stylesheet" href="/styles/custom-vagas-candidatadas.css">
     
 </head>
 
@@ -78,6 +79,191 @@
                 <img src="/images/global/info.svg">
             </div>
 
+            <?php 
+                $status = $this->view->detalhesProcessoSeletivo->status_proc;
+            ?>
+
+            <div class="row mb-3 vagas">
+                <!--6%-->
+                    <div class="title">
+                        <h2 class="title-2">Status</h2>
+                    </div>
+
+                <div class="mb-3 vaga" id="1-etapa">
+                    <div class="vaga-bar">
+                        <div class="vaga-per-6" per="6%"></div>
+                    </div>
+
+                    <div class="mb-3 texts">
+                        <div class="text-box">
+                            <span>Aberto</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Divulgado</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Testes</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Entrevistas</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Finalizado</span>
+                            <img src="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--24%-->
+                <div class="mb-3 vaga" id="2-etapa">
+                    <div class="vaga-bar">
+                        <div class="vaga-per-24" per="24%"></div>
+                    </div>
+
+                    <div class="mb-3 texts">
+                        <div class="text-box">
+                            <span>Aberto</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Divulgado</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Testes</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Entrevistas</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Finalizado</span>
+                            <img src="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--59%-->
+                <div class="mb-3 vaga" id="3-etapa">
+                    <div class="vaga-bar">
+                        <div class="vaga-per-59" per="59%"></div>
+                    </div>
+
+                    <div class="mb-3 texts">
+                        <div class="text-box">
+                            <span>Aberto</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Divulgado</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Testes</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Entrevistas</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Finalizado</span>
+                            <img src="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--77%-->
+                <div class="vaga" id="4-etapa">
+                    <div class="vaga-bar">
+                        <div class="vaga-per-77" per="77%"></div>
+                    </div>
+
+                    <div class="mb-3 texts">
+                        <div class="text-box">
+                            <span>Aberto</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Divulgado</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Testes</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Entrevistas</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Finalizado</span>
+                            <img src="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--100%-->
+                <div class="vaga" id="5-etapa">
+                    <div class="vaga-bar">
+                        <div class="vaga-per-100" per="100%"></div>
+                    </div>
+
+                    <div class="mb-3 texts">
+                        <div class="text-box">
+                            <span>Aberto</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Divulgado</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Testes</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Entrevistas</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Finalizado</span>
+                            <img src="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>                    
+
             <div class="row mb-3">
                 <label for="start_date" class="col-sm-2 form-label form-label">Data de Início</label>
                 <div class="col-sm-10">
@@ -130,3 +316,24 @@
 </body>
 
 </html>
+
+<script language="javascript">
+                var status = "<?php print $status; ?>";
+                
+                document.getElementById("1-etapa").style.display = "none";
+                document.getElementById('2-etapa').style.display = 'none';
+                document.getElementById('3-etapa').style.display = 'none';
+                document.getElementById('4-etapa').style.display = 'none';
+                document.getElementById('5-etapa').style.display = 'none';
+
+                if(status == "Aberto")
+                    document.getElementById('1-etapa').style.display = 'block'; 
+                else if(status == 'Divulgado')
+                    document.getElementById('2-etapa').style.display = 'block'; 
+                else if(status == 'Testes')
+                    document.getElementById('3-etapa').style.display = 'block'; 
+                else if(status == 'Entrevistas')
+                    document.getElementById('4-etapa').style.display = 'block'; 
+                else
+                    document.getElementById('5-etapa').style.display = 'block'; 
+</script>

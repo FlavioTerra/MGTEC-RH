@@ -33,6 +33,7 @@
                                            titulo_vaga,
                                            num_vagas,
                                            vinculo_emp,
+                                           status_vaga,
                                            data_solic,
                                            salario,
                                            funcao,
@@ -45,6 +46,7 @@
                                            :titulo_vaga,
                                            :num_vagas,
                                            :vinculo_emp,
+                                           "Aberta",
                                            :data_solic,
                                            :salario,
                                            :funcao,
@@ -57,6 +59,7 @@
             $stmt->bindValue(':num_vagas',$this->__get('num_vagas'));
             $stmt->bindValue(':vinculo_emp',$this->__get('vinculo_emp'));
             $stmt->bindValue(':data_solic',$this->__get('data_solic'));
+            $stmt->bindValue(':status_vaga',$this->__get('status_vaga'));
             $stmt->bindValue(':salario',$this->__get('salario'));
             $stmt->bindValue(':funcao',$this->__get('funcao'));
             $stmt->bindValue(':hora_inicio',$this->__get('hora_inicio'));

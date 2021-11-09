@@ -11,7 +11,7 @@
     // 1 => Usuario comum
     // 2 => Usuario funcionario
     // 3 => Usuario gestor
-    // 4 => Usuario chefe
+    // 4 => Usuario chefe rh
 
     class GeneralScreensController extends Action {
         public function index() {  
