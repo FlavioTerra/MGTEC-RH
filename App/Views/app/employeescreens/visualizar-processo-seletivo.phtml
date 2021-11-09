@@ -318,22 +318,22 @@
 </html>
 
 <script language="javascript">
-                var status = "<?php print $status; ?>";
+    var status = "<?php print $status; ?>";
                 
-                document.getElementById("1-etapa").style.display = "none";
-                document.getElementById('2-etapa').style.display = 'none';
-                document.getElementById('3-etapa').style.display = 'none';
-                document.getElementById('4-etapa').style.display = 'none';
-                document.getElementById('5-etapa').style.display = 'none';
+    document.getElementById("1-etapa").style.display = "none";
+    document.getElementById('2-etapa').style.display = 'none';
+    document.getElementById('3-etapa').style.display = 'none';
+    document.getElementById('4-etapa').style.display = 'none';
+    document.getElementById('5-etapa').style.display = 'none';
 
-                if(status == "Aberto")
-                    document.getElementById('1-etapa').style.display = 'block'; 
-                else if(status == 'Divulgado')
-                    document.getElementById('2-etapa').style.display = 'block'; 
-                else if(status == 'Testes')
-                    document.getElementById('3-etapa').style.display = 'block'; 
-                else if(status == 'Entrevistas')
-                    document.getElementById('4-etapa').style.display = 'block'; 
-                else
-                    document.getElementById('5-etapa').style.display = 'block'; 
+    if(status == "Aberto")
+        document.getElementById('1-etapa').style.display = 'block'; 
+    else if(status == 'Divulgado')
+        document.getElementById('2-etapa').style.display = 'block'; 
+    else if(status == 'Testes')
+        document.getElementById('3-etapa').style.display = 'block'; 
+    else if(status == 'Entrevistas')
+        document.getElementById('4-etapa').style.display = 'block'; 
+    else
+        document.getElementById('5-etapa').style.display = 'block'; 
 </script>
