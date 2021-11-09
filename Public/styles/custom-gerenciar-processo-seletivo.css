@@ -86,7 +86,19 @@ hr{
     .footer{
         margin-top: 30px;   
     }
+
+    #btnGerenciar{
+        display: flex;
+        justify-content: left;
+        width: 100%;
+        
+    }
+    
+    #btnCadastrar{
+        margin-right: 10px;
+    }
 }
+
 @media screen and (min-width:576px){
     /*Forms*/
     .form-select{
@@ -106,6 +118,14 @@ hr{
     .card-text{
         font-size: 15px;
     }
+
+    #btnGerenciar{
+        display: flex;
+        justify-content: right;
+        width: 100%;
+        padding-right: 15px;
+    }
+    
 }
 
 @media screen and (min-width:700px){
@@ -120,9 +140,4 @@ hr{
     .footer{
         margin-top: 70px;
     }
-}
-
-.footer{
-    position: absolute;
-    width: 100%
 }

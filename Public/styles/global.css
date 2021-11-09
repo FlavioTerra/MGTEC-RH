@@ -4,6 +4,8 @@
 html body{
     background-color: #ECEDF0;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
 }
 
 /*header*/
@@ -181,12 +183,14 @@ select[readonly], input[readonly], textarea[readonly]{
 
 /*footer*/
 .footer{
-    display: flex;
+    display: absolute;
     justify-content: space-around;
     align-items: center;
     height: 40px;
     background-color: #7a18c5;
     background: linear-gradient(to right, rgb(122, 24, 197) 50%, rgb(138, 62, 196));
+    position:static;
+    bottom: -1px;
 }
 
 .img-footer{
