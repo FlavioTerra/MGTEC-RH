@@ -8,13 +8,35 @@
 
 div .text-area {
     height: 5rem;
-    width: 93%;
+    width: 95%;
+    max-width: 490px;
     margin-left: 0.6rem;
+    resize: none;
 }
 
 .buttons {
     gap: 0.5rem;
     padding: 0.7rem;
+}
+
+.form{
+    max-width: 180px;
+}
+
+.form-label{
+    width: 170px;
+}
+
+.info{
+    width: 12px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+@media screen and (min-width: 576px){
+    .form-label{
+        margin-right: 0;
+    }
 }
 
 @media (max-width: 576px) {
