@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap / CSS -->
+    <link rel="stylesheet" href="../../../../Public/styles/custom-login.css">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+        <div class="container-fluid background-navbar">
+            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Gestor</a>
+                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Requisições</a>
+                    <a class="nav-link" href="#">Vagas</a>
+                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Suporte</a>
+                    <a class="nav-link" href="#">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--body-->
+    <form action="requisitante.php" method="post">
+        <div class="container">
+            <div class="login-content">
+                <h1>Login</h1>
+
+                <div class="textbox">
+                    <img src="../../../../Public/images/login/user.svg">
+                    <input type="text" placeholder="Nome de Usuário/E-mail" name="login">
+                </div>
+
+                <div class="textbox">
+                    <img src="../../../../Public/images/login/lock.svg">
+                    <input type="password" placeholder="Senha" name="login" id="password">
+                    <img src="../../../../Public/images/login/eye-off.svg" id="eye-img" class="eye">
+                </div>
+
+                <div class="trocar-senha">
+                    <a class="btn-link" href="./recuperar-senha-security.html">
+                        <span class="txt-trocar-senha">Esqueci minha senha</span>
+                    </a>
+                </div>
+
+                <a class="btn-link" href="#">
+                    <div class="effect">
+                        <span>Entrar</span>
+                        <input class="btn" type="button" disabled>
+                    </div>
+                </a>
+
+                <a class="btn-link" href="./registro.html">
+                    <div class="effect">
+                        <span>Registrar</span>
+                        <input class="btn" type="button" disabled>
+                    </div>
+                </a>
+
+                <a class="btn-link" href="#">
+                    <div class="effect">
+                        <span>Voltar</span>
+                        <input class="btn" type="button" disabled>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </form>
+
+    <!--Footer-->
+    <footer class="footer">
+        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <label class="label-footer">+55 (15) 5555-5555</label>
+    </footer>
+
+    <!--Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+    <script src="../../../../Public/scripts/general-scripts/login.js"></script>
+</body>
+
+</html>

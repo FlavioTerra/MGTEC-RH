@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap / CSS -->
+    <link rel="stylesheet" href="../../../../Public/styles/custom-editar-processo-seletivo.css">
+
+    <title>Editar Processo Seletivo</title>
+</head>
+
+<body>
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+        <div class="container-fluid background-navbar">
+            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Gestor</a>
+                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Requisições</a>
+                    <a class="nav-link" href="#">Vagas</a>
+                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Suporte</a>
+                    <a class="nav-link" href="#">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Body-->
+    <div class="principal" id="body">
+
+        <div class="title">
+            <h1 class="title-1">Editar Processo Seletivo</h1>
+        </div>
+        <br>
+
+        <h3 class="title-2"> Dados de Cadastro</h3>
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Teste</label>
+            <div class="col-sm-10">
+                <select class="col-sm-10 form-select" aria-label="teste" name="teste">
+                    <option selected>Sim</option>
+                    <option value="1">Não</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Entrevista</label>
+            <div class="col-sm-10">
+                <select class="col-sm-10 form-select" aria-label="entrevista"
+                 name="entrevista">
+                    <option selected>Sim</option>
+                    <option value="1">Não</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Responsável</label>
+            <div class="col-sm-10">
+                <input name="Responsavel" type="text" class="input-1"/>
+            </div>
+        </div>
+        <br>
+
+        <h3 class="title-2">Dados de Processo</h3>
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Departamento</label>
+            <div class="col-sm-10">
+                <select class="col-sm-10 form-select" aria-label="departamento"
+                 name="departamento">
+                    <option selected>#</option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Cargo</label>
+            <div class="col-sm-10">
+                <select class="col-sm-10 form-select" aria-label="cargo" name="cargo">
+                    <option selected>#</option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Data de Início</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control edit" id="colFormLabel"
+                 placeholder="" name="data-de-inicio">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Data de Término</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control edit" id="colFormLabel"
+                 placeholder="" name="data-de-termino">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Regra de Classificação</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control cl-exp-anos-experiencia edit"
+                 id="colFormLabel" placeholder="00" name="regra de classificacao">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="colFormLabel" class="label">Descrição</label>
+            <div class="col-sm-10">
+                <textarea name="Descr" cols="50" rows="8" class="textarea" id="Descr"
+                 input="" value=""></textarea>
+            </div>
+        </div>
+
+        <input name="AtrTeste" type="button" value="Atribuir Teste"
+        class="btn btn-outline-primary mb-5 atr">
+
+        <center>
+            <input name="Salvar" type="button" value="Salvar"
+             class="btn btn-outline-primary mb-5 verde">
+                
+            <input name="Excluir" type="button" value="Excluir"
+             class="btn btn-outline-primary mb-5 vermelho">
+        </center>
+
+        <center>
+            <a href="./gerenciar-processo-seletivo.html"><input name="Voltar"
+             type="button" value="Voltar" class="btn btn-outline-primary mb-5"></a>
+        </center>
+
+        </div>
+    </form>
+
+        <!--Footer-->
+        <footer class="footer">
+            <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
+            <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
+            <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+            <label class="label-footer">+55 (15) 5555-5555</label>
+        </footer>
+
+        <!--Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
