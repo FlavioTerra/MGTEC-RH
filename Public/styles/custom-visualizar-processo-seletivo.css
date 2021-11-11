@@ -1,29 +1,28 @@
-@import url(./bootstrap.min.css);
-@import url(./global.css);
+@import url(./custom-cadastrar-processo-seletivo.css);
+@import url(./custom-vagas-candidatadas.css);
 
-/*tittle*/
 .title{
-    width: 90%;
-    margin-left: 15mm;
+    margin-bottom: 15px;
 }
 
-.title-2{
-    margin-left: 15mm;
+.form-label{
+    width: 170px;
 }
 
-/*input e label*/
-.input-1{
-    height: 25px;
-    font-size: 15px;
-    padding: 0 2.25rem 0 0.75rem;
-    color: #212529;
+.form-control{
+    max-width: 180px;
 }
 
-.mb-2{
-    margin-left: 15mm;
+div .text-area{
+    max-width: 350px;
 }
 
-/*buttons*/
-.btn{
-    margin-left: 15mm;
+.vagas{
+    max-width: 720px;
+}
+
+@media screen and (min-width: 576px){
+    .form-label{
+        margin-right: 0;
+    }
 }
