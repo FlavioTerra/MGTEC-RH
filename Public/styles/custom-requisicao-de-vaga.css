@@ -32,17 +32,54 @@
     margin-bottom: 3.5vh;
 }
 
+.form-select{
+    margin-left: 0;
+}
+
+.form-label{
+    width: 180px;
+}
+
+.form1{
+    max-width: 180px;
+}
+
+.form2, .input-1, .input-2{
+    max-width: 85px;
+}
+
+.form3{
+    max-width: 249px;
+}
+
+.form4{
+    max-width: 519px;
+}
+
+textarea{
+    max-width: 516px;
+}
+
+.cl-exp-anos-experiencia{
+    margin-left: -20px;
+}
+
 @media screen and (min-width:576px){
     /*forms*/
     .dual{
         margin-left: 0;
     }
 
-    .number .form-control{
-        margin-left: -1px;
-    }
-
     .add, .add-form-select{
         margin-top: 1vh;
     }
+
+    .form-select{
+        margin-left: 10px;
+    }
+
+    .form-label{
+        margin-right: 0;
+    }
+    
 }
