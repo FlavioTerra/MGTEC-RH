@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <!-- <link rel="stylesheet" href="../../../../Public/styles/custom-visualizar-requisicoes-de-vagas.css"> -->
-    <link rel="stylesheet" href="styles/custom-visualizar-requisicoes-de-vagas.css">
-    <link rel="stylesheet" href="/styles/custom-vagas-candidatadas.css">
+    <link rel="stylesheet" href="/styles/custom-visualizar-requisicoes-de-vagas.css">
     <title>Visualizar Requisições de Vagas</title>
 </head>
 
@@ -17,12 +15,12 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <!-- <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a> -->
+
             <a class="navbar-brand" href="#"><img src="images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <!-- <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button"> -->
+
                 <img src="images/global/navbar-button.svg" class="navbar-button">
             </button>
 
@@ -52,43 +50,45 @@
             <!--Dados de Solicitaçao-->
             <div class="title">
                 <h2 class="title-2">Dados de Solicitação</h2>
-                <!-- <img src="../../../../Public/images/global/info.svg"> -->
+
                 <img src="images/global/info.svg">
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label title-interview">Título da Vaga</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="titulo_vaga" value="<?= $this->view->detalhesVaga->titulo_vaga ?>" readonly>
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
+                        name="titulo_vaga" value="<?= $this->view->detalhesVaga->titulo_vaga ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="requisitante" value="<?= $this->view->detalhesVaga->nome ?>" readonly>
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
+                        name="requisitante" value="<?= $this->view->detalhesVaga->nome ?>">
                 </div>
             </div>
 
-            <!-- <div class="row mb-3">
+            <!--<div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="responsável">
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
+                        name="responsável">
                 </div>
-            </div> -->
+            </div>-->
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="data-de-solicitacao" value="<?= $this->view->detalhesVaga->data_solic ?>" readonly>
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
+                        name="data-de-solicitacao" value="<?= $this->view->detalhesVaga->data_solic ?>">
                 </div>
             </div>
 
             <!--Dados de Vaga-->
             <div class="title">
                 <h2 class="title-2">Dados de Vaga</h2>
-                <!-- <img src="../../../../Public/images/global/info.svg"> -->
                 <img src="images/global/info.svg">
             </div>
 
@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="text-box">
-                            <span>Em An�lise</span>
+                            <span>Em An�lise</span>
                             <img src="">
                         </div>
 
@@ -274,19 +274,21 @@
                     </div>
 
                 </div>
-            </div> 
+            </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cargo" value="<?= $this->view->detalhesVaga->nome_cargo ?>" readonly>
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder="" name="cargo"
+                        value="<?= $this->view->detalhesVaga->nome_cargo ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="departamento" value="<?= $this->view->detalhesVaga->nome_departamento ?>" readonly>
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
+                        name="departamento" value="<?= $this->view->detalhesVaga->nome_departamento ?>">
                 </div>
             </div>
 
@@ -302,49 +304,51 @@
                             $vinculo = 'Estágio';
                         }
                     ?>
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="vinculo_empregaticio" value="<?= $vinculo ?>" readonly>
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
+                        name="vinculo_empregaticio" value="<?= $vinculo ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control edit" id="colFormLabel" placeholder="" name="salario"
-                        min="0" value="<?= $this->view->detalhesVaga->salario ?>" readonly>
+                    <input type="number" class="form-control edit form1" id="colFormLabel" placeholder="" name="salario"
+                        min="0" value="<?= $this->view->detalhesVaga->salario ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
                 <div class="col-sm-10 input-1">
-                    <input type="time" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="hora-trab-inicio" value="<?= $this->view->detalhesVaga->hora_inicio ?>" readonly>
+                    <input type="time" class="form-control edit form2" id="colFormLabel" placeholder=""
+                        name="hora-trab-inicio" value="<?= $this->view->detalhesVaga->hora_inicio ?>">
                 </div>
                 <label for="colFormLabel" class="col label-middle">à</label>
                 <div class="col-sm-10 input-2">
-                    <input type="time" class="form-control edit" id="colFormLabel" placeholder="" name="hora-trab-fim" value="<?= $this->view->detalhesVaga->hora_fim ?>" readonly>
+                    <input type="time" class="form-control edit form2" id="colFormLabel" placeholder=""
+                        name="hora-trab-fim" value="<?= $this->view->detalhesVaga->hora_fim ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control edit" id="colFormLabel" placeholder=""
-                        name="numero-de-vagas" min="0" value="<?= $this->view->detalhesVaga->num_vagas ?>" readonly>
+                    <input type="number" class="form-control edit form1" id="colFormLabel" placeholder=""
+                        name="numero-de-vagas" min="0" value="<?= $this->view->detalhesVaga->num_vagas ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
                 <div class="col-sm-12 mb-3">
-                    <textarea type="text" class="form-control edit" id="textarea" rows="3" name="funcao" readonly><?= $this->view->detalhesVaga->funcao ?></textarea>
+                    <textarea type="text" class="form-control edit" id="textarea" rows="3"
+                        name="funcao"><?= $this->view->detalhesVaga->funcao ?></textarea>
                 </div>
             </div>
 
             <!--Experiências-->
             <div class="title">
                 <h2 class="title-2">Experiências</h2>
-                <!-- <img src="../../../../Public/images/global/info.svg"> -->
                 <img src="images/global/info.svg">
             </div>
 
@@ -355,14 +359,15 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-exp-formacao edit" aria-label="Formação" name="exp-fomacao-1">
+                    <select class="col form-select cl-exp-formacao edit form3" aria-label="Formação"
+                        name="exp-fomacao-1">
                         <option selected>Formação</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
                         <option value="3">#</option>
                     </select>
 
-                    <select class="col form-select cl-exp-status edit" aria-label="Status" name="exp-status-1">
+                    <select class="col form-select cl-exp-status edit form3" aria-label="Status" name="exp-status-1">
                         <option selected>Status</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
@@ -373,27 +378,20 @@
                 <div class="row">
                     <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
                     <div class="col number">
-                        <input type="number" class="form-control cl-exp-anos-experiencia edit" id="colFormLabel"
+                        <input type="number" class="form-control cl-exp-anos-experiencia edit form2" id="colFormLabel"
                             placeholder="00" name="exp-anos-experiencia-1">
                     </div>
                 </div>
 
                 <div id="btn-area-0" class="btn-area-exp">
-                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addExp()"> -->
-                        <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addExp()">
-                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeExp()"> -->
-                        <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeExp()">
+                    <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addExp()">
+                    <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeExp()">
                 </div>
             </div>
 
             <!--Competências-->
             <div class="title">
                 <h2 class="title-2">Competências</h2>
-                <!-- <img src="../../../../Public/images/global/info.svg"> -->
                 <img src="images/global/info.svg">
             </div>
 
@@ -404,14 +402,14 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-comp-nome edit" aria-label="Nome" name="comp-nome-1">
+                    <select class="col form-select cl-comp-nome edit form3" aria-label="Nome" name="comp-nome-1">
                         <option selected>Nome</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
                         <option value="3">#</option>
                     </select>
 
-                    <select class="col form-select cl-comp-grau edit" aria-label="Grau" name="comp-grau-1">
+                    <select class="col form-select cl-comp-grau edit form3" aria-label="Grau" name="comp-grau-1">
                         <option selected>Grau</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
@@ -420,7 +418,7 @@
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-comp-status edit" aria-label="Status" name="comp-status-1">
+                    <select class="col form-select cl-comp-status edit form4" aria-label="Status" name="comp-status-1">
                         <option selected>Status</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
@@ -429,21 +427,14 @@
                 </div>
 
                 <div id="btn-area-comp-0" class="btn-area-comp">
-                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addComp()"> -->
-                        <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addComp()">
-                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeComp()"> -->
-                        <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeComp()">
+                    <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addComp()">
+                    <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeComp()">
                 </div>
             </div>
 
             <!--Formações-->
             <div class="title">
                 <h2 class="title-2">Formações</h2>
-                <!-- <img src="../../../../Public/images/global/info.svg"> -->
                 <img src="images/global/info.svg">
             </div>
 
@@ -454,14 +445,14 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-form-tipo edit" aria-label="Tipo" name="form-tipo-1">
+                    <select class="col form-select cl-form-tipo edit form3" aria-label="Tipo" name="form-tipo-1">
                         <option selected>Tipo</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
                         <option value="3">#</option>
                     </select>
 
-                    <select class="col form-select cl-form-status edit" aria-label="Status" name="form-status-1">
+                    <select class="col form-select cl-form-status edit form3" aria-label="Status" name="form-status-1">
                         <option selected>Status</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
@@ -470,14 +461,14 @@
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-form-nome edit" aria-label="Nome" name="form-nome-1">
+                    <select class="col form-select cl-form-nome edit form3" aria-label="Nome" name="form-nome-1">
                         <option selected>Nome</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
                         <option value="3">#</option>
                     </select>
 
-                    <select class="col form-select cl-form-grau edit" aria-label="Grau" name="form-grau-1">
+                    <select class="col form-select cl-form-grau edit form3" aria-label="Grau" name="form-grau-1">
                         <option selected>Grau</option>
                         <option value="1">#</option>
                         <option value="2">#</option>
@@ -486,14 +477,8 @@
                 </div>
 
                 <div id="btn-area-form-0" class="btn-area-form">
-                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addForm()"> -->
-                        <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
-                        onclick="addForm()">
-                    <!-- <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeForm()"> -->
-                        <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
-                        onclick="removeForm()">
+                    <img src="images/custom-requisicao-de-vaga/plus.svg" class="btn-form" onclick="addForm()">
+                    <img src="images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removeForm()">
                 </div>
             </div>
 
@@ -502,7 +487,6 @@
             <!--Comentário do Líder-->
             <div class="title">
                 <h2 class="title-2">Comentários</h2>
-                <!-- <img src="../../../../Public/images/global/info.svg"> -->
                 <img src="images/global/info.svg">
             </div>
 
@@ -522,9 +506,6 @@
 
     <!--Footer-->
     <footer class="footer">
-        <!-- <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick=""> -->
         <img src="images/global/linkedin.svg" class="img-footer" onclick="">
         <img src="images/global/facebook.svg" class="img-footer" onclick="">
         <img src="images/global/email.svg" class="img-footer" onclick="">
@@ -536,7 +517,6 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
 
-    <!-- <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script> -->
     <script src="scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
 </body>
 
@@ -551,14 +531,14 @@
     document.getElementById('4-etapa').style.display = 'none';
     document.getElementById('5-etapa').style.display = 'none';
 
-    if(status == 'Aberta')
-        document.getElementById('1-etapa').style.display == 'block'; 
-    else if(status == 'Em An�lise')
-        document.getElementById('2-etapa').style.display == 'block'; 
-    else if(status == 'Aprovada')
-        document.getElementById('3-etapa').style.display == 'block'; 
-    else if(status == 'Vaga Criada')
-        document.getElementById('4-etapa').style.display == 'block'; 
+    if (status == 'Aberta')
+        document.getElementById('1-etapa').style.display == 'block';
+    else if (status == 'Em Análise')
+        document.getElementById('2-etapa').style.display == 'block';
+    else if (status == 'Aprovada')
+        document.getElementById('3-etapa').style.display == 'block';
+    else if (status == 'Vaga Criada')
+        document.getElementById('4-etapa').style.display == 'block';
     else
-        document.getElementById('5-etapa').style.display == 'block'; 
+        document.getElementById('5-etapa').style.display == 'block';
 </script>

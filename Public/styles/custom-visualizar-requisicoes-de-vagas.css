@@ -1,17 +1,16 @@
-@import url(./bootstrap.min.css);
-@import url(./global.css);
+@import url(./custom-vagas-candidatadas.css);
 @import url(./custom-requisicao-de-vaga.css);
 
-/*tittles*/
+/*titles*/
 .title{
     width: 100%;
 }
 
-/*forms*/
+/*forms
 .edit{
     color: #B8B8B8;
 }
 
 .edit:focus{
     color: #212529;
-}
+}*/

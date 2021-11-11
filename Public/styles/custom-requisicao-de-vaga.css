@@ -19,7 +19,7 @@
 
 .exp-label{
     margin-bottom: 0;
-    margin-left: 1px;
+    margin-left: -8px;
 }
 
 .btn-area-exp, .btn-area-comp, .btn-area-form{
@@ -64,6 +64,10 @@ textarea{
     margin-left: -20px;
 }
 
+#Exp .row, #Comp .row, #Form .row{
+    margin-left: 0px;
+}
+
 @media screen and (min-width:576px){
     /*forms*/
     .dual{
@@ -81,5 +85,12 @@ textarea{
     .form-label{
         margin-right: 0;
     }
-    
+
+    #Exp .row, #Comp .row, #Form .row{
+        margin-left: -12px;
+    }
+
+    .exp-label{
+        margin-left: 1px;
+    }
 }
