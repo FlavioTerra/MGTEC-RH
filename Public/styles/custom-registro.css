@@ -7,3 +7,12 @@
 .img-email{
 padding-top: 5px;
 }
+
+.login-content{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.footer{
+    position: relative;
+}

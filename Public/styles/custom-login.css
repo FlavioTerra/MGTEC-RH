@@ -121,6 +121,12 @@ input::-ms-reveal, input::-ms-clear {
     opacity: 1;
 }
 
+.btn:hover{
+    border: 1px solid #7A18C5;
+    background-color: rgb(12, 12, 12);
+    transform: none;
+}
+
 .effect{
     position: relative;
     width: 100%;
