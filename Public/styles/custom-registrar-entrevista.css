@@ -1,29 +1,52 @@
 @import url(./bootstrap.min.css);
 @import url(./global.css);
 
-.form-label-interview {
-    width: 41vw;
+.label{
+    width: 150px;
+}
+
+.form{
+    margin-left: 10px;
+    max-width: 176px;
+}
+
+.form-select{
+    max-width: 176px;
 }
 
 .text-area {
-    height: 5rem;
+    height: 70px;
+    width: 85vw;
+    max-width: 500px;
+    margin-left: 0;
+    resize: none;
 }
 
-.buttons {
-    gap: 10px;
+.title-1{
+    margin-bottom: 15px;
 }
 
 .title {
     width: 100%;
-    gap: 10px
+    margin-bottom: 5px;
+    gap: 7px;
 }
 
-textarea.form-control {
-    margin-left: 0;
+.icon, .icon-click{
+    width: 14px;
 }
 
-@media (max-width: 576px) {
-    .title-interview {
-        width: 44vw;
+.icon-click{
+    cursor: pointer;
+    margin-top: -7px;
+}
+
+.buttons{
+    margin-top: 30px;
+}
+
+@media screen and (min-width:576px){
+    .form-label{
+        margin-right: 0;
     }
 }
