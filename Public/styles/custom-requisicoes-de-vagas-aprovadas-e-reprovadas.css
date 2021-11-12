@@ -2,6 +2,10 @@
 @import url(./global.css);
 
 /*forms*/
+.container{
+    height: 100vh;
+}
+
 .form-select{
     margin-left: 0px;
     margin-right: 11px;
