@@ -59,7 +59,6 @@
             $stmt->bindValue(':num_vagas',$this->__get('num_vagas'));
             $stmt->bindValue(':vinculo_emp',$this->__get('vinculo_emp'));
             $stmt->bindValue(':data_solic',$this->__get('data_solic'));
-            $stmt->bindValue(':status_vaga',$this->__get('status_vaga'));
             $stmt->bindValue(':salario',$this->__get('salario'));
             $stmt->bindValue(':funcao',$this->__get('funcao'));
             $stmt->bindValue(':hora_inicio',$this->__get('hora_inicio'));
@@ -69,14 +68,16 @@
         }
 
         public function getAll() {
-            $query = 'select v.id_vaga,  
+            $query = "select v.id_vaga,  
                              v.titulo_vaga,
                              v.num_vagas,
+                             DATE_FORMAT(v.data_solic, '%d/%m/%Y') as data_solic,
+                             v.status_vaga,
                              c.nome_cargo,
                              d.nome_departamento
                              from tb_vaga v 
                   inner join tb_cargo c        on v.id_cargo = c.id_cargo
-                  inner join tb_departamento d on d.id_departamento = c.id_departamento';
+                  inner join tb_departamento d on d.id_departamento = c.id_departamento";
             
             $stmt = $this->db->prepare($query);
 
@@ -94,6 +95,7 @@
                              v.num_vagas,
                              v.vinculo_emp,
                              DATE_FORMAT(v.data_solic, '%d/%m/%Y') as data_solic,
+                             v.status_vaga,
                              v.salario,
                              v.funcao,
                              v.hora_inicio,

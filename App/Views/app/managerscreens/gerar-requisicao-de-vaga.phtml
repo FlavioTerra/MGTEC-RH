@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-requisicao-de-vaga.css">
+    <link rel="stylesheet" href="/styles/custom-requisicao-de-vaga.css">
 
     <title>Gerar Requisição de Vaga</title>
 
     <script type="text/javascript">
-        let cargos = <? php echo json_encode($this -> view -> cargos) ?>;
+        let cargos = <?php echo json_encode($this -> view -> cargos) ?>;
     </script>
 </head>
 
@@ -29,14 +29,12 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Home</a>
                     <a class="nav-link" href="#">Gestor</a>
-                    <a class="nav-link" href="#">Gerar Vaga</a>
-                    <a class="nav-link" href="#">Requisições</a>
+                    <a class="nav-link active" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Sobre</a>
-                    <a class="nav-link" href="#">Suporte</a>
-                    <a class="nav-link" href="#">Sair</a>
+                    <a class="nav-link" href="#">Processos Seletivos</a>
+                    <a class="nav-link" href="#">Sair</a>                 
                 </div>
             </div>
         </div>
@@ -102,7 +100,7 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
                 <div class="col-sm-10">
-                    <select class="col form-select form1" name="departamento" onchange="atribuitDept(this)">
+                    <select class="col form-select form1" name="cargo">
                         <option selected>--Selecione--</option>
                         <?php foreach ($this->view->cargos as $key => $cargo) { ?>
                         <option value="<?=$cargo->id_cargo?>">

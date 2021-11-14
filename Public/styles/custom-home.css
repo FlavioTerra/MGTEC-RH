@@ -607,11 +607,11 @@ body, html{
     }
 
     #radio3:checked ~ .first{
-        margin-left: -240%;
+        margin-left: -250%;
     }
 
     #radio4:checked ~ .first{
-        margin-left: -350%;
+        margin-left: -370%;
     }
 
     /*btn slide*/
