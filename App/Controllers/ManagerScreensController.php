@@ -47,6 +47,11 @@
         public function gerarVaga() {
             $requisicaoVaga = Container::getModel('GerarVaga');
 
+            echo '<pre>';
+                print_r($_POST);
+            echo '<pre>';
+
+            /*
             $requisicaoVaga->__set('id_cargo' , $_POST['cargo']);
             $requisicaoVaga->__set('titulo_vaga' , $_POST['titulo_vaga']);
             $requisicaoVaga->__set('num_vagas' , $_POST['numero_vagas']);
@@ -59,7 +64,7 @@
             
             $requisicaoVaga->save();
 
-            header('Location:/gerar_requisicao_vaga');
+            header('Location:/gerar_requisicao_vaga');*/
         }
 
         public function visualizarRequisicao() {

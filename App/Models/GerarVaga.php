@@ -26,6 +26,8 @@
         }
         
         public function save(){
+            // id_proc é setado quando é criado o processo seletivo
+            // id_solicitante pe setado pelo usuário em que esta logado
             $query = 'insert into tb_vaga (id_vaga,
                                            id_proc,
                                            id_cargo,
@@ -40,7 +42,7 @@
                                            hora_inicio,
                                            hora_fim)
                                     values (null,
-                                           null,
+                                           null, 
                                            :id_cargo,
                                            null,
                                            :titulo_vaga,
@@ -66,6 +68,24 @@
             $stmt->bindValue(':hora_fim',$this->__get('hora_fim'));
 
             $stmt->execute();
+        }
+
+        public function saveCompetencia() {
+            $query = 'insert into tb_vaga_competencia (id_vaga, 
+                                                       id_competencia) 
+                                               values';
+        }
+        
+        public function saveExperiencia() {
+            $query = 'insert into tb_vaga_experiencia (id_vaga, 
+                                                       id_experiencia) 
+                                               values';
+        }
+        
+        public function saveFormacao() {
+            $query = 'insert into tb_vaga_formacao (id_vaga, 
+                                                    id_formacao) 
+                                            values (';
         }
 
         public function getAll() {
