@@ -8,7 +8,7 @@
     <title>Gerenciar Processo Seletivo</title>
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-gerenciar-processo-seletivo.css">
+    <link rel="stylesheet" href="/styles/custom-gerenciar-processo-seletivo.css">
 
 </head>
 
@@ -26,12 +26,14 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Gestor</a>
-                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Funcionário</a>
+                    <a class="nav-link" href="#">Candidatos</a>
                     <a class="nav-link" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link active" href="#">Processos Seletivos</a>
+                    <a class="nav-link" href="#">Testes</a>
+                    <a class="nav-link" href="#">Entrevistas</a>
                     <a class="nav-link" href="#">Suporte</a>
                     <a class="nav-link" href="#">Sair</a>
                 </div>
@@ -73,8 +75,9 @@
             <label for="colFormLabel" class="col-sm-2 form-label">Organizar por</label>
 
             <select class="col-sm-10 form-select" aria-label="organizar-por" name="organizar-por">
-                <option selected>Maior tempo</option>
-                <option value="1">Menor tempo</option>
+                <option selected>Todas</option>
+                <option value="1">Mais recente</option>
+                <option value="2">Mais antigo</option>
             </select>
         </div>
 
@@ -88,16 +91,25 @@
                     <div class="card-img"></div>
 
                     <div class="card-body">
-                        <!-- <h4 class="card-title">Departamento: <?= $processoSeletivo->nome_departamento ?> </h4> -->
-                        <h5 class="card-title" id="titulo_proc">
+                        <h4 class="card-title">Departamento: RH - Recrutamento e Seleção
+                            <!-- $processoSeletivo->nome_departamento -->
+                        </h4>
+                        <h6 class="card-text">
                             <?= $processoSeletivo->titulo_proc ?>
-                        </h5>
-                        <p class="card-text" id="status">
-                            <?= $processoSeletivo->status_proc ?>
-                        </p>
-                        <p class="card-text" id="descricao">
-                            <?= $processoSeletivo->descricao ?>
-                        </p>
+
+                            <span>
+                                - <?= $processoSeletivo->data_inicio ?>
+                            </span>
+
+                            <span>
+                                à <?= $processoSeletivo->data_termino ?>
+                            </span>
+
+                            <span>
+                                - <?= $processoSeletivo->status_proc ?>
+                            </span>
+                        </h6>
+                        
                     </div>
                 </div>
                 <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
@@ -108,7 +120,7 @@
         </form>
         <?php } ?>
 
-
+        <hr>
 
         <div id="btnGerenciar" class="buttons">
             <button id="btnCadastrar" type="button" class="btn btn-outline-primary mb-5"

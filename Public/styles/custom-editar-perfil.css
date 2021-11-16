@@ -67,6 +67,18 @@
     cursor:auto;
 }
 
+.form-select{
+    max-width: 340px;
+}
+
+#Exp .row, #Comp .row, #Form .row {
+    margin-left: 0px;
+}
+
+.exp-label{
+    margin-left: -10px;
+}
+
 /*parte de baixo*/
 .asterisco, .asterisco-2, .descricao-edicao{
     color: red;
@@ -107,6 +119,10 @@
 
     .row-img-names{
         padding-left: 10px;
+    }
+
+    #Exp .row, #Comp .row, #Form .row {
+        margin-left: -10px;
     }
 }
 

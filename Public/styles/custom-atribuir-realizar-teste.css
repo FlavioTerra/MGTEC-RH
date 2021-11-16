@@ -60,12 +60,42 @@
     gap: 1rem;
 }
 
+.check{
+    margin-right: 5px;
+}
+
+.form-label-t-test{
+    margin-right: 0;
+    width: 125px;
+}
+
+.text-area{
+    max-width: 385px;
+}
+
 input[type="radio"] {
     -ms-transform: scale(1.3);
     -webkit-transform: scale(1.3);
     transform: scale(1.3);
 }
 
-@media (max-width: 576px) {
-    
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
 }
+
+@media (min-width: 1072px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+} 

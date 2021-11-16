@@ -26,12 +26,15 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Gestor</a>
-                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Funcionário</a>
+                    <a class="nav-link" href="#">Candidatos</a>
                     <a class="nav-link" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Processos Seletivos</a>
+                    <a class="nav-link" href="#">Testes</a>
+                    <a class="nav-link" href="#">Entrevistas</a>
+                    <a class="nav-link active" href="#">Relatórios</a>
                     <a class="nav-link" href="#">Suporte</a>
                     <a class="nav-link" href="#">Sair</a>
                 </div>
@@ -40,295 +43,152 @@
     </nav>
 
     <!--Body-->
-    <div class="principal" id="body">
+    <div class="container" id="body">
 
-        <div class="title">
+        <div class="title mb-3">
             <h1 class="title-1">Relatório de Indicadores de Desempenho</h1>
         </div>
 
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Período</label>
-            <div class="col-sm-10">
-                <input type="date" class="form-control edit" id="colFormLabel"
-                 placeholder="" name="data-de-inicio">
-                <center class="a">à</center>
-                <input type="date" class="form-control edit" id="colFormLabel"
-                 placeholder="" name="data-de-termino">
-            </div>
+        <label for="colFormLabel" class="label">Período</label>
+
+        <div class="row mb-3 info-container">
+            <input type="date" class="form-control edit" id="colFormLabel" placeholder="" name="data-de-inicio">
+
+            <span class="span">à</span>
+
+            <input type="date" class="form-control edit" id="colFormLabel" placeholder="" name="data-de-termino">
         </div>
 
         <!--Gráfico de Pizza-->
-        <canvas id="canvas" width="300" height="300"></canvas>
+        <div class="graph-container">
+            <table id="mydata" class="TB">
+                <thead>
+                    <tr>
+                        <th class="Assunto">#</th>
+                        <th class="Val">Valor</th>
+                    </tr>
+                </thead>
 
-        <table id="mydata" class="TB">     
-            <thead>
-                <tr>
-                    <th class="Assunto">#</th>
-                    <th class="Val">Valor</th>
-                </tr>
-            </thead>
+                <tbody>
+                    <tr>
+                        <td class="Assunto">#</td>
+                        <td class="Val">100</td>
+                    </tr>
+                    <tr>
+                        <td class="Assunto">#</td>
+                        <td class="Val">200</td>
+                    </tr>
+                    <tr>
+                        <td class="Assunto">#</td>
+                        <td class="Val">300</td>
+                    </tr>
+                    <tr>
+                        <td class="Assunto">#</td>
+                        <td class="Val">50</td>
+                    </tr>
+                    <tr>
+                        <td class="Assunto">#</td>
+                        <td class="Val">30</td>
+                    </tr>
+                    <tr>
+                        <td class="Assunto">#</td>
+                        <td class="Val">10</td>
+                    </tr>
+                    <tr>
+                        <td class="Assunto">#</td>
+                        <td class="Val">30</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <tbody>
-                <tr>
-                    <td class="Assunto">#</td> 
-                    <td class="Val">100</td>
-                </tr>     
-                <tr>
-                    <td class="Assunto">#</td> 
-                    <td class="Val">200</td> 
-                </tr>     
-                <tr>
-                    <td class="Assunto">#</td> 
-                    <td class="Val">300</td> 
-                </tr>     
-                <tr>
-                    <td class="Assunto">#</td> 
-                    <td class="Val">50</td> 
-                </tr>     
-                <tr>
-                    <td class="Assunto">#</td> 
-                    <td class="Val">30</td> 
-                </tr>     
-                <tr>
-                    <td class="Assunto">#</td> 
-                    <td class="Val">10</td> 
-                </tr>
-                <tr>
-                    <td class="Assunto">#</td> 
-                    <td class="Val">30</td> 
-                </tr>
-            </tbody> 
-        </table>
-        <br><br>
-
-        <!--Gráfico de Barras-->
-        <div class="grafico-barras">
-            <div class="colunas">
-                <div class="escala-y">
-                    <div class="divisao">Qtde</div>
-                    <div class="divisao">Qtde</div>
-                    <div class="divisao">Qtde</div>
-                    <div class="divisao">Qtde</div>
-                    <div class="divisao">Qtde</div>
-                    <div class="divisao">Qtde</div>
-                    <div class="divisao">0</div>
-                </div>
-                <div class="area-grafico">
-                    <div class="area-barras">
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                        <div class="divisao">
-                            <div class="barra verde" style="height: 30%"></div>
-                            <div class="barra azul" style="height: 60%"></div>
-                            <div class="barra vermelha" style="height: 20%"></div>
-                        </div>
-                    </div>
-                    <div class="escala-x">
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                        <div class="divisao">
-                            Mês<br>
-                            Ano
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <canvas id="canvas" width="300" height="300"></canvas>
         </div>
 
-        <table class="TB-Barras">     
-            <tbody>
-                <tr>
-                    <td class="Cor1">#</td> 
-                    <td class="Assunto">#</td>
-                </tr>     
-                <tr>
-                    <td class="Cor2">#</td> 
-                    <td class="Assunto">#</td> 
-                </tr>     
-                <tr>
-                    <td class="Cor3">#</td> 
-                    <td class="Assunto">#</td> 
-                </tr>
-            </tbody> 
-        </table>
+
         <br><br>
 
         <!--Inputs-->
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Processos Iniciados</label>
+
+        <div class="row mb-3">
+            <label for="vacancy" class="col-sm-2 form-label form-label">Processos Iniciados</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly/>
+                <input type="text" class="form-control" id="colFormLabel" value="" name="" readonly>
             </div>
         </div>
 
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Processos Finalizados</label>
+        <div class="row mb-3">
+            <label for="responsible" class="col-sm-2 form-label form-label">Processos Finalizados</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly/>
+                <input type="text" class="form-control" id="colFormLabel" value="" name="" readonly>
             </div>
         </div>
 
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Tempo Médio de Contratação</label>
+        <div class="row mb-3">
+            <label for="responsible" class="col-sm-2 form-label form-label">Tempo Médio de Contratação</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly/>
+                <input type="text" class="form-control" id="colFormLabel" value="" name="" readonly>
             </div>
         </div>
 
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Vagas em Aberto</label>
+        <div class="row mb-3">
+            <label for="responsible" class="col-sm-2 form-label form-label">Vagas em Aberto</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly/>
+                <input type="text" class="form-control" id="colFormLabel" value="" name="" readonly>
             </div>
         </div>
 
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Custo Médio da Vaga</label>
+        <div class="row mb-3">
+            <label for="responsible" class="col-sm-2 form-label form-label">Custo Médio da Vaga</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly/>
+                <input type="text" class="form-control" id="colFormLabel" value="" name="" readonly>
             </div>
         </div>
 
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Custo Total</label>
+        <div class="row mb-3">
+            <label for="responsible" class="col-sm-2 form-label form-label">Custo Total</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly/>
+                <input type="text" class="form-control" id="colFormLabel" value="" name="" readonly>
             </div>
         </div>
 
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Vagas Preenchidas</label>
+        <div class="row mb-3">
+            <label for="responsible" class="col-sm-2 form-label form-label">Vagas Preenchidas</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly/>
+                <input type="text" class="form-control" id="colFormLabel" value="" name="" readonly>
             </div>
         </div>
 
-        <div class="row mb-2">
-            <label for="colFormLabel" class="label">Vagas Não Preenchidas</label>
+        <div class="row mb-3">
+            <label for="responsible" class="col-sm-2 form-label form-label">Vagas Não Preenchidas</label>
             <div class="col-sm-10">
-                <input name="Responsavel" type="text" class="input-1" readonly/>
+                <input type="text" class="form-control" id="colFormLabel" value="" name="" readonly>
             </div>
         </div>
-        <br><br>
-            
-        <center>
-            <a href="./gerar-relatorio.html"><input name="Voltar" type="button"
-            value="Voltar" class="btn btn-outline-primary mb-5"></a>
-        </center>
 
+
+
+        <div class="buttons">
+            <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
         </div>
+
+    </div>
     </form>
 
-        <!--Footer-->
-        <footer class="footer">
-            <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
-            <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-            <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
-            <label class="label-footer">+55 (15) 5555-5555</label>
-        </footer>
+    <!--Footer-->
+    <footer class="footer">
+        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <label class="label-footer">+55 (15) 5555-5555</label>
+    </footer>
 
-        <!--Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
-            crossorigin="anonymous"></script>
+    <!--Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
 
-        <script src="../../../../Public/scripts/employee-scripts/relatorio-indicadores-desempenho.js">
-        </script>
+    <script src="../../../../Public/scripts/employee-scripts/relatorio-indicadores-desempenho.js">
+    </script>
 </body>
 
 </html>

@@ -1,11 +1,2 @@
-@import url(./bootstrap.min.css);
-@import url(./global.css);
 @import url(./custom-relatorio-quadro-de-vagas.css);
 
-.roxo-claro{
-    background-color: #DBCAE8;
-    text-align: center;
-    border-collapse: collapse;
-    border: 2px solid #ffffff;
-    color: white;
-}

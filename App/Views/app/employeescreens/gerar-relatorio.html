@@ -25,12 +25,15 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Gestor</a>
-                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Funcionário</a>
+                    <a class="nav-link" href="#">Candidatos</a>
                     <a class="nav-link" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Processos Seletivos</a>
+                    <a class="nav-link" href="#">Testes</a>
+                    <a class="nav-link" href="#">Entrevistas</a>
+                    <a class="nav-link active" href="#">Relatórios</a>
                     <a class="nav-link" href="#">Suporte</a>
                     <a class="nav-link" href="#">Sair</a>
                 </div>
@@ -39,47 +42,76 @@
     </nav>
 
     <!--Body-->
-    <div class="principal" id="body">
+    <div class="container" id="body">
 
         <div class="title">
             <h1 class="title-1">Relatórios Disponíveis</h1>
         </div>
 
-        <h3 class="title-2">Indicadores de Desempenho</h3>
-        <img src="../../../../Public/images/custom-gerar-relatorio/Gráfico.png" alt=""
-        class="IMG"/>
-        Este relatório mostra as estatísticas dos processos seletivos da empresa em um
-        determinado período de tempo. 
-        <br>
-        <a href="./relatorio-indicadores-desempenho.html"><input name="AcessIndicadores"
-            type="button" value="Acessar" class="BtnInd"></a>
-        <br>
-        <br>
+        <div class="row relatorio mb-2">
+            <div class="col text-relatorio-area">
+                <h3 class="title-2">Indicadores de Desempenho</h3>
 
-        <h3 class="title-2">Recrutamento e Seleção</h3>
-        <img src="../../../../Public/images/custom-gerar-relatorio/Pessoas.png" alt=""
-        class="IMG" />
-        Este relatório mostra os dados de todos os candidatos associados a cada vaga
-        cadastrada no sistema. 
-        <br>
-        <a href="./relatorio-recrutamento-selecao.html"><input name="AcessRecrutamento"
-            type="button" value="Acessar" class="BtnRec"></a>
-        <br>
-        <br>
+                <div class="row description">
+                    <img src="../../../../Public/images/custom-gerar-relatorio/Gráfico.png" alt=""
+                        class="relatorio-img">
 
-        <h3 class="title-2">Quadro de Vagas</h3>
-        <img src="../../../../Public/images/custom-gerar-relatorio/Prancheta.png" alt=""
-        class="IMG" />
-        Este relatório mostra os dados de todas as vagas cadastradas, assim como as
-        vagas que entraram e saíram do sistema em um determinado período de tempo.
-        <br>
-        <a href="./relatorio-quadro-de-vagas.html"><input name="AcessQuadro" type="button"
-            value="Acessar" class="BtnQuad"></a>
-        <br>
-        <br>
+                    <p class="text-relatorio">
+                        Este relatório mostra as estatísticas dos processos seletivos da empresa em um determinado
+                        período de tempo.
+                    </p>
+                </div>
+            </div>
 
-        <center><input name="Voltar" type="button" value="Voltar" class="BtnVoltar">
-        </center>
+            <div class="btn-relatorio">
+                <button type="button" class="col btn btn-outline-primary mb-2 btn-view">Visualizar</button>
+            </div>
+        </div>
+
+        <div class="row relatorio mb-2">
+            <div class="col text-relatorio-area">
+                <h3 class="title-2">Recrutamento e Seleção</h3>
+
+                <div class="row description">
+                    <img src="../../../../Public/images/custom-gerar-relatorio/Pessoas.png" alt=""
+                        class="relatorio-img">
+
+                    <p class="text-relatorio">
+                        Este relatório mostra os dados de todos os candidatos associados a cada vaga cadastrada no
+                        sistema.
+                    </p>
+                </div>
+            </div>
+
+            <div class="btn-relatorio">
+                <button type="button" class="col btn btn-outline-primary mb-2 btn-view">Visualizar</button>
+            </div>
+        </div>
+
+        <div class="row relatorio">
+            <div class="col text-relatorio-area">
+                <h3 class="title-2">Quadro de Vagas</h3>
+
+                <div class="row description">
+                    <img src="../../../../Public/images/custom-gerar-relatorio/Prancheta.png" alt=""
+                        class="relatorio-img">
+
+                    <p class="text-relatorio">
+                        Este relatório mostra os dados de todas as vagas cadastradas, assim como as vagas que entraram e
+                        saíram do sistema em um determinado período de tempo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="btn-relatorio">
+                <button type="button" class="col btn btn-outline-primary mb-2 btn-view">Visualizar</button>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="btn btn-outline-primary mb-5"
+                onclick="window.location.href = 'http://localhost:3000/home'">Voltar</button>
+        </div>
     </div>
 
     <!--Footer-->

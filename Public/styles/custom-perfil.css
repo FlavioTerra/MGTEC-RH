@@ -91,6 +91,30 @@
 }
 
 /*parte de baixo do perfil*/
+#colFormLabel{
+    max-width: 340px;
+}
+
+.number{
+    max-width: 70px;
+}
+
+#Exp #colFormLabel, #Comp #colFormLabel, #Form #colFormLabel{
+    max-width: 248px;
+}
+
+#Exp .row, #Comp .row, #Form .row {
+     margin-left: -10px;
+}
+
+.exp-label{
+    margin-left: 0;
+}
+
+.ajust{
+    margin-left: 0px;
+}
+
 hr{
     color: #7A18C5;
     opacity: 1;

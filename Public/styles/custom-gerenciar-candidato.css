@@ -37,16 +37,6 @@
     height: 35vh;
 }
 
-.card{
-    display: flex;
-    flex-direction: row;
-    max-width: 336px;
-    margin-bottom: 15px;
-    border: 1px solid #7a18c5;
-    border-radius: 0px;
-    padding: 5px;
-}
-
 .card-body{
     margin: 0 0 0 7px;
     width: 85%;
@@ -60,16 +50,6 @@
     padding-left: 10px;
 }
 
-.card-img{
-    width: 85px;
-    height: 75px;
-    border-radius: 50%;
-    border-color: #7a18c5;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .candidato .card .card-img{
     background-image: url(../images/custom-perfil/no-picture.png);
     border: 1px solid #7a18c5;
@@ -78,6 +58,37 @@
 .card-title{
     margin-bottom: 0;
 }
+
+.card {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border: 1px solid #7a18c5;
+    border-radius: 0px;
+    padding: 5px;
+}
+
+.card-title {
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+}
+
+.card-text{
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.card-img{
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+    border-color: #7a18c5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 .title-user{
     margin-bottom: 0;
@@ -110,10 +121,23 @@ hr{
     }
 }
 
-@media screen and (min-width:900px){
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
 
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
 }
 
-@media screen and (min-width:1250px){
+@media (min-width: 1072px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
 
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
 }

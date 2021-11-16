@@ -25,12 +25,14 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Gestor</a>
-                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Funcionário</a>
+                    <a class="nav-link active" href="#">Candidatos</a>
                     <a class="nav-link" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Processos Seletivos</a>
+                    <a class="nav-link" href="#">Testes</a>
+                    <a class="nav-link" href="#">Entrevistas</a>
                     <a class="nav-link" href="#">Suporte</a>
                     <a class="nav-link" href="#">Sair</a>
                 </div>
@@ -63,8 +65,7 @@
 
                 <div class="row buttons">
                     <div class="area-btn">
-                        <button type="button" class="col btn btn-outline-primary mb-2">Liberar Teste</button>
-                        <button type="button" class="btn btn-outline-primary mb-2">Marcar Entrevista</button>
+                        <button type="button" class="col btn btn-outline-primary mb-2">Resultado Teste</button>
                         <button type="button" class="btn btn-outline-primary mb-2">Resultado Entrevista</button>
                     </div>
                 </div>
@@ -82,36 +83,39 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Data de Nascimento</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="colFormLabel" placeholder="" name="data-de-nascimento"
-                        readonly>
+                    <input type="date" class="form-control" id="colFormLabel" placeholder="07/08/1997"
+                        name="data-de-nascimento" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Sexo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="sexo" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="Masculino" name="sexo"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">CPF</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cpf" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="423.123.456-54" name="cpf"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">CNPJ</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cnpj" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="05.993.943/0001-86"
+                        name="cnpj" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Disponibilidade</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="disponibilidade"
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="Sim" name="disponibilidade"
                         readonly>
                 </div>
             </div>
@@ -119,7 +123,8 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Status</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="status" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="Desempregado" name="status"
+                        readonly>
                 </div>
             </div>
 
@@ -132,21 +137,24 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Telefone</label>
                 <div class="col-sm-10">
-                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="telefone" readonly>
+                    <input type="tel" class="form-control" id="colFormLabel" placeholder="1132283419" name="telefone"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Celular</label>
                 <div class="col-sm-10">
-                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="sexo" readonly>
+                    <input type="tel" class="form-control" id="colFormLabel" placeholder="11991236464" name="sexo"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">E-mail</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="" name="email" readonly>
+                    <input type="email" class="form-control" id="colFormLabel" placeholder="usuario@gmail.com.br"
+                        name="email" readonly>
                 </div>
             </div>
 
@@ -159,42 +167,48 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">CEP</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cep" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="18086765" name="cep"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Estado</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="estado" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="São Paulo" name="estado"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Cidade</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="Sorocaba" name="cidade"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Bairro</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="bairro" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="Jardim Maria Eugênia"
+                        name="bairro" readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Rua</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="rua" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="Roberto de Souza" name="rua"
+                        readonly>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Número</label>
                 <div class="col-sm-10 mb-3">
-                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly>
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="159" name="cidade"
+                        readonly>
                 </div>
             </div>
 
