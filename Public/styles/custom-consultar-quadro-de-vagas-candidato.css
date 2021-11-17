@@ -8,3 +8,33 @@
 #Exp #colFormLabel{
     max-width: 45px;
 }
+
+.form-control {
+    max-width: 340px;
+}
+
+.info-click{
+    cursor: pointer;
+}
+
+.buttons{
+    margin: 0 15vw 0 15vw;
+}
+
+#Exp .row, #Comp .row, #Form .row {
+    width: 99%;
+}
+
+.cl-exp-formacao, .cl-comp-nome, .cl-form-tipo, .cl-form-nome{
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 576px){
+    .buttons{
+        margin: 0;
+    }
+
+    #textarea{
+        max-width: 520px;
+    }
+}

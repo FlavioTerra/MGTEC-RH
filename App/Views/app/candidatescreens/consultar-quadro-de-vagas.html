@@ -8,6 +8,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="../../../../Public/styles/custom-consultar-quadro-de-vagas-candidato.css">
+    <link rel="stylesheet" href="../../../../Public/styles/pop-up.css">
 
     <title>Consultar Quadro de Vagas Candidato</title>
 </head>
@@ -37,8 +38,33 @@
         </div>
     </nav>
 
-    <!--body-->
-    <form action="requisitante.php" method="post">
+    <!--Pop-up area-->
+    <div class="popup-container" id="popup-info">
+        <!--onclick="Open('popup-info')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close" onclick="Close(this)">
+                <img src="../../../../Public/images/global/close.svg">
+            </div>
+
+            <img src="../../../../Public/images/pop-up/info.svg" class="popup-img">
+
+            <h1 class="popup-title">Vaga em Aberto</h1>
+
+            <p class="popup-description">É desejado que você tenha os requisitos mínimos que colocamos em
+                "Experiências", "Competências" e "Formações" para trabalhar conosco. Caso tenha alguma dúvida entre em
+                contato com a gente na aba
+                "contato" do menu.</p>
+
+            <button type="button" class="popup-btn popup-btn-width" onclick="Close(this)">
+                Entendi!
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
+    <form action="requisitante.php" method="post" id="formulario">
         <div class="container">
 
             <div class="title">
@@ -48,7 +74,7 @@
             <!--Dados de Vaga-->
             <div class="title">
                 <h2 class="title-2">Informações da Vaga</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="../../../../Public/images/global/info.svg" class="info-click" onclick="Open('popup-info')">
             </div>
 
             <div class="row mb-3">
@@ -124,7 +150,6 @@
             <!--Experiências-->
             <div class="title">
                 <h2 class="title-2">Experiências</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Exp">
@@ -156,7 +181,6 @@
             <!--Competências-->
             <div class="title">
                 <h2 class="title-2">Competências</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Comp">
@@ -185,7 +209,6 @@
             <!--Formações-->
             <div class="title">
                 <h2 class="title-2">Formações</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Form">
@@ -236,6 +259,7 @@
         crossorigin="anonymous"></script>
 
     <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>
 </body>
 
 </html>

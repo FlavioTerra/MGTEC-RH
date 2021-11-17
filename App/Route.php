@@ -141,7 +141,7 @@
                 'action'=>'usuarioCadastrarSalvar'
             );
 
-            // Controle Usuário
+            // Controle UsuÃ¡rio
             $routes['usuario_entrar'] = array(
                 'route'=>'/usuario_entrar',
                 'controller'=>'GeneralScreensController',

@@ -8,6 +8,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="../../../../Public/styles/custom-vagas-candidatadas.css">
+    <link rel="stylesheet" href="../../../../Public/styles/pop-up.css">
 
     <title>Vagas Candidatadas</title>
 </head>
@@ -37,8 +38,34 @@
         </div>
     </nav>
 
-    <!--body-->
-    <form action="requisitante.php" method="post">
+    <div class="popup-container" id="popup-info">
+        <!--onclick="Open('popup-info')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close" onclick="Close(this)">
+                <img src="../../../../Public/images/global/close.svg">
+            </div>
+
+            <img src="../../../../Public/images/pop-up/info.svg" class="popup-img">
+
+            <h1 class="popup-title">Vagas Candidatadas</h1>
+
+            <p class="popup-description">Aqui aparecerá seu status no processo seletivo ao qual você se candidatou.
+                Abaixo de cada etapa você poderá ver um dos três ícones: seta circular azul(em espera); seta check
+                roxa(passou de
+                etapa); x vermelho(não passou de etapa). O teste pode ser realizado apenas uma vez, então separe um
+                tempo para poder iniciar. Caso tenha alguma dúvida entre em contato com a gente na aba "contato" do
+                menu.</p>
+
+            <button type="button" class="popup-btn popup-btn-width" onclick="Close(this)">
+                Entendi!
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
+    <form action="requisitante.php" method="post" id="formulario">
         <div class="container">
 
             <!--parte de cima do perfil-->
@@ -69,7 +96,7 @@
             <hr>
 
             <!--parte de baixo do perfil-->
-            <img src="../../../../Public/images/global/info.svg" class="instructions">
+            <img src="../../../../Public/images/global/info.svg" class="instructions" onclick="Open('popup-info')">
 
             <!--Animated bars-->
             <div class="row mb-3 vagas">
@@ -430,6 +457,7 @@
         crossorigin="anonymous"></script>
 
     <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>
 </body>
 
 </html>
