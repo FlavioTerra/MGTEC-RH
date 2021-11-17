@@ -25,12 +25,14 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Gestor</a>
-                    <a class="nav-link" href="#">Gerar Vaga</a>
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Funcionário</a>
+                    <a class="nav-link active" href="#">Candidatos</a>
                     <a class="nav-link" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Processos Seletivos</a>
+                    <a class="nav-link" href="#">Testes</a>
+                    <a class="nav-link" href="#">Entrevistas</a>
                     <a class="nav-link" href="#">Suporte</a>
                     <a class="nav-link" href="#">Sair</a>
                 </div>
@@ -49,7 +51,7 @@
             <label for="colFormLabel" class="col-sm-2 form-label label-edit">Processo Seletivo</label>
             <div class="col-sm-10">
                 <select class="col form-select" aria-label="processo-seletivo" name="processo-seletivo">
-                    <option selected></option>
+                    <option selected>Todos</option>
                     <option value="1">#</option>
                     <option value="2">#</option>
                     <option value="3">#</option>
@@ -61,8 +63,9 @@
             <label for="colFormLabel" class="col-sm-2 form-label">Organizar por</label>
 
             <select class="col-sm-10 form-select" aria-label="organizar-por" name="organizar-por">
-                <option selected>Mais recentes</option>
-                <option value="1">Mais antigos</option>
+                <option selected>Todas</option>
+                <option value="1">Mais recente</option>
+                <option value="2">Mais antigos</option>
             </select>
         </div>
 
@@ -75,9 +78,18 @@
                     <div class="card-img"></div>
 
                     <div class="card-body">
-                        <h4 class="card-title" id="nome-candidato">Nome do Candidato</h4>
-                        <p class="card-text title-user" id="nome-user">Nome de usuário</p>
-                        <p class="card-text" id="status-candidato">Status do Candidato</p>
+                        <h4 class="card-title">Nome do Candidato
+                            <!-- $processoSeletivo->nome_departamento -->
+                        </h4>
+                        <h6 class="card-text">
+                            <span>
+                                Processo Seletivo: Recrutador de RH
+                            </span>
+
+                            <span>
+                                - Entrevista Marcada
+                            </span>
+                        </h6>
                     </div>
                 </div>
 

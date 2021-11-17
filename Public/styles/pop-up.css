@@ -1,0 +1,80 @@
+@import url(./custom-login.css);
+
+.effect span{
+    z-index: 1;
+}
+/**/
+
+.popup-btn{
+    display: inline-block;
+    background-color: rgb(43, 43, 54);
+    color: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: .5rem;
+    transition: .3s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.popup-btn:hover{
+    background-color: rgb(33, 33, 43);
+}
+
+.popup-content img{
+    max-width: 100%;
+    height: auto;
+}
+
+.popup-container{
+    z-index: 2;
+    position: fixed;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: -9vh;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(132, 94, 139, 0.192);
+    display: grid;
+    place-items: center;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: all .3s;
+    /* visibility: hidden;
+    opacity: 0; */
+}
+
+.popup-content{
+    position: relative;
+    background-color: white;
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    border-radius: 1rem 1rem 0 0;
+    transition: all .3s;
+}
+
+.popup-img{
+    width: 110px;
+    margin-bottom: .75rem;
+}
+
+.popup-close{
+    display: inline-flex;
+    background-color: rgb(43, 43, 54);
+    border-radius: .25rem;
+    padding: 4px;
+    color: white;
+    transform: scale(0.9);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.popup-title{
+    font-weight: 600;
+}
+
+.popup-description{
+    margin-bottom: 1.5rem;
+}

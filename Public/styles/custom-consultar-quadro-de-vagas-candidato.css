@@ -1,13 +1,10 @@
-@import url(../styles/custom-aprovar-requisicao-de-vaga.css);
+@import url(../styles/custom-visualizar-requisicoes-de-vagas.css);
 
-.buttons{
-    margin: 0 15vw 0 15vw;
+
+.form2, .input-1, .input-2 {
+    max-width: 165px;
 }
 
-.btn:last-child{
-    border-color: green;
-}
-
-.btn:active:last-child, .btn:hover:last-child{
-    background-color: green;
+#Exp #colFormLabel{
+    max-width: 45px;
 }

@@ -19,6 +19,15 @@
     border-color: rgb(175, 14, 14);
 }
 
+.aprovar{
+    border-color: rgb(1, 173, 10);
+}
+
+.aprovar:hover, .aprovar:active{
+    background-color: rgb(1, 173, 10);
+    border-color: rgb(1, 173, 10);
+}
+
 /*forms
 .edit{
     color: #B8B8B8;

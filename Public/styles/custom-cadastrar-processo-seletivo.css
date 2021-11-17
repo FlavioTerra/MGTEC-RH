@@ -1,46 +1,36 @@
-@import url(./bootstrap.min.css);
-@import url(./global.css);
+@import url(./custom-visualizar-processo-seletivo.css);
 
-.title {
-    width: 100%;
-    gap: 10px
+hr{
+    color: grey;
 }
 
-div .text-area {
-    height: 5rem;
-    width: 95%;
-    max-width: 490px;
-    margin-left: 0.6rem;
+.form-select{
+    max-width: 340px;
+}
+
+.text-area{
+    height: 70px;
     resize: none;
+    margin-left: 10px;
 }
 
-.buttons {
-    gap: 0.5rem;
-    padding: 0.7rem;
-}
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
 
-.form{
-    max-width: 180px;
-}
-
-.form-label{
-    width: 170px;
-}
-
-.info{
-    width: 12px;
-    cursor: pointer;
-    margin-bottom: 2px;
-}
-
-@media screen and (min-width: 576px){
-    .form-label{
-        margin-right: 0;
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
     }
 }
 
-@media (max-width: 576px) {
-    .form-select {
-        margin-left: 0;
+@media (min-width: 1072px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
     }
 }

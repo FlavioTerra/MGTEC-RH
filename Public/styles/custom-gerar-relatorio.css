@@ -1,56 +1,65 @@
-@import url(./bootstrap.min.css);
-@import url(./global.css);
+@import url(custom-perfil.css);
 
-div #body{
-    width: 100%;
-    border: 1px solid gray;
-}
-
-/*titles*/
 .title{
-    width: 80%;
-    margin-left: 15mm;
+    width: 300px;
 }
 
-.title-2{
-    margin-left: 15mm;
+.container{
+    min-height: 100vh;
 }
 
-/*buttons*/
-.BtnInd{
-    margin-left: 15mm;
-    border-width: medium;
-    border-style: solid;
-    border-color: #7A18C5;
-    border-radius: 15mm;
+.relatorio{
+    width: 100%;
 }
 
-.BtnRec{
-    margin-left: 15mm;
-    border-width: medium;
-    border-style: solid;
-    border-color: #7A18C5;
-    border-radius: 15mm;
+.text-relatorio-area{
+    width: 100%;
 }
 
-.BtnQuad{
-    margin-left: 15mm;
-    border-width: medium;
-    border-style: solid;
-    border-color: #7A18C5;
-    border-radius: 15mm;
+.description{
+    margin-left: 3px;
 }
 
-.BtnVoltar{
-    border-width: medium;
-    border-style: solid;
-    border-color: #7A18C5;
-    border-radius: 15mm;
+.text-relatorio{
+    max-width: 700px;
+    margin: 0;
+    padding: 0;
 }
 
-/*images*/
-.IMG{
-    margin-left: 15mm;
-    border: 8px solid rgb(0, 0, 0);
-    border-width: thin;
+.relatorio-img{
+    width: 95px;
+    padding: 3px 15px 3px 15px;
+    border: 1px solid rgb(107, 105, 105);
+}
+
+.btn-view{
+    margin-top: 5px;
+    transform: scale(0.9);
+}
+
+@media screen and (min-width:992px){
+    .text-relatorio{
+        padding: 0 12px 0 12px;
+    }
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
+}
+
+@media (min-width: 1250px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
 }

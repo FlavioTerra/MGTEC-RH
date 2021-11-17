@@ -1,26 +1,22 @@
-@import url(./bootstrap.min.css);
-@import url(./global.css);
+@import url(./custom-requisicoes-de-vagas-aprovadas-e-reprovadas.css);
 
-.card-link{
-    border: 2px solid #7a18c5;
-    border-radius: 10px;
-    padding:5px;
-    text-decoration: none;
-    color: black;
-    background-color: white;
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
 }
 
-.card{
-    margin: 20px;
-    border: 2px solid #7a18c5;
-    border-radius: 0px;
-}
+@media (min-width: 1072px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
 
-.card-link:hover{
-    background-color: #7a18c5;
-    color: white;
-}
-
-.btn btn-outline-primary mb-5{
-    margin: 10px;
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
 }

@@ -1,10 +1,4 @@
 <?php
-
-    // 1 => Usuario comum
-    // 2 => Usuario funcionario
-    // 3 => Usuario gestor
-    // 4 => Usuario chefe rh
-
     namespace App\Models;
 
     use MF\Model\Model;

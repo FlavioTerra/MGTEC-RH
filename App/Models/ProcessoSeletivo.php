@@ -38,14 +38,14 @@
         }
 
         public function getAll() {
-            $query = 'select ps.id_proc,  
+            $query = "select ps.id_proc,  
                       ps.titulo_proc,
                       ps.status_proc,
-                      ps.data_inicio,
-                      ps.data_termino,
+                      DATE_FORMAT(ps.data_inicio, '%d/%m/%Y') as data_inicio,
+                      DATE_FORMAT(ps.data_termino, '%d/%m/%Y') as data_termino,
                       ps.regra_class,
                       ps.descricao
-                      from tb_processo_seletivo ps';
+                      from tb_processo_seletivo ps";
             
             $stmt = $this->db->prepare($query);
 
