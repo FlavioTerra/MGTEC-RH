@@ -6,6 +6,19 @@
     width: 100%;
 }
 
+.vagas .title{
+    margin-bottom: 30px;
+}
+
+.excluir{
+    border-color: rgb(175, 14, 14);
+}
+
+.excluir:hover, .excluir:active{
+    background-color: rgb(175, 14, 14);
+    border-color: rgb(175, 14, 14);
+}
+
 /*forms
 .edit{
     color: #B8B8B8;

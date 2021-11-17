@@ -26,10 +26,10 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Home</a>
                     <a class="nav-link" href="#">Gestor</a>
                     <a class="nav-link" href="#">Gerar Vaga</a>
-                    <a class="nav-link" href="#">Requisições</a>
+                    <a class="nav-link active" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
                     <a class="nav-link" href="#">Sobre</a>
                     <a class="nav-link" href="#">Suporte</a>
@@ -66,30 +66,16 @@
                 <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
-                        name="requisitante" value="<?= $this->view->detalhesVaga->nome ?>">
+                        name="requisitante" readonly value="<?= $this->view->detalhesVaga->nome ?>">
                 </div>
             </div>
-
-            <!--<div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">Responsável</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
-                        name="responsável">
-                </div>
-            </div>-->
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
-                        name="data-de-solicitacao" value="<?= $this->view->detalhesVaga->data_solic ?>">
+                        name="data-de-solicitacao" readonly value="<?= $this->view->detalhesVaga->data_solic ?>">
                 </div>
-            </div>
-
-            <!--Dados de Vaga-->
-            <div class="title">
-                <h2 class="title-2">Dados de Vaga</h2>
-                <img src="images/global/info.svg">
             </div>
 
             <?php 
@@ -114,7 +100,7 @@
                         </div>
 
                         <div class="text-box">
-                            <span>Em An�lise</span>
+                            <span>Em Análise</span>
                             <img src="">
                         </div>
 
@@ -143,27 +129,27 @@
 
                     <div class="mb-3 texts">
                         <div class="text-box">
-                            <span>Aberto</span>
+                            <span>Aberta</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Divulgado</span>
+                            <span>Em Análise</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Testes</span>
+                            <span>Aprovada</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Entrevistas</span>
+                            <span>Vaga Criada</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Finalizado</span>
+                            <span>Finalizada</span>
                             <img src="">
                         </div>
                     </div>
@@ -178,27 +164,27 @@
 
                     <div class="mb-3 texts">
                         <div class="text-box">
-                            <span>Aberto</span>
+                            <span>Aberta</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Divulgado</span>
+                            <span>Em Análise</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Testes</span>
+                            <span>Aprovada</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Entrevistas</span>
+                            <span>Vaga Criada</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Finalizado</span>
+                            <span>Finalizada</span>
                             <img src="">
                         </div>
                     </div>
@@ -213,27 +199,27 @@
 
                     <div class="mb-3 texts">
                         <div class="text-box">
-                            <span>Aberto</span>
+                            <span>Aberta</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Divulgado</span>
+                            <span>Em Análise</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Testes</span>
+                            <span>Aprovada</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Entrevistas</span>
+                            <span>Vaga Criada</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Finalizado</span>
+                            <span>Finalizada</span>
                             <img src="">
                         </div>
                     </div>
@@ -248,32 +234,38 @@
 
                     <div class="mb-3 texts">
                         <div class="text-box">
-                            <span>Aberto</span>
+                            <span>Aberta</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Divulgado</span>
+                            <span>Em Análise</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Testes</span>
+                            <span>Aprovada</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Entrevistas</span>
+                            <span>Vaga Criada</span>
                             <img src="">
                         </div>
 
                         <div class="text-box">
-                            <span>Finalizado</span>
+                            <span>Finalizada</span>
                             <img src="">
                         </div>
                     </div>
 
                 </div>
+            </div>
+
+            <!--Dados de Vaga-->
+            <div class="title">
+                <h2 class="title-2">Dados de Vaga</h2>
+                <img src="images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -499,6 +491,7 @@
 
             <div class="buttons">
                 <a href="/requisicoes_vaga" class="btn btn-outline-primary mb-5">Voltar</a>
+                <button type="button" class="btn excluir btn-outline-primary mb-5">Excluir</button>
                 <button type="submit" class="btn btn-outline-primary mb-5">Gerar</button>
             </div>
         </div>
@@ -532,13 +525,13 @@
     document.getElementById('5-etapa').style.display = 'none';
 
     if (status == 'Aberta')
-        document.getElementById('1-etapa').style.display == 'block';
+        document.getElementById('1-etapa').style.display = 'block';
     else if (status == 'Em Análise')
-        document.getElementById('2-etapa').style.display == 'block';
+        document.getElementById('2-etapa').style.display = 'block';
     else if (status == 'Aprovada')
-        document.getElementById('3-etapa').style.display == 'block';
+        document.getElementById('3-etapa').style.display = 'block';
     else if (status == 'Vaga Criada')
-        document.getElementById('4-etapa').style.display == 'block';
+        document.getElementById('4-etapa').style.display = 'block';
     else
-        document.getElementById('5-etapa').style.display == 'block';
+        document.getElementById('5-etapa').style.display = 'block';
 </script>

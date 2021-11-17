@@ -29,14 +29,12 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Home</a>
                     <a class="nav-link" href="#">Gestor</a>
-                    <a class="nav-link" href="#">Gerar Vaga</a>
-                    <a class="nav-link" href="#">Requisições</a>
+                    <a class="nav-link active" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Sobre</a>
-                    <a class="nav-link" href="#">Suporte</a>
-                    <a class="nav-link" href="#">Sair</a>
+                    <a class="nav-link" href="#">Processos Seletivos</a>
+                    <a class="nav-link" href="#">Sair</a>                 
                 </div>
             </div>
         </div>
@@ -59,7 +57,7 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label title-interview">Título da Vaga</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control form1" id="colFormLabel" placeholder="" name="titulo_vaga">
+                    <input type="text" class="form-control form1" id="colFormLabel" placeholder="" name="titulo_vaga" required>
                 </div>
             </div>
 
@@ -75,7 +73,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
                     <input type="date" class="form-control form1" id="colFormLabel" placeholder=""
-                        name="data_solicitacao">
+                        name="data_solicitacao" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" required>
                 </div>
             </div>
 
@@ -89,7 +87,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
                 <div class="col-sm-10">
                     <select class="col form-select form1" name="departamento" onchange="atribuitDept(this)">
-                        <option selected>--Selecione--</option>
+                        <option selected value="0">--Selecione--</option>
                         <?php foreach ($this->view->departamentos as $key => $departamento) { ?>
                         <option value="<?=$departamento->id_departamento?>">
                             <?= $departamento->nome_departamento ?>
@@ -103,7 +101,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
                 <div class="col-sm-10">
                     <select class="col form-select form1" name="cargo">
-                        <option selected>--Selecione--</option>
+                        <option selected value="0">--Selecione--</option>
                         <?php foreach ($this->view->cargos as $key => $cargo) { ?>
                         <option value="<?=$cargo->id_cargo?>">
                             <?= $cargo->nome_cargo ?>
@@ -117,7 +115,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
                 <div class="col-sm-10">
                     <select class="col form-select form1" aria-label="Formação" name="vinculo_empregaticio">
-                        <option selected>--Selecione--</option>
+                        <option selected value="0">--Selecione--</option>
                         <option value="1">CLT</option>
                         <option value="2">PJ</option>
                         <option value="3">Estágio</option>
@@ -128,8 +126,8 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control form1" id="colFormLabel" placeholder="" name="salario"
-                        min="0">
+                    <input type="number" class="form-control form1" id="colFormLabel" placeholder="" 
+                        name="salario" step="0.01" min="0">
                 </div>
             </div>
 
@@ -137,11 +135,12 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
                 <div class="col-sm-10 input-1">
                     <input type="time" class="form-control form2" id="colFormLabel" placeholder=""
-                        name="hora_trab_inicio">
+                        name="hora_trab_inicio" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$">
                 </div>
                 <label for="colFormLabel" class="col label-middle">à</label>
                 <div class="col-sm-10 input-2">
-                    <input type="time" class="form-control form2" id="colFormLabel" placeholder="" name="hora_trab_fim">
+                    <input type="time" class="form-control form2" id="colFormLabel" placeholder="" 
+                        name="hora_trab_fim" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$">
                 </div>
             </div>
 
@@ -173,11 +172,11 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-exp-formacao form3" aria-label="Experiência" name="exp-fomacao-1">
-                        <option selected>Experiência</option>
+                    <select class="col form-select cl-exp-formacao form3" aria-label="Experiência" name="exp-formacao-1">
+                        <option selected value="0">Experiência</option>
                         <option value="1">Administrativa</option>
                         <option value="2">Elétrica</option>
-                        <option value="3">Eltrônica</option>
+                        <option value="3">Eletrônica</option>
                         <option value="4">Recursos Humanos</option>
                         <option value="5">Redes</option>
                         <option value="6">Contábil</option>
@@ -186,7 +185,7 @@
                     </select>
 
                     <select class="col form-select cl-exp-status form3" aria-label="Status" name="exp-status-1">
-                        <option selected>Status</option>
+                        <option selected value="0">Status</option>
                         <option value="1">Experiência Qualquer</option>
                         <option value="2">Júnior</option>
                         <option value="3">Pleno</option>
@@ -222,7 +221,7 @@
 
                 <div class="row mb-3">
                     <select class="col form-select cl-comp-nome form3" aria-label="Nome" name="comp-nome-1">
-                        <option selected>Nome</option>
+                        <option selected value="0">Nome</option>
                         <option value="1">Gestão de Pessoas</option>
                         <option value="2">Análise de Requisitos</option>
                         <option value="3">Java</option>
@@ -236,7 +235,7 @@
                     </select>
 
                     <select class="col form-select cl-comp-grau form3" aria-label="Grau" name="comp-grau-1">
-                        <option selected>Grau</option>
+                        <option selected value="0">Grau</option>
                         <option value="1">Básico</option>
                         <option value="2">Intermediário</option>
                         <option value="3">Avançado</option>
@@ -245,7 +244,7 @@
 
                 <div class="row">
                     <select class="col form-select cl-comp-status form4" aria-label="Status" name="comp-status-1">
-                        <option selected>Status</option>
+                        <option selected value="0">Status</option>
                         <option value="1">Iniciante</option>
                         <option value="2">Em Desenvolvimento</option>
                         <option value="3">Concluído</option>
@@ -272,7 +271,7 @@
 
                 <div class="row mb-3">
                     <select class="col form-select cl-form-tipo form3" aria-label="Tipo" name="form-tipo-1">
-                        <option selected>Tipo</option>
+                        <option selected value="0">Tipo</option>
                         <option value="1">Fundamental</option>
                         <option value="2">Ensino médio</option>
                         <option value="3">Técnico</option>
@@ -280,7 +279,7 @@
                     </select>
 
                     <select class="col form-select cl-form-status form3" aria-label="Status" name="form-status-1">
-                        <option selected>Status</option>
+                        <option selected value="0">Status</option>
                         <option value="1">Completo</option>
                         <option value="2">Em Andamento</option>
                         <option value="3">Incompleto</option>
@@ -289,7 +288,7 @@
 
                 <div class="row">
                     <select class="col form-select cl-form-nome form3" aria-label="Nome" name="form-nome-1">
-                        <option selected>Nome</option>
+                        <option selected value="0">Nome</option>
                         <option value="1">Análise e Desenvolvimento de Sistemas</option>
                         <option value="2">Redes</option>
                         <option value="3">Ciência da Computação</option>
@@ -303,7 +302,7 @@
                     </select>
 
                     <select class="col form-select cl-form-grau form3" aria-label="Grau" name="form-grau-1">
-                        <option selected>Grau</option>
+                        <option selected value="0">Grau</option>
                         <option value="1">Tecnólogo</option>
                         <option value="2">Graduação</option>
                         <option value="3">Pôs-graduação</option>
