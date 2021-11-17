@@ -1,5 +1,3 @@
-@import url(./custom-login.css);
-
 .effect span{
     z-index: 1;
 }
@@ -17,6 +15,19 @@
     outline: none;
 }
 
+.popup-btn-width{
+    width: 90%;
+}
+
+.popup-btn-link{
+    display: block;
+    margin: 1rem auto 0;
+    background-color: transparent;
+    color: rgb(43, 43, 54);
+    font-weight: 500;
+    border: none;
+}
+
 .popup-btn:hover{
     background-color: rgb(33, 33, 43);
 }
@@ -29,8 +40,6 @@
 .popup-container{
     z-index: 2;
     position: fixed;
-    margin-left: 1rem;
-    margin-right: 1rem;
     margin-top: -9vh;
     height: 100vh;
     width: 100%;
@@ -40,21 +49,25 @@
     align-items: flex-end;
     overflow: hidden;
     transition: all .3s;
-    /* visibility: hidden;
-    opacity: 0; */
+    visibility: hidden;
+    opacity: 0;
 }
 
 .popup-content{
     position: relative;
     background-color: white;
     text-align: center;
-    padding: 3rem 2rem 2rem;
+    padding: 2.5rem 2rem 2rem;
     border-radius: 1rem 1rem 0 0;
     transition: all .3s;
+    max-width: 270px;
+
+    /*effect*/
+    transform: translateY(10%);
 }
 
 .popup-img{
-    width: 110px;
+    width: 80px;
     margin-bottom: .75rem;
 }
 
@@ -73,8 +86,31 @@
 
 .popup-title{
     font-weight: 600;
+    font-size: 25px;
 }
 
 .popup-description{
     margin-bottom: 1.5rem;
+}
+
+.show-popup{
+    visibility: visible;
+    opacity: 1;
+}
+
+.show-popup .popup-content{
+    transform: translateY(0);
+}
+
+@media screen and (min-width: 576px){
+    .popup-content{
+        margin: auto;
+        width: 280px;
+        max-width: 290px;
+        border-radius: 1.25rem;
+    }
+
+    .popup-img{
+        width: 90px;
+    }
 }

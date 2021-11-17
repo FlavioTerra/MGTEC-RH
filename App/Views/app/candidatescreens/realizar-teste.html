@@ -9,6 +9,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="../../../../Public/styles/custom-atribuir-realizar-teste.css">
+    <link rel="stylesheet" href="../../../../Public/styles/pop-up.css">
 
 </head>
 
@@ -38,7 +39,83 @@
         </div>
     </nav>
 
-    <form action="" method="post">
+    <!--Pop-up area-->
+    <div class="popup-container" id="popup-info">
+        <!--onclick="Open('popup-info')"-->
+        <!--link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close" onclick="Close(this)">
+                <img src="../../../../Public/images/global/close.svg">
+            </div>
+
+            <img src="../../../../Public/images/pop-up/info.svg" class="popup-img">
+
+            <h1 class="popup-title">Realizar Teste</h1>
+
+            <p class="popup-description">O teste possui apenas uma resposta certa para cada pergunta e não possui tempo
+                limite para a realização.</p>
+
+            <button type="button" class="popup-btn popup-btn-width" onclick="Close(this)">
+                Entendi!
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-confirm">
+        <!--onclick="Open('popup-confirm')"-->
+        <!--link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close" onclick="Close(this)">
+                <img src="../../../../Public/images/global/close.svg">
+            </div>
+
+            <img src="../../../../Public/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Finalizar Teste</h1>
+
+            <p class="popup-description">Tem certeza que deseja finalizar o teste? Você não poderá mais alterar suas
+                respostas.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-desistir">
+        <!--onclick="Open('popup-desistir')"-->
+        <!--link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close" onclick="Close(this)">
+                <img src="../../../../Public/images/global/close.svg">
+            </div>
+
+            <img src="../../../../Public/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Desistir do Teste</h1>
+
+            <p class="popup-description">Tem certeza que deseja desistir do teste? Você não poderá mais realizar este
+                teste para este processo seletivo.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Close(this)">
+                Continuar Teste
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Desistir
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
+    <form action="" method="post" id="formulario">
         <div class="container">
             <div class="title">
                 <h1 class="title-1">Teste</h1>
@@ -55,7 +132,7 @@
 
             <div class="title">
                 <h2 class="title-2">Perguntas</h2>
-                <img src="../../../../Public/images/global/info.svg">
+                <img src="../../../../Public/images/global/info.svg" onclick="Open('popup-info')">
             </div>
 
             <div class="questions" id="questions">
@@ -102,9 +179,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="buttons buttons-test">
-                <button type="button" class="btn btn-outline-primary mb-5">Desistir</button>
-                <button type="submit" class="btn btn-outline-primary mb-5">Finalizar</button>
+                <button type="button" class="btn btn-outline-primary mb-5"
+                    onclick="Open('popup-desistir')">Desistir</button>
+                <button type="button" class="btn btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm')">Finalizar</button>
             </div>
         </div>
     </form>
@@ -121,6 +201,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
+
+    <script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>
 </body>
 
 </html>
