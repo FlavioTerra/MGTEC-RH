@@ -5,6 +5,8 @@
     use MF\Controller\Action;
     use MF\Model\Container;
 
+    use App\Models\DepartamentosCargos;
+
     class EmployeeScreensController extends Action {
         public function index() {  
         }
@@ -27,7 +29,20 @@
         }
 
         public function gerenciarProcessoSeletivo() {
+            session_start();
+
+            $_SESSION['tipo_user'] = 2;
+
             $processosSeletivos = Container::getModel('ProcessoSeletivo');
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
 
             $this->view->todosProcessoSeletivos = $processosSeletivos->getAll();
             

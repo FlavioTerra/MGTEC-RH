@@ -141,6 +141,37 @@
                 'action'=>'usuarioCadastrarSalvar'
             );
 
+            // Controle Usuário
+            $routes['usuario_entrar'] = array(
+                'route'=>'/usuario_entrar',
+                'controller'=>'GeneralScreensController',
+                'action'=>'usuarioEntrar'
+            );
+
+            $routes['usuario_sair'] = array(
+                'route'=>'/usuario_sair',
+                'controller'=>'GeneralScreensController',
+                'action'=>'usuarioSair'
+            );
+
+            $routes['exibir_popup'] = array(
+                'route'=>'/exibir_popup',
+                'controller'=>'GeneralScreensController',
+                'action'=>'exibirPopup'
+            );
+
+            $routes['usuario_recuperar_senha'] = array(
+                'route'=>'/usuario_recuperar_senha',
+                'controller'=>'GeneralScreensController',
+                'action'=>'usuarioRecuperarSenha'
+            );
+
+            $routes['usuario_recuperar_senha_codigo'] = array(
+                'route'=>'/usuario_recuperar_senha_codigo',
+                'controller'=>'GeneralScreensController',
+                'action'=>'usuarioRecuperarSenhaCodigo'
+            );
+
             $this->setRoutes($routes);
         }    
     }

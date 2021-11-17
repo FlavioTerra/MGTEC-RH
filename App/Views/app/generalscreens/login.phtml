@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap / CSS -->
-    <link rel="stylesheet" href="../../../../Public/styles/custom-login.css">
+    <link rel="stylesheet" href="/styles/custom-login.css">
 
     <title>Login</title>
 </head>
@@ -16,22 +16,22 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="http://localhost:3000/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+                <img src="/images/global/navbar-button.svg" class="navbar-button">
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                    <a class="nav-link active" href="#">Entrar</a>
-                    <a class="nav-link" href="#scroll-1">Sobre</a>
-                    <a class="nav-link" href="#scroll-2">Quem Somos</a>
-                    <a class="nav-link" href="#scroll-3">Nossos Líderes</a>
-                    <a class="nav-link" href="#scroll-4">Trabalhe Conosco</a>
-                    <a class="nav-link" href="#scroll-5">Contato</a>
+                    <a class="nav-link" aria-current="page" href="http://localhost:3000/home">Home</a>
+                    <a class="nav-link active" href="http://localhost:3000/usuario_entrar">Entrar</a>
+                    <a class="nav-link" href="http://localhost:3000/home#scroll-1">Sobre</a>
+                    <a class="nav-link" href="http://localhost:3000/home#scroll-2">Quem Somos</a>
+                    <a class="nav-link" href="http://localhost:3000/home#scroll-3">Nossos Líderes</a>
+                    <a class="nav-link" href="http://localhost:3000/home#scroll-4">Trabalhe Conosco</a>
+                    <a class="nav-link" href="http://localhost:3000/home#scroll-5">Contato</a>
                 </div>
             </div>
         </div>
@@ -44,37 +44,37 @@
                 <h1>Login</h1>
 
                 <div class="textbox">
-                    <img src="../../../../Public/images/login/user.svg">
+                    <img src="/images/login/user.svg">
                     <input type="text" placeholder="Nome de Usuário/E-mail" name="login">
                 </div>
 
                 <div class="textbox">
-                    <img src="../../../../Public/images/login/lock.svg">
+                    <img src="/images/login/lock.svg">
                     <input type="password" placeholder="Senha" name="login" id="password">
-                    <img src="../../../../Public/images/login/eye-off.svg" id="eye-img" class="eye">
+                    <img src="/images/login/eye-off.svg" id="eye-img" class="eye">
                 </div>
 
                 <div class="trocar-senha">
-                    <a class="btn-link" href="./recuperar-senha-security.html">
+                    <a class="btn-link" href="http://localhost:3000/usuario_recuperar_senha_codigo">
                         <span class="txt-trocar-senha">Esqueci minha senha</span>
                     </a>
                 </div>
 
-                <a class="btn-link" href="#">
+                <a class="btn-link" href="http://localhost:3000/home">
                     <div class="effect">
                         <span>Entrar</span>
-                        <input class="btn" type="button" disabled>
+                        <input class="btn" type="submit" disabled>
                     </div>
                 </a>
 
-                <a class="btn-link" href="./registro.html">
+                <a class="btn-link" href="http://localhost:3000/usuario_cadastrar">
                     <div class="effect">
                         <span>Registrar</span>
                         <input class="btn" type="button" disabled>
                     </div>
                 </a>
 
-                <a class="btn-link" href="#">
+                <a class="btn-link" href="http://localhost:3000/home">
                     <div class="effect">
                         <span>Voltar</span>
                         <input class="btn" type="button" disabled>
@@ -86,9 +86,9 @@
 
     <!--Footer-->
     <footer class="footer">
-        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
-        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="/images/global/email.svg" class="img-footer" onclick="">
         <label class="label-footer">+55 (15) 5555-5555</label>
     </footer>
 
@@ -97,7 +97,7 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
         crossorigin="anonymous"></script>
 
-    <script src="../../../../Public/scripts/general-scripts/login.js"></script>
+    <script src="/scripts/general-scripts/login.js"></script>
 </body>
 
 </html>

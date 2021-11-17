@@ -44,7 +44,7 @@ function enviar() {
 
     if (resposta == true) {
         document.getElementById('myForm').submit();
-        window.location.replace('http://localhost:3000/login')
+        window.location.replace('http://localhost:3000/usuario_entrar')
     }
     else if (resposta == false) {
         alert("Favor preencher todos os campos.")
@@ -69,6 +69,4 @@ function verificar() {
     else {
         return 'senha';
     }
-
-
 }
