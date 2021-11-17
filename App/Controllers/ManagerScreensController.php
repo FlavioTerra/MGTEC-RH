@@ -47,7 +47,12 @@
         public function gerarVaga() {
             $requisicaoVaga = Container::getModel('GerarVaga');
 
+            // echo '<pre>';
+            //     print_r($_POST);
+            // echo '<pre>';
+
             $requisicaoVaga->__set('id_cargo' , $_POST['cargo']);
+            //$requisicaoVaga->__set('id_solicitante' , $_POST['id_solicitante']);
             $requisicaoVaga->__set('titulo_vaga' , $_POST['titulo_vaga']);
             $requisicaoVaga->__set('num_vagas' , $_POST['numero_vagas']);
             $requisicaoVaga->__set('vinculo_emp' , $_POST['vinculo_empregaticio']);
@@ -57,7 +62,45 @@
             $requisicaoVaga->__set('hora_inicio' , $_POST['hora_trab_inicio']);
             $requisicaoVaga->__set('hora_fim' , $_POST['hora_trab_fim']);
             
-            $requisicaoVaga->save();
+            $idVaga = $requisicaoVaga->save();
+
+            //****______________Requisitos da Vaga_________________****//
+
+            $requisicaoVaga->__set('id_vaga', $idVaga->id_vaga);
+
+            // Experiencia
+            $cont = 1;
+            while(isset($_POST['exp-formacao-' . $cont])) {
+                $requisicaoVaga->__set('nome_e' , $_POST['exp-formacao-' . $cont]);
+                $requisicaoVaga->__set('r_status_e' , $_POST['exp-status-' . $cont]);
+                $requisicaoVaga->__set('anos_xp' , $_POST['exp-anos-experiencia-' . $cont]);
+
+                $requisicaoVaga->saveExperiencia();
+                $cont++;
+            }
+
+            // Competencia
+            $cont = 1;
+            while(isset($_POST['comp-nome-' . $cont])) {
+                $requisicaoVaga->__set('nome_c' , $_POST['comp-nome-' . $cont]);
+                $requisicaoVaga->__set('grau_c' , $_POST['comp-grau-' . $cont]);
+                $requisicaoVaga->__set('r_status_c' , $_POST['comp-status-' . $cont]);
+
+                $requisicaoVaga->saveCompetencia();
+                $cont++;
+            }
+
+            // Formacao
+            $cont = 1;
+            while(isset($_POST['form-tipo-' . $cont])) {
+                $requisicaoVaga->__set('tipo' , $_POST['form-tipo-' . $cont]);
+                $requisicaoVaga->__set('grau_f' , $_POST['form-grau-' . $cont]);
+                $requisicaoVaga->__set('r_status_f' , $_POST['form-status-' . $cont]);
+                $requisicaoVaga->__set('curso' , $_POST['form-nome-' . $cont]);
+
+                $requisicaoVaga->saveFormacao();
+                $cont++;
+            }
 
             header('Location:/gerar_requisicao_vaga');
         }

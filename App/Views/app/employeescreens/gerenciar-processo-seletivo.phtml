@@ -17,7 +17,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="http://localhost:3000/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -26,17 +26,17 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Funcionário</a>
-                    <a class="nav-link" href="#">Candidatos</a>
-                    <a class="nav-link" href="#">Requisições</a>
-                    <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link active" href="#">Processos Seletivos</a>
-                    <a class="nav-link" href="#">Testes</a>
-                    <a class="nav-link" href="#">Entrevistas</a>
-                    <a class="nav-link" href="#">Suporte</a>
-                    <a class="nav-link" href="#">Sair</a>
-                </div>
+                    <a class="nav-link" href="http://localhost:3000/home">Home</a>
+                    <a class="nav-link" href="http://localhost:3000/#">Funcionário</a>
+                    <a class="nav-link" href="http://localhost:3000/gerenciar_candidato">Candidatos</a>
+                    <a class="nav-link" href="http://localhost:3000/requisicoes_vaga">Requisições</a>
+                    <a class="nav-link" href="http://localhost:3000/gerenciar_vaga">Vagas</a>
+                    <a class="nav-link active" href="http://localhost:3000/gerenciar_processo_seletivo">Processos Seletivos</a>
+                    <a class="nav-link" href="http://localhost:3000/teste_candidato">Testes</a>
+                    <a class="nav-link" href="http://localhost:3000/entrevista_candidato">Entrevistas</a>
+                    <a class="nav-link" href="http://localhost:3000/relatorio">Relatórios</a>
+                    <a class="nav-link" href="http://localhost:3000/sair">Sair</a>
+                 </div>
             </div>
         </div>
     </nav>
@@ -50,11 +50,13 @@
         <div class="row mb-3">
             <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
             <div class="col-sm-10">
-                <select class="col form-select" aria-label="departamento" name="departamento">
+                <select class="col form-select form1" name="departamento" onchange="atribuitDept(this)">
                     <option selected>Todos</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
+                        <?php foreach ($this->view->departamentos as $key => $departamento) { ?>
+                    <option value="<?=$departamento->id_departamento?>">
+                        <?= $departamento->nome_departamento ?>
+                    </option>
+                    <?php } ?>
                 </select>
             </div>
         </div>
@@ -62,11 +64,13 @@
         <div class="row mb-3">
             <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
             <div class="col-sm-10">
-                <select class="col form-select" aria-label="cargo" name="cargo">
+                <select class="col form-select form1" name="cargo">
                     <option selected>Todos</option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
+                        <?php foreach ($this->view->cargos as $key => $cargo) { ?>
+                    <option value="<?=$cargo->id_cargo?>">
+                        <?= $cargo->nome_cargo ?>
+                    </option>
+                    <?php } ?>
                 </select>
             </div>
         </div>
@@ -75,59 +79,108 @@
             <label for="colFormLabel" class="col-sm-2 form-label">Organizar por</label>
 
             <select class="col-sm-10 form-select" aria-label="organizar-por" name="organizar-por">
-                <option selected>Todas</option>
+                <option selected>Todos</option>
                 <option value="1">Mais recente</option>
-                <option value="2">Mais antigo</option>
+                <option value="2">Menos recente</option>
             </select>
         </div>
 
         <hr>
 
-        <!--Resposta-->
-        <?php foreach($this->view->todosProcessoSeletivos as $key => $processoSeletivo) {?>
-        <form action="/visualizar_processo_seletivo" method="post">
-            <div class="depto-recursos-humanos">
-                <div class="card">
-                    <div class="card-img"></div>
+        <?php if($_SESSION['tipo_user'] == 2 || $_SESSION['tipo_user'] == 5){ ?>
+            <?php foreach($this->view->todosProcessoSeletivos as $key => $processoSeletivo) {?>
+            <form action="/visualizar_processo_seletivo" method="post">
+                <div class="depto-recursos-humanos">
+                    <div class="card">
+                        <div class="card-img"></div>
 
-                    <div class="card-body">
-                        <h4 class="card-title">Departamento: RH - Recrutamento e Seleção
-                            <!-- $processoSeletivo->nome_departamento -->
-                        </h4>
-                        <h6 class="card-text">
-                            <?= $processoSeletivo->titulo_proc ?>
+                        <div class="card-body">
+                            <h4 class="card-title">Departamento: RH - Recrutamento e Seleção
+                                <!-- $processoSeletivo->nome_departamento -->
+                            </h4>
+                            <h6 class="card-text">
+                                <?= $processoSeletivo->titulo_proc ?>
 
-                            <span>
-                                - <?= $processoSeletivo->data_inicio ?>
-                            </span>
+                                <span>
+                                    - <?= $processoSeletivo->data_inicio ?>
+                                </span>
 
-                            <span>
-                                à <?= $processoSeletivo->data_termino ?>
-                            </span>
+                                <span>
+                                    à <?= $processoSeletivo->data_termino ?>
+                                </span>
 
-                            <span>
-                                - <?= $processoSeletivo->status_proc ?>
-                            </span>
-                        </h6>
-                        
+                                <span>
+                                    - <?= $processoSeletivo->status_proc ?>
+                                </span>
+                            </h6>
+                            
+                        </div>
                     </div>
+                    <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
+                    <?php if($processoSeletivo->status_proc != 'Aberto'){ ?>
+                        <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
+                        <button type="button" class="btn btn-outline-primary mb-4" disabled>Divulgar</button>
+                        <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
+                    <?php } else {?>
+                        <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
+                        <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button>
+                        <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
+                    <?php } ?>
                 </div>
-                <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
-                <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
-                <button type="submit" class="btn btn-outline-primary mb-4">Divulgar</button>
-                <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
-            </div>
-        </form>
+            </form>
         <?php } ?>
 
         <hr>
 
         <div id="btnGerenciar" class="buttons">
-            <button id="btnCadastrar" type="button" class="btn btn-outline-primary mb-5"
-                onclick="window.location.href = 'http://localhost:3000/processo_seletivo'">Cadastrar</button>
             <button type="button" class="btn btn-outline-primary mb-5"
                 onclick="window.location.href = 'http://localhost:3000/home'">Voltar</button>
+            <button id="btnCadastrar" type="button" class="btn btn-outline-primary mb-5"
+                onclick="window.location.href = 'http://localhost:3000/processo_seletivo'">Cadastrar</button>
         </div>
+        <?php } else { ?>
+            <?php foreach($this->view->todosProcessoSeletivos as $key => $processoSeletivo) {?>
+            <form action="/visualizar_processo_seletivo" method="post">
+                <div class="depto-recursos-humanos">
+                    <div class="card">
+                        <div class="card-img"></div>
+
+                        <div class="card-body">
+                            <h4 class="card-title">Departamento: RH - Recrutamento e Seleção
+                                <!-- $processoSeletivo->nome_departamento -->
+                            </h4>
+                            <h6 class="card-text">
+                                <?= $processoSeletivo->titulo_proc ?>
+
+                                <span>
+                                    - <?= $processoSeletivo->data_inicio ?>
+                                </span>
+
+                                <span>
+                                    à <?= $processoSeletivo->data_termino ?>
+                                </span>
+
+                                <span>
+                                    - <?= $processoSeletivo->status_proc ?>
+                                </span>
+                            </h6>
+                            
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
+                    <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
+                </div>
+            </form>
+        <?php } ?>
+
+            <hr>
+
+            <div id="btnGerenciar" class="buttons">
+                <button type="button" class="btn btn-outline-primary mb-5"
+                    onclick="window.location.href = 'http://localhost:3000/home'">Voltar</button>
+            </div>
+        <?php } ?>
 
     </div>
 
