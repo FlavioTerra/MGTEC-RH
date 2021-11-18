@@ -9,6 +9,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-marcar-entrevista.css">
+    <link rel="stylesheet" href="/styles/pop-up.css">
 
 </head>
 
@@ -45,14 +46,69 @@
     if (isset($_GET['entrevistaMarcar'])) {
     ?>
 
-        <script>
-            alert("Entrevista Salva com Sucesso!");
-        </script>
+    <script>
+    alert("Entrevista Salva com Sucesso!");
+    </script>
 
     <?php
     } 
     ?>
 
+    <!--Pop-up area -->
+    <div class="popup-container" id="popup-confirm">
+        <!--onclick="Open('popup-confirm')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Marcar Entrevista</h1>
+
+            <p class="popup-description">Tem certeza que deseja marcar a entrevista? Você pode alterar as informações a
+                qualquer momento.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-back">
+        <!--onclick="Open('popup-back')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Cancelar Marcação</h1>
+
+            <p class="popup-description">Tem certeza que deseja voltar para a página anterior? Todas as informações
+                inseridas
+                serão perdidas.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Back(this, 'url')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
     <form action="/entrevista_candidato_marcar" method="post">
         <div class="container">
             <div class="title">
@@ -80,7 +136,7 @@
 
             <div class="row">
                 <label for="hora" class="label1">Hora</label>
-                
+
                 <input type="time" class="form-control" name="hora">
             </div>
 
@@ -106,7 +162,7 @@
                 </select>
             </div>
 
-                
+
             <div class="row">
                 <label class="label2">Processo Seletivo</label>
 
@@ -123,8 +179,9 @@
             <div class="buttons">
                 <!-- <button type="button" class="btn btn-outline-primary mb-5 accept">Salvar</button>
                 <button type="button" class="btn btn-outline-primary mb-5 delete">Excluir</button> -->
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-                <button type="submit" class="btn btn-outline-primary mb-5">Marcar</button>
+                <button type="button" class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</button>
+                <button type="button" class="btn btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm')">Marcar</button>
             </div>
         </div>
     </form>
@@ -140,10 +197,11 @@
 
     <!--Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
-        crossorigin="anonymous"></script>
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
+    </script>
 
     <script src="/scripts/manager-scripts/marcar-entrevista.js"></script>
+    <script src="/scripts/general-scripts/pop-up.js"></script>
 </body>
 
 </html>

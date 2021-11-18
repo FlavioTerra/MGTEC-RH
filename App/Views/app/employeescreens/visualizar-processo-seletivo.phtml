@@ -9,11 +9,11 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-visualizar-processo-seletivo.css">
+    <link rel="stylesheet" href="/styles/pop-up.css">
 
 </head>
 
 <body>
-
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
@@ -38,8 +38,89 @@
                     <a class="nav-link" href="#">Sair</a>
                 </div>
             </div>
+        </div>
     </nav>
 
+    <!--Pop-up area-->
+    <div class="popup-container" id="popup-confirm">
+        <!--onclick="Open('popup-confirm')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Salvar Processo</h1>
+
+            <p class="popup-description">Tem certeza que deseja salvar o processo seletivo? Você poderá atualizar as
+                informações a qualquer momento.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-confirm2">
+        <!--onclick="Open('popup-confirm2')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Excluir Processo</h1>
+
+            <p class="popup-description">Tem certeza que deseja excluir o processo seletivo? Todos os dados do processo
+                seletivo serão perdidos.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-back">
+        <!--onclick="Open('popup-back')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Voltar</h1>
+
+            <p class="popup-description">Tem certeza que deseja voltar para a página anterior? Todas as alterações serão
+                perdidas</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Back(this, 'url')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
     <form action="/processo_seletivo_cadastrar" method="post">
         <div class="container">
             <div class="title">
@@ -48,7 +129,6 @@
 
             <div class="title">
                 <h2 class="title-2">Dados de Cadastro</h2>
-                <img src="/images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -75,7 +155,6 @@
 
             <div class="title">
                 <h2 class="title-2">Dados do Processo</h2>
-                <img src="/images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -301,9 +380,11 @@
             <hr />
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-                <button type="button" class="btn excluir btn-outline-primary mb-5">Excluir</button>
-                <button type="submit" class="btn aprovar btn-outline-primary mb-5">Salvar</button>
+                <button type="button" class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</button>
+                <button type="button" class="btn excluir btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm2')">Excluir</button>
+                <button type="button" class="btn aprovar btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm')">Salvar</button>
             </div>
         </div>
     </form>
@@ -321,39 +402,41 @@
 
     <!--Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
-        crossorigin="anonymous"></script>
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
+    </script>
+
+    <script src="/scripts/general-scripts/pop-up.js"></script>
 </body>
 
 </html>
 
 <script language="javascript">
-    var status = "<?php print $status; ?>";
+var status = "<?php print $status; ?>";
 
-    document.getElementById('1-etapa').style.display = 'none';
-    document.getElementById('2-etapa').style.display = 'none';
-    document.getElementById('3-etapa').style.display = 'none';
-    document.getElementById('4-etapa').style.display = 'none';
-    document.getElementById('5-etapa').style.display = 'none';
+document.getElementById('1-etapa').style.display = 'none';
+document.getElementById('2-etapa').style.display = 'none';
+document.getElementById('3-etapa').style.display = 'none';
+document.getElementById('4-etapa').style.display = 'none';
+document.getElementById('5-etapa').style.display = 'none';
 
-    if (status == "Aberto")
-        document.getElementById('1-etapa').style.display = 'block';
-    else if (status == 'Divulgado')
-        document.getElementById('2-etapa').style.display = 'block';
-    else if (status == 'Testes')
-        document.getElementById('3-etapa').style.display = 'block';
-    else if (status == 'Entrevistas')
-        document.getElementById('4-etapa').style.display = 'block';
-    else
-        document.getElementById('5-etapa').style.display = 'block';
+if (status == "Aberto")
+    document.getElementById('1-etapa').style.display = 'block';
+else if (status == 'Divulgado')
+    document.getElementById('2-etapa').style.display = 'block';
+else if (status == 'Testes')
+    document.getElementById('3-etapa').style.display = 'block';
+else if (status == 'Entrevistas')
+    document.getElementById('4-etapa').style.display = 'block';
+else
+    document.getElementById('5-etapa').style.display = 'block';
 
 
-    var btn = document.getElementById('btnLiberarTeste');
+var btn = document.getElementById('btnLiberarTeste');
 
+btn.disabled = true;
+
+if (status == "Divulgado")
+    btn.disabled = false;
+else
     btn.disabled = true;
-
-    if (status == "Divulgado")
-        btn.disabled = false;
-    else
-        btn.disabled = true;
 </script>

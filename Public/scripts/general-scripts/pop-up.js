@@ -1,32 +1,25 @@
-// const showPopup = (openButton, popupContent) => {
-//     const openBtn = document.getElementById(openButton),
-//         popupContainer = document.getElementById(popupContent);
-
-//     if (openBtn && popupContainer) {
-//         openBtn.addEventListener('click', () => {
-//             popupContainer.classList.add('show-popup')
-//         })
-//     }
-// }
-
-// showPopup('open-popup', 'popup-container');
-
+/* Abre o pop-up */
 function Open(popup) {
     document.getElementById(popup).classList.add('show-popup');
 }
 
+/* Fecha o pop-up */
 function Close(btn) {
     (btn.parentNode).parentNode.classList.remove('show-popup');
 
     return;
 }
 
+/* Envia o formulário pelo btn do pop-up */
 function Confirm(btn) {
     Close(btn);
 
-    let container = (btn.parentNode).parentNode;
+    document.getElementById("formulario").submit();
+}
 
-    if (container.id == 'popup-confirm') {
-        document.getElementById("formulario").submit();
-    }
+/* Redireciona a página */
+function Back(btn, url) {
+    Close(btn);
+
+    window.location.replace(url);
 }
