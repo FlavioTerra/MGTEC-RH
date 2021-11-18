@@ -19,6 +19,10 @@
         }
 
         public function visualizarProcessoSeletivo() {
+            session_start();
+
+            $_SESSION['tipo_user'] = 3;
+
             $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
 
             $viewProcessoSeletivo->__set('id_proc', $_POST['id_proc']);
@@ -169,11 +173,27 @@
             $this->render('atribuir-teste');
         }
 
-        // public function cadastrarTeste() {
-        //     $entrevista = Container::getModel('AtribuirTeste');
 
-            
-        // }
+        // Relatórios
+        public function gerarRelatorio() {
+
+            $this->render('gerar-relatorio');
+        }
+        
+        public function gerarRelatorioIndicadoresDesempenho() {
+
+            $this->render('relatorio-indicadores-desempenho');
+        }
+
+        public function gerarRelatorioQuadroVagas() {
+
+            $this->render('relatorio-quadro-de-vagas');
+        }
+
+        public function gerarRelatorioRecrutamentoSelecao() {
+
+            $this->render('relatorio-recrutamento-selecao');
+        }
 
     }   
 

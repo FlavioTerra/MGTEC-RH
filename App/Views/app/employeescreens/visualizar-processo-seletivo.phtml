@@ -17,7 +17,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -26,21 +26,23 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Funcionário</a>
-                    <a class="nav-link" href="#">Candidatos</a>
-                    <a class="nav-link" href="#">Requisições</a>
-                    <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link active" href="#">Processos Seletivos</a>
-                    <a class="nav-link" href="#">Testes</a>
-                    <a class="nav-link" href="#">Entrevistas</a>
-                    <a class="nav-link" href="#">Suporte</a>
-                    <a class="nav-link" href="#">Sair</a>
+                    <a class="nav-link active" href="/home">Home</a>
+                    <a class="nav-link" href="/#">Funcionário</a>
+                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                    <a class="nav-link" href="/teste_candidato">Testes</a>
+                    <a class="nav-link" href="/entrevista_candidato">Entrevistas</a>
+                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
                 </div>
             </div>
     </nav>
 
     <form action="/processo_seletivo_cadastrar" method="post">
+
+    <?php if($_SESSION['tipo_user'] == 2 || $_SESSION['tipo_user'] == 5){ ?>
         <div class="container">
             <div class="title">
                 <h1 class="title-1">Processo Seletivo</h1>
@@ -111,8 +113,8 @@
                 </div>
 
                 <?php 
-                $status = $this->view->detalhesProcessoSeletivo->status_proc;
-            ?>
+                    $status = $this->view->detalhesProcessoSeletivo->status_proc;
+                ?>
 
                 <div class="row vagas">
                     <!--6%-->
@@ -301,11 +303,275 @@
             <hr />
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-                <button type="button" class="btn excluir btn-outline-primary mb-5">Excluir</button>
-                <button type="submit" class="btn aprovar btn-outline-primary mb-5">Salvar</button>
+                <a href="/gerenciar_processo_seletivo"><button type="button" class="btn btn-outline-primary mb-5">Voltar</button></a>
+                <a><button type="button" class="btn excluir btn-outline-primary mb-5">Excluir</button></a>
+                <a><button type="submit" class="btn aprovar btn-outline-primary mb-5">Salvar</button></a>
             </div>
         </div>
+    <?php } else { ?>
+        <div class="container">
+            <div class="title">
+                <h1 class="title-1">Processo Seletivo</h1>
+            </div>
+
+            <div class="title">
+                <h2 class="title-2">Dados de Cadastro</h2>
+                <img src="/images/global/info.svg">
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="colsm-2 form-label title-interview">Título</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel"
+                        value="<?= $this->view->detalhesProcessoSeletivo->titulo_proc ?>" placeholder=""
+                        name="tituloProcSeletivo" disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="vacancy" class="col-sm-2 form-label form-label">Vaga</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" value="" name="vacancy" disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="responsible" class="col-sm-2 form-label form-label">Responsável</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel"
+                        value="<?= $this->view->detalhesProcessoSeletivo->nome ?>" name="responsible" disabled>
+                </div>
+            </div>
+
+            <div class="title">
+                <h2 class="title-2">Dados do Processo</h2>
+                <img src="/images/global/info.svg">
+            </div>
+
+            <div class="row mb-3">
+                <div class="row mb-3">
+                    <label for="start_date" class="col-sm-2 form-label form-label">Data de Início</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            value="<?= $this->view->detalhesProcessoSeletivo->data_inicio ?>" name="start_date" disabled>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="end_date" class="col-sm-2 form-label form-label">Data de Término</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                            value="<?= $this->view->detalhesProcessoSeletivo->data_termino ?>" name="end_date" disabled>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="teste_Title" class="col-sm-2 form-label form-label">Classificação</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="colFormLabel"
+                            value="<?= $this->view->detalhesProcessoSeletivo->regra_class ?>" name="classification-rule"
+                            min="0" step="0.1" max="1" disabled>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="teste_Title" class="col-sm-2 form-label form-label">Descrição</label>
+                    <textarea type="text" class="form-control text-area"
+                        name="descProc" disabled><?=$this->view->detalhesProcessoSeletivo->descricao ?></textarea>
+                </div>
+
+                <?php 
+                    $status = $this->view->detalhesProcessoSeletivo->status_proc;
+                ?>
+
+                <div class="row vagas">
+                    <!--6%-->
+                    <div class="title">
+                        <h2 class="title-2">Status</h2>
+                    </div>
+
+                    <div class="mb-3 vaga" id="1-etapa">
+                        <div class="vaga-bar">
+                            <div class="vaga-per-6" per="6%"></div>
+                        </div>
+
+                        <div class="mb-3 texts">
+                            <div class="text-box">
+                                <span>Aberto</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Divulgado</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Testes</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Entrevistas</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Finalizado</span>
+                                <img src="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--24%-->
+                    <div class="mb-3 vaga" id="2-etapa">
+                        <div class="vaga-bar">
+                            <div class="vaga-per-24" per="24%"></div>
+                        </div>
+
+                        <div class="mb-3 texts">
+                            <div class="text-box">
+                                <span>Aberto</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Divulgado</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Testes</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Entrevistas</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Finalizado</span>
+                                <img src="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--59%-->
+                    <div class="mb-3 vaga" id="3-etapa">
+                        <div class="vaga-bar">
+                            <div class="vaga-per-59" per="59%"></div>
+                        </div>
+
+                        <div class="mb-3 texts">
+                            <div class="text-box">
+                                <span>Aberto</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Divulgado</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Testes</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Entrevistas</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Finalizado</span>
+                                <img src="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--77%-->
+                    <div class="vaga" id="4-etapa">
+                        <div class="vaga-bar">
+                            <div class="vaga-per-77" per="77%"></div>
+                        </div>
+
+                        <div class="mb-3 texts">
+                            <div class="text-box">
+                                <span>Aberto</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Divulgado</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Testes</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Entrevistas</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Finalizado</span>
+                                <img src="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--100%-->
+                    <div class="vaga" id="5-etapa">
+                        <div class="vaga-bar">
+                            <div class="vaga-per-100" per="100%"></div>
+                        </div>
+
+                        <div class="mb-3 texts">
+                            <div class="text-box">
+                                <span>Aberto</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Divulgado</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Testes</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Entrevistas</span>
+                                <img src="">
+                            </div>
+
+                            <div class="text-box">
+                                <span>Finalizado</span>
+                                <img src="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="buttons">
+                <a href="/gerenciar_processo_seletivo"><button type="button" class="btn btn-outline-primary mb-5">Voltar</button></a>
+            </div>
+        </div>
+    <?php } ?>
+        
     </form>
 
     <!--Footer-->

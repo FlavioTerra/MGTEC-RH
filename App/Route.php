@@ -7,11 +7,18 @@
     class Route extends Bootstrap{
         
         protected function initRoutes() {
+            $routes['/'] = array(
+                'route'=>'/',
+                'controller'=>'GeneralScreensController',
+                'action'=>'index'
+            );
+
             $routes['home'] = array(
                 'route'=>'/home',
                 'controller'=>'GeneralScreensController',
                 'action'=>'index'
             );
+            
 
             // Cadastrar Processo Seletivo
             $routes['processo_seletivo'] = array(
@@ -170,6 +177,31 @@
                 'route'=>'/usuario_recuperar_senha_codigo',
                 'controller'=>'GeneralScreensController',
                 'action'=>'usuarioRecuperarSenhaCodigo'
+            );
+
+            // Relatórios
+            $routes['gerar_relatorio'] = array(
+                'route'=>'/gerar_relatorio',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'gerarRelatorio'
+            );
+
+            $routes['gerar_relatorio_indicadores_desempenho'] = array(
+                'route'=>'/gerar_relatorio_indicadores_desempenho',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'gerarRelatorioIndicadoresDesempenho'
+            );
+
+            $routes['gerar_relatorio_quadro_vagas'] = array(
+                'route'=>'/gerar_relatorio_quadro_vagas',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'gerarRelatorioQuadroVagas'
+            );
+
+            $routes['gerar_relatorio_recrutamento_selecao'] = array(
+                'route'=>'/gerar_relatorio_recrutamento_selecao',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'gerarRelatorioRecrutamentoSelecao'
             );
 
             $this->setRoutes($routes);

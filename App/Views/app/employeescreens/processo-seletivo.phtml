@@ -17,7 +17,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -26,17 +26,17 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="http://localhost:3000/home">Home</a>
-                    <a class="nav-link" href="http://localhost:3000/#">Funcionário</a>
-                    <a class="nav-link" href="http://localhost:3000/gerenciar_candidato">Candidatos</a>
-                    <a class="nav-link" href="http://localhost:3000/requisicoes_vaga">Requisições</a>
-                    <a class="nav-link" href="http://localhost:3000/gerenciar_vaga">Vagas</a>
-                    <a class="nav-link active" href="http://localhost:3000/gerenciar_processo_seletivo">Processos Seletivos</a>
-                    <a class="nav-link" href="http://localhost:3000/teste_candidato">Testes</a>
-                    <a class="nav-link" href="http://localhost:3000/entrevista_candidato">Entrevistas</a>
-                    <a class="nav-link" href="http://localhost:3000/relatorio">Relatórios</a>
-                    <a class="nav-link" href="http://localhost:3000/sair">Sair</a>
-                 </div>
+                    <a class="nav-link active" href="/home">Home</a>
+                    <a class="nav-link" href="/#">Funcionário</a>
+                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                    <a class="nav-link" href="/teste_candidato">Testes</a>
+                    <a class="nav-link" href="/entrevista_candidato">Entrevistas</a>
+                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
+                </div>
             </div>
     </nav>
     <?php
@@ -48,7 +48,7 @@
         </script>
 
     <?php
-    header("Location: http://localhost:3000/gerenciar_processo_seletivo");}
+    header("Location: /gerenciar_processo_seletivo");}
     ?>
 
     <form action="/processo_seletivo_cadastrar" method="post">
@@ -129,7 +129,7 @@
             <hr />
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5" onclick="window.location.href = 'http://localhost:3000/gerenciar_processo_seletivo'">Voltar</button>
+                <button type="button" class="btn btn-outline-primary mb-5" onclick="window.location.href = '/gerenciar_processo_seletivo'">Voltar</button>
                 <button type="submit" class="btn btn-outline-primary mb-5">Cadastrar</button>
             </div>
         </div>
