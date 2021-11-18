@@ -43,6 +43,12 @@
             header('Location:/usuario_cadastrar?usuarioCadastrar=sucess');   
         }
 
+        public function usuarioEntrarValidar(){
+            $usuario = Container::getModel('UsuarioCadastrar');
+
+            $usuario->logar();
+        }
+
         public function gerarUsuario() {
 
             $usuarios = Container::getModel('InformacoesGlobais');

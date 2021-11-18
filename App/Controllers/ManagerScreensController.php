@@ -17,6 +17,18 @@
             $this->render('entrevista-registrar');
         }
 
+        public function entrevistaRegistrada() {
+            $entrevistasRegistradas = Container::getModel('EntrevistaRegistrar');
+
+            $this->view->todasEntrevistasRegistradas = $entrevistasRegistradas->getAll();
+
+            $this->render('entrevistas-registradas');
+        }
+
+        public function visualizarEntrevistaRegistrada() {
+            $this->render('visualizar-entrevista-registrada');
+        }
+
         public function entrevistaCandidatoRegistrar() {
             $entrevista = Container::getModel('EntrevistaRegistrar');
 

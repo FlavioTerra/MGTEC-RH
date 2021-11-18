@@ -61,7 +61,9 @@
                         e.titulo_entrevista,
                         e.hora_entrevista,
                         e.descricao
-                        from tb_entrevista e';
+                        from tb_entrevista e
+                        inner join tb_usuario u on e.id_user = u.id_user    
+                        where e.id_entrevista = :id_proc';
   
                 
             $stmt = $this->db->prepare($query);

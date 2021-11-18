@@ -21,7 +21,7 @@
         public function visualizarProcessoSeletivo() {
             session_start();
 
-            $_SESSION['tipo_user'] = 3;
+            $_SESSION['tipo_user'] = 2;
 
             $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
 

@@ -59,6 +59,19 @@
                 'action'=>'entrevistaCandidatoRegistrar'
             );
 
+            $routes['entrevista_registrada'] = array(
+                'route'=>'/entrevista_registrada',
+                'controller'=>'ManagerScreensController',
+                'action'=>'entrevistaRegistrada'
+            );
+
+            $routes['visualizar_entrevista_registrada'] = array(
+                'route'=>'/visualizar_entrevista_registrada',
+                'controller'=>'ManagerScreensController',
+                'action'=>'visualizarEntrevistaRegistrada'
+            );
+
+
             // Marcar Entrevista
             $routes['entrevista_marcar'] = array(
                 'route'=>'/entrevista_marcar',
@@ -153,6 +166,12 @@
                 'route'=>'/usuario_entrar',
                 'controller'=>'GeneralScreensController',
                 'action'=>'usuarioEntrar'
+            );
+
+            $routes['usuario_entrar_validar'] = array(
+                'route'=>'/usuario_entrar_validar',
+                'controller'=>'GeneralScreensController',
+                'action'=>'usuarioEntrarValidar'
             );
 
             $routes['usuario_sair'] = array(

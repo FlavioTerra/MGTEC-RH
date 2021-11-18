@@ -16,7 +16,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -24,19 +24,19 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Funcionário</a>
-                    <a class="nav-link" href="#">Candidatos</a>
-                    <a class="nav-link" href="#">Requisições</a>
-                    <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Processos Seletivos</a>
-                    <a class="nav-link" href="#">Testes</a>
-                    <a class="nav-link active" href="#">Entrevistas</a>
-                    <a class="nav-link" href="#">Suporte</a>
-                    <a class="nav-link" href="#">Sair</a>
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="/#">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/teste_candidato">Testes</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
                 </div>
-            </div>
         </div>
     </nav>
 
@@ -68,45 +68,8 @@
         </div>
 
         <div class="btn-search">
-            <button type="button" class="btn btn-outline-primary mb-5 roxo">Marcadas</button>
-            <button type="button" class="btn btn-outline-primary mb-5">Registradas</button>
-        </div>
-
-        <hr>
-
-        <!--resultado-->
-        <div class="bottom-area">
-            <div class="candidato">
-                <div class="card">
-                    <div class="card-img"></div>
-
-                    <div class="card-body">
-                        <h4 class="card-title">Nome do Candidato
-                            <!-- $processoSeletivo->nome_departamento -->
-                        </h4>
-                        <h6 class="card-text">
-                            <span>
-                                Recrutador de RH
-                            </span>
-
-                            <span>
-                                - 08/11/2021
-                            </span>
-
-                            <span>
-                                - 12:00
-                            </span>
-
-                            <span>
-                                - Marcada
-                            </span>
-                        </h6>
-                    </div>
-                </div>
-
-                <button type="button" class="btn btn-outline-primary mb-4">Visualizar</button>
-                <button type="button" class="btn btn-outline-primary mb-4" disabled>Registrar</button>
-            </div>
+            <a href="/gerenciar_entrevista_candidato"><button type="button" class="btn btn-outline-primary mb-5 roxo">Marcadas</button></a>
+            <a href="/entrevista_registrada"><button type="button" class="btn btn-outline-primary mb-5">Registradas</button></a>
         </div>
 
         <hr>
@@ -121,18 +84,17 @@
                     <div class="card-body">
                         <!-- <h4 class="card-title">Departamento: <?= $entrevistaCandidato->nome_departamento ?> </h4> -->
                         <h4 class="card-title" id="nome-candidato">
-                            <?= $entrevistaCandidato->id_user ?>
+                            <!-- <?= $entrevistaCandidato->nome ?> -->
                         </h4>
                         <p class="card-text title-user" id="hora-entrevista">
-                            <?= $entrevistaCandidato->hora_entrevista ?>
-                        </p>
-                        <p class="card-text" id="data-entrevista">
-                            <?= $entrevistaCandidato->data_entrevista ?>
+                            <?= $entrevistaCandidato->hora_entrevista ?> - <?= $entrevistaCandidato->data_entrevista ?>
                         </p>
                     </div>
                 </div>
                 <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
                 <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
+                <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
+                <button type="submit" class="btn btn-outline-primary mb-4" disabled>Registrar</button>
                 <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
             </div>
         </form>
@@ -140,9 +102,9 @@
 
         <div class="buttons">
             <button type="button" class="btn btn-outline-primary mb-5"
-                onclick="window.location.href = 'http://localhost:3000/entrevista-marcar'">Marcar</button>
+                onclick="window.location.href = '/entrevista_marcar'">Marcar</button>
             <button type="button" class="btn btn-outline-primary mb-5"
-                onclick="window.location.href = 'http://localhost:3000/home'">Voltar</button>
+                onclick="window.location.href = '/home'">Voltar</button>
         </div>
 
     </div>
