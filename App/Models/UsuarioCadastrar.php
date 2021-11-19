@@ -33,6 +33,10 @@
 
             $stmt->execute();
         }
+
+        public function logar(){
+            print_r($id_user);
+        }
     }
 
 ?>

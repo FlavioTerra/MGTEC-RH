@@ -31,6 +31,42 @@
 
             $stmt->execute();
         }
+
+        public function getAll() {
+            $query = "select ec.id_entrevista,
+                      ec.id_candidato,
+                      ec.est_comp,
+                      ec.pontos_pos,
+                      ec.pontos_neg
+                      from tb_entrevista_candidato ec";
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+            
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        public function getEntrevistaRegistrada() {
+            $query = "select ec.id_entrevista,
+                        ec.id_candidato,
+                        ec.est_comp,
+                        ec.pontos_pos,
+                        ec.pontos_neg
+                        from tb_entrevista_candidato ec
+                        inner join tb_candidato u on ec.id_candidato = u.id_candidato  
+                        where ec.id_entrevista = :id_entrevista";
+  
+            // Fazer junção com vaga mais tarde
+
+            $stmt = $this->db->prepare($query);
+            
+            $stmt->bindValue(':id_entrevista',$this->__get('id_entrevista'));
+        
+            $stmt->execute();
+            
+            return $stmt->fetch(\PDO::FETCH_OBJ);
+        }
     }
 
 ?>

@@ -18,7 +18,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -27,16 +27,16 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Funcionário</a>
-                    <a class="nav-link" href="#">Candidatos</a>
-                    <a class="nav-link" href="#">Requisições</a>
-                    <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Processos Seletivos</a>
-                    <a class="nav-link" href="#">Testes</a>
-                    <a class="nav-link active" href="#">Entrevistas</a>
-                    <a class="nav-link" href="#">Suporte</a>
-                    <a class="nav-link" href="#">Sair</a>
+                    <a class="nav-link active" href="/home">Home</a>
+                    <a class="nav-link" href="/#">Funcionário</a>
+                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                    <a class="nav-link" href="/teste_candidato">Testes</a>
+                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
                 </div>
             </div>
         </div>
@@ -47,11 +47,11 @@
     ?>
 
     <script>
-    alert("Entrevista Salva com Sucesso!");
+    alert("Entrevista maracada com sucesso!");
     </script>
 
     <?php
-    } 
+    header("Location: /gerenciar_entrevista_candidato");}
     ?>
 
     <!--Pop-up area -->
@@ -119,31 +119,42 @@
             <div class="row">
                 <label class="label1">Título</label>
 
-                <input type="text" class="form-control" name="titulo">
+                <input type="text" class="form-control" name="titulo" required>
             </div>
 
             <div class="row">
                 <label class="label1">Descrição</label>
 
-                <textarea type="text" class="form-control" id="textarea" rows="3" name="desc"></textarea>
+                <textarea type="text" class="form-control" id="textarea" rows="3" name="desc" required></textarea>
             </div>
 
             <div class="row">
                 <label for="sdate" class="label1">Data</label>
 
-                <input type="date" class="form-control" name="date">
+                <input type="date" class="form-control" name="date" required>
             </div>
 
             <div class="row">
                 <label for="hora" class="label1">Hora</label>
 
-                <input type="time" class="form-control" name="hora">
+                <input type="time" class="form-control" name="hora" required>
+            </div>
+
+            <div class="row">
+                <label class="label2">Processo Seletivo</label>
+
+                <select class="form-select" aria-label="processo-seletivo" name="processo-seletivo" required>
+                    <option selected></option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
             </div>
 
             <div class="row">
                 <label class="label2">Candidato</label>
 
-                <select class="form-select" aria-label="nome-candidato" name="nome-candidato">
+                <select class="form-select" aria-label="nome-candidato" name="nome-candidato" required>
                     <option selected></option>
                     <option value="1">#</option>
                     <option value="2">#</option>
@@ -154,19 +165,7 @@
             <div class="row">
                 <label class="label2">Responsável</label>
 
-                <select class="form-select" aria-label="resp" name="resp">
-                    <option selected></option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
-            </div>
-
-
-            <div class="row">
-                <label class="label2">Processo Seletivo</label>
-
-                <select class="form-select" aria-label="processo-seletivo" name="processo-seletivo">
+                <select class="form-select" aria-label="resp" name="resp" required>
                     <option selected></option>
                     <option value="1">#</option>
                     <option value="2">#</option>

@@ -16,7 +16,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="http://localhost:3000/home"><img src="/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -25,20 +25,20 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="http://localhost:3000/home">Home</a>
-                    <a class="nav-link active" href="http://localhost:3000/usuario_entrar">Entrar</a>
-                    <a class="nav-link" href="http://localhost:3000/home#scroll-1">Sobre</a>
-                    <a class="nav-link" href="http://localhost:3000/home#scroll-2">Quem Somos</a>
-                    <a class="nav-link" href="http://localhost:3000/home#scroll-3">Nossos Líderes</a>
-                    <a class="nav-link" href="http://localhost:3000/home#scroll-4">Trabalhe Conosco</a>
-                    <a class="nav-link" href="http://localhost:3000/home#scroll-5">Contato</a>
+                    <a class="nav-link" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active" href="/usuario_entrar">Entrar</a>
+                    <a class="nav-link" href="/home#sobre_nos">Sobre</a>
+                    <a class="nav-link" href="/home#quem_somos">Quem Somos</a>
+                    <a class="nav-link" href="/home#nossa_equipe">Nossos Líderes</a>
+                    <a class="nav-link" href="/home#vagas_abertas">Trabalhe Conosco</a>
+                    <a class="nav-link" href="/home#contate_nos">Contato</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!--body-->
-    <form action="requisitante.php" method="post">
+    <form action="usuario_entrar_validar" method="post">
         <div class="container">
             <div class="login-content">
                 <h1>Login</h1>
@@ -55,26 +55,26 @@
                 </div>
 
                 <div class="trocar-senha">
-                    <a class="btn-link" href="http://localhost:3000/usuario_recuperar_senha_codigo">
+                    <a class="btn-link" href="/usuario_recuperar_senha_codigo">
                         <span class="txt-trocar-senha">Esqueci minha senha</span>
                     </a>
                 </div>
 
-                <a class="btn-link" href="http://localhost:3000/home">
+                <a class="btn-link">
                     <div class="effect">
                         <span>Entrar</span>
                         <input class="btn" type="submit" disabled>
                     </div>
                 </a>
 
-                <a class="btn-link" href="http://localhost:3000/usuario_cadastrar">
+                <a class="btn-link" href="/usuario_cadastrar">
                     <div class="effect">
                         <span>Registrar</span>
                         <input class="btn" type="button" disabled>
                     </div>
                 </a>
 
-                <a class="btn-link" href="http://localhost:3000/home">
+                <a class="btn-link" href="/home">
                     <div class="effect">
                         <span>Voltar</span>
                         <input class="btn" type="button" disabled>

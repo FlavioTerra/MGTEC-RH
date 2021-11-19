@@ -16,7 +16,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="http://localhost:3000/home"><img src="/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -27,82 +27,82 @@
                 <!-- Usu�rio comum -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="http://localhost:3000/home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
                         <a class="nav-link" href="#">Candidato</a>
-                        <a class="nav-link" href="#scroll-1">Sobre</a>
-                        <a class="nav-link" href="#scroll-2">Quem Somos</a>
-                        <a class="nav-link" href="#scroll-3">Nossos Líderes</a>
-                        <a class="nav-link" href="#scroll-4">Trabalhe Conosco</a>
-                        <a class="nav-link" href="#scroll-5">Contato</a>
+                        <a class="nav-link" href="#sobre_nos">Sobre</a>
+                        <a class="nav-link" href="#quem_somos">Quem Somos</a>
+                        <a class="nav-link" href="#nossa_equipe">Nossos Líderes</a>
+                        <a class="nav-link" href="#vagas_abertas">Trabalhe Conosco</a>
+                        <a class="nav-link" href="#contate_nos">Contato</a>
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 2) { ?>
                 <!-- Usu�rio funcion�rio -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" href="http://localhost:3000/home">Home</a>
-                        <a class="nav-link" href="http://localhost:3000/#">Funcionário</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_candidato">Candidatos</a>
-                        <a class="nav-link" href="http://localhost:3000/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_vaga">Vagas</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link" href="http://localhost:3000/teste_candidato">Testes</a>
-                        <a class="nav-link" href="http://localhost:3000/entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="http://localhost:3000/relatorio">Relatórios</a>
-                        <a class="nav-link" href="http://localhost:3000/sair">Sair</a>
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="/#">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/teste_candidato">Testes</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 3) { ?>
                 <!-- Usu�rio gestor -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" href="http://localhost:3000/home">Home</a>
+                        <a class="nav-link active" href="/home">Home</a>
                         <a class="nav-link" href="#">Gestor</a>
-                        <a class="nav-link" href="http://localhost:3000/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_vaga">Vagas</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link" href="http://localhost:3000/sair">Sair</a>               
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 4) { ?>
                 <!-- Usu�rio l�der -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                        <a class="nav-link active" href="http://localhost:3000/home">Home</a>
+                        <a class="nav-link active" href="/home">Home</a>
                         <a class="nav-link" href="#">L�der</a>
-                        <a class="nav-link" href="http://localhost:3000/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_vaga">Vagas</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link" href="http://localhost:3000/sair">Sair</a>               
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 5) { ?>
                 <!-- Usu�rio l�der -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" href="http://localhost:3000/home">Home</a>
-                        <a class="nav-link" href="http://localhost:3000/#">Admim</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_candidato">Candidatos</a>
-                        <a class="nav-link" href="http://localhost:3000/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_vaga">Vagas</a>
-                        <a class="nav-link" href="http://localhost:3000/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link" href="http://localhost:3000/teste_candidato">Testes</a>
-                        <a class="nav-link" href="http://localhost:3000/entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="http://localhost:3000/relatorio">Relatórios</a>
-                        <a class="nav-link" href="http://localhost:3000/sair">Sair</a>                    
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="/#">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/teste_candidato">Testes</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
                 </div>
             <?php } else { ?>    
                 <!-- Usu�rio sem identifica��o -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="http://localhost:3000/home">Home</a>
-                        <a class="nav-link" href="http://localhost:3000/usuario_entrar">Entrar</a>
-                        <a class="nav-link" href="#scroll-1">Sobre</a>
-                        <a class="nav-link" href="#scroll-2">Quem Somos</a>
-                        <a class="nav-link" href="#scroll-3">Nossos Líderes</a>
-                        <a class="nav-link" href="#scroll-4">Trabalhe Conosco</a>
-                        <a class="nav-link" href="#scroll-5">Contato</a>
+                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                        <a class="nav-link" href="/usuario_entrar">Entrar</a>
+                        <a class="nav-link" href="#sobre_nos">Sobre</a>
+                        <a class="nav-link" href="#quem_somos">Quem Somos</a>
+                        <a class="nav-link" href="#nossa_equipe">Nossos Líderes</a>
+                        <a class="nav-link" href="#vagas_abertas">Trabalhe Conosco</a>
+                        <a class="nav-link" href="#contate_nos">Contato</a>
                     </div>
                 </div>
             <?php } ?>    
@@ -112,7 +112,7 @@
     </nav>
 
     <!--Body-->
-    <form action="requisitante.php" method="post">
+    <form action="" method="post">
         <div class="container">
             <!--slider-->
             <div class="slide-area">
@@ -159,7 +159,7 @@
 
             <!--Sobre nós-->
             <div class="about-area">
-                <div id="scroll-1"></div>
+                <div id="sobre_nos"></div>
                 <div class="card-about">
                     <div class="icon-about-area">
                         <img class="icon-about" src="/images/home/eletron.svg">
@@ -190,7 +190,7 @@
 
             <!--quem somos-->
             <div class="dark-area">
-                <div id="scroll-2"></div>
+                <div id="quem_somos"></div>
                 <div class="dark-block">
                     <h1 class="quem-somos-title">Quem Somos?</h1>
 
@@ -272,7 +272,7 @@
 
             <!--Teams-->
             <div class="team-area">
-                <div id="scroll-3"></div>
+                <div id="nossa_equipe"></div>
                 <h1 class="lideres-title">Nossos Líderes</h1>
                 <div class="team-section">
                     <div class="person">
@@ -315,7 +315,7 @@
 
             <!--Vagas-->
             <div class="job-area" id="jobs">
-                <div id="scroll-4"></div>
+                <div id="vagas_abertas"></div>
                 <h1 class="title-job">Vagas Disponíveis</h1>
 
                 <div class="left-btn" onclick="preCard()"></div>
@@ -350,7 +350,7 @@
 
             <!--Contact us-->
             <div class="contact-area">
-                <div id="scroll-5"></div>
+                <div id="contate_nos"></div>
                 <h1 class="title-contact">Contate-nos</h1>
 
                 <div class="contact-section">

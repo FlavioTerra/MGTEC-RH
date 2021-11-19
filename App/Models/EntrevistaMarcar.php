@@ -37,14 +37,14 @@
         }
 
         public function getAll() {
-            $query = 'select e.id_entrevista,  
+            $query = "select e.id_entrevista,  
                         e.id_user,
                         e.responsavel,
-                        e.data_entrevista,
+                        DATE_FORMAT(e.data_entrevista,'%d/%m/%Y') as data_entrevista,
                         e.titulo_entrevista,
-                        e.hora_entrevista,
+                        TIME_FORMAT(e.hora_entrevista, '%T')as hora_entrevista,
                         e.descricao
-                        from tb_entrevista e';
+                        from tb_entrevista e";
             
             $stmt = $this->db->prepare($query);
 
@@ -54,18 +54,20 @@
         }
 
         public function getEntrevistaCandidato() {
-            $query = 'select e.id_entrevista,  
+            $query = "select e.id_entrevista,  
                         e.id_user,
                         e.responsavel,
-                        e.data_entrevista,
+                        DATE_FORMAT(e.data_entrevista,'%d/%m/%Y') as data_entrevista,
                         e.titulo_entrevista,
-                        e.hora_entrevista,
+                        TIME_FORMAT(e.hora_entrevista, '%T') as hora_entrevista,
                         e.descricao
-                        from tb_entrevista e';
+                        from tb_entrevista e
+                        inner join tb_usuario u on e.id_user = u.id_user    
+                        where e.id_entrevista = :id_entrevista";
   
                 
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(':id_proc',$this->__get('id_proc'));
+            $stmt->bindValue(':id_entrevista',$this->__get('id_entrevista'));
         
             $stmt->execute();
             
