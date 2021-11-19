@@ -33,7 +33,8 @@
         }
 
         public function getAll() {
-            $query = "select ec.id_candidato,
+            $query = "select ec.id_entrevista,
+                      ec.id_candidato,
                       ec.est_comp,
                       ec.pontos_pos,
                       ec.pontos_neg
@@ -47,23 +48,20 @@
         }
 
         public function getEntrevistaRegistrada() {
-            $query = "select ps.id_proc,  
-                             ps.titulo_proc,
-                             u.nome,
-                             ps.status_proc,
-                             DATE_FORMAT(ps.data_inicio,'%d/%m/%Y') as data_inicio,
-                             DATE_FORMAT(ps.data_termino,'%d/%m/%Y') as data_termino,
-                             ps.regra_class,
-                             ps.descricao
-                            from tb_processo_seletivo ps
-                            inner join tb_usuario u on ps.id_responsavel = id_user    
-                            where ps.id_proc = :id_proc";
+            $query = "select ec.id_entrevista,
+                        ec.id_candidato,
+                        ec.est_comp,
+                        ec.pontos_pos,
+                        ec.pontos_neg
+                        from tb_entrevista_candidato ec
+                        inner join tb_candidato u on ec.id_candidato = u.id_candidato  
+                        where ec.id_entrevista = :id_entrevista";
   
             // Fazer junção com vaga mais tarde
 
             $stmt = $this->db->prepare($query);
             
-            $stmt->bindValue(':id_proc',$this->__get('id_proc'));
+            $stmt->bindValue(':id_entrevista',$this->__get('id_entrevista'));
         
             $stmt->execute();
             

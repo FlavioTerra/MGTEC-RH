@@ -21,7 +21,7 @@
         public function visualizarProcessoSeletivo() {
             session_start();
 
-            $_SESSION['tipo_user'] = 2;
+            $_SESSION['tipo_user'] = 3;
 
             $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
 
@@ -111,10 +111,29 @@
         public function gerenciarEntrevistaCandidato() {
             $entrevistasCandidato = Container::getModel('EntrevistaMarcar');
 
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
             $this->view->todasEntrevistasCandidato = $entrevistasCandidato->getAll();
             
             $this->render('gerenciar-entrevista');
         }
+
+        public function entrevistaCandidato() {
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
+            $this->render('entrevista-marcar');
+        }
+
+
+        // Teste
 
         public function cadastrarTeste() {
             $teste = Container::getModel('AtribuirTeste');

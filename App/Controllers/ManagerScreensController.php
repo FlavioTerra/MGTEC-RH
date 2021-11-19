@@ -20,12 +20,27 @@
         public function entrevistaRegistrada() {
             $entrevistasRegistradas = Container::getModel('EntrevistaRegistrar');
 
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
             $this->view->todasEntrevistasRegistradas = $entrevistasRegistradas->getAll();
 
             $this->render('entrevistas-registradas');
         }
 
         public function visualizarEntrevistaRegistrada() {
+            $viewEntrevistasRegistradas = Container::getModel('EntrevistaRegistrar');
+
+            $viewEntrevistasRegistradas->__set('id_entrevista', $_POST['id_entrevista']);
+
+            $this->view->detalhesEntrevistaRegistradas = $viewEntrevistasRegistradas->getEntrevistaRegistrada(); 
+
             $this->render('visualizar-entrevista-registrada');
         }
 
@@ -43,6 +58,13 @@
             $entrevista->save();
 
             header('Location:/entrevista_registrar?entrevistaRegistrar=sucess');   
+        }
+
+        public function entrevistaRegistrada2() {
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
+            $this->render('entrevista-registrar');
         }
 
         public function gerarRequisicaoVaga() {

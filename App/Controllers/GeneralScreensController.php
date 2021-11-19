@@ -19,7 +19,7 @@
             // trocar dps
             session_start();
 
-            $_SESSION['tipo_user'] = 0;
+            $_SESSION['tipo_user'] = 3;
 
             $this->render('home');
 
@@ -62,7 +62,9 @@
         }
 
         public function usuarioSair() {
-            $this->render('sair'); 
+            session_start();
+            session_destroy();
+            $this->render('home'); 
         }
 
         public function exibirPopup() {

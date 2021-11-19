@@ -94,17 +94,23 @@
                 <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
                 <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
                 <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
-                <button type="submit" class="btn btn-outline-primary mb-4" disabled>Registrar</button>
-                <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
+                <?php  
+                $hoje = date('d/m/Y', strtotime("-1 day"));
+                if($entrevistaCandidato->data_entrevista == $hoje) {?>
+                    <a href="/entrevista_registrar"><button type="submit" class="btn btn-outline-primary mb-4">Registrar</button></a>
+                    <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
+                <?php } else { ?>
+                    <button type="submit" class="btn btn-outline-primary mb-4" disabled>Registrar</button>
+                <?php } ?>
             </div>
         </form>
         <?php } ?>
 
         <div class="buttons">
             <button type="button" class="btn btn-outline-primary mb-5"
-                onclick="window.location.href = '/entrevista_marcar'">Marcar</button>
-            <button type="button" class="btn btn-outline-primary mb-5"
                 onclick="window.location.href = '/home'">Voltar</button>
+            <button type="button" class="btn btn-outline-primary mb-5"
+                onclick="window.location.href = '/entrevista_marcar'">Marcar</button>
         </div>
 
     </div>

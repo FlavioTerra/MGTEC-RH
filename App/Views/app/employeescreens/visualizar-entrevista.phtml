@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcar Entrevista</title>
+    <title>Visualizar Entrevista</title>
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-marcar-entrevista.css">
@@ -16,7 +16,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
-            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -24,17 +24,19 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Gestor</a>
-                    <a class="nav-link" href="#">Gerar Vaga</a>
-                    <a class="nav-link" href="#">Requisições</a>
-                    <a class="nav-link" href="#">Vagas</a>
-                    <a class="nav-link" href="#">Sobre</a>
-                    <a class="nav-link" href="#">Suporte</a>
-                    <a class="nav-link" href="#">Sair</a>
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="/#">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/teste_candidato">Testes</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
                 </div>
-            </div>
         </div>
     </nav>
     <?php
@@ -48,35 +50,48 @@
     <?php
     } 
     ?>
+
     <form action="/entrevista_candidato_marcar" method="post">
         <div class="container">
             <div class="title">
-                <h1 class="title-1">Marcar Entrevista</h1>
+                <h1 class="title-1">Visualizar Entrevista</h1>
             </div>
 
             <!--Pesquisa-->
             <div class="row">
                 <label class="label1">Título</label>
 
-                <input type="text" class="form-control" name="titulo">
+                <input type="text" class="form-control" name="titulo" value="<?= $this->view->detalhesEntrevistaCandidato->titulo_entrevista ?>">
             </div>
 
             <div class="row">
                 <label class="label1">Descrição</label>
-
-                <textarea type="text" class="form-control" id="textarea" rows="3" name="desc"></textarea>
+                
+                <textarea type="text" class="form-control" id="textarea" rows="3" name="desc" value=""><?= $this->view->detalhesEntrevistaCandidato->descricao ?></textarea>
             </div>
 
             <div class="row">
                 <label for="sdate" class="label1">Data</label>
 
-                <input type="date" class="form-control" name="date">
+                <input type="text" class="form-control center" 
+                            value="<?= $this->view->detalhesEntrevistaCandidato->data_entrevista ?>" name="end_date">
             </div>
 
             <div class="row">
                 <label for="hora" class="label1">Hora</label>
 
-                <input type="time" class="form-control" name="hora">
+                <input type="time" class="form-control" name="hora" value="<?= $this->view->detalhesEntrevistaCandidato->hora_entrevista ?>">
+            </div>
+
+            <div class="row">
+                <label class="label2">Processo Seletivo</label>
+
+                <select class="form-select" aria-label="processo-seletivo" name="processo-seletivo">
+                    <option selected></option>
+                    <option value="1">#</option>
+                    <option value="2">#</option>
+                    <option value="3">#</option>
+                </select>
             </div>
 
             <div class="row">
@@ -101,23 +116,12 @@
                 </select>
             </div>
 
-
-            <div class="row">
-                <label class="label2">Processo Seletivo</label>
-
-                <select class="form-select" aria-label="processo-seletivo" name="processo-seletivo">
-                    <option selected></option>
-                    <option value="1">#</option>
-                    <option value="2">#</option>
-                    <option value="3">#</option>
-                </select>
-            </div>
-
             <hr>
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-                <button type="submit" class="btn btn-outline-primary mb-5">Marcar</button>
+                <a href="/gerenciar_entrevista_candidato"><button type="button" class="btn btn-outline-primary mb-5">Voltar</button></a>
+                <a><button type="button" class="btn excluir btn-outline-primary mb-5">Excluir</button></a>
+                <a><button type="submit" class="btn aprovar btn-outline-primary mb-5">Salvar</button></a>
             </div>
         </div>
     </form>

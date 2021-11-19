@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registrar Entrevista</title>
+        <title>Visualizar Entrevista</title>
 
         <!-- Bootstrap / CSS -->
         <link rel="stylesheet" href="/styles/custom-registrar-entrevista.css">
@@ -14,7 +14,7 @@
         <!--Header-->
         <nav class="navbar navbar-expand-lg navbar-dark" id="header">
             <div class="container-fluid background-navbar">
-                <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
+                <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -23,16 +23,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="#">Home</a>
-                        <a class="nav-link" href="#">Funcionário</a>
-                        <a class="nav-link" href="#">Candidatos</a>
-                        <a class="nav-link" href="#">Requisições</a>
-                        <a class="nav-link" href="#">Vagas</a>
-                        <a class="nav-link" href="#">Processos Seletivos</a>
-                        <a class="nav-link" href="#">Testes</a>
-                        <a class="nav-link active" href="#">Entrevistas</a>
-                        <a class="nav-link" href="#">Suporte</a>
-                        <a class="nav-link" href="#">Sair</a>
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="/#">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/teste_candidato">Testes</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
         <form action="entrevista_candidato_registrar" method="post">
             <div class="container">
                 <div class="title">
-                    <h1 class="title-1">Registrar Entrevista</h1>
+                    <h1 class="title-1">Visualizar Entrevista</h1>
                     <img class="icon-click" src="/images/global/info.svg">
                 </div>
 
@@ -93,7 +93,7 @@
                         <h2 class="title-2">Estilo Comportamental <img class="icon" src="/images/global/edit.svg" alt="edit"></h2>            
                     </div>
                     <div class="col-sm-12 mb-3">
-                        <textarea type="text" class="form-control text-area" name="behavioral_style"></textarea>
+                        <textarea type="text" class="form-control text-area" name="behavioral_style"><?= $this->view->detalhesEntrevistaRegistradas->est_comp ?></textarea>
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@
                         <h2 class="title-2">Pontos Positivos <img class="icon" src="/images/global/edit.svg" alt="edit"></h2>            
                     </div>
                     <div class="col-sm-12 mb-3">
-                        <textarea type="text" class="form-control text-area" name="positive_points"></textarea>
+                        <textarea type="text" class="form-control text-area" name="positive_points"><?= $this->view->detalhesEntrevistaRegistradas->pontos_pos ?></textarea>
                     </div>
                 </div>
                 
@@ -111,14 +111,15 @@
                         <h2 class="title-2">Pontos Negativos <img class="icon" src="/images/global/edit.svg" alt="edit"></h2>            
                     </div>
                     <div class="col-sm-12 mb-3">
-                        <textarea type="text" class="form-control text-area" name="negative_points"></textarea>
+                        <textarea type="text" class="form-control text-area" name="negative_points"><?= $this->view->detalhesEntrevistaRegistradas->pontos_neg ?></textarea>
                     </div>
                 </div>
                 
                 <div class="buttons">
-                    <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
-                    <button type="submit" class="btn btn-outline-primary mb-5">Registrar</button>
-                </div>
+                <a href="/entrevista_registrada"><button type="button" class="btn btn-outline-primary mb-5">Voltar</button></a>
+                <a><button type="button" class="btn excluir btn-outline-primary mb-5">Excluir</button></a>
+                <a><button type="submit" class="btn aprovar btn-outline-primary mb-5">Salvar</button></a>
+            </div>
             </div>
         </form>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrevistas Registradas</title>
+    <title>Gerenciar Entrevistas</title>
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-gerenciar-entrevista.css">
@@ -68,52 +68,39 @@
         </div>
 
         <div class="btn-search">
-            <button type="button" class="btn btn-outline-primary mb-5">Marcadas</button>
-            <button type="button" class="btn btn-outline-primary mb-5 roxo">Registradas</button>
+            <a href="/gerenciar_entrevista_candidato"><button type="button" class="btn btn-outline-primary mb-5">Marcadas</button></a>
+            <a href="/entrevista_registrada"><button type="button" class="btn btn-outline-primary mb-5 roxo">Registradas</button></a>
         </div>
 
         <hr>
 
-        <!--resultado-->
-        <div class="bottom-area">
+        <!--Resposta-->
+        <?php foreach($this->view->todasEntrevistasRegistradas as $key => $entrevistaRegistrada) {?>
+        <form action="/visualizar_entrevista_registrada" method="post">
             <div class="candidato">
                 <div class="card">
                     <div class="card-img"></div>
 
                     <div class="card-body">
-                        <h4 class="card-title">Nome do Candidato
-                            <!-- $processoSeletivo->nome_departamento -->
+                        <!-- <h4 class="card-title">Departamento: <?= $entrevistaRegistrada->est_comp ?> </h4> -->
+                        <h4 class="card-title" id="nome-candidato">
+                            <!-- <?= $entrevistaRegistrada->est_comp ?> -->
                         </h4>
-                        <h6 class="card-text">
-                            <span>
-                                Recrutador de RH
-                            </span>
-
-                            <span>
-                                - 08/11/2021
-                            </span>
-
-                            <span>
-                                - 12:00
-                            </span>
-
-                            <span>
-                                - Registrada
-                            </span>
-                        </h6>
-
+                        <p class="card-text title-user" id="hora-entrevista">
+                            <?= $entrevistaRegistrada->est_comp ?> - <?= $entrevistaRegistrada->est_comp ?>
+                        </p>
                     </div>
                 </div>
-
-                <button type="button" class="btn btn-outline-primary mb-4">Visualizar</button>
+                <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
+                <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
+                <input type="hidden" name="id_entrevista" value="<?= $entrevistaRegistrada->id_entrevista ?>">
             </div>
-        </div>
-
-        <hr>
+        </form>
+        <?php } ?>
 
         <div class="buttons">
             <button type="button" class="btn btn-outline-primary mb-5"
-                onclick="window.location.href = 'http://localhost:3000/home'">Voltar</button>
+                onclick="window.location.href = '/gerenciar_entrevista_candidato'">Voltar</button>
         </div>
 
     </div>
