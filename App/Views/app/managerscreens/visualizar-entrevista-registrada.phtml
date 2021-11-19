@@ -53,15 +53,12 @@
     <?php
         }
         ?>
-    <<<<<<< HEAD:App/Views/app/employeescreens/visualizar-entrevista-registrada.phtml=======<form
-        action="entrevista_candidato_registrar" method="post">
+    <form action="entrevista_candidato_registrar" method="post">
         <div class="container">
             <div class="title">
                 <h1 class="title-1">Visualizar Entrevista</h1>
                 <img class="icon-click" src="/images/global/info.svg">
             </div>
-            >>>>>>>
-            4999b61d9272e2b93a0f0795d8632eabe754ab04:App/Views/app/managerscreens/visualizar-entrevista-registrada.phtml
 
             <!--Pop-up area-->
             <div class="popup-container" id="popup-back">
@@ -69,8 +66,8 @@
                 <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
                 <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
                 <div class="popup-content">
-                    <div class="popup-close" title="Close">
-                        <img src="/images/global/close.svg" onclick="Close(this)">
+                    <div class="popup-close" title="Close" onclick="Close(this)">
+                        <img src="/images/global/close.svg">
                     </div>
 
                     <img src="/images/pop-up/alert.svg" class="popup-img">
@@ -80,7 +77,7 @@
                     <p class="popup-description">Tem certeza que deseja voltar para a página anterior? Todas as
                         informações inseridas serão perdidas.</p>
 
-                    <button class="popup-btn popup-btn-width" onclick="Back(this, '/entrevista_registrada')">
+                    <button class="popup-btn popup-btn-width" onclick="Back(this, '/entrevistas_registradas')">
                         Confirmar
                     </button>
 
@@ -180,14 +177,13 @@
 
                     <hr />
 
-                    <<<<<<< HEAD:App/Views/app/employeescreens/visualizar-entrevista-registrada.phtml <div>
+                    <div>
                         <div class="title">
                             <h2 class="title-2">Estilo Comportamental <img class="icon" src="/images/global/edit.svg"
                                     alt="edit"></h2>
                         </div>
                         <div class="col-sm-12 mb-3">
                             <textarea type="text" class="form-control text-area" name="behavioral_style"></textarea>
-                            =======
                             <div>
                                 <div class="title">
                                     <h2 class="title-2">Estilo Comportamental <img class="icon"
@@ -197,12 +193,9 @@
                                     <textarea type="text" class="form-control text-area"
                                         name="behavioral_style"><?= $this->view->detalhesEntrevistaRegistradas->est_comp ?></textarea>
                                 </div>
-                                >>>>>>>
-                                4999b61d9272e2b93a0f0795d8632eabe754ab04:App/Views/app/managerscreens/visualizar-entrevista-registrada.phtml
                             </div>
                         </div>
-
-                        <<<<<<< HEAD:App/Views/app/employeescreens/visualizar-entrevista-registrada.phtml <div>
+                        <div>
                             <div class="title">
                                 <h2 class="title-2">Pontos Positivos <img class="icon" src="/images/global/edit.svg"
                                         alt="edit">
@@ -210,7 +203,7 @@
                             </div>
                             <div class="col-sm-12 mb-3">
                                 <textarea type="text" class="form-control text-area" name="positive_points"></textarea>
-                            </div>
+                        </div>
                 </div>
 
                 <div>
@@ -228,7 +221,6 @@
                         onclick="Open('popup-back')">Voltar</button>
                     <button type="button" class="btn btn-outline-primary mb-5"
                         onclick="Open('popup-confirm')">Registrar</button>
-                    =======
                     <div>
                         <div class="title">
                             <h2 class="title-2">Pontos Positivos <img class="icon" src="/images/global/edit.svg"
@@ -259,8 +251,6 @@
                         <a><button type="button" class="btn aprovar btn-outline-primary mb-5"
                                 onclick="Open('popup-confirm')">Salvar</button></a>
                     </div>
-                    >>>>>>>
-                    4999b61d9272e2b93a0f0795d8632eabe754ab04:App/Views/app/managerscreens/visualizar-entrevista-registrada.phtml
                 </div>
         </div>
         </form>

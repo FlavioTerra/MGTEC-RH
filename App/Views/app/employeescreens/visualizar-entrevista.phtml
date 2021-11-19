@@ -9,7 +9,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-marcar-entrevista.css">
-    <link rel="stylesheet" href="/Public/styles/pop-up.css">
+    <link rel="stylesheet" href="/styles/pop-up.css">
 
 </head>
 
@@ -53,11 +53,8 @@
     } 
     ?>
 
-    <!--Pop-up area -->
+
     <div class="popup-container" id="popup-confirm">
-        <!--onclick="Open('popup-confirm')"-->
-        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
-        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
         <div class="popup-content">
             <div class="popup-close" title="Close">
                 <img src="/images/global/close.svg" onclick="Close(this)">
@@ -70,7 +67,30 @@
             <p class="popup-description">Tem certeza que deseja marcar a entrevista? Você pode alterar as informações a
                 qualquer momento.</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this, '/gerenciar_entrevista_candidato')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+    
+    <div class="popup-container" id="popup-confirm-2">
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Marcar Entrevista</h1>
+
+            <p class="popup-description">Tem certeza que deseja excluir a entrevista? Você pode alterar as informações a
+                qualquer momento.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this, '/gerenciar_entrevista_candidato')">
                 Confirmar
             </button>
 
@@ -80,11 +100,7 @@
         </div>
     </div>
 
-    <!--Pop-up de redirecionar página-->
     <div class="popup-container" id="popup-back">
-        <!--onclick="Open('popup-back')"-->
-        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
-        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
         <div class="popup-content">
             <div class="popup-close" title="Close">
                 <img src="/images/global/close.svg" onclick="Close(this)">
@@ -98,7 +114,7 @@
                 inseridas
                 serão perdidas.</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Back(this, 'url')">
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/gerenciar_entrevista_candidato')">
                 Confirmar
             </button>
 
@@ -179,9 +195,12 @@
             <hr>
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</button>
-                <button type="button" class="btn btn-outline-primary mb-5"
-                    onclick="Open('popup-confirm')">Marcar</button>
+                <a><button type="button" class="btn btn-outline-primary mb-5"
+                        onclick="Open('popup-back')">Voltar</button></a>
+                <a><button type="button" class="btn excluir btn-outline-primary mb-5"
+                        onclick="Open('popup-confirm-2')">Excluir</button></a>
+                <a><button type="button" class="btn aprovar btn-outline-primary mb-5"
+                        onclick="Open('popup-confirm')">Salvar</button></a>
             </div>
         </div>
     </form>
