@@ -9,7 +9,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-marcar-entrevista.css">
-    <link rel="stylesheet" href="/Public/styles/pop-up.css">
+    <link rel="stylesheet" href="/styles/pop-up.css">
 
 </head>
 
@@ -86,8 +86,8 @@
         <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
         <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
         <div class="popup-content">
-            <div class="popup-close" title="Close">
-                <img src="/images/global/close.svg" onclick="Close(this)">
+            <div class="popup-close" title="Close" onclick="Close(this)">
+                <img src="/images/global/close.svg">
             </div>
 
             <img src="/images/pop-up/alert.svg" class="popup-img">
@@ -98,7 +98,7 @@
                 inseridas
                 serão perdidas.</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Back(this, 'url')">
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/gerenciar_entrevista_candidato')">
                 Confirmar
             </button>
 
