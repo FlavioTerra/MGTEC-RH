@@ -35,8 +35,6 @@
         public function gerenciarProcessoSeletivo() {
             session_start();
 
-            $_SESSION['tipo_user'] = 2;
-
             $processosSeletivos = Container::getModel('ProcessoSeletivo');
 
             $departametos = Container::getModel('InformacoesGlobais');
@@ -193,7 +191,7 @@
         }
 
 
-        // Relatórios
+        // Relatï¿½rios
         public function gerarRelatorio() {
 
             $this->render('gerar-relatorio');

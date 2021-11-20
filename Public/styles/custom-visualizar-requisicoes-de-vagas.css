@@ -28,8 +28,8 @@
     border-color: rgb(1, 173, 10);
 }
 
-#colFormLabel {
-    max-width: 180px;
+#Exp #colFormLabel, #Comp #colFormLabel, #Form #colFormLabel{
+    max-width: 70px;
 }
 
 /*forms

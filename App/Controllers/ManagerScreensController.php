@@ -133,7 +133,7 @@
                 $cont++;
             }
 
-            header('Location:/gerar_requisicao_vaga');
+            header('Location:/requisicoes_vaga');
 
         }
 

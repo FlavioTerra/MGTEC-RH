@@ -13,7 +13,7 @@
     <title>Gerar Requisição de Vaga</title>
 
     <script type="text/javascript">
-        let cargos = <?php echo json_encode($this->view->cargos) ?>;
+    let cargos = <?php echo json_encode($this->view->cargos) ?>;
     </script>
 </head>
 
@@ -57,7 +57,7 @@
 
             <p class="popup-description">Tem certeza que deseja gerar esta requsicição de vaga?</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this, '/requisicoes_vaga')">
                 Confirmar
             </button>
 
@@ -83,7 +83,7 @@
             <p class="popup-description">Tem certeza que deseja cancelar a requisição? Todas as informações inseridas
                 serão perdidas.</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Back(this, 'url')">
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/requisicoes_vaga')">
                 Confirmar
             </button>
 
