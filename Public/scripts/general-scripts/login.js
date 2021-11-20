@@ -70,3 +70,9 @@ function verificar() {
         return 'senha';
     }
 }
+
+/* Login */
+
+function entrar() {
+    document.getElementById('myForm').submit();
+}
