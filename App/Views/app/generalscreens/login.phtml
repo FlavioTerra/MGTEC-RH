@@ -45,12 +45,12 @@
 
                 <div class="textbox">
                     <img src="/images/login/user.svg">
-                    <input type="text" placeholder="Nome de Usuário/E-mail" name="login">
+                    <input type="text" placeholder="Nome de Usuário/E-mail" name="user_name">
                 </div>
 
                 <div class="textbox">
                     <img src="/images/login/lock.svg">
-                    <input type="password" placeholder="Senha" name="login" id="password">
+                    <input type="password" placeholder="Senha" name="user_password" id="password">
                     <img src="/images/login/eye-off.svg" id="eye-img" class="eye">
                 </div>
 
@@ -60,11 +60,17 @@
                     </a>
                 </div>
 
+                <?php if(isset($_GET['login'])) {?>
+                    <small class="form-text text-danger">
+                        *E-mail e/ou senha inválido(s).
+                    </small>
+                <?php } ?>
+
                 <a class="btn-link">
                     <div class="effect">
                         <span>Entrar</span>
-                        <input class="btn" type="submit">
                     </div>
+                    <input class="btn" type="submit" value="Entrar">
                 </a>
                 
                 <a class="btn-link" href="/usuario_cadastrar">
