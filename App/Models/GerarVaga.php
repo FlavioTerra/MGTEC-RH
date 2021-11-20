@@ -99,6 +99,33 @@
         }
 
         public function saveExperiencia() {
+
+            $query = 'insert into tb_experiencia_r (id_experiencia,
+                                                    nome,
+                                                    r_status,
+                                                    anos_xp)
+                                            values (null,
+                                                    :nome_e,
+                                                    :r_status_e,
+                                                    :anos_xp)';    
+
+            $stmt = $this->db->prepare($query);
+
+            $stmt->bindValue(':nome_e',$this->__get('nome_e'));
+            $stmt->bindValue(':r_status_e',$this->__get('r_status_e'));
+            $stmt->bindValue(':anos_xp',$this->__get('anos_xp'));
+
+            $stmt->execute();   
+
+            // Recupera o ultimo id_experiencia 
+            $query = 'select max(id_experiencia) id_experiencia from tb_experiencia_r';
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $id_xp = $stmt->fetch(\PDO::FETCH_OBJ);
+            $this->__set('id_experiencia', $id_xp->id_experiencia);
+
+            //***________ Relacionando com a tabela intermediária ________*** //
+
             $query = 'insert into tb_vaga_experiencia (id_vaga, 
                                                        id_experiencia) 
                                                 values (:id_vaga,
@@ -109,28 +136,37 @@
             $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
             $stmt->bindValue(':id_experiencia',$this->__get('id_experiencia'));
 
-            $stmt->execute();
-
-            $query = 'insert into tb_experiencia_r (id_experiencia
-                                                    nome,
-                                                    r_status,
-                                                    anos_xp)
-                                            values (:id_experiencia,
-                                                    :nome_e,
-                                                    :r_status_e,
-                                                    :anos_xp)';
-
-            $stmt = $this->db->prepare($query);
-
-            $stmt->bindValue(':id_experiencia',$this->__get('id_experiencia'));
-            $stmt->bindValue(':nome_e',$this->__get('nome_e'));
-            $stmt->bindValue(':r_status_e',$this->__get('r_status_e'));
-            $stmt->bindValue(':anos_xp',$this->__get('anos_xp'));
-
-            $stmt->execute();                
+            $stmt->execute();      
         }
 
         public function saveCompetencia() {
+
+            $query = 'insert into tb_competencia_r (id_competencia,
+                                                    grau,
+                                                    nome,
+                                                    r_status)
+                                            values (null,
+                                                    :grau_c,
+                                                    :nome_c,
+                                                    :r_status_c)';
+
+            $stmt = $this->db->prepare($query);
+
+            $stmt->bindValue(':grau_c',$this->__get('grau_c'));
+            $stmt->bindValue(':nome_c',$this->__get('nome_c'));
+            $stmt->bindValue(':r_status_c',$this->__get('r_status_c'));
+
+            $stmt->execute();   
+
+            // Recupera o ultimo id_competencia 
+            $query = 'select max(id_competencia) id_competencia from tb_competencia_r';
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $id_comp = $stmt->fetch(\PDO::FETCH_OBJ);
+            $this->__set('id_competencia', $id_comp->id_competencia);
+
+            //***________ Relacionando com a tabela intermediária ________*** //
+
             $query = 'insert into tb_vaga_competencia (id_vaga, 
                                                        id_competencia) 
                                                values (:id_vaga,
@@ -141,28 +177,40 @@
             $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
             $stmt->bindValue(':id_competencia',$this->__get('id_competencia'));
 
-            $stmt->execute();   
-
-            $query = 'insert into tb_competencia_r (id_competencia
-                                                    grau,
-                                                    nome,
-                                                    r_status)
-                                            values (:id_competencia,
-                                                    :grau_c,
-                                                    :nome_c,
-                                                    :r_status_c)';
-
-            $stmt = $this->db->prepare($query);
-
-            $stmt->bindValue(':id_competencia',$this->__get('id_competencia'));
-            $stmt->bindValue(':grau_c',$this->__get('grau_c'));
-            $stmt->bindValue(':nome_c',$this->__get('nome_c'));
-            $stmt->bindValue(':r_status_c',$this->__get('r_status_c'));
-            
             $stmt->execute();                                   		
         }
         
         public function saveFormacao() {
+
+            $query = 'insert into tb_formacao_r (id_formacao,
+                                                 tipo,
+                                                 grau,
+                                                 r_status,
+                                                 curso)
+                                        values (null,
+                                                :tipo,
+                                                :grau_f,
+                                                :r_status_f,
+                                                :curso)';
+
+            $stmt = $this->db->prepare($query);
+
+            $stmt->bindValue(':tipo',$this->__get('tipo'));
+            $stmt->bindValue(':grau_f',$this->__get('grau_f'));
+            $stmt->bindValue(':r_status_f',$this->__get('r_status_f'));
+            $stmt->bindValue(':curso',$this->__get('curso'));
+
+            $stmt->execute();
+
+            // Recupera o ultimo id_formacao 
+            $query = 'select max(id_formacao) id_formacao from tb_formacao_r';
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $id_form= $stmt->fetch(\PDO::FETCH_OBJ);
+            $this->__set('id_formacao', $id_form->id_formacao);
+
+            //***________ Relacionando com a tabela intermediária ________*** //
+
             $query = 'insert into tb_vaga_formacao (id_vaga, 
                                                     id_formacao) 
                                             values (:id_vaga,
@@ -172,25 +220,6 @@
 
             $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
             $stmt->bindValue(':id_formacao',$this->__get('id_formacao'));
-
-            $stmt->execute();
-
-            $query = 'insert into tb_formacao_r (id_formacao,
-                                              	 tipo,
-                                                 grau,
-                                                 r_status,
-                                                 curso)
-                                         values (:id_formacao,
-                                                 :tipo,
-                                                 :grau_f,
-                                                 :r_status_f,
-                                                 :curso)';
-        
-            $stmt->bindValue(':id_formacao',$this->__get('id_formacao'));
-            $stmt->bindValue(':tipo',$this->__get('tipo'));
-            $stmt->bindValue(':grau_f',$this->__get('grau_f'));
-            $stmt->bindValue(':r_status_f',$this->__get('r_status_f'));
-            $stmt->bindValue(':curso',$this->__get('curso'));
 
             $stmt->execute();
         }
@@ -216,8 +245,8 @@
 
         public function getVaga() {
             $query = "select v.id_vaga,
-                             c.nome_cargo,
-                             d.nome_departamento,
+                             v.id_cargo,
+                             c.id_departamento,
                              u.nome,
                              v.titulo_vaga,
                              v.num_vagas,
@@ -230,7 +259,6 @@
                              v.hora_fim
                         from tb_vaga v 
                   inner join tb_cargo c on v.id_cargo = c.id_cargo
-                  inner join tb_departamento d on c.id_departamento = d.id_departamento
                   inner join tb_usuario u on v.id_solicitante = u.id_user
                        where v.id_vaga = :id_vaga";
                 
@@ -240,6 +268,63 @@
             $stmt->execute();
             
             return $stmt->fetch(\PDO::FETCH_OBJ);
+        }
+
+        public function getVagaExperiencia() {
+            $query = "select tve.id_vaga,
+                             ter.id_experiencia,
+                             ter.nome,
+                             ter.r_status,
+                             ter.anos_xp	
+                        from tb_vaga_experiencia tve
+                  inner join tb_experiencia_r ter on tve.id_experiencia = ter.id_experiencia
+                       where tve.id_vaga = :id_vaga";
+
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        public function getVagaCompetencia() {
+            $query = "select tvc.id_vaga,
+                             tcr.id_competencia,
+                             tcr.grau,
+                             tcr.nome,
+                             tcr.r_status	
+                        from tb_vaga_competencia tvc
+                  inner join tb_competencia_r tcr on tvc.id_competencia = tcr.id_competencia
+                       where tvc.id_vaga = :id_vaga";
+                
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+        
+            $stmt->execute();
+            
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+            
+        }
+
+        public function getVagaFormacao() {
+            $query = "select tvf.id_vaga,
+                             tfr.id_formacao,
+                             tfr.tipo,
+                             tfr.grau,
+                             tfr.r_status,
+                             tfr.curso
+                        from tb_vaga_formacao tvf
+                  inner join tb_formacao_r tfr on tvf.id_formacao = tfr.id_formacao
+                       where tvf.id_vaga = :id_vaga";
+                
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+        
+            $stmt->execute();
+            
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+            
         }
     }
 

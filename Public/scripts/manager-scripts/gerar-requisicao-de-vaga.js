@@ -355,3 +355,166 @@ function atribuitDept(obj) {
         }
     });
 }
+
+function insereExperiencia() {
+    if(experiencias[0] == null || experiencias[0] == undefined) {
+        return;
+    }
+
+    let numExperiencia = parseInt(experiencias[0].nome);
+    let numStatus = parseInt(experiencias[0].r_status);
+    let numAnos = parseInt(experiencias[0].anos_xp);
+
+    document.querySelector('[name=exp-fomacao-1').children[numExperiencia].setAttribute('selected', 'selected');
+    document.querySelector('[name=exp-status-1').children[numStatus].setAttribute('selected', 'selected');
+    document.querySelector('[name=exp-anos-experiencia-1').value = numAnos;
+
+    for(let cont = 1; cont < experiencias.length; cont++) {
+        let div = document.createElement('div');
+
+        div.setAttribute('class', 'add-div-exp');
+
+        //adiciona o html na nova div
+        div.innerHTML = content;
+
+        numExperiencia = parseInt(experiencias[cont].nome);
+        numStatus = parseInt(experiencias[cont].r_status);
+        numAnos = parseInt(experiencias[cont].anos_xp);
+
+        div.children[1].children[0].children[numExperiencia].setAttribute('selected', 'selected');
+
+        div.children[1].children[1].children[numStatus].setAttribute('selected', 'selected');
+
+        div.children[2].children[1].children[0].value = numAnos;
+        
+        //incrementa número da experiencia
+        addNumExp(div);
+
+        //incrementa id nos botões
+        addIdsButtons(div);
+
+        //incrementa os names
+        addNamesExp(div);
+
+        //anexa a div criada dentro da classe exp
+        i.appendChild(div);
+
+        //remove os botões antigos
+        removeBtnExp();
+    }
+}
+
+function insereCompetencia() {
+    if(competencias[0] == null || competencias[0] == undefined) {
+        return;
+    }
+    let numCompetencia = parseInt(competencias[0].nome);
+    let numStatus = parseInt(competencias[0].r_status);
+    let numGrau = parseInt(competencias[0].grau);
+
+    document.querySelector('[name=comp-nome-1').children[numCompetencia].setAttribute('selected', 'selected');
+    document.querySelector('[name=comp-grau-1').children[numGrau].setAttribute('selected', 'selected')
+    document.querySelector('[name=comp-status-1').children[numStatus].setAttribute('selected', 'selected')
+
+    for(let cont = 1; cont < competencias.length; cont++) {
+        //array da classe
+        let comp = document.getElementById("Comp");
+
+        //pega o html dentro da primeira classe
+        let contentComp = comp.innerHTML;
+
+        //cria a nova div e seta a classe que contem tudo para adicionar
+        let divComp = document.createElement('div');
+        divComp.setAttribute('class', 'add-div-comp');
+
+        //adiciona o html na nova div
+        divComp.innerHTML = contentComp;
+
+        numCompetencia = parseInt(competencias[cont].nome);
+        numStatus = parseInt(competencias[cont].r_status);
+        numGrau = parseInt(competencias[cont].grau);
+
+        divComp.children[1].children[0].children[numCompetencia].setAttribute('selected', 'selected');
+
+        divComp.children[1].children[1].children[numGrau].setAttribute('selected', 'selected');
+
+        divComp.children[2].children[0].children[numStatus].setAttribute('selected', 'selected');
+
+        //incrementa número da competencia
+        addNumComp(divComp);
+
+        //incrementa id nos botões
+        addIdsButtonsComp(divComp);
+
+        //incrementa os names
+        addNamesComp(divComp);
+
+        //anexa a div criada dentro da classe comp
+        comp.appendChild(divComp);
+
+        //remove os botões antigos
+        removeBtnComp();
+    }
+}
+
+function insereFormacao() {
+    if(formacoes[0] == null || formacoes[0] == undefined) {
+        return;
+    }
+    let numFormacao = parseInt(formacoes[0].curso);
+    let numStatus = parseInt(formacoes[0].r_status);
+    let numGrau = parseInt(formacoes[0].grau);
+    let numTipo = parseInt(formacoes[0].tipo);
+
+    document.querySelector('[name=form-nome-1').children[numFormacao].setAttribute('selected', 'selected');
+    document.querySelector('[name=form-tipo-1').children[numTipo].setAttribute('selected', 'selected');
+    document.querySelector('[name=form-status-1').children[numStatus].setAttribute('selected', 'selected');
+    document.querySelector('[name=form-grau-1').children[numGrau].setAttribute('selected', 'selected');
+
+
+    for(let cont = 1; cont < formacoes.length; cont++) {
+        //array da classe
+        let form = document.getElementById("Form");
+
+        //pega o html dentro da primeira classe
+        let contentForm = form.innerHTML;
+
+        //cria a nova div e seta a classe que contem tudo para adicionar
+        let divForm = document.createElement('div');
+        divForm.setAttribute('class', 'add-div-form');
+
+        //adiciona o html na nova div
+        divForm.innerHTML = contentForm;
+
+        numFormacao = parseInt(formacoes[cont].curso);
+        numStatus = parseInt(formacoes[cont].r_status);
+        numGrau = parseInt(formacoes[cont].grau);
+        numTipo = parseInt(formacoes[cont].tipo);
+
+        console.log(divForm.children[1].children[0].children[numTipo].setAttribute('selected', 'selected'));
+        console.log(divForm.children[1].children[1].children[numStatus].setAttribute('selected', 'selected'));
+        console.log(divForm.children[2].children[0].children[numFormacao].setAttribute('selected', 'selected'));
+        console.log(divForm.children[2].children[1].children[numGrau].setAttribute('selected', 'selected'));
+
+        //incrementa número da formação
+        addNumForm(divForm);
+
+        //incrementa id nos botões
+        addIdsButtonsForm(divForm);
+
+        //incrementa os names
+        addNamesForm(divForm);
+
+        //anexa a div criada dentro da classe form
+        form.appendChild(divForm);
+
+        //remove os botões antigos
+        removeBtnForm();
+    }
+}
+
+function renderizaInformacoes() {
+    document.querySelector('[name=departamento]').children[departamentoSalvo].setAttribute('selected', 'selected');
+    document.querySelector('[name=cargo]').children[cargoSalvo].setAttribute('selected', 'selected');
+    document.querySelector('[name=vinculo_empregaticio]').children[vinculoSalvo].setAttribute('selected', 'selected');
+}
