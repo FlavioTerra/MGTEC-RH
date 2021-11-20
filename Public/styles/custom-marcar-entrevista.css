@@ -26,6 +26,18 @@
     color: #212529;
 }
 
+.center{
+    text-align: center;
+}
+
+.aprovar{
+    border-color: green;
+}
+
+.excluir{
+    border-color: rgb(197, 10, 10);
+}
+
 .form-select:focus{
     box-shadow: 0 0 5px #9a5ec9;
     border-color: #ced4da;

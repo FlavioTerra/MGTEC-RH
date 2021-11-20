@@ -8,6 +8,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="../../../../Public/styles/custom-consultar-quadro-de-vagas-candidato.css">
+    <link rel="stylesheet" href="../../../../Public/styles/pop-up.css">
 
     <title>Consultar Quadro de Vagas Funcionario</title>
 </head>
@@ -40,7 +41,86 @@
         </div>
     </nav>
 
-    <!--body-->
+    <!--Pop-up area-->
+    <div class="popup-container" id="popup-confirm">
+        <!--onclick="Open('popup-confirm')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Liberar Vaga</h1>
+
+            <p class="popup-description">Tem certeza que deseja liberar esta vaga para que possa virar um processo
+                seletivo?</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-confirm2">
+        <!--onclick="Open('popup-confirm2')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Excluir Vaga</h1>
+
+            <p class="popup-description">Tem certeza que deseja excluir esta vaga? Todos os dados da vaga serão
+                perdidos.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-back">
+        <!--onclick="Open('popup-back')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Voltar</h1>
+
+            <p class="popup-description">Tem certeza que deseja voltar para a página anterior? Todas as alterações serão
+                perdidas.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/requisicoes_vaga')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
     <form action="requisitante.php" method="post">
         <div class="container">
 
@@ -51,8 +131,6 @@
             <!--Dados de Solicitaçao-->
             <div class="title">
                 <h2 class="title-2">Dados de Solicitação</h2>
-
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -123,7 +201,6 @@
             <!--Dados de Vaga-->
             <div class="title">
                 <h2 class="title-2">Dados de Vaga</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -190,7 +267,6 @@
             <!--Experiências-->
             <div class="title">
                 <h2 class="title-2">Experiências</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Exp">
@@ -235,7 +311,6 @@
             <!--Competências-->
             <div class="title">
                 <h2 class="title-2">Competências</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Comp">
@@ -280,7 +355,6 @@
             <!--Formações-->
             <div class="title">
                 <h2 class="title-2">Formações</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div id="Form">
@@ -334,7 +408,6 @@
             <!--Comentário do Líder-->
             <div class="title">
                 <h2 class="title-2">Comentários</h2>
-                <img src="../../../../Public/images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -345,9 +418,11 @@
             </div>
 
             <div class="buttons">
-                <a href="/requisicoes_vaga" class="btn btn-outline-primary mb-5">Voltar</a>
-                <button type="button" class="btn excluir btn-outline-primary mb-5">Excluir</button>
-                <button type="submit" class="btn aprovar btn-outline-primary mb-5">Liberar</button>
+                <a class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</a>
+                <button type="button" class="btn excluir btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm2')">Excluir</button>
+                <button type="button" class="btn aprovar btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm')">Liberar</button>
 
                 <!--lider-->
                 <!-- <button type="submit" class="btn aprovar btn-outline-primary mb-5">Aprovar</button> -->
@@ -369,6 +444,7 @@
         crossorigin="anonymous"></script>
 
     <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>
 </body>
 
 </html>

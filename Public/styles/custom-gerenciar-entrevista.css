@@ -49,6 +49,14 @@
     background-color: transparent;
 }
 
+.container{
+    min-height: 100vh;
+}
+
+.footer{
+    position: relative;
+}
+
 /*@media screens*/
 @media screen and (min-width:576px){
 

@@ -19,7 +19,7 @@
             // trocar dps
             session_start();
 
-            $_SESSION['tipo_user'] = 0;
+            $_SESSION['tipo_user'] = 3;
 
             $this->render('home');
 
@@ -43,6 +43,12 @@
             header('Location:/usuario_cadastrar?usuarioCadastrar=sucess');   
         }
 
+        public function usuarioEntrarValidar(){
+            $usuario = Container::getModel('UsuarioCadastrar');
+
+            $usuario->logar();
+        }
+
         public function gerarUsuario() {
 
             $usuarios = Container::getModel('InformacoesGlobais');
@@ -55,8 +61,16 @@
             $this->render('login'); 
         }
 
+        public function usuarioLogar() {
+            echo '<pre>';
+                print_r($_POST);
+            echo '<pre>';
+        }
+
         public function usuarioSair() {
-            $this->render('sair'); 
+            session_start();
+            session_destroy();
+            $this->render('home'); 
         }
 
         public function exibirPopup() {

@@ -19,6 +19,10 @@
         }
 
         public function visualizarProcessoSeletivo() {
+            session_start();
+
+            $_SESSION['tipo_user'] = 3;
+
             $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
 
             $viewProcessoSeletivo->__set('id_proc', $_POST['id_proc']);
@@ -107,10 +111,29 @@
         public function gerenciarEntrevistaCandidato() {
             $entrevistasCandidato = Container::getModel('EntrevistaMarcar');
 
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
             $this->view->todasEntrevistasCandidato = $entrevistasCandidato->getAll();
             
             $this->render('gerenciar-entrevista');
         }
+
+        public function entrevistaCandidato() {
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
+            $this->render('entrevista-marcar');
+        }
+
+
+        // Teste
 
         public function cadastrarTeste() {
             $teste = Container::getModel('AtribuirTeste');
@@ -169,11 +192,27 @@
             $this->render('atribuir-teste');
         }
 
-        // public function cadastrarTeste() {
-        //     $entrevista = Container::getModel('AtribuirTeste');
 
-            
-        // }
+        // Relatórios
+        public function gerarRelatorio() {
+
+            $this->render('gerar-relatorio');
+        }
+        
+        public function gerarRelatorioIndicadoresDesempenho() {
+
+            $this->render('relatorio-indicadores-desempenho');
+        }
+
+        public function gerarRelatorioQuadroVagas() {
+
+            $this->render('relatorio-quadro-de-vagas');
+        }
+
+        public function gerarRelatorioRecrutamentoSelecao() {
+
+            $this->render('relatorio-recrutamento-selecao');
+        }
 
     }   
 

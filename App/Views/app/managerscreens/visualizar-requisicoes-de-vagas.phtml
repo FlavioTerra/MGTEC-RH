@@ -8,6 +8,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-visualizar-requisicoes-de-vagas.css">
+    <link rel="stylesheet" href="/styles/pop-up.css">
     <title>Visualizar Requisições de Vagas</title>
 
     <script type="text/javascript">
@@ -38,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <!--gestor-->
                 <div class="navbar-nav">
-                <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Home</a>
                     <a class="nav-link" href="#">Gestor</a>
                     <a class="nav-link active" href="#">Requisições</a>
                     <a class="nav-link" href="#">Vagas</a>
@@ -61,8 +62,61 @@
         </div>
     </nav>
 
-    <!--body-->
-    <form action="requisitante.php" method="post">
+    <!--Pop-up area-->
+    <div class="popup-container" id="popup-confirm">
+        <!--onclick="Open('popup-confirm')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Gerar Requisição</h1>
+
+            <p class="popup-description">Tem certeza que deseja gerar essa requisição?</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <!--Pop-up de redirecionar página-->
+    <div class="popup-container" id="popup-back">
+        <!--onclick="Open('popup-back')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Voltar</h1>
+
+            <p class="popup-description">Tem certeza que deseja voltar para a página anterior? Todas as alterações
+                realizadas serão perdidas.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/requisicoes_vaga')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
+    <form action="requisitante.php" method="post" id="formulario">
         <div class="container">
 
             <div class="title">
@@ -72,8 +126,6 @@
             <!--Dados de Solicitaçao-->
             <div class="title">
                 <h2 class="title-2">Dados de Solicitação</h2>
-
-                <img src="images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -287,7 +339,6 @@
             <!--Dados de Vaga-->
             <div class="title">
                 <h2 class="title-2">Dados de Vaga</h2>
-                <img src="images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -370,7 +421,6 @@
             <!--Experiências-->
             <div class="title">
                 <h2 class="title-2">Experiências</h2>
-                <img src="images/global/info.svg">
             </div>
 
             <div id="Exp">
@@ -419,7 +469,6 @@
             <!--Competências-->
             <div class="title">
                 <h2 class="title-2">Competências</h2>
-                <img src="images/global/info.svg">
             </div>
 
             <div id="Comp">
@@ -469,7 +518,6 @@
             <!--Formações-->
             <div class="title">
                 <h2 class="title-2">Formações</h2>
-                <img src="images/global/info.svg">
             </div>
 
             <div id="Form">
@@ -531,7 +579,6 @@
             <!--Comentário do Líder-->
             <div class="title">
                 <h2 class="title-2">Comentários</h2>
-                <img src="images/global/info.svg">
             </div>
 
             <div class="row mb-3">
@@ -542,9 +589,9 @@
             </div>
 
             <div class="buttons">
-                <a href="/requisicoes_vaga" class="btn btn-outline-primary mb-5">Voltar</a>
-                <button type="button" class="btn excluir btn-outline-primary mb-5">Reprovar</button>
-                <button type="submit" class="btn btn-outline-primary mb-5">Gerar</button>
+                <a class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</a>
+                <button type="button" class="btn btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm')">Gerar</button>
 
                 <!--lider-->
                 <!-- <button type="submit" class="btn aprovar btn-outline-primary mb-5">Aprovar</button> -->
@@ -562,10 +609,11 @@
 
     <!--Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
-        crossorigin="anonymous"></script>
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
+    </script>
 
-    <script src="scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="/scripts/general-scripts/pop-up.js"></script>
 </body>
 
 </html>
@@ -594,6 +642,4 @@
     insereExperiencia();
     insereCompetencia();
     insereFormacao();
-
-    
 </script>

@@ -69,51 +69,41 @@
 
         <div class="btn-search">
             <a href="/gerenciar_entrevista_candidato"><button type="button"
-                    class="btn btn-outline-primary mb-5 roxo">Marcadas</button></a>
+                    class="btn btn-outline-primary mb-5">Marcadas</button></a>
             <a href="/entrevista_registrada"><button type="button"
-                    class="btn btn-outline-primary mb-5">Registradas</button></a>
+                    class="btn btn-outline-primary mb-5 roxo">Registradas</button></a>
         </div>
 
         <hr>
 
         <!--Resposta-->
-        <?php foreach($this->view->todasEntrevistasCandidato as $key => $entrevistaCandidato) {?>
-        <form action="/visualizar_entrevista_candidato" method="post">
+        <?php foreach($this->view->todasEntrevistasRegistradas as $key => $entrevistaRegistrada) {?>
+        <form action="/visualizar_entrevista_registrada" method="post">
             <div class="candidato">
                 <div class="card">
                     <div class="card-img"></div>
 
                     <div class="card-body">
-                        <!-- <h4 class="card-title">Departamento: <?= $entrevistaCandidato->nome_departamento ?> </h4> -->
+                        <!-- <h4 class="card-title">Departamento: <?= $entrevistaRegistrada->est_comp ?> </h4> -->
                         <h4 class="card-title" id="nome-candidato">
-                            <!-- <?= $entrevistaCandidato->nome ?> -->
+                            <!-- <?= $entrevistaRegistrada->est_comp ?> -->
                         </h4>
                         <p class="card-text title-user" id="hora-entrevista">
-                            <?= $entrevistaCandidato->hora_entrevista ?> - <?= $entrevistaCandidato->data_entrevista ?>
+                            <?= $entrevistaRegistrada->est_comp ?> -
+                            <?= $entrevistaRegistrada->est_comp ?>
                         </p>
                     </div>
                 </div>
                 <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
                 <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
-                <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
-                <?php  
-                $hoje = date('d/m/Y', strtotime("-1 day"));
-                if($entrevistaCandidato->data_entrevista == $hoje) {?>
-                <a href="/entrevista_registrar"><button type="submit"
-                        class="btn btn-outline-primary mb-4">Registrar</button></a>
-                <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
-                <?php } else { ?>
-                <button type="submit" class="btn btn-outline-primary mb-4" disabled>Registrar</button>
-                <?php } ?>
+                <input type="hidden" name="id_entrevista" value="<?= $entrevistaRegistrada->id_entrevista ?>">
             </div>
         </form>
         <?php } ?>
 
         <div class="buttons">
             <button type="button" class="btn btn-outline-primary mb-5"
-                onclick="window.location.href = '/home'">Voltar</button>
-            <button type="button" class="btn btn-outline-primary mb-5"
-                onclick="window.location.href = '/entrevista_marcar'">Marcar</button>
+                onclick="window.location.href = '/gerenciar_entrevista_candidato'">Voltar</button>
         </div>
 
     </div>
@@ -129,8 +119,8 @@
 
     <!--Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
-    </script>
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
 
     <script src=""></script>
 </body>

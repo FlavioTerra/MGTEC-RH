@@ -108,6 +108,10 @@
     margin: 0;
 }
 
+.cl-exp-anos-experiencia{
+    width: 60px;
+}
+
 @media screen and (min-width:576px){
     .sobre-area .text-area{
         margin-left: 0;
@@ -123,6 +127,10 @@
 
     #Exp .row, #Comp .row, #Form .row {
         margin-left: -10px;
+    }
+
+    .exp-label{
+        margin-left: 0px;
     }
 }
 
