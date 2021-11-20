@@ -81,10 +81,6 @@
         public function gerarVaga() {
             $requisicaoVaga = Container::getModel('GerarVaga');
 
-            // echo '<pre>';
-            //     print_r($_POST);
-            // echo '<pre>';
-
             $requisicaoVaga->__set('id_cargo' , $_POST['cargo']);
             //$requisicaoVaga->__set('id_solicitante' , $_POST['id_solicitante']);
             $requisicaoVaga->__set('titulo_vaga' , $_POST['titulo_vaga']);
@@ -116,6 +112,7 @@
             // Competencia
             $cont = 1;
             while(isset($_POST['comp-nome-' . $cont])) {
+                $requisicaoVaga->__set('id_competencia' , $_POST['comp-nome-' . $cont]);
                 $requisicaoVaga->__set('nome_c' , $_POST['comp-nome-' . $cont]);
                 $requisicaoVaga->__set('grau_c' , $_POST['comp-grau-' . $cont]);
                 $requisicaoVaga->__set('r_status_c' , $_POST['comp-status-' . $cont]);
@@ -137,6 +134,7 @@
             }
 
             header('Location:/gerar_requisicao_vaga');
+
         }
 
         public function visualizarRequisicao() {
@@ -145,6 +143,15 @@
             $viewRequisicao->__set('id_vaga', $_POST['id_vaga']);
 
             $this->view->detalhesVaga = $viewRequisicao->getVaga();
+            $this->view->detalhesVagaExperiencia = $viewRequisicao->getVagaExperiencia();
+            $this->view->detalhesVagaCompetencia = $viewRequisicao->getVagaCompetencia();
+            $this->view->detalhesVagaFormacao = $viewRequisicao->getVagaFormacao();
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
 
             $this->render('visualizar-requisicoes-de-vagas');
         }

@@ -114,17 +114,6 @@
                         </h6>
 
                     </div>
-                    <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
-                    <?php if($processoSeletivo->status_proc == 'Aberto'){ ?>
-                    <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
-                    <button style="color: gray;" type="button" class="btn btn-outline-primary mb-4"
-                        disabled>Divulgar</button>
-                    <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
-                    <?php } else {?>
-                    <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
-                    <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button>
-                    <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
-                    <?php } ?>
                 </div>
                 <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
                 <?php if($processoSeletivo->status_proc != 'Aberto'){ ?>

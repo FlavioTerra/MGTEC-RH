@@ -24,7 +24,7 @@
             </button>
 
             <?php if($_SESSION['tipo_user'] == 1){ ?>
-                <!-- Usuário comum -->
+                <!-- UsuÃ¡rio comum -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="/home">Home</a>
@@ -34,10 +34,11 @@
                         <a class="nav-link" href="#nossa_equipe">Nossos LÃ­deres</a>
                         <a class="nav-link" href="#vagas_abertas">Trabalhe Conosco</a>
                         <a class="nav-link" href="#contate_nos">Contato</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 2) { ?>
-                <!-- Usuário funcionário -->
+                <!-- UsuÃ¡rio funcionÃ¡rio -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
@@ -53,7 +54,7 @@
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 3) { ?>
-                <!-- Usuário gestor -->
+                <!-- Usuï¿½rio gestor -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
@@ -65,11 +66,11 @@
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 4) { ?>
-                <!-- Usuário líder -->
+                <!-- UsuÃ¡rio Chefe -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
-                        <a class="nav-link" href="#">Líder</a>
+                        <a class="nav-link" href="#">Lï¿½der</a>
                         <a class="nav-link" href="/requisicoes_vaga">RequisiÃ§Ãµes</a>
                         <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
                         <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
@@ -77,7 +78,7 @@
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 5) { ?>
-                <!-- Usuário líder -->
+                <!-- UsuÃ¡rio lÃ­der -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
@@ -93,7 +94,7 @@
                     </div>
                 </div>
             <?php } else { ?>    
-                <!-- Usuário sem identificação -->
+                <!-- UsuÃ¡rio sem identificaÃ§Ã£o -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="/home">Home</a>

@@ -19,8 +19,10 @@
             // trocar dps
             session_start();
 
-            $_SESSION['tipo_user'] = 3;
-
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 6;
+            }
+            
             $this->render('home');
 
         }
@@ -61,10 +63,34 @@
             $this->render('login'); 
         }
 
+        public function usuarioLogar() {
+
+            $user = Container::getModel('UsuarioCadastrar');
+
+            $user->__set('email_user', $_POST['user_name']);
+            $user->__set('senha_user', $_POST['user_password']);
+
+            $user->logar();
+
+            if(!empty($user->__get('id_user')) && !empty($user->__get('tipo_user'))) {
+                
+                session_start(); 
+                
+                $_SESSION['id_usuario'] = $user->__get('id_user');
+                $_SESSION['tipo_user'] = $user->__get('tipo_user');
+                $_SESSION['nome'] = $user->__get('nome');
+
+                header('Location: /');
+            } 
+            else {
+                    header('Location: /usuario_entrar?login=error');
+            }
+         }
+
         public function usuarioSair() {
             session_start();
             session_destroy();
-            $this->render('home'); 
+            header('Location: /'); 
         }
 
         public function exibirPopup() {

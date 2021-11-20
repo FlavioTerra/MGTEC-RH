@@ -35,7 +35,28 @@
         }
 
         public function logar(){
-            print_r($id_user);
+            $query = 'select id_user,
+                             nome,
+                             email_user,
+                             tipo_user
+                        from tb_usuario
+                       where (email_user = :email_user or nome = :email_user)
+                         and senha_user = :senha_user';
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->bindValue(':email_user', $this->__get('email_user'));
+            $stmt->bindValue(':senha_user', $this->__get('senha_user'));
+
+            $stmt->execute();
+
+            $user = $stmt->fetch(\PDO::FETCH_OBJ);
+
+            if($user) {
+                $this->__set('id_user', $user->id_user);
+                $this->__set('tipo_user', $user->tipo_user);  
+                $this->__set('nome', $user->nome);  
+            }
         }
     }
 

@@ -168,6 +168,12 @@
                 'action'=>'usuarioEntrar'
             );
 
+            $routes['usuario_logar'] = array(
+                'route'=>'/usuario_logar',
+                'controller'=>'GeneralScreensController',
+                'action'=>'usuarioLogar'
+            );
+
             $routes['usuario_entrar_validar'] = array(
                 'route'=>'/usuario_entrar_validar',
                 'controller'=>'GeneralScreensController',
@@ -198,7 +204,7 @@
                 'action'=>'usuarioRecuperarSenhaCodigo'
             );
 
-            // Relatórios
+            // Relatï¿½rios
             $routes['gerar_relatorio'] = array(
                 'route'=>'/gerar_relatorio',
                 'controller'=>'EmployeeScreensController',

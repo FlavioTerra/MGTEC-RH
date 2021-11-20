@@ -28,6 +28,10 @@
     border-color: rgb(1, 173, 10);
 }
 
+#colFormLabel {
+    max-width: 180px;
+}
+
 /*forms
 .edit{
     color: #B8B8B8;
