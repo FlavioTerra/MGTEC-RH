@@ -135,6 +135,12 @@
                 'action'=>'cadastrarTeste'
             );
 
+            $routes['realizar_teste'] = array(
+                'route'=>'/realizar_teste',
+                'controller'=>'CandidateScreensController',
+                'action'=>'renderizaTeste'
+            );
+
             // Perfil Candidato
             $routes['editar_perfil'] = array(
                 'route'=>'/editar_perfil',
@@ -204,7 +210,7 @@
                 'action'=>'usuarioRecuperarSenhaCodigo'
             );
 
-            // Relat�rios
+            // Relatórios
             $routes['gerar_relatorio'] = array(
                 'route'=>'/gerar_relatorio',
                 'controller'=>'EmployeeScreensController',

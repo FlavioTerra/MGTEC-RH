@@ -38,7 +38,8 @@
             $query = 'select id_user,
                              nome,
                              email_user,
-                             tipo_user
+                             tipo_user,
+                             login_user
                         from tb_usuario
                        where (email_user = :email_user or nome = :email_user)
                          and senha_user = :senha_user';
@@ -56,6 +57,7 @@
                 $this->__set('id_user', $user->id_user);
                 $this->__set('tipo_user', $user->tipo_user);  
                 $this->__set('nome', $user->nome);  
+                $this->__set('login_user', $user->login_user);  
             }
         }
     }

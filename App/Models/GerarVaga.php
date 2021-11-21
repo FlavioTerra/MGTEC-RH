@@ -67,7 +67,7 @@
                                     values (null,
                                            null, 
                                            :id_cargo,
-                                           null,
+                                           :id_solicitante,
                                            :titulo_vaga,
                                            :num_vagas,
                                            :vinculo_emp,
@@ -80,6 +80,7 @@
 
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(':id_cargo',$this->__get('id_cargo'));
+            $stmt->bindValue(':id_solicitante',$this->__get('id_solicitante'));
             $stmt->bindValue(':titulo_vaga',$this->__get('titulo_vaga'));
             $stmt->bindValue(':num_vagas',$this->__get('num_vagas'));
             $stmt->bindValue(':vinculo_emp',$this->__get('vinculo_emp'));
