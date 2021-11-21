@@ -23,20 +23,56 @@
                 <img src="/images/global/navbar-button.svg" class="navbar-button">
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" href="/home">Home</a>
-                    <a class="nav-link" href="/#">Funcionário</a>
-                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
-                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
-                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                    <a class="nav-link" href="/teste_candidato">Testes</a>
-                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
-                    <a class="nav-link" href="/usuario_sair">Sair</a>
+            <?php if($_SESSION['tipo_user'] == 2) { ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
                 </div>
-            </div>
+            <?php } elseif($_SESSION['tipo_user'] == 3){ ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Gestor</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } elseif($_SESSION['tipo_user'] == 4){ ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Líder</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } else { ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Admin</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
+                </div>
+             <?php } ?>
         </div>
     </nav>
 

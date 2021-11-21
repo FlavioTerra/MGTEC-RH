@@ -166,6 +166,25 @@
                 'action'=>'editarPerfilSalvar'
             );
 
+            $routes['perfil_ver'] = array(
+                'route'=>'/perfil_ver',
+                'controller'=>'CandidateScreensController',
+                'action'=>'perfilVer'
+            );
+
+            $routes['vaga_candidatada_ver'] = array(
+                'route'=>'/vaga_candidatada_ver',
+                'controller'=>'CandidateScreensController',
+                'action'=>'vagaCandidatadaVer'
+            );
+
+            $routes['realizar_teste'] = array(
+                'route'=>'/realizar_teste',
+                'controller'=>'CandidateScreensController',
+                'action'=>'realizarTeste'
+            );
+
+
             // Cadastro Usuário
             $routes['usuario_cadastrar'] = array(
                 'route'=>'/usuario_cadastrar',

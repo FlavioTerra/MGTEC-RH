@@ -78,7 +78,7 @@
 
             $entrevista->save();
 
-            header('Location:/entrevista_registrar?entrevistaRegistrar=sucess');   
+            header('Location:/entrevista_registrada');   
         }
 
         public function entrevistaRegistrada2() {
@@ -179,6 +179,13 @@
             if(empty($_SESSION['tipo_user'])) {
                 $_SESSION['tipo_user'] = 0;
             }
+
+            $alterarVaga = Container::getModel('GerarVaga');
+
+            $alterarVaga->__set('id_vaga', $_POST['id_vaga']);
+
+            $alterarVaga->alterStatusVaga(); 
+
             header('Location:/requisicoes_vaga');
         }
 

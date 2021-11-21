@@ -378,6 +378,19 @@
             
             return $stmt->fetch(\PDO::FETCH_OBJ);
         }
+
+        public function alterStatusVaga() {
+            $query = "update tb_vaga v
+                    set v.status_vaga = 'Aprovada' 
+                       where v.id_vaga = :id_vaga";
+                
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+        
+            $stmt->execute();
+            
+            return $stmt->fetch(\PDO::FETCH_OBJ);
+        }
     }
 
 ?>

@@ -57,7 +57,49 @@
 
             $entrevista->save();
 
-            header('Location:/editar_perfil?editarPerfilSalvar=sucess');   
+            header('Location:/perfil_ver');   
+        }
+
+        public function perfilVer() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
+            $viewPerfilCandidato = Container::getModel('EditarPerfil');
+
+            $viewPerfilCandidato->__set('id_candidato', $_POST['id_candidato']);
+
+            $this->view->detalhesPerfilCandidato = $viewPerfilCandidato->getPerfilCandidato(); 
+
+            $this->render('perfil');
+        }
+
+        public function vagaCandidatadaVer() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
+            $viewVagaCandidatada = Container::getModel('EditarPerfil');
+
+            $viewPerfilCandidato->__set('id_candidato', $_POST['id_candidato']);
+
+            $this->view->detalhesVagaCandidatada = $viewVagaCandidatada->getVagaCandidatada(); 
+
+            $this->render('vagas-candidatadas');
+        }
+
+        public function realizarTeste() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
+            $this->render('realizar-teste');
         }
 
     }   

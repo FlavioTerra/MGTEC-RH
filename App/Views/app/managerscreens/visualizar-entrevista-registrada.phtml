@@ -24,35 +24,60 @@
                 <img src="/images/global/navbar-button.svg" class="navbar-button">
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" href="/home">Home</a>
-                    <a class="nav-link" href="/#">Funcionário</a>
-                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
-                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
-                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                    <a class="nav-link" href="/teste_candidato">Testes</a>
-                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
-                    <a class="nav-link" href="/usuario_sair">Sair</a>
+            <?php if($_SESSION['tipo_user'] == 2) { ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
                 </div>
-            </div>
+            <?php } elseif($_SESSION['tipo_user'] == 3){ ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Gestor</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } elseif($_SESSION['tipo_user'] == 4){ ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Líder</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } else { ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Admin</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
+                </div>
+             <?php } ?>
         </div>
         </div>
     </nav>
 
-    <?php
-        if (isset($_GET['entrevistaRegistrar'])) {
-        ?>
-
-    <script>
-    alert("Registro da Entrevista Realizado com Sucesso!");
-    </script>
-
-    <?php
-        }
-        ?>
     <form action="entrevista_candidato_registrar" method="post">
         <div class="container">
             <div class="title">
@@ -139,11 +164,8 @@
             </div>
 
             <!--Page user-->
-            <form action="entrevista_candidato_registrar" method="post" id="formulario">
+
                 <div class="container">
-                    <div class="title">
-                        <h1 class="title-1">Registrar Entrevista</h1>
-                    </div>
 
                     <div class="row mb-3">
                         <label for="colFormLabel" class="colsm-2 form-label label">Responsável</label>
@@ -183,44 +205,16 @@
                                     alt="edit"></h2>
                         </div>
                         <div class="col-sm-12 mb-3">
-                            <textarea type="text" class="form-control text-area" name="behavioral_style"></textarea>
                             <div>
-                                <div class="title">
-                                    <h2 class="title-2">Estilo Comportamental <img class="icon"
-                                            src="/images/global/edit.svg" alt="edit"></h2>
-                                </div>
+             
                                 <div class="col-sm-12 mb-3">
                                     <textarea type="text" class="form-control text-area"
                                         name="behavioral_style"><?= $this->view->detalhesEntrevistaRegistradas->est_comp ?></textarea>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="title">
-                                <h2 class="title-2">Pontos Positivos <img class="icon" src="/images/global/edit.svg"
-                                        alt="edit">
-                                </h2>
-                            </div>
-                            <div class="col-sm-12 mb-3">
-                                <textarea type="text" class="form-control text-area" name="positive_points"></textarea>
-                        </div>
                 </div>
 
-                <div>
-                    <div class="title">
-                        <h2 class="title-2">Pontos Negativos <img class="icon" src="/images/global/edit.svg" alt="edit">
-                        </h2>
-                    </div>
-                    <div class="col-sm-12 mb-3">
-                        <textarea type="text" class="form-control text-area" name="negative_points"></textarea>
-                    </div>
-                </div>
-
-                <div class="buttons">
-                    <button type="button" class="btn btn-outline-primary mb-5"
-                        onclick="Open('popup-back')">Voltar</button>
-                    <button type="button" class="btn btn-outline-primary mb-5"
-                        onclick="Open('popup-confirm')">Registrar</button>
                     <div>
                         <div class="title">
                             <h2 class="title-2">Pontos Positivos <img class="icon" src="/images/global/edit.svg"
@@ -253,7 +247,7 @@
                     </div>
                 </div>
         </div>
-        </form>
+    </form>
 
         <!--Footer-->
         <footer class="footer">
