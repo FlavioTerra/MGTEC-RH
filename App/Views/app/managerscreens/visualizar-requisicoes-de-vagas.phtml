@@ -739,7 +739,7 @@
     </div>
 
     <!--Page user-->
-    <form action="alterar_vaga" method="post" id="formulario">
+    <form action="vaga_aprovar" method="post" id="formulario">
         <div class="container">
 
             <div class="title">
@@ -781,10 +781,10 @@
 
             <div class="row mb-3 vagas">
                 <!--6%-->
-                <div class="mb-3 vaga" id="1-etapa">
-                    <div class="title">
+                <div class="title">
                         <h2 class="title-2">Status</h2>
                     </div>
+                <div class="mb-3 vaga" id="1-etapa">
 
                     <div class="vaga-bar">
                         <div class="vaga-per-6" per="6%"></div>
@@ -1205,7 +1205,7 @@
                 <button type="button" class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</button>
                 <button type="button" class="btn excluir btn-outline-primary mb-5"
                     onclick="Open('popup-confirm-2')">Reprovar</button>
-                <button type="button" class="btn aprovar btn-outline-primary mb-5"
+                <button type="submit" class="btn aprovar btn-outline-primary mb-5"
                     onclick="Open('popup-confirm')">Aprovar</button>
             </div>
         </div>
