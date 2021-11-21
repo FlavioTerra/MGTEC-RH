@@ -67,6 +67,14 @@
     font-size: 22px;
 }
 
+.footer{
+    position: relative;
+}
+
+.container{
+    min-height: 100vh;
+}
+
 /*separação*/
 hr{
     margin: 0 0 25px 0;

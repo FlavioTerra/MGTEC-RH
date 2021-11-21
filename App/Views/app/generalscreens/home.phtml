@@ -28,7 +28,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="/home">Home</a>
-                        <a class="nav-link" href="#">Candidato</a>
+                        <a class="nav-link" href="perfil_ver">Candidato</a>
                         <a class="nav-link" href="#sobre_nos">Sobre</a>
                         <a class="nav-link" href="#quem_somos">Quem Somos</a>
                         <a class="nav-link" href="#nossa_equipe">Nossos Líderes</a>
@@ -42,13 +42,11 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
-                        <a class="nav-link" href="/#">Funcionário</a>
+                        <a class="nav-link" href="">Funcionário</a>
                         <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
-                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
                         <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
                         <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link" href="/teste_candidato">Testes</a>
-                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
                         <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
                         <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
@@ -58,37 +56,36 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
-                        <a class="nav-link" href="#">Gestor</a>
+                        <a class="nav-link" href="">Gestor</a>
                         <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
                         <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
                         <a class="nav-link" href="/usuario_sair">Sair</a>               
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 4) { ?>
                 <!-- Usuário Chefe -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                    <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
-                        <a class="nav-link" href="#">L�der</a>
+                        <a class="nav-link" href="">Líder</a>
                         <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
                         <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
                         <a class="nav-link" href="/usuario_sair">Sair</a>               
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 5) { ?>
-                <!-- Usuário líder -->
+                <!-- Usuário adm -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
-                        <a class="nav-link" href="/#">Funcionário</a>
+                        <a class="nav-link" href="">Admin</a>
                         <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
                         <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
                         <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
                         <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link" href="/teste_candidato">Testes</a>
-                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
                         <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
                         <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>

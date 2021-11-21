@@ -20,7 +20,7 @@
             session_start();
 
             if(empty($_SESSION['tipo_user'])) {
-                $_SESSION['tipo_user'] = 6;
+                $_SESSION['tipo_user'] = 0;
             }
             
             $this->render('home');
@@ -28,10 +28,20 @@
         }
 
         public function usuarioCadastrar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $this->render('usuario-cadastrar'); 
         }
 
         public function usuarioCadastrarSalvar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             
             $usuario = Container::getModel('UsuarioCadastrar');
           
@@ -46,12 +56,22 @@
         }
 
         public function usuarioEntrarValidar(){
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $usuario = Container::getModel('UsuarioCadastrar');
 
             $usuario->logar();
         }
 
         public function gerarUsuario() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $usuarios = Container::getModel('InformacoesGlobais');
             $this->view->usuarios = $usuarios->getUsuarios();
@@ -60,10 +80,20 @@
         }
 
         public function usuarioEntrar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $this->render('login'); 
         }
 
         public function usuarioLogar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $user = Container::getModel('UsuarioCadastrar');
 
@@ -95,15 +125,43 @@
         }
 
         public function exibirPopup() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $this->render('popup'); 
         }
 
         public function usuarioRecuperarSenha() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $this->render('recuperar-senha'); 
         }
 
         public function usuarioRecuperarSenhaCodigo() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $this->render('recuperar-senha-security'); 
+        }
+
+        public function gerenciarCandidato() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+            $candidatos = Container::getModel('UsuarioCadastrar');
+
+            $this->view->todosCandidatos = $candidatos->getAll();
+
+            $this->render('gerenciar-candidato');
         }
 
     }   

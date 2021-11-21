@@ -25,36 +25,59 @@
                 <img src="/images/global/navbar-button.svg" class="navbar-button">
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" href="/home">Home</a>
-                    <a class="nav-link" href="/#">Funcionário</a>
-                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
-                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
-                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                    <a class="nav-link" href="/teste_candidato">Testes</a>
-                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
-                    <a class="nav-link" href="/usuario_sair">Sair</a>
+            <?php if($_SESSION['tipo_user'] == 2) { ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
                 </div>
-            </div>
+            <?php } elseif($_SESSION['tipo_user'] == 3){ ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Gestor</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } elseif($_SESSION['tipo_user'] == 4){ ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Líder</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } else { ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Admin</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
+                </div>
+             <?php } ?>
         </div>
     </nav>
 
-    <?php
-    if (isset($_GET['entrevistaMarcar'])) {
-    ?>
-
-    <script>
-    alert("Entrevista maracada com sucesso!");
-    </script>
-
-    <?php
-    header("Location: /gerenciar_entrevista_candidato");}
-    ?>
-
-    <!--Pop-up area -->
     <div class="popup-container" id="popup-confirm">
         <!--onclick="Open('popup-confirm')"-->
         <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
@@ -68,10 +91,35 @@
 
             <h1 class="popup-title">Marcar Entrevista</h1>
 
-            <p class="popup-description">Tem certeza que deseja marcar a entrevista? Você pode alterar as informações a
-                qualquer momento.</p>
+            <p class="popup-description">Tem certeza que deseja marcar essa entrevista?</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this, '/entrevista_candidato_marcar')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-back">
+        <!--onclick="Open('popup-back')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Voltar</h1>
+
+            <p class="popup-description">Tem certeza que deseja cancelar a entrevista? Todas as informações inseridas
+                serão perdidas.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/gerenciar_entrevista_candidato')">
                 Confirmar
             </button>
 
@@ -98,7 +146,7 @@
                 inseridas
                 serão perdidas.</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Back(this, 'url')">
+            <button class="popup-btn popup-btn-width" onclick="Back(this, 'gerenciar_entrevista_candidato')">
                 Confirmar
             </button>
 

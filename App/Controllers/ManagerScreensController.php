@@ -9,15 +9,26 @@
     use App\Models\DepartamentosCargos;
 
     class ManagerScreensController extends Action {
+        
         public function index() {  
 
         }
 
         public function entrevistaRegistrar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $this->render('entrevista-registrar');
         }
 
         public function entrevistaRegistrada() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $entrevistasRegistradas = Container::getModel('EntrevistaRegistrar');
 
             $departametos = Container::getModel('InformacoesGlobais');
@@ -35,6 +46,11 @@
         }
 
         public function visualizarEntrevistaRegistrada() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $viewEntrevistasRegistradas = Container::getModel('EntrevistaRegistrar');
 
             $viewEntrevistasRegistradas->__set('id_entrevista', $_POST['id_entrevista']);
@@ -45,6 +61,11 @@
         }
 
         public function entrevistaCandidatoRegistrar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $entrevista = Container::getModel('EntrevistaRegistrar');
 
             $entrevista->__set('id_candidato',$_POST['applpicant']);
@@ -57,10 +78,15 @@
 
             $entrevista->save();
 
-            header('Location:/entrevista_registrar?entrevistaRegistrar=sucess');   
+            header('Location:/entrevista_registrada');   
         }
 
         public function entrevistaRegistrada2() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $usuarios = Container::getModel('InformacoesGlobais');
             $this->view->usuarios = $usuarios->getUsuarios();
 
@@ -68,6 +94,11 @@
         }
 
         public function gerarRequisicaoVaga() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $departametos = Container::getModel('InformacoesGlobais');
             $this->view->departamentos = $departametos->getDepartamentos();
@@ -79,6 +110,11 @@
         }
 
         public function gerarVaga() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $requisicaoVaga = Container::getModel('GerarVaga');
 
             session_start();
@@ -135,11 +171,32 @@
                 $cont++;
             }
 
-            header('Location:/gerar_requisicao_vaga');
+            header('Location:/requisicoes_vaga');
 
         }
 
+        public function alterarVaga(){
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
+            $alterarVaga = Container::getModel('GerarVaga');
+
+            $alterarVaga->__set('id_vaga', $_POST['id_vaga']);
+
+            $alterarVaga->alterStatusVaga(); 
+
+            header('Location:/requisicoes_vaga');
+        }
+
         public function visualizarRequisicao() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $viewRequisicao = Container::getModel('GerarVaga');
 
             $viewRequisicao->__set('id_vaga', $_POST['id_vaga']);
@@ -159,11 +216,53 @@
         }
 
         public function requisicoesVagas() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $requisicoes = Container::getModel('GerarVaga');
 
             $this->view->todasRequisicoes = $requisicoes->getAll();
 
             $this->render('requisicoes-de-vagas-aprovadas-e-reprovadas');
+        }
+
+        public function gerenciarVaga() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+            $vagas = Container::getModel('GerarVaga');
+
+            $this->view->todasVagas = $vagas->getAllVaga();
+
+            $this->render('gerenciar-vaga');
+        }
+
+        public function visualizarVaga() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+            $viewRequisicao = Container::getModel('GerarVaga');
+
+            $viewRequisicao->__set('id_vaga', $_POST['id_vaga']);
+
+            $this->view->detalhesVaga = $viewRequisicao->getVagaAprovada();
+            $this->view->detalhesVagaExperiencia = $viewRequisicao->getVagaExperiencia();
+            $this->view->detalhesVagaCompetencia = $viewRequisicao->getVagaCompetencia();
+            $this->view->detalhesVagaFormacao = $viewRequisicao->getVagaFormacao();
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $this->render('visualizar-vaga');
         }
     }   
 

@@ -122,6 +122,24 @@
                 'action'=>'requisicoesVagas'
             );
 
+            $routes['gerenciar_vaga'] = array(
+                'route'=>'/gerenciar_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'gerenciarVaga'
+            );
+
+            $routes['visualizar_vaga'] = array(
+                'route'=>'/visualizar_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'visualizarVaga'
+            );
+
+            $routes['alterar_vaga'] = array(
+                'route'=>'/alterar_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'alterarVaga'
+            );
+
             // Teste
             $routes['atribuir_teste'] = array(
                 'route'=>'/atribuir_teste',
@@ -153,6 +171,25 @@
                 'controller'=>'CandidateScreensController',
                 'action'=>'editarPerfilSalvar'
             );
+
+            $routes['perfil_ver'] = array(
+                'route'=>'/perfil_ver',
+                'controller'=>'CandidateScreensController',
+                'action'=>'perfilVer'
+            );
+
+            $routes['vaga_candidatada_ver'] = array(
+                'route'=>'/vaga_candidatada_ver',
+                'controller'=>'CandidateScreensController',
+                'action'=>'vagaCandidatadaVer'
+            );
+
+            $routes['realizar_teste'] = array(
+                'route'=>'/realizar_teste',
+                'controller'=>'CandidateScreensController',
+                'action'=>'realizarTeste'
+            );
+
 
             // Cadastro Usuário
             $routes['usuario_cadastrar'] = array(
@@ -233,6 +270,12 @@
                 'route'=>'/gerar_relatorio_recrutamento_selecao',
                 'controller'=>'EmployeeScreensController',
                 'action'=>'gerarRelatorioRecrutamentoSelecao'
+            );
+
+            $routes['gerenciar_candidato'] = array(
+                'route'=>'/gerenciar_candidato',
+                'controller'=>'GeneralScreensController',
+                'action'=>'gerenciarCandidato'
             );
 
             $this->setRoutes($routes);

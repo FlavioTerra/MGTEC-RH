@@ -42,7 +42,7 @@
                         e.responsavel,
                         DATE_FORMAT(e.data_entrevista,'%d/%m/%Y') as data_entrevista,
                         e.titulo_entrevista,
-                        TIME_FORMAT(e.hora_entrevista, '%T')as hora_entrevista,
+                        e.hora_entrevista,
                         e.descricao
                         from tb_entrevista e";
             
@@ -59,15 +59,15 @@
                         e.responsavel,
                         DATE_FORMAT(e.data_entrevista,'%d/%m/%Y') as data_entrevista,
                         e.titulo_entrevista,
-                        TIME_FORMAT(e.hora_entrevista, '%T') as hora_entrevista,
+                        e.hora_entrevista,
                         e.descricao
                         from tb_entrevista e
                         inner join tb_usuario u on e.id_user = u.id_user    
-                        where e.id_entrevista = :id_entrevista";
+                        where e.id_candidato = :id_candidato";
   
                 
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(':id_entrevista',$this->__get('id_entrevista'));
+            $stmt->bindValue(':id_candidato',$this->__get('id_candidato'));
         
             $stmt->execute();
             
