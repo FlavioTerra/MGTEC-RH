@@ -1,0 +1,71 @@
+@import url(./custom-cadastrar-processo-seletivo.css);
+@import url(./custom-vagas-candidatadas.css);
+
+.title{
+    margin-bottom: 15px;
+}
+
+.form-label{
+    width: 170px;
+}
+
+.form-control{
+    max-width: 340px;
+}
+
+div .text-area{
+    max-width: 340px;
+}
+
+.vagas{
+    max-width: 720px;
+}
+
+.aprovar{
+    border-color: green;
+}
+
+.excluir{
+    border-color: rgb(197, 10, 10);
+}
+
+.aprovar:hover, .aprovar:active{
+    background-color: green;
+    border-color: green;
+}
+
+.excluir:hover, .excluir:active{
+    background-color: rgb(197, 10, 10);
+    border-color: rgb(197, 10, 10);
+}
+
+.title .title-2:last-child{
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 576px){
+    .form-label{
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
+}
+
+@media (min-width: 1072px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+}

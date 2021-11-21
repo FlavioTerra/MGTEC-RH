@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap / CSS -->
+    <link rel="stylesheet" href="/styles/custom-recuperar-senha-security.css">
+
+    <title>Recuperar Senha (Código de Segurança)</title>
+</head>
+
+<body>
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+        <div class="container-fluid background-navbar">
+            <a class="navbar-brand" href="/home"><img src="/images/global/logo.svg" alt=""></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <img src="/images/global/navbar-button.svg" class="navbar-button">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active" href="/usuario_entrar">Entrar</a>
+                    <a class="nav-link" href="/home#sobre_nos">Sobre</a>
+                    <a class="nav-link" href="/home#quem_somos">Quem Somos</a>
+                    <a class="nav-link" href="/home#nossa_equipe">Nossos Líderes</a>
+                    <a class="nav-link" href="/home#vagas_abertas">Trabalhe Conosco</a>
+                    <a class="nav-link" href="/home#contate_nos">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--body-->
+    <form action="requisitante.php" method="post">
+        <div class="container">
+            <div class="login-content">
+                <h1>Recuperar Senha</h1>
+
+                <div class="textbox">
+                    <img src="/images/login/user.svg">
+                    <input type="text" placeholder="Nome de Usuário" name="nome-usuario">
+                </div>
+
+                <div class="textbox">
+                    <img class="img-email" src="/images/global/email.svg">
+                    <input type="text" placeholder="E-mail" name="email">
+                </div>
+
+                <div class="textbox txt">
+                    <img src="/images/login/lock.svg">
+                    <input type="text" placeholder="Código de Segurança" name="codigo-seguranca">
+                </div>
+
+                <a class="btn-link" href="/usuario_recuperar_senha">
+                    <div class="effect">
+                        <span class="txt-codigo">Enviar Código ao E-mail</span>
+                        <input class="btn" type="submit" disabled>
+                    </div>
+                </a>
+
+                <a class="btn-link" href="/usuario_cadastrar">
+                    <div class="effect">
+                        <span>Registrar</span>
+                        <input class="btn" type="button" disabled>
+                    </div>
+                </a>
+
+                <a class="btn-link" href="/usuario_entrar">
+                    <div class="effect">
+                        <span>Voltar</span>
+                        <input class="btn" type="button" disabled>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </form>
+
+    <!--Footer-->
+    <footer class="footer">
+        <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="/images/global/email.svg" class="img-footer" onclick="">
+        <label class="label-footer">+55 (15) 5555-5555</label>
+    </footer>
+
+    <!--Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+    <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+</body>
+
+</html>

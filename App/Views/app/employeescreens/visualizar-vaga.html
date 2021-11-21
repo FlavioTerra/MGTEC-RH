@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap / CSS -->
+    <link rel="stylesheet" href="../../../../Public/styles/custom-consultar-quadro-de-vagas-candidato.css">
+    <link rel="stylesheet" href="../../../../Public/styles/pop-up.css">
+
+    <title>Consultar Quadro de Vagas Funcionario</title>
+</head>
+
+<body>
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+        <div class="container-fluid background-navbar">
+            <a class="navbar-brand" href="#"><img src="../../../../Public/images/global/logo.svg" alt=""></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <img src="../../../../Public/images/global/navbar-button.svg" class="navbar-button">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Funcionário</a>
+                    <a class="nav-link" href="#">Candidatos</a>
+                    <a class="nav-link" href="#">Requisições</a>
+                    <a class="nav-link active" href="#">Vagas</a>
+                    <a class="nav-link" href="#">Processos Seletivos</a>
+                    <a class="nav-link" href="#">Testes</a>
+                    <a class="nav-link" href="#">Entrevistas</a>
+                    <a class="nav-link" href="#">Suporte</a>
+                    <a class="nav-link" href="#">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Pop-up area-->
+    <div class="popup-container" id="popup-confirm">
+        <!--onclick="Open('popup-confirm')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Liberar Vaga</h1>
+
+            <p class="popup-description">Tem certeza que deseja liberar esta vaga para que possa virar um processo
+                seletivo?</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-confirm2">
+        <!--onclick="Open('popup-confirm2')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Excluir Vaga</h1>
+
+            <p class="popup-description">Tem certeza que deseja excluir esta vaga? Todos os dados da vaga serão
+                perdidos.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-back">
+        <!--onclick="Open('popup-back')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Voltar</h1>
+
+            <p class="popup-description">Tem certeza que deseja voltar para a página anterior? Todas as alterações serão
+                perdidas.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/requisicoes_vaga')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
+    <form action="requisitante.php" method="post">
+        <div class="container">
+
+            <div class="title">
+                <h1 class="title-1">Visualizar Vaga</h1>
+            </div>
+
+            <!--Dados de Solicitaçao-->
+            <div class="title">
+                <h2 class="title-2">Dados de Solicitação</h2>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="colsm-2 form-label title-interview">Título da Vaga</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder="Recrutador de RH"
+                        name="titulo_vaga" value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder="usuario teste"
+                        name="requisitante" readonly value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder="12/11/2021"
+                        name="data-de-solicitacao" readonly value="">
+                </div>
+            </div>
+
+            <div class="row mb-3 vagas">
+                <div class="title">
+                    <h2 class="title-2">Status</h2>
+                </div>
+
+                <!--6%-->
+                <div class="mb-3 vaga" id="3-etapa">
+                    <div class="vaga-bar">
+                        <div class="vaga-per-59" per="59%"></div>
+                    </div>
+
+                    <div class="mb-3 texts">
+                        <div class="text-box">
+                            <span>Aberta</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Em Análise</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Aprovada</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Vaga Criada</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Finalizada</span>
+                            <img src="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Dados de Vaga-->
+            <div class="title">
+                <h2 class="title-2">Dados de Vaga</h2>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control edit form1" id="colFormLabel"
+                        placeholder="Analista de recrutamento" name="cargo" value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control edit form1" id="colFormLabel"
+                        placeholder="RH - Recrutamento e Seleção" name="departamento" value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control edit form1" id="colFormLabel" placeholder="CLT"
+                        name="vinculo_empregaticio" value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control edit form1" id="colFormLabel" placeholder="3504,00"
+                        name="salario" min="0" value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
+                <div class="col-sm-10 input-1">
+                    <input type="time" class="form-control edit form2" id="colFormLabel" placeholder=""
+                        name="hora-trab-inicio" value="">
+                </div>
+                <label for="colFormLabel" class="col label-middle">à</label>
+                <div class="col-sm-10 input-2">
+                    <input type="time" class="form-control edit form2" id="colFormLabel" placeholder=""
+                        name="hora-trab-fim" value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control edit form1" id="colFormLabel" placeholder="2"
+                        name="numero-de-vagas" min="0" value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
+                <div class="col-sm-12 mb-3">
+                    <textarea type="text" class="form-control edit" id="textarea" rows="3"
+                        name="funcao">O funcionário será responsável por encontrar e atrair profissionais talentosos para a empresa. Será responsável por realizações de aisjdiajedij.</textarea>
+                </div>
+            </div>
+
+            <!--Experiências-->
+            <div class="title">
+                <h2 class="title-2">Experiências</h2>
+            </div>
+
+            <div id="Exp">
+                <div class="subtitle">
+                    <h3 class="title-3">Experiência</h3>
+                    <h3 class="numExp">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-exp-formacao edit form3" aria-label="Formação"
+                        name="exp-fomacao-1">
+                        <option selected>Formação</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <select class="col form-select cl-exp-status edit form3" aria-label="Status" name="exp-status-1">
+                        <option selected>Status</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
+                    <div class="col number">
+                        <input type="number" class="form-control cl-exp-anos-experiencia edit form2" id="colFormLabel"
+                            placeholder="00" name="exp-anos-experiencia-1">
+                    </div>
+                </div>
+
+                <div id="btn-area-0" class="btn-area-exp">
+                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                        onclick="addExp()">
+                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                        onclick="removeExp()">
+                </div>
+            </div>
+
+            <!--Competências-->
+            <div class="title">
+                <h2 class="title-2">Competências</h2>
+            </div>
+
+            <div id="Comp">
+                <div class="subtitle">
+                    <h3 class="title-3">Competência</h3>
+                    <h3 class="numComp">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-comp-nome edit form3" aria-label="Nome" name="comp-nome-1">
+                        <option selected>Nome</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <select class="col form-select cl-comp-grau edit form3" aria-label="Grau" name="comp-grau-1">
+                        <option selected>Grau</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <select class="col form-select cl-comp-status edit form4" aria-label="Status" name="comp-status-1">
+                        <option selected>Status</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div id="btn-area-comp-0" class="btn-area-comp">
+                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                        onclick="addComp()">
+                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                        onclick="removeComp()">
+                </div>
+            </div>
+
+            <!--Formações-->
+            <div class="title">
+                <h2 class="title-2">Formações</h2>
+            </div>
+
+            <div id="Form">
+                <div class="subtitle">
+                    <h3 class="title-3">Formação</h3>
+                    <h3 class="numForm">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-form-tipo edit form3" aria-label="Tipo" name="form-tipo-1">
+                        <option selected>Tipo</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <select class="col form-select cl-form-status edit form3" aria-label="Status" name="form-status-1">
+                        <option selected>Status</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <select class="col form-select cl-form-nome edit form3" aria-label="Nome" name="form-nome-1">
+                        <option selected>Nome</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+
+                    <select class="col form-select cl-form-grau edit form3" aria-label="Grau" name="form-grau-1">
+                        <option selected>Grau</option>
+                        <option value="1">#</option>
+                        <option value="2">#</option>
+                        <option value="3">#</option>
+                    </select>
+                </div>
+
+                <div id="btn-area-form-0" class="btn-area-form">
+                    <img src="../../../../Public/images/custom-requisicao-de-vaga/plus.svg" class="btn-form"
+                        onclick="addForm()">
+                    <img src="../../../../Public/images/custom-requisicao-de-vaga/minus.svg" class="btn-form"
+                        onclick="removeForm()">
+                </div>
+            </div>
+
+            <hr>
+
+            <!--Comentário do Líder-->
+            <div class="title">
+                <h2 class="title-2">Comentários</h2>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-12 mb-3">
+                    <textarea type="text" class="form-control edit" id="textarea" rows="3" name="comentario" readonly
+                        tabindex="-1"></textarea>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</a>
+                <button type="button" class="btn excluir btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm2')">Excluir</button>
+                <button type="button" class="btn aprovar btn-outline-primary mb-5"
+                    onclick="Open('popup-confirm')">Liberar</button>
+
+                <!--lider-->
+                <!-- <button type="submit" class="btn aprovar btn-outline-primary mb-5">Aprovar</button> -->
+            </div>
+        </div>
+    </form>
+
+    <!--Footer-->
+    <footer class="footer">
+        <img src="../../../../Public/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="../../../../Public/images/global/email.svg" class="img-footer" onclick="">
+        <label class="label-footer">+55 (15) 5555-5555</label>
+    </footer>
+
+    <!--Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+    <script src="../../../../Public/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>
+</body>
+
+</html>
