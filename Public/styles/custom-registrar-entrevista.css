@@ -70,6 +70,14 @@
     background-color: red;
 }
 
+.container{
+    min-width: 100vh;
+}
+
+.footer{
+    position: relative;
+}
+
 @media screen and (min-width:576px){
     .form-label{
         margin-right: 0;
