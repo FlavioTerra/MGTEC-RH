@@ -12,6 +12,11 @@
         }
 
         public function processoSeletivo() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $usuarios = Container::getModel('InformacoesGlobais');
             $this->view->usuarios = $usuarios->getUsuarios();
 
@@ -21,7 +26,9 @@
         public function visualizarProcessoSeletivo() {
             session_start();
 
-            $_SESSION['tipo_user'] = 3;
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
 
@@ -34,6 +41,10 @@
 
         public function gerenciarProcessoSeletivo() {
             session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $processosSeletivos = Container::getModel('ProcessoSeletivo');
 
@@ -52,6 +63,11 @@
         }
 
         public function processoSeletivoCadastrar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $processoSeletivo = Container::getModel('ProcessoSeletivo');
             
             $processoSeletivo->__set('titulo_proc',$_POST['tituloProcSeletivo']);
@@ -68,15 +84,25 @@
 
             $processoSeletivo->save();
 
-            header('Location:/processo_seletivo?cadastroProcSeletivo=sucess');   
+            header('Location:/gerenciar_processo_seletivo');   
         }
 
         // Marcar Entrevista
         public function entrevistaMarcar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $this->render('entrevista-marcar');
         }
 
         public function entrevistaCandidatoMarcar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $entrevista = Container::getModel('EntrevistaMarcar');
    
             $entrevista->__set('titulo_entrevista',$_POST['titulo']);
@@ -93,10 +119,15 @@
 
             $entrevista->save();
 
-            header('Location:/entrevista_marcar?entrevistaMarcar=sucess');   
+            header('Location:/gerenciar_entrevista_candidato');   
         }
 
         public function visualizarEntrevistaCandidato() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $viewEntrevistasCandidato = Container::getModel('EntrevistaMarcar');
 
             $viewEntrevistasCandidato->__set('id_entrevista', $_POST['id_entrevista']);
@@ -107,6 +138,11 @@
         }
 
         public function gerenciarEntrevistaCandidato() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $entrevistasCandidato = Container::getModel('EntrevistaMarcar');
 
             $departametos = Container::getModel('InformacoesGlobais');
@@ -124,6 +160,11 @@
         }
 
         public function entrevistaCandidato() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $usuarios = Container::getModel('InformacoesGlobais');
             $this->view->usuarios = $usuarios->getUsuarios();
 
@@ -134,6 +175,11 @@
         // Teste
 
         public function cadastrarTeste() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $teste = Container::getModel('AtribuirTeste');
 
             $teste->__set('id_proc', 1); //<- Ver como pegar o id do processo seletivo
@@ -171,6 +217,11 @@
         }
 
         public function gerarEntrevistaCandidato() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $departametos = Container::getModel('InformacoesGlobais');
             $this->view->departamentos = $departametos->getDepartamentos();
@@ -186,6 +237,11 @@
 
         // Atribuir Teste
         public function atribuirTeste() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $this->render('atribuir-teste');
         }
@@ -193,23 +249,65 @@
 
         // Relat�rios
         public function gerarRelatorio() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $this->render('gerar-relatorio');
         }
         
         public function gerarRelatorioIndicadoresDesempenho() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $this->render('relatorio-indicadores-desempenho');
         }
 
         public function gerarRelatorioQuadroVagas() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $this->render('relatorio-quadro-de-vagas');
         }
 
         public function gerarRelatorioRecrutamentoSelecao() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
 
             $this->render('relatorio-recrutamento-selecao');
+        }
+
+        public function gerenciarVaga() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+            $entrevistasCandidato = Container::getModel('GerarVaga');
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
+            $this->view->todasVagas = $vagas->getAll();
+
+            $this->render('gerenciar-vaga');
         }
 
     }   

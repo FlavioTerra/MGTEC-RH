@@ -10,6 +10,7 @@
         private $id_cargo;	
         private $id_solicitante;	
         private $titulo_vaga;
+        private $comentario;
         private $num_vagas;
         private $vinculo_emp;
         private $data_solic;
@@ -56,6 +57,7 @@
                                            id_cargo,
                                            id_solicitante,
                                            titulo_vaga,
+                                           comentario,
                                            num_vagas,
                                            vinculo_emp,
                                            status_vaga,
@@ -69,6 +71,7 @@
                                            :id_cargo,
                                            null,
                                            :titulo_vaga,
+                                           null,
                                            :num_vagas,
                                            :vinculo_emp,
                                            "Aberta",
@@ -251,6 +254,7 @@
                              v.titulo_vaga,
                              v.num_vagas,
                              v.vinculo_emp,
+                             v.comentario,
                              DATE_FORMAT(v.data_solic, '%d/%m/%Y') as data_solic,
                              v.status_vaga,
                              v.salario,
@@ -325,6 +329,54 @@
             
             return $stmt->fetchAll(\PDO::FETCH_OBJ);
             
+        }
+
+        public function getAllVaga() {
+            $query = "select v.id_vaga,  
+                             v.titulo_vaga,
+                             v.num_vagas,
+                             DATE_FORMAT(v.data_solic, '%d/%m/%Y') as data_solic,
+                             v.status_vaga,
+                             c.nome_cargo,
+                             d.nome_departamento
+                             from tb_vaga v 
+                  inner join tb_cargo c        on v.id_cargo = c.id_cargo
+                  inner join tb_departamento d on d.id_departamento = c.id_departamento
+                  and v.status_vaga = 'Aprovada'";
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+            
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        public function getVagaAprovada() {
+            $query = "select v.id_vaga,
+                             v.id_cargo,
+                             c.id_departamento,
+                             u.nome,
+                             v.titulo_vaga,
+                             v.num_vagas,
+                             v.vinculo_emp,
+                             v.comentario,
+                             DATE_FORMAT(v.data_solic, '%d/%m/%Y') as data_solic,
+                             v.status_vaga,
+                             v.salario,
+                             v.funcao,
+                             v.hora_inicio,
+                             v.hora_fim
+                        from tb_vaga v 
+                  inner join tb_cargo c on v.id_cargo = c.id_cargo
+                  inner join tb_usuario u on v.id_solicitante = u.id_user
+                       where v.id_vaga = :id_vaga and v.status_vaga = 'Aprovada'";
+                
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+        
+            $stmt->execute();
+            
+            return $stmt->fetch(\PDO::FETCH_OBJ);
         }
     }
 

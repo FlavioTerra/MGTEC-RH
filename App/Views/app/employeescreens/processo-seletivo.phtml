@@ -9,6 +9,7 @@
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-cadastrar-processo-seletivo.css">
+    <link rel="stylesheet" href="/styles/pop-up.css">
 
 </head>
 
@@ -25,34 +26,72 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" href="/home">Home</a>
-                    <a class="nav-link" href="/#">Funcionário</a>
-                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
-                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
-                    <a class="nav-link active" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                    <a class="nav-link" href="/teste_candidato">Testes</a>
-                    <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
-                    <a class="nav-link" href="/usuario_sair">Sair</a>
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link active" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
                 </div>
-            </div>
     </nav>
 
-    <?php
-    if (isset($_GET['cadastroProcSeletivo'])) {
-    ?>
+    <!-- Pop-up area -->
+    <div class="popup-container" id="popup-confirm">
+        <!--onclick="Open('popup-confirm')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
 
-    <script>
-    alert("Cadastro do Processo Seletivo Realizado com Sucesso!");
-    </script>
+            <img src="/images/pop-up/alert.svg" class="popup-img">
 
-    <?php
-    header("Location: /gerenciar_processo_seletivo");}
-    ?>
+            <h1 class="popup-title">Cadastrar Processo Seletivo</h1>
 
-    <form action="/processo_seletivo_cadastrar" method="post">
+            <p class="popup-description">Tem certeza que deseja cadastrar esse processo seletivo?</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this, '/processo_seletivo_cadastrar')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-back">
+        <!--onclick="Open('popup-back')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close">
+                <img src="/images/global/close.svg" onclick="Close(this)">
+            </div>
+
+            <img src="/images/pop-up/alert.svg" class="popup-img">
+
+            <h1 class="popup-title">Voltar</h1>
+
+            <p class="popup-description">Tem certeza que deseja cancelar o processo seletivo? Todas as informações inseridas
+                serão perdidas.</p>
+
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/gerenciar_processo_seletivo')">
+                Confirmar
+            </button>
+
+            <button type="button" class="popup-btn-link" onclick="Close(this)">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <form action="/processo_seletivo_cadastrar" method="post" id="formulario">
         <div class="container">
             <div class="title">
                 <h1 class="title-1">Cadastrar Processo Seletivo</h1>
@@ -130,9 +169,9 @@
             <hr />
 
             <div class="buttons">
+                <button type="button" class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</button>
                 <button type="button" class="btn btn-outline-primary mb-5"
-                    onclick="window.location.href = '/gerenciar_processo_seletivo'">Voltar</button>
-                <button type="submit" class="btn btn-outline-primary mb-5">Cadastrar</button>
+                    onclick="Open('popup-confirm')">Cadastrar</button>
             </div>
         </div>
     </form>
@@ -151,6 +190,7 @@
     </script>
 
     <script src="/scripts/general-scripts/processo-seletivo.js"></script>
+    <script src="/scripts/general-scripts/pop-up.js"></script>
 </body>
 
 </html>

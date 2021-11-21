@@ -23,22 +23,57 @@
                 aria-expanded="false" aria-label="Toggle navigation">
                 <img src="/images/global/navbar-button.svg" class="navbar-button">
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" href="/home">Home</a>
-                    <a class="nav-link" href="/#">Funcionário</a>
-                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
-                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
-                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                    <a class="nav-link" href="/teste_candidato">Testes</a>
-                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
-                    <a class="nav-link" href="/usuario_sair">Sair</a>
+            <?php if($_SESSION['tipo_user'] == 2) { ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link active" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
                 </div>
-            </div>
-        </div>
+            <?php } elseif($_SESSION['tipo_user'] == 3){ ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Gestor</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link active" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } elseif($_SESSION['tipo_user'] == 4){ ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Líder</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link active" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } else { ?>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/home">Home</a>
+                        <a class="nav-link" href="">Admin</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link active" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
+                </div>
+             <?php } ?>
+           
         </div>
     </nav>
 
@@ -54,9 +89,9 @@
 
             <img src="/images/pop-up/alert.svg" class="popup-img">
 
-            <h1 class="popup-title">Salvar Processo</h1>
+            <h1 class="popup-title">Alterar Processo</h1>
 
-            <p class="popup-description">Tem certeza que deseja salvar o processo seletivo? Você poderá atualizar as
+            <p class="popup-description">Tem certeza que deseja alterar o processo seletivo? Você poderá atualizar as
                 informações a qualquer momento.</p>
 
             <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
@@ -127,7 +162,7 @@
         <?php if($_SESSION['tipo_user'] == 2 || $_SESSION['tipo_user'] == 5){ ?>
         <div class="container">
             <div class="title">
-                <h1 class="title-1">Processo Seletivo</h1>
+                <h1 class="title-1">Visualizar Processo Seletivo</h1>
             </div>
 
             <div class="title">
@@ -200,6 +235,8 @@
                     <!--6%-->
                     <div class="title">
                         <h2 class="title-2">Status</h2>
+                        <br>
+                        <br>
                     </div>
 
                     <div class="mb-3 vaga" id="1-etapa">
@@ -469,6 +506,8 @@
                     <!--6%-->
                     <div class="title">
                         <h2 class="title-2">Status</h2>
+                        <br>
+                        <br>
                     </div>
 
                     <div class="mb-3 vaga" id="1-etapa">

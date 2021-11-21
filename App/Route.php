@@ -122,6 +122,24 @@
                 'action'=>'requisicoesVagas'
             );
 
+            $routes['gerenciar_vaga'] = array(
+                'route'=>'/gerenciar_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'gerenciarVaga'
+            );
+
+            $routes['visualizar_vaga'] = array(
+                'route'=>'/visualizar_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'visualizarVaga'
+            );
+
+            $routes['alterar_vaga'] = array(
+                'route'=>'/alterar_vaga',
+                'controller'=>'ManagerScreensController',
+                'action'=>'alterarVaga'
+            );
+
             // Teste
             $routes['atribuir_teste'] = array(
                 'route'=>'/atribuir_teste',
@@ -227,6 +245,12 @@
                 'route'=>'/gerar_relatorio_recrutamento_selecao',
                 'controller'=>'EmployeeScreensController',
                 'action'=>'gerarRelatorioRecrutamentoSelecao'
+            );
+
+            $routes['gerenciar_candidato'] = array(
+                'route'=>'/gerenciar_candidato',
+                'controller'=>'GeneralScreensController',
+                'action'=>'gerenciarCandidato'
             );
 
             $this->setRoutes($routes);

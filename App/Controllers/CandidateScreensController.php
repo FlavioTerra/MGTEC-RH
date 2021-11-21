@@ -14,10 +14,21 @@
         }
 
         public function editarPerfil() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
             $this->render('editar-perfil');
         }
 
         public function editarPerfilSalvar() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
             $entrevista = Container::getModel('EditarPerfil');
             // exp-fomacao-1  exp-status-1  exp-anos-experiencia-1 
             // comp-nome-1  comp-grau-1  comp-status-1
