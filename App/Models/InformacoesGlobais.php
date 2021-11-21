@@ -47,6 +47,31 @@
 
             return $stmt->fetchAll(\PDO::FETCH_OBJ);
         }
+
+        function getEstados() {
+            $query = 'select id_estado,
+                             nome
+                        from tb_estado';
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        function getCidades() {
+            $query = 'select id_cidade,
+                             id_estado,
+                             nome
+                        from tb_cidade';
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
     }
 
 ?>

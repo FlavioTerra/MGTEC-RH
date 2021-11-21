@@ -68,6 +68,14 @@ textarea{
     margin-left: 0px;
 }
 
+.footer{
+    position: relative;
+}
+
+.container{
+    min-height: 100vh;
+}
+
 @media screen and (min-width:576px){
     /*forms*/
     .dual{

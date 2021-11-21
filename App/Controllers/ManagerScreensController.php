@@ -117,8 +117,10 @@
             }
             $requisicaoVaga = Container::getModel('GerarVaga');
 
+            session_start();
+
             $requisicaoVaga->__set('id_cargo' , $_POST['cargo']);
-            //$requisicaoVaga->__set('id_solicitante' , $_POST['id_solicitante']);
+            $requisicaoVaga->__set('id_solicitante' , $_SESSION['id_usuario']);
             $requisicaoVaga->__set('titulo_vaga' , $_POST['titulo_vaga']);
             $requisicaoVaga->__set('num_vagas' , $_POST['numero_vagas']);
             $requisicaoVaga->__set('vinculo_emp' , $_POST['vinculo_empregaticio']);

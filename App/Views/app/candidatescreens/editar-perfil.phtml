@@ -1,16 +1,22 @@
-<!doctype html>
+    <!doctype html>
 <html lang="en">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">        
 
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-editar-perfil.css">
     <link rel="stylesheet" href="/styles/pop-up.css">
 
     <title>Editar Perfil Candidato</title>
+
+    <?php session_start(); ?>
+
+    <script type="text/javascript">
+        let cidades = <?php echo json_encode($this->view->cidades) ?>;
+    </script>
 </head>
 
 <body>
@@ -86,8 +92,8 @@
                     </div>
 
                     <div class="names">
-                        <h1 class="nome-perfil">Nome Perfil</h1>
-                        <h2 class="nome-usuario">nome_usuario</h2>
+                        <h1 class="nome-perfil"><?=$_SESSION['nome']?></h1>
+                        <h2 class="nome-usuario"><?=$_SESSION['login_user']?></h2>
                     </div>
                 </div>
 
@@ -100,7 +106,6 @@
                         <textarea type="text" class="form-control text-area" name="sobre"></textarea>
                     </div>
                 </div>
-
 
                 <div class="buttons">
                     <button type="button" class="btn btn-outline-primary mb-2 select">Editar Perfil</button>
@@ -126,7 +131,7 @@
                     <span class="asterisco-2">*</span>
                 </label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control edit" id="colFormLabel" placeholder=""
+                    <input type="date" class="form-control" id="colFormLabel" placeholder=""
                         name="data-de-nascimento">
                 </div>
             </div>
@@ -134,34 +139,9 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Sexo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="sexo">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">CPF
-                    <span class="asterisco-2">*</span>
-                </label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cpf">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="colFormLabel" class="col-sm-2 form-label">CNPJ</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cnpj">
-                </div>
-            </div>
-
-            <div class="row mb-3 dados">
-                <label for="role" class="col-sm-2 form-label form-label-interview">Cadastro de Pessoa</label>
-                <div class="col-sm-10">
-                    <select class="col form-select" name="cadastro-pessoa">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select name="sexo" id="colFormLabel" class="col form-select"> 
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
                     </select>
                 </div>
             </div>
@@ -170,11 +150,33 @@
                 <label for="role" class="col-sm-2 form-label form-label-interview">Tipo Pessoa</label>
                 <div class="col-sm-10">
                     <select class="col form-select" name="tipo_pessoa">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                        <option value="1">Fisíca</option>
+                        <option value="2">Jurídica</option>
                     </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">CPF
+                    <span class="asterisco-2">*</span>
+                </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cpf">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">CNPJ</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cnpj">
+                </div>
+            </div>
+
+            <div class="row mb-3 dados">
+                <label for="role" class="col-sm-2 form-label form-label-interview">Cadastro de Pessoa</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="colFormLabel" placeholder=""
+                        name="cadastro-pessoa">
                 </div>
             </div>
 
@@ -183,7 +185,7 @@
                     <span class="asterisco-2">*</span>
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder=""
+                    <input type="text" class="form-control" id="colFormLabel" placeholder=""
                         name="disponibilidade">
                 </div>
             </div>
@@ -192,10 +194,8 @@
                 <label for="role" class="col-sm-2 form-label form-label-interview">Status</label>
                 <div class="col-sm-10">
                     <select class="col form-select" name="c_status">
-                        <option selected></option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                        <option value="1">Desempregado</option>
+                        <option value="2">Trabalhando</option>
                     </select>
                 </div>
             </div>
@@ -209,7 +209,7 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Telefone</label>
                 <div class="col-sm-10">
-                    <input type="tel" class="form-control edit" id="colFormLabel" placeholder="" name="telefone">
+                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="telefone"  maxlength="15">
                 </div>
             </div>
 
@@ -218,7 +218,7 @@
                     <span class="asterisco-2">*</span>
                 </label>
                 <div class="col-sm-10">
-                    <input type="tel" class="form-control edit" id="colFormLabel" placeholder="" name="celular">
+                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="celular">
                 </div>
             </div>
 
@@ -227,7 +227,7 @@
                     <span class="asterisco-2">*</span>
                 </label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control edit" id="colFormLabel" placeholder="" name="email">
+                    <input type="email" class="form-control" id="colFormLabel" placeholder="" name="email">
                 </div>
             </div>
 
@@ -242,7 +242,7 @@
                     <span class="asterisco-2">*</span>
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cep">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cep">
                 </div>
             </div>
 
@@ -251,7 +251,14 @@
                     <span class="asterisco-2">*</span>
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="estado">
+                    <select class="col form-select form1" name="estado" onchange="atribuiEstado(this)">
+                        <option selected value="0">--Selecione--</option>
+                        <?php foreach ($this->view->estados as $key => $estados) { ?>
+                        <option value="<?=$estados->id_estado?>">
+                            <?= $estados->nome ?>
+                        </option>
+                        <?php } ?>
+                    </select>
                 </div>
             </div>
 
@@ -260,28 +267,35 @@
                     <span class="asterisco-2">*</span>
                 </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="cidade">
+                    <select class="col form-select form1" name="cidade">
+                        <option selected value="0">--Selecione--</option>
+                        <?php foreach ($this->view->cidades as $key => $cidades) { ?>
+                        <option value="<?=$cidades->id_cidade?>">
+                            <?= $cidades->nome ?>
+                        </option>
+                        <?php } ?>
+                    </select>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Bairro</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="bairro">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="bairro">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Rua</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control edit" id="colFormLabel" placeholder="" name="rua">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="rua">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Número</label>
                 <div class="col-sm-10 mb-3">
-                    <input type="number" class="form-control edit" id="colFormLabel" placeholder="" name="numero">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="numero">
                 </div>
             </div>
 
@@ -297,25 +311,32 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-exp-formacao edit" aria-label="Formação" name="exp-fomacao-1">
-                        <option selected>Formação</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-exp-formacao form3" aria-label="Experiência"
+                        name="exp-formacao-1">
+                        <option selected value="0">Experiência</option>
+                        <option value="1">Administrativa</option>
+                        <option value="2">Elétrica</option>
+                        <option value="3">Eletrônica</option>
+                        <option value="4">Recursos Humanos</option>
+                        <option value="5">Redes</option>
+                        <option value="6">Contábil</option>
+                        <option value="7">Programação</option>
+                        <option value="8">Logística</option>
                     </select>
 
-                    <select class="col form-select cl-exp-status edit" aria-label="Status" name="exp-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-exp-status form3" aria-label="Status" name="exp-status-1">
+                        <option selected value="0">Status</option>
+                        <option value="1">Experiência Qualquer</option>
+                        <option value="2">Júnior</option>
+                        <option value="3">Pleno</option>
+                        <option value="4">Sênior</option>
                     </select>
                 </div>
 
                 <div class="row">
                     <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
                     <div class="col number">
-                        <input type="number" class="form-control cl-exp-anos-experiencia edit" id="colFormLabel"
+                        <input type="number" class="form-control cl-exp-anos-experiencia" id="colFormLabel"
                             placeholder="00" name="exp-anos-experiencia-1">
                     </div>
                 </div>
@@ -338,27 +359,34 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-comp-nome edit" aria-label="Nome" name="comp-nome-1">
-                        <option selected>Nome</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-comp-nome form3" aria-label="Nome" name="comp-nome-1">
+                        <option selected value="0">Nome</option>
+                        <option value="1">Gestão de Pessoas</option>
+                        <option value="2">Análise de Requisitos</option>
+                        <option value="3">Java</option>
+                        <option value="4">ERP</option>
+                        <option value="5">Prestações de Contas</option>
+                        <option value="6">Escrituração Fiscal</option>
+                        <option value="7">Manutenção de Motores Trifásicos</option>
+                        <option value="8">Gestão de Projetos</option>
+                        <option value="9">Planejamento de Armazenagem de Mercadorias</option>
+                        <option value="10">Inglês</option>
                     </select>
 
-                    <select class="col form-select cl-comp-grau edit" aria-label="Grau" name="comp-grau-1">
-                        <option selected>Grau</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-comp-grau form3" aria-label="Grau" name="comp-grau-1">
+                        <option selected value="0">Grau</option>
+                        <option value="1">Básico</option>
+                        <option value="2">Intermediário</option>
+                        <option value="3">Avançado</option>
                     </select>
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-comp-status edit" aria-label="Status" name="comp-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-comp-status form4" aria-label="Status" name="comp-status-1">
+                        <option selected value="0">Status</option>
+                        <option value="1">Iniciante</option>
+                        <option value="2">Em Desenvolvimento</option>
+                        <option value="3">Concluído</option>
                     </select>
                 </div>
 
@@ -380,34 +408,44 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-form-tipo edit" aria-label="Tipo" name="form-tipo-1">
-                        <option selected>Tipo</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-form-tipo form3" aria-label="Tipo" name="form-tipo-1">
+                        <option selected value="0">Tipo</option>
+                        <option value="1">Fundamental</option>
+                        <option value="2">Ensino médio</option>
+                        <option value="3">Técnico</option>
+                        <option value="4">Superior</option>
                     </select>
 
-                    <select class="col form-select cl-form-status edit" aria-label="Status" name="form-status-1">
-                        <option selected>Status</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-form-status form3" aria-label="Status" name="form-status-1">
+                        <option selected value="0">Status</option>
+                        <option value="1">Completo</option>
+                        <option value="2">Em Andamento</option>
+                        <option value="3">Incompleto</option>
                     </select>
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-form-nome edit" aria-label="Nome" name="form-nome-1">
-                        <option selected>Nome</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-form-nome form3" aria-label="Nome" name="form-nome-1">
+                        <option selected value="0">Nome</option>
+                        <option value="1">Análise e Desenvolvimento de Sistemas</option>
+                        <option value="2">Redes</option>
+                        <option value="3">Ciência da Computação</option>
+                        <option value="4">Logística</option>
+                        <option value="5">Contabilidade</option>
+                        <option value="6">Engenharia Elétrica</option>
+                        <option value="7">Engenharia Eletrônica</option>
+                        <option value="8">Engenharia de Automação</option>
+                        <option value="9">Recursos Humanos</option>
+                        <option value="10">Administração</option>
                     </select>
 
-                    <select class="col form-select cl-form-grau edit" aria-label="Grau" name="form-grau-1">
-                        <option selected>Grau</option>
-                        <option value="1">#</option>
-                        <option value="2">#</option>
-                        <option value="3">#</option>
+                    <select class="col form-select cl-form-grau form3" aria-label="Grau" name="form-grau-1">
+                        <option selected value="0">Grau</option>
+                        <option value="1">Tecnólogo</option>
+                        <option value="2">Graduação</option>
+                        <option value="3">Pôs-graduação</option>
+                        <option value="4">Mestrado</option>
+                        <option value="4">Doutorado</option>
                     </select>
                 </div>
 

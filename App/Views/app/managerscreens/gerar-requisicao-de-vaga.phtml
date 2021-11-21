@@ -12,6 +12,10 @@
 
     <title>Gerar Requisição de Vaga</title>
 
+    <?php
+        session_start();
+    ?>
+
     <script type="text/javascript">
     let cargos = <?php echo json_encode($this->view->cargos) ?>;
     </script>
@@ -118,7 +122,7 @@
                 <label for="colFormLabel" class="colsm-2 form-label">Requisitante</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control form1" id="colFormLabel" placeholder="" name="requisitante"
-                        readonly>
+                        value="<?=$_SESSION['nome']?>" readonly>
                 </div>
             </div>
 

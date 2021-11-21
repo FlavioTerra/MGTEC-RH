@@ -109,11 +109,12 @@
                 $_SESSION['id_usuario'] = $user->__get('id_user');
                 $_SESSION['tipo_user'] = $user->__get('tipo_user');
                 $_SESSION['nome'] = $user->__get('nome');
+                $_SESSION['login_user'] =  $user->__get('login_user');
 
                 header('Location: /');
             } 
             else {
-                    header('Location: /usuario_entrar?login=error');
+                header('Location: /usuario_entrar?login=error');
             }
          }
 

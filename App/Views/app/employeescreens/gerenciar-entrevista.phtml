@@ -24,55 +24,55 @@
             </button>
 
             <?php if($_SESSION['tipo_user'] == 2) { ?>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="/home">Home</a>
-                        <a class="nav-link" href="">Funcionário</a>
-                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
-                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
-                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
-                        <a class="nav-link" href="/usuario_sair">Sair</a>
-                    </div>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="">Funcionário</a>
+                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
                 </div>
+            </div>
             <?php } elseif($_SESSION['tipo_user'] == 3){ ?>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="/home">Home</a>
-                        <a class="nav-link" href="">Gestor</a>
-                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="/usuario_sair">Sair</a>               
-                    </div>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="">Gestor</a>
+                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
                 </div>
+            </div>
             <?php } elseif($_SESSION['tipo_user'] == 4){ ?>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="/home">Home</a>
-                        <a class="nav-link" href="">Líder</a>
-                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="/usuario_sair">Sair</a>               
-                    </div>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="">Líder</a>
+                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
                 </div>
+            </div>
             <?php } else { ?>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="/home">Home</a>
-                        <a class="nav-link" href="">Admin</a>
-                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
-                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
-                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
-                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
-                        <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
-                        <a class="nav-link" href="/usuario_sair">Sair</a>
-                    </div>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="">Admin</a>
+                    <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                    <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                    <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                    <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                    <a class="nav-link active" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                    <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
                 </div>
-             <?php } ?>
+            </div>
+            <?php } ?>
         </div>
     </nav>
 
@@ -135,13 +135,13 @@
             </div>
         </form>
         <?php  
-                $hoje = date('d/m/Y', strtotime("-1 day"));
+                $hoje = date('d/m/Y');
                 if($entrevistaCandidato->data_entrevista == $hoje) {?>
-                <a href="/entrevista_registrar"><button class="btn btn-outline-primary mb-4">Registrar</button></a>
-                <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
-                <?php } else { ?>
-                <button type="submit" class="btn btn-outline-primary mb-4" disabled>Registrar</button>
-                <?php } ?>
+        <a href="/entrevista_registrar"><button class="btn btn-outline-primary mb-4 botao">Registrar</button></a>
+        <input type="hidden" name="id_entrevista" value="<?= $entrevistaCandidato->id_entrevista ?>">
+        <?php } else { ?>
+        <button type="submit" class="btn btn-outline-primary mb-4 botao" disabled>Registrar</button>
+        <?php } ?>
         <?php } ?>
 
         <div class="buttons">
