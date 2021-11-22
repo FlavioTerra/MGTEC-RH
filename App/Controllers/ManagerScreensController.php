@@ -173,7 +173,7 @@
 
         }
 
-        public function alterarVaga(){
+        public function alterarVagaVisualizar(){
             session_start();
 
             if(empty($_SESSION['tipo_user'])) {
@@ -186,7 +186,42 @@
 
             $alterarVaga->alterStatusVaga(); 
 
-            header('Location:/requisicoes_vaga');
+            $viewRequisicao = Container::getModel('GerarVaga');
+
+            $viewRequisicao->__set('id_vaga', $_POST['id_vaga']);
+
+            $this->view->detalhesVaga = $viewRequisicao->getVaga();
+            $this->view->detalhesVagaExperiencia = $viewRequisicao->getVagaExperiencia();
+            $this->view->detalhesVagaCompetencia = $viewRequisicao->getVagaCompetencia();
+            $this->view->detalhesVagaFormacao = $viewRequisicao->getVagaFormacao();
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $this->render('visualizar-requisicoes-de-vagas');
+
+        }
+
+        public function vagaAprovar(){
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
+            $alterarVaga = Container::getModel('GerarVaga');
+
+            $alterarVaga->__set('id_vaga', $_POST['id_vaga']);
+
+            $alterarVaga->__set('comentario',$_POST['comentario']);
+
+            $alterarVaga->alterStatusVagaAprovar(); 
+
+            // header('Location:/requisicoes_vaga');
+
         }
 
         public function visualizarRequisicao() {
@@ -198,7 +233,7 @@
             $viewRequisicao = Container::getModel('GerarVaga');
 
             $viewRequisicao->__set('id_vaga', $_POST['id_vaga']);
-
+            
             $this->view->detalhesVaga = $viewRequisicao->getVaga();
             $this->view->detalhesVagaExperiencia = $viewRequisicao->getVagaExperiencia();
             $this->view->detalhesVagaCompetencia = $viewRequisicao->getVagaCompetencia();

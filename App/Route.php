@@ -134,10 +134,16 @@
                 'action'=>'visualizarVaga'
             );
 
-            $routes['alterar_vaga'] = array(
-                'route'=>'/alterar_vaga',
+            $routes['vaga_aprovar'] = array(
+                'route'=>'/vaga_aprovar',
                 'controller'=>'ManagerScreensController',
-                'action'=>'alterarVaga'
+                'action'=>'vagaAprovar'
+            );
+
+            $routes['alterar_vaga_visualizar'] = array(
+                'route'=>'/alterar_vaga_visualizar',
+                'controller'=>'ManagerScreensController',
+                'action'=>'alterarVagaVisualizar'
             );
 
             // Teste

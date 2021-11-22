@@ -382,8 +382,34 @@
 
         public function alterStatusVaga() {
             $query = "update tb_vaga v
-                    set v.status_vaga = 'Aprovada' 
+                    set v.status_vaga = 'Em Análise' 
+                       where v.id_vaga = :id_vaga
+                       and v.status_vaga = 'Aberta' ";
+                
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+        
+            $stmt->execute();
+            
+            return $stmt->fetch(\PDO::FETCH_OBJ);
+        }
+
+        public function alterStatusVagaAprovar() {
+            $comentario = $this->__get('comentario');
+            var_dump($comentario);
+            $query = "update tb_vaga v
+                    set v.comentario = '.$comentario.' 
                        where v.id_vaga = :id_vaga";
+
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+        
+            $stmt->execute();
+
+            $query = "update tb_vaga v
+                    set v.status_vaga = 'Aprovada' 
+                       where v.id_vaga = :id_vaga
+                       and v.status_vaga = 'Em Análise' ";
                 
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
