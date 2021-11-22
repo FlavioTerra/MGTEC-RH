@@ -398,7 +398,7 @@
             $comentario = $this->__get('comentario');
             var_dump($comentario);
             $query = "update tb_vaga v
-                    set v.comentario = 'oi' 
+                    set v.comentario = '.$comentario.' 
                        where v.id_vaga = :id_vaga";
 
             $stmt = $this->db->prepare($query);

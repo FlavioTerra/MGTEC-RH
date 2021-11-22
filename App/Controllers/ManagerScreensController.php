@@ -216,7 +216,7 @@
 
             $alterarVaga = Container::getModel('GerarVaga');
 
-            $alterarVaga->__set('id_vaga', $idVaga->id_vaga);
+            $alterarVaga->__set('id_vaga', $_POST['id_vaga']);
 
             $alterarVaga->__set('comentario',$_POST['comentario']);
 
