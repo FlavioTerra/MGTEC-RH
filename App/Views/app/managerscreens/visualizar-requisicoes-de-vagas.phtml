@@ -12,19 +12,20 @@
     <title>Visualizar Requisições de Vagas</title>
 
     <script type="text/javascript">
-        let experiencias = <?php echo json_encode($this->view->detalhesVagaExperiencia) ?>;
-        let competencias =  <?php echo json_encode($this->view->detalhesVagaCompetencia) ?>;
-        let formacoes =  <?php echo json_encode($this->view->detalhesVagaFormacao) ?>;
-        let cargos = <?php echo json_encode($this->view->cargos) ?>;
-        
-        let departamentoSalvo = <?php echo json_encode($this->view->detalhesVaga->id_departamento) ?>;
-        let cargoSalvo = <?php echo json_encode($this->view->detalhesVaga->id_cargo) ?>;
-        let vinculoSalvo = <?php echo json_encode($this->view->detalhesVaga->vinculo_emp) ?>;
+    let experiencias = <?php echo json_encode($this->view->detalhesVagaExperiencia) ?>;
+    let competencias = <?php echo json_encode($this->view->detalhesVagaCompetencia) ?>;
+    let formacoes = <?php echo json_encode($this->view->detalhesVagaFormacao) ?>;
+    let cargos = <?php echo json_encode($this->view->cargos) ?>;
+
+    let departamentoSalvo = <?php echo json_encode($this->view->detalhesVaga->id_departamento) ?>;
+    let cargoSalvo = <?php echo json_encode($this->view->detalhesVaga->id_cargo) ?>;
+    let vinculoSalvo = <?php echo json_encode($this->view->detalhesVaga->vinculo_emp) ?>;
     </script>
 </head>
-  
-            <?php if($_SESSION['tipo_user'] == 3) { ?>
-                <body>
+
+<?php if($_SESSION['tipo_user'] == 3) { ?>
+
+<body>
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
@@ -46,7 +47,7 @@
                         <a class="nav-link active" href="/requisicoes_vaga">Requisições</a>
                         <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
                         <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
                 </div>
             </div>
@@ -211,10 +212,10 @@
                     </div>
                 </div>
 
-                <!--24%-->
+                <!--28%-->
                 <div class="mb-3 vaga" id="2-etapa">
                     <div class="vaga-bar">
-                        <div class="vaga-per-24" per="24%"></div>
+                        <div class="vaga-per-24" per="28%"></div>
                     </div>
 
                     <div class="mb-3 texts">
@@ -246,45 +247,10 @@
 
                 </div>
 
-                <!--59%-->
+                <!--72%-->
                 <div class="mb-3 vaga" id="3-etapa">
                     <div class="vaga-bar">
-                        <div class="vaga-per-59" per="59%"></div>
-                    </div>
-
-                    <div class="mb-3 texts">
-                        <div class="text-box">
-                            <span>Aberta</span>
-                            <img src="">
-                        </div>
-
-                        <div class="text-box">
-                            <span>Em Análise</span>
-                            <img src="">
-                        </div>
-
-                        <div class="text-box">
-                            <span>Aprovada</span>
-                            <img src="">
-                        </div>
-
-                        <div class="text-box">
-                            <span>Vaga Criada</span>
-                            <img src="">
-                        </div>
-
-                        <div class="text-box">
-                            <span>Finalizada</span>
-                            <img src="">
-                        </div>
-                    </div>
-
-                </div>
-
-                <!--77%-->
-                <div class="vaga" id="4-etapa">
-                    <div class="vaga-bar">
-                        <div class="vaga-per-77" per="77%"></div>
+                        <div class="vaga-per-59" per="72%"></div>
                     </div>
 
                     <div class="mb-3 texts">
@@ -317,9 +283,9 @@
                 </div>
 
                 <!--100%-->
-                <div class="vaga" id="5-etapa">
+                <div class="vaga" id="4-etapa">
                     <div class="vaga-bar">
-                        <div class="vaga-per-100" per="100%"></div>
+                        <div class="vaga-per-77" per="100%"></div>
                     </div>
 
                     <div class="mb-3 texts">
@@ -630,8 +596,9 @@
     <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
     <script src="/scripts/general-scripts/pop-up.js"></script>
 </body>
-            <?php } elseif($_SESSION['tipo_user'] == 4) { ?>
-                <body>
+<?php } elseif($_SESSION['tipo_user'] == 4) { ?>
+
+<body>
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
@@ -653,7 +620,7 @@
                         <a class="nav-link active" href="/requisicoes_vaga">Requisições</a>
                         <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
                         <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
                 </div>
             </div>
@@ -771,7 +738,8 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
-                        name="data-de-solicitacao" readonly value="<?= $this->view->detalhesVaga->data_solic ?>" disabled>
+                        name="data-de-solicitacao" readonly value="<?= $this->view->detalhesVaga->data_solic ?>"
+                        disabled>
                 </div>
             </div>
 
@@ -782,8 +750,8 @@
             <div class="row mb-3 vagas">
                 <!--6%-->
                 <div class="title">
-                        <h2 class="title-2">Status</h2>
-                    </div>
+                    <h2 class="title-2">Status</h2>
+                </div>
                 <div class="mb-3 vaga" id="1-etapa">
 
                     <div class="vaga-bar">
@@ -1036,8 +1004,8 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
                 <div class="col-sm-12 mb-3">
-                    <textarea type="text" class="form-control edit" id="textarea" rows="3"
-                        name="funcao" disabled><?= $this->view->detalhesVaga->funcao ?></textarea>
+                    <textarea type="text" class="form-control edit" id="textarea" rows="3" name="funcao"
+                        disabled><?= $this->view->detalhesVaga->funcao ?></textarea>
                 </div>
             </div>
 
@@ -1066,7 +1034,8 @@
                         <option value="8">Logística</option>
                     </select>
 
-                    <select class="col form-select cl-exp-status edit form3" aria-label="Status" name="exp-status-1" disabled>
+                    <select class="col form-select cl-exp-status edit form3" aria-label="Status" name="exp-status-1"
+                        disabled>
                         <option value="0">Status</option>
                         <option value="1">Experiência Qualquer</option>
                         <option value="2">Júnior</option>
@@ -1083,7 +1052,7 @@
                     </div>
                 </div>
 
-             
+
             </div>
 
             <!--Competências-->
@@ -1098,7 +1067,8 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-comp-nome edit form3" aria-label="Nome" name="comp-nome-1" disabled>
+                    <select class="col form-select cl-comp-nome edit form3" aria-label="Nome" name="comp-nome-1"
+                        disabled>
                         <option value="0">Nome</option>
                         <option value="1">Gestão de Pessoas</option>
                         <option value="2">Análise de Requisitos</option>
@@ -1112,7 +1082,8 @@
                         <option value="10">Inglês</option>
                     </select>
 
-                    <select class="col form-select cl-comp-grau edit form3" aria-label="Grau" name="comp-grau-1" disabled>
+                    <select class="col form-select cl-comp-grau edit form3" aria-label="Grau" name="comp-grau-1"
+                        disabled>
                         <option value="0">Grau</option>
                         <option value="1">Básico</option>
                         <option value="2">Intermediário</option>
@@ -1121,7 +1092,8 @@
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-comp-status edit form4" aria-label="Status" name="comp-status-1" disabled>
+                    <select class="col form-select cl-comp-status edit form4" aria-label="Status" name="comp-status-1"
+                        disabled>
                         <option value="0">Status</option>
                         <option value="1">Iniciante</option>
                         <option value="2">Em Desenvolvimento</option>
@@ -1129,7 +1101,7 @@
                     </select>
                 </div>
 
-         
+
             </div>
 
             <!--Formações-->
@@ -1144,7 +1116,8 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-form-tipo edit form3" aria-label="Tipo" name="form-tipo-1" disabled>
+                    <select class="col form-select cl-form-tipo edit form3" aria-label="Tipo" name="form-tipo-1"
+                        disabled>
                         <option value="0">Tipo</option>
                         <option value="1">Fundamental</option>
                         <option value="2">Ensino médio</option>
@@ -1152,7 +1125,8 @@
                         <option value="4">Superior</option>
                     </select>
 
-                    <select class="col form-select cl-form-status edit form3" aria-label="Status" name="form-status-1" disabled>
+                    <select class="col form-select cl-form-status edit form3" aria-label="Status" name="form-status-1"
+                        disabled>
                         <option value="0">Status</option>
                         <option value="1">Completo</option>
                         <option value="2">Em Andamento</option>
@@ -1161,7 +1135,8 @@
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-form-nome edit form3" aria-label="Nome" name="form-nome-1" disabled>
+                    <select class="col form-select cl-form-nome edit form3" aria-label="Nome" name="form-nome-1"
+                        disabled>
                         <option value="0">Nome</option>
                         <option value="1">Análise e Desenvolvimento de Sistemas</option>
                         <option value="2">Redes</option>
@@ -1175,7 +1150,8 @@
                         <option value="10">Administração</option>
                     </select>
 
-                    <select class="col form-select cl-form-grau edit form3" aria-label="Grau" name="form-grau-1" disabled>
+                    <select class="col form-select cl-form-grau edit form3" aria-label="Grau" name="form-grau-1"
+                        disabled>
                         <option value="0">Grau</option>
                         <option value="1">Tecnólogo</option>
                         <option value="2">Graduação</option>
@@ -1227,8 +1203,9 @@
     <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
     <script src="/scripts/general-scripts/pop-up.js"></script>
 </body>
-            <?php } else{ ?>
-                <body>
+<?php } else{ ?>
+
+<body>
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
@@ -1251,7 +1228,7 @@
                         <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
                         <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
                         <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
-                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
                 </div>
             </div>
@@ -1835,32 +1812,32 @@
     <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
     <script src="/scripts/general-scripts/pop-up.js"></script>
 </body>
-            <?php } ?>
+<?php } ?>
 
 </html>
 
 <script language="javascript">
-    var status = "<?php print $status; ?>";
+var status = "<?php print $status; ?>";
 
-    document.getElementById('1-etapa').style.display = 'none';
-    document.getElementById('2-etapa').style.display = 'none';
-    document.getElementById('3-etapa').style.display = 'none';
-    document.getElementById('4-etapa').style.display = 'none';
-    document.getElementById('5-etapa').style.display = 'none';
+document.getElementById('1-etapa').style.display = 'none';
+document.getElementById('2-etapa').style.display = 'none';
+document.getElementById('3-etapa').style.display = 'none';
+document.getElementById('4-etapa').style.display = 'none';
+document.getElementById('5-etapa').style.display = 'none';
 
-    if (status == 'Aberta')
-        document.getElementById('1-etapa').style.display = 'block';
-    else if (status == 'Em Análise')
-        document.getElementById('2-etapa').style.display = 'block';
-    else if (status == 'Aprovada')
-        document.getElementById('3-etapa').style.display = 'block';
-    else if (status == 'Vaga Criada')
-        document.getElementById('4-etapa').style.display = 'block';
-    else
-        document.getElementById('5-etapa').style.display = 'block';
-    
-    renderizaInformacoes();
-    insereExperiencia();
-    insereCompetencia();
-    insereFormacao();
+if (status == 'Aberta')
+    document.getElementById('1-etapa').style.display = 'block';
+else if (status == 'Em Análise')
+    document.getElementById('2-etapa').style.display = 'block';
+else if (status == 'Aprovada')
+    document.getElementById('3-etapa').style.display = 'block';
+else if (status == 'Vaga Criada')
+    document.getElementById('4-etapa').style.display = 'block';
+else
+    document.getElementById('5-etapa').style.display = 'block';
+
+renderizaInformacoes();
+insereExperiencia();
+insereCompetencia();
+insereFormacao();
 </script>

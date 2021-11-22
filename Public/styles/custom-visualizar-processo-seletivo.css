@@ -43,6 +43,51 @@ div .text-area{
     margin-bottom: 0;
 }
 
+/*bars*/
+.vaga-per-6{
+    max-width: 6%;
+}
+
+.vaga-per-24{
+    max-width: 28%;
+}
+
+.vaga-per-59{
+    max-width: 50%;
+}
+
+.vaga-per-77{
+    max-width: 72%;
+}
+
+@media screen and (min-width:576px){
+    .vaga-per-6{
+        max-width: 4%;
+    }
+    
+    .vaga-per-24{
+        max-width: 27%;
+    }
+    
+    .vaga-per-59{
+        max-width: 50%;
+    }
+    
+    .vaga-per-77{
+        max-width: 73%;
+    }
+
+    .vaga-per-100{
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width:700px){
+    .vagas{
+        width: 546px;
+    }
+}
+
 @media screen and (min-width: 576px){
     .form-label{
         margin-right: 0;
