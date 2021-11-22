@@ -72,6 +72,19 @@
 
             return $stmt->fetchAll(\PDO::FETCH_OBJ);
         }
+
+        public function getAllVagasAbertas() {
+            $query = "select v.id_vaga,  
+                             v.titulo_vaga
+                             from tb_vaga v 
+                            where v.status_vaga = 'Aprovada'";
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+            
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
     }
 
 ?>

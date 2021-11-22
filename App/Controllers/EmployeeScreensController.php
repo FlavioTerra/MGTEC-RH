@@ -17,8 +17,12 @@
             if(empty($_SESSION['tipo_user'])) {
                 $_SESSION['tipo_user'] = 0;
             }
+
             $usuarios = Container::getModel('InformacoesGlobais');
             $this->view->usuarios = $usuarios->getUsuarios();
+
+            $vagas = Container::getModel('InformacoesGlobais');
+            $this->view->vagasAbertasProc = $vagas->getAllVagasAbertas();
 
             $this->render('processo-seletivo');
         }
@@ -81,6 +85,8 @@
             $processoSeletivo->__set('regra_class',$_POST['classification-rule']);
 
             $processoSeletivo->__set('descricao',$_POST['descProc']);
+
+            $processoSeletivo->__set('id_vaga',$_POST['vacancy']);
 
             $processoSeletivo->save();
 

@@ -12,8 +12,6 @@
 
     <title>Editar Perfil Candidato</title>
 
-    <?php session_start(); ?>
-
     <script type="text/javascript">
         let cidades = <?php echo json_encode($this->view->cidades) ?>;
     </script>
@@ -490,7 +488,9 @@
 
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                <a href="/perfil_ver">
+                    <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                </a>
                 <button type="submit" class="btn btn-outline-primary mb-5">Concluir</button>
             </div>
         </div>

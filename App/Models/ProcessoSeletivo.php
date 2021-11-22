@@ -14,6 +14,8 @@
         private $regra_class;	
         private $descricao;
 
+        private $id_vaga;
+
         public function __get($attribute){
             return $this->$attribute;
         }
@@ -35,6 +37,25 @@
             $stmt->bindValue(':descricao',$this->__get('descricao'));
 
             $stmt->execute();
+
+            $query = 'select max(id_proc) id_proc
+                        from tb_processo_seletivo';
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $id_processo= $stmt->fetch(\PDO::FETCH_OBJ);
+            $this->__set('id_proc', $id_processo->id_proc);
+
+            $query = 'update tb_vaga
+                         set id_proc = :id_proc
+                       where id_vaga = :id_vaga';
+            
+            $stmt = $this->db->prepare($query);
+
+            $stmt->bindValue(':id_proc',$this->__get('id_proc'));
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+
+            $stmt->execute();
+                         
         }
 
         public function getAll() {

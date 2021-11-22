@@ -5,9 +5,10 @@
     use MF\Model\Model;
 
     Class EditarPerfil extends Model{
+
         private $id_candidato;
         private $id_proc;
-        private $id_estado;
+        private $id_cidade;
         private $nome; 
         private $email; 
         private $foto; 
@@ -27,6 +28,8 @@
         private $tipo_pessoa; 
         private $curriculo; 
         private $c_status; 
+        
+        private $id_perfil;
 
         //****______________Requisitos do Perfil _________________****//
 
@@ -59,14 +62,15 @@
         }
 
         public function save(){
-            $query = 'INSERT INTO tb_candidato (id_candidato, id_proc, id_estado, nome, email, foto, cpf, cnpf, data_nasc, sexo, bairro, cep, num_casa, rua, cadastro_pessoa, 
-            disponibilidade, telefone, celular, sobre, tipo_pessoa, curriculo, c_status) 
-            VALUES(NULL, NULL, :id_estado, :nome, NULL, :foto, :cpf, NULL, :data_nasc, :sexo, :bairro, :cep, :num_casa, :rua, :cadastro_pessoa, 
-            :disponibilidade, :telefone, :celular, :sobre, :tipo_pessoa, :curriculo, :c_status)';
+            $query = 'INSERT INTO tb_candidato (id_candidato, id_proc, id_cidade, nome, email, foto, cpf, cnpf, data_nasc, sexo, bairro, cep, num_casa, rua, cadastro_pessoa, 
+            disponibilidade, telefone, celular, sobre, tipo_pessoa, curriculo, c_status, id_perfil) 
+            VALUES(NULL, NULL, :id_cidade, :nome, :email, :foto, :cpf, :cnpf, :data_nasc, :sexo, :bairro, :cep, :num_casa, :rua, :cadastro_pessoa, 
+            :disponibilidade, :telefone, :celular, :sobre, :tipo_pessoa, :curriculo, :c_status, :id_perfil)';
 
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(':id_estado',$this->__get('id_estado'));
+            $stmt->bindValue(':id_cidade',$this->__get('id_cidade'));
             $stmt->bindValue(':nome',$this->__get('nome'));
+            $stmt->bindValue(':email',$this->__get('email'));
             $stmt->bindValue(':foto',$this->__get('foto'));
             $stmt->bindValue(':cpf',$this->__get('cpf'));
             $stmt->bindValue(':data_nasc',$this->__get('data_nasc'));
@@ -75,6 +79,7 @@
             $stmt->bindValue(':cep',$this->__get('cep'));
             $stmt->bindValue(':num_casa',$this->__get('num_casa'));
             $stmt->bindValue(':rua',$this->__get('rua'));
+            $stmt->bindValue(':cnpf',$this->__get('cnpf'));
             $stmt->bindValue(':cadastro_pessoa',$this->__get('cadastro_pessoa'));
             $stmt->bindValue(':disponibilidade',$this->__get('disponibilidade'));
             $stmt->bindValue(':telefone',$this->__get('telefone'));
@@ -85,13 +90,10 @@
             $stmt->bindValue(':c_status',$this->__get('c_status'));
             $stmt->bindValue(':nome',$this->__get('nome'));
 
+            $stmt->bindValue(':id_perfil',$this->__get('id_perfil'));
+
             $stmt->execute();
 
-            // Recupera o ultimo id_pefil 
-            $query = 'select max(id_candidato) id_candidato from tb_candidato';
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-            return $stmt->fetch(\PDO::FETCH_OBJ);   
         }
 
         public function saveExperiencia() {
@@ -221,24 +223,101 @@
         }
 
         public function getPerfilCandidato() {
-            $query = "select e.id_entrevista,  
-                        e.id_user,
-                        e.responsavel,
-                        DATE_FORMAT(e.data_entrevista,'%d/%m/%Y') as data_entrevista,
-                        e.titulo_entrevista,
-                        e.hora_entrevista,
-                        e.descricao
-                        from tb_entrevista e
-                        inner join tb_usuario u on e.id_user = u.id_user    
-                        where e.id_entrevista = :id_entrevista";
-  
+
+            $query = 'select    can.id_candidato,
+                                can.id_proc,
+                                cid.nome cidade,
+                                est.nome estado,
+                                can.nome,
+                                can.email,
+                                can.cpf,
+                                can.cnpf,
+                                can.data_nasc,
+                                can.sexo,
+                                can.bairro,
+                                can.cep,
+                                can.num_casa,
+                                can.rua,
+                                can.cadastro_pessoa,
+                                can.disponibilidade,
+                                can.telefone,
+                                can.celular,
+                                can.sobre,
+                                can.tipo_pessoa,
+                                can.c_status,
+                                can.id_perfil
+                        from tb_candidato can
+                   left join tb_cidade cid on cid.id_cidade = can.id_cidade
+                   left join tb_estado est on est.id_estado = cid.id_estado
+                     where can.id_perfil = :id_perfil';
                 
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(':id_entrevista',$this->__get('id_entrevista'));
+            $stmt->bindValue(':id_perfil',$this->__get('id_perfil'));
         
             $stmt->execute();
             
             return $stmt->fetch(\PDO::FETCH_OBJ);
+        }
+
+        public function getCandidatoExperiencia() {
+            $query = "select tce.id_candidato,
+                             tec.id_experiencia,
+                             tec.nome,
+                             tec.c_status,
+                             tec.anos_xp	
+                        from tb_candidato_experiencia tce
+                  inner join tb_experiencia_c tec on tec.id_experiencia = tce.id_experiencia
+                       where tce.id_candidato = :id_perfil";
+
+            // Id_candidato é o id_perfil na tabela
+
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_perfil',$this->__get('id_perfil'));
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        public function getCandidatoCompetencia() {
+            $query = "select tcc.id_candidato,
+                             tcca.id_competencia,
+                             tcca.nome,
+                             tcca.c_status,
+                             tcca.grau	
+                    from tb_candidato_competencia tcc
+                inner join tb_competencia_c tcca on tcc.id_competencia = tcca.id_competencia
+                    where tcc.id_candidato = :id_perfil";
+
+                // Id_candidato é o id_perfil na tabela
+
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_perfil',$this->__get('id_perfil'));
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        public function getCandidatoFormacao() {
+            $query = "select tcf.id_candidato,
+                             tfc.id_formacao,
+                             tfc.tipo,
+                             tfc.c_status,
+                             tfc.grau,
+                             tfc.curso
+                      from tb_candidato_formacao tcf
+                inner join tb_formacao_c tfc on tcf.id_formacao = tfc.id_formacao
+                     where tcf.id_candidato = :id_perfil";
+
+                // Id_candidato é o id_perfil na tabela
+
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_perfil',$this->__get('id_perfil'));
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);     
         }
     }
 

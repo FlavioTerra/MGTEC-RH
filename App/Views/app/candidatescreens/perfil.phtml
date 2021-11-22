@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="/styles/custom-perfil.css">
 
     <title>Perfil Candidato</title>
+
+    <script type="text/javascript">
+        let experiencias = <?php echo json_encode($this->view->perfilExperiencia) ?>;
+        let competencias =  <?php echo json_encode($this->view->perfilCompetencia) ?>;
+        let formacoes =  <?php echo json_encode($this->view->perfilFormacao) ?>;
+    </script>
+
 </head>
 
 <body>
@@ -25,7 +32,7 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
                     <a class="nav-link active" href="#">Perfil</a>
                     <a class="nav-link" href="#">Sobre</a>
                     <a class="nav-link" href="#">Quem Somos</a>
@@ -48,20 +55,19 @@
                     <div class="img-perfil"></div>
 
                     <div class="names">
-                        <h1 class="nome-perfil">Nome Perfil</h1>
-                        <h2 class="nome-usuario">nome_usuario</h2>
+                        <h1 class="nome-perfil"><?=$_SESSION['nome']?></h1>
+                        <h2 class="nome-usuario"><?=$_SESSION['login_user']?></h2>
                     </div>
                 </div>
 
                 <p class="mb-3 descricao-perfil">
-                    Aqui fica a descrição do perfil personalizada, diga-nos um pouco
-                    sobre você. Aqui fica a sua descrição do perfil personalizada, diga-nos um pouco
-                    sobre você. Aqui fica a sua descrição do perfil personalizada, diga-nos um pouco
-                    sobre você.
+                    <?= $this->view->detalhesPerfilCandidato->sobre ?>
                 </p>
 
                 <div class="buttons">
-                    <button type="button" class="btn btn-outline-primary mb-2">Editar Perfil</button>
+                    <a href="/editar_perfil">
+                        <button type="button" class="btn btn-outline-primary mb-2">Editar Perfil</button>
+                    </a>
                     <button type="button" class="btn btn-outline-primary mb-2">Vagas Candidatadas</button>
                 </div>
             </div>
@@ -79,28 +85,39 @@
                 <label for="colFormLabel" class="colsm-2 form-label">Data de Nascimento</label>
                 <div class="col-sm-10">
                     <input type="date" class="form-control" id="colFormLabel" placeholder="" name="data-de-nascimento"
-                        readonly>
+                        readonly value="<?=$this->view->detalhesPerfilCandidato->data_nasc?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Sexo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="sexo" readonly>
+                    <?php
+                        $sexo = null;
+                        if($this->view->detalhesPerfilCandidato->sexo == 1) {
+                            $sexo = 'Masculino';
+                        } else if($this->view->detalhesPerfilCandidato->sexo = 2) {
+                            $sexo = 'Feminino';
+                        }
+                    ?>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="sexo" 
+                    readonly value="<?=$sexo?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">CPF</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cpf" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cpf" 
+                    readonly value="<?= $this->view->detalhesPerfilCandidato->cpf?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">CNPJ</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cnpj" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cnpj" readonly
+                    value="<?= $this->view->detalhesPerfilCandidato->cnpf?>">
                 </div>
             </div>
 
@@ -108,14 +125,23 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Disponibilidade</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="disponibilidade"
-                        readonly>
+                        readonly value="<?= $this->view->detalhesPerfilCandidato->disponibilidade?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Status</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="status" readonly>
+                    <?php
+                        $status = null;
+                        if($this->view->detalhesPerfilCandidato->c_status == 1) {
+                            $status = 'Desempregado';
+                        } else if($this->view->detalhesPerfilCandidato->c_status == 2) {
+                            $status = 'Trabalhando';
+                        }
+                    ?>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="status" readonly
+                        value="<?=$status?>">
                 </div>
             </div>
 
@@ -128,21 +154,24 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Telefone</label>
                 <div class="col-sm-10">
-                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="telefone" readonly>
+                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="telefone" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->telefone?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Celular</label>
                 <div class="col-sm-10">
-                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="sexo" readonly>
+                    <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="celular" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->celular?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">E-mail</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="" name="email" readonly>
+                    <input type="email" class="form-control" id="colFormLabel" placeholder="" name="email" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->email?>">
                 </div>
             </div>
 
@@ -155,42 +184,48 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">CEP</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cep" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cep" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->cep?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="colsm-2 form-label">Estado</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="estado" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="estado" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->estado?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Cidade</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->cidade?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Bairro</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="bairro" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="bairro" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->bairro?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Rua</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="rua" readonly>
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="rua" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->rua?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Número</label>
                 <div class="col-sm-10 mb-3">
-                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly>
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly
+                        value="<?= $this->view->detalhesPerfilCandidato->num_casa?>">
                 </div>
             </div>
 
@@ -206,17 +241,32 @@
                 </div>
 
                 <div class="row mb-3">
-                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="formacao"
-                        readonly>
+                    <select class="col form-select cl-exp-formacao form3" aria-label="Experiência"
+                        name="exp-fomacao-1" readonly>
+                        <option value="0">Experiência</option>
+                        <option value="1">Administrativa</option>
+                        <option value="2">Elétrica</option>
+                        <option value="3">Eletrônica</option>
+                        <option value="4">Recursos Humanos</option>
+                        <option value="5">Redes</option>
+                        <option value="6">Contábil</option>
+                        <option value="7">Programação</option>
+                        <option value="8">Logística</option>
+                    </select>
 
-                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="status"
-                        readonly>
+                    <select class="col form-select cl-exp-status form3" aria-label="Status" name="exp-status-1" readonly>
+                        <option value="0">Status</option>
+                        <option value="1">Experiência Qualquer</option>
+                        <option value="2">Júnior</option>
+                        <option value="3">Pleno</option>
+                        <option value="4">Sênior</option>
+                    </select>
                 </div>
 
                 <div class="row">
                     <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
                     <div class="col number mb-3">
-                        <input type="number" class="form-control cl-exp-anos-experiencia" id="colFormLabel"
+                        <input type="number" class="form-control cl-exp-anos-experiencia" style="min-width: 50px;" id="colFormLabel"
                             placeholder="" name="exp-anos-experiencia-1" readonly>
                     </div>
                 </div>
@@ -234,17 +284,36 @@
                 </div>
 
                 <div class="row mb-3">
-                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="nome"
-                        readonly>
+                    <select class="col form-select cl-comp-nome form3" aria-label="Nome" name="comp-nome-1" readonly>
+                        <option value="0">Nome</option>
+                        <option value="1">Gestão de Pessoas</option>
+                        <option value="2">Análise de Requisitos</option>
+                        <option value="3">Java</option>
+                        <option value="4">ERP</option>
+                        <option value="5">Prestações de Contas</option>
+                        <option value="6">Escrituração Fiscal</option>
+                        <option value="7">Manutenção de Motores Trifásicos</option>
+                        <option value="8">Gestão de Projetos</option>
+                        <option value="9">Planejamento de Armazenagem de Mercadorias</option>
+                        <option value="10">Inglês</option>
+                    </select>
 
-                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="grau"
-                        readonly>
+                    <select class="col form-select cl-comp-grau form3" aria-label="Grau" name="comp-grau-1" readonly>
+                        <option value="0">Grau</option>
+                        <option value="1">Básico</option>
+                        <option value="2">Intermediário</option>
+                        <option value="3">Avançado</option>
+                    </select>
                 </div>
 
                 <div class="row">
                     <div class="col mb-3">
-                        <input type="text" class="form-control ajust" id="colFormLabel" placeholder="" name="status"
-                            readonly>
+                        <select class="col form-select cl-comp-status form3" style="margin-left: 0;" aria-label="Status" name="comp-status-1" readonly>
+                            <option value="0">Status</option>
+                            <option value="1">Iniciante</option>
+                            <option value="2">Em Desenvolvimento</option>
+                            <option value="3">Concluído</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -261,19 +330,45 @@
                 </div>
 
                 <div class="row mb-3">
-                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="tipo"
-                        readonly>
+                <select class="col form-select cl-form-tipo form3" aria-label="Tipo" name="form-tipo-1" readonly>
+                        <option value="0">Tipo</option>
+                        <option value="1">Fundamental</option>
+                        <option value="2">Ensino médio</option>
+                        <option value="3">Técnico</option>
+                        <option value="4">Superior</option>
+                    </select>
 
-                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="status"
-                        readonly>
+                    <select class="col form-select cl-form-status form3" aria-label="Status" name="form-status-1" readonly>
+                        <option value="0">Status</option>
+                        <option value="1">Completo</option>
+                        <option value="2">Em Andamento</option>
+                        <option value="3">Incompleto</option>
+                    </select>
                 </div>
 
                 <div class="row">
-                    <input type="text" class="col form-control dual" id="colFormLabel" placeholder="" name="nome"
-                        readonly>
+                    <select class="col form-select cl-form-nome form3" aria-label="Nome" name="form-nome-1" readonly>
+                        <option value="0">Nome</option>
+                        <option value="1">Análise e Desenvolvimento de Sistemas</option>
+                        <option value="2">Redes</option>
+                        <option value="3">Ciência da Computação</option>
+                        <option value="4">Logística</option>
+                        <option value="5">Contabilidade</option>
+                        <option value="6">Engenharia Elétrica</option>
+                        <option value="7">Engenharia Eletrônica</option>
+                        <option value="8">Engenharia de Automação</option>
+                        <option value="9">Recursos Humanos</option>
+                        <option value="10">Administração</option>
+                    </select>
 
-                    <input type="text" class="col form-control dual mb-3" id="colFormLabel" placeholder="" name="grau"
-                        readonly>
+                    <select class="col form-select cl-form-grau form3" aria-label="Grau" name="form-grau-1" readonly>
+                        <option value="0">Grau</option>
+                        <option value="1">Tecnólogo</option>
+                        <option value="2">Graduação</option>
+                        <option value="3">Pôs-graduação</option>
+                        <option value="4">Mestrado</option>
+                        <option value="4">Doutorado</option>
+                    </select>
                 </div>
             </div>
 
@@ -308,7 +403,9 @@
 
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                <a href="perfil_ver">
+                    <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                </a>
             </div>
         </div>
     </form>
@@ -327,6 +424,11 @@
         crossorigin="anonymous"></script>
 
     <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script>
+        insereExperienciaPerfil();
+        insereCompetenciaPerfil();
+        insereFormacaoPerfil();
+    </script>
 </body>
 
 </html>

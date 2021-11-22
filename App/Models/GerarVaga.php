@@ -263,8 +263,8 @@
                              v.hora_inicio,
                              v.hora_fim
                         from tb_vaga v 
-                  inner join tb_cargo c on v.id_cargo = c.id_cargo
-                  inner join tb_usuario u on v.id_solicitante = u.id_user
+                  left join tb_cargo c on v.id_cargo = c.id_cargo
+                  left join tb_usuario u on v.id_solicitante = u.id_user
                        where v.id_vaga = :id_vaga";
                 
             $stmt = $this->db->prepare($query);

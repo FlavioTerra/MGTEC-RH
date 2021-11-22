@@ -10,6 +10,10 @@
     <!-- Bootstrap / CSS -->
     <link rel="stylesheet" href="/styles/custom-gerenciar-processo-seletivo.css">
 
+    <script type="text/javascript">
+        let cargos = <?php echo json_encode($this->view->cargos) ?>;
+    </script>
+
 </head>
 
 <body>
@@ -221,7 +225,7 @@
     </div>
 
     <!--Footer-->
-    <footer class="footer">
+    <footer class="footer"  style="margin-top: 100vh;">
         <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
         <img src="/images/global/facebook.svg" class="img-footer" onclick="">
         <img src="/images/global/email.svg" class="img-footer" onclick="">
@@ -234,7 +238,7 @@
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
     </script>
 
-    <script src=""></script>
+    <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
 </body>
 
 </html>

@@ -30,17 +30,21 @@
 
         public function editarPerfilSalvar() {
             $perfil = Container::getModel('EditarPerfil');
-            
+
             session_start();
 
             if(empty($_SESSION['tipo_user'])) {
                 $_SESSION['tipo_user'] = 0;
             }
             
-            $entrevista = Container::getModel('EditarPerfil');
+            $perfil = Container::getModel('EditarPerfil');
         
-            $perfil->__set('id_estado',$_POST['estado']);
+            $perfil->__set('id_perfil', $_SESSION['id_usuario']);
+            $perfil->__set('id_candidato', $_SESSION['id_usuario']);
+
+            $perfil->__set('id_cidade',$_POST['cidade']);
             $perfil->__set('data_nasc',$_POST['data-de-nascimento']);
+            $perfil->__set('email',$_POST['email']);
             $perfil->__set('sexo',$_POST['sexo']);
             $perfil->__set('foto',$_POST['foto']); //a
             $perfil->__set('bairro',$_POST['bairro']);
@@ -51,7 +55,7 @@
             $perfil->__set('num_casa',$_POST['numero']);
             $perfil->__set('cadastro_pessoa',$_POST['cadastro-pessoa']); 
             $perfil->__set('rua',$_POST['rua']);
-            $perfil->__set('cnpj',$_POST['cnpj']);
+            $perfil->__set('cnpf',$_POST['cnpj']);
             $perfil->__set('curriculo',$_POST['curriculo']); //a
             $perfil->__set('disponibilidade',$_POST['disponibilidade']);
             $perfil->__set('sobre',$_POST['sobre']); //a
@@ -60,11 +64,9 @@
             $perfil->__set('c_status',$_POST['c_status']); 
             $perfil->__set('nome', $_SESSION['nome']); 
 
-            $idPerfil = $perfil->save();
+            $perfil->save();
 
             //****______________Requisitos do perfil _________________****//
-
-            $perfil->__set('id_candidato', $idPerfil->id_candidato);
 
             // Experiencia
             $cont = 1;
@@ -113,9 +115,13 @@
 
             $viewPerfilCandidato = Container::getModel('EditarPerfil');
 
-            $viewPerfilCandidato->__set('id_candidato', $_POST['id_candidato']);
+            $viewPerfilCandidato->__set('id_perfil', $_SESSION['id_usuario']);
 
-            $this->view->detalhesPerfilCandidato = $viewPerfilCandidato->getPerfilCandidato(); 
+            $this->view->detalhesPerfilCandidato = $viewPerfilCandidato->getPerfilCandidato();
+            
+            $this->view->perfilExperiencia = $viewPerfilCandidato->getCandidatoExperiencia();
+            $this->view->perfilCompetencia = $viewPerfilCandidato->getCandidatoCompetencia();
+            $this->view->perfilFormacao = $viewPerfilCandidato->getCandidatoFormacao();
 
             $this->render('perfil');
         }
