@@ -26,13 +26,14 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                    <a class="nav-link active" href="#">Perfil</a>
-                    <a class="nav-link" href="#">Sobre</a>
-                    <a class="nav-link" href="#">Quem Somos</a>
-                    <a class="nav-link" href="#">Nossos Líderes</a>
-                    <a class="nav-link" href="#">Trabalhe Conosco</a>
-                    <a class="nav-link" href="#">Contato</a>
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                    <a class="nav-link active" href="/perfil_ver">Perfil</a>
+                    <a class="nav-link" href="/#sobre_nos">Sobre</a>
+                    <a class="nav-link" href="/#quem_somos">Quem Somos</a>
+                    <a class="nav-link" href="/#nossa_equipe">Nossos Líderes</a>
+                    <a class="nav-link" href="/#vagas_abertas">Trabalhe Conosco</a>
+                    <a class="nav-link" href="/#contate_nos">Contato</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
                 </div>
             </div>
         </div>
@@ -88,7 +89,9 @@
                 </p>
 
                 <div class="buttons">
-                    <button type="button" class="btn btn-outline-primary mb-2">Editar Perfil</button>
+                    <a href="/editar_perfil">
+                        <button type="button" class="btn btn-outline-primary mb-2">Editar Perfil</button>
+                    </a>
                     <button type="button" class="btn btn-outline-primary mb-2 select">Vagas Candidatadas</button>
                 </div>
             </div>
@@ -438,7 +441,9 @@
             </div>
 
             <div class="buttons">
-                <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                <a href="/perfil_ver">
+                    <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                </a>
             </div>
         </div>
     </form>

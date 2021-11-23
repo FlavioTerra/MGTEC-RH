@@ -25,6 +25,16 @@
                 $_SESSION['tipo_user'] = 0;
             }
 
+            $viewPerfilCandidato = Container::getModel('EditarPerfil');
+
+            $viewPerfilCandidato->__set('id_perfil', $_SESSION['id_usuario']);
+
+            $this->view->detalhesPerfilCandidato = $viewPerfilCandidato->getPerfilCandidato();
+
+            $this->view->perfilExperiencia = $viewPerfilCandidato->getCandidatoExperiencia();
+            $this->view->perfilCompetencia = $viewPerfilCandidato->getCandidatoCompetencia();
+            $this->view->perfilFormacao = $viewPerfilCandidato->getCandidatoFormacao();
+
             $this->render('editar-perfil');
         }
 
@@ -118,7 +128,7 @@
             $viewPerfilCandidato->__set('id_perfil', $_SESSION['id_usuario']);
 
             $this->view->detalhesPerfilCandidato = $viewPerfilCandidato->getPerfilCandidato();
-            
+
             $this->view->perfilExperiencia = $viewPerfilCandidato->getCandidatoExperiencia();
             $this->view->perfilCompetencia = $viewPerfilCandidato->getCandidatoCompetencia();
             $this->view->perfilFormacao = $viewPerfilCandidato->getCandidatoFormacao();
@@ -133,11 +143,11 @@
                 $_SESSION['tipo_user'] = 0;
             }
 
-            $viewVagaCandidatada = Container::getModel('EditarPerfil');
+            // $viewVagaCandidatada = Container::getModel('EditarPerfil');
 
-            $viewPerfilCandidato->__set('id_candidato', $_POST['id_candidato']);
+            // $viewPerfilCandidato->__set('id_candidato', $_POST['id_candidato']);
 
-            $this->view->detalhesVagaCandidatada = $viewVagaCandidatada->getVagaCandidatada(); 
+            // $this->view->detalhesVagaCandidatada = $viewVagaCandidatada->getVagaCandidatada(); 
 
             $this->render('vagas-candidatadas');
         }

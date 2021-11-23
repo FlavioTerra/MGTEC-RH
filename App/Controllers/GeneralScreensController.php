@@ -22,6 +22,9 @@
             if(empty($_SESSION['tipo_user'])) {
                 $_SESSION['tipo_user'] = 0;
             }
+
+            $vagas = Container::getModel('InformacoesGlobais');
+            $this->view->vagasDivulgar = $vagas->getAllVagasDivulgadas();
             
             $this->render('home');
 

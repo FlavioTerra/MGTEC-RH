@@ -365,9 +365,9 @@ function insereExperiencia() {
     let numStatus = parseInt(experiencias[0].r_status);
     let numAnos = parseInt(experiencias[0].anos_xp);
 
-    document.querySelector('[name=exp-fomacao-1').children[numExperiencia].setAttribute('selected', 'selected');
-    document.querySelector('[name=exp-status-1').children[numStatus].setAttribute('selected', 'selected');
-    document.querySelector('[name=exp-anos-experiencia-1').value = numAnos;
+    document.querySelector('[name=exp-fomacao-1]').children[numExperiencia].setAttribute('selected', 'selected');
+    document.querySelector('[name=exp-status-1]').children[numStatus].setAttribute('selected', 'selected');
+    document.querySelector('[name=exp-anos-experiencia-1]').value = numAnos;
 
     for(let cont = 1; cont < experiencias.length; cont++) {
         let div = document.createElement('div');
@@ -412,9 +412,9 @@ function insereCompetencia() {
     let numStatus = parseInt(competencias[0].r_status);
     let numGrau = parseInt(competencias[0].grau);
 
-    document.querySelector('[name=comp-nome-1').children[numCompetencia].setAttribute('selected', 'selected');
-    document.querySelector('[name=comp-grau-1').children[numGrau].setAttribute('selected', 'selected')
-    document.querySelector('[name=comp-status-1').children[numStatus].setAttribute('selected', 'selected')
+    document.querySelector('[name=comp-nome-1]').children[numCompetencia].setAttribute('selected', 'selected');
+    document.querySelector('[name=comp-grau-1]').children[numGrau].setAttribute('selected', 'selected')
+    document.querySelector('[name=comp-status-1]').children[numStatus].setAttribute('selected', 'selected')
 
     for(let cont = 1; cont < competencias.length; cont++) {
         //array da classe
@@ -466,10 +466,10 @@ function insereFormacao() {
     let numGrau = parseInt(formacoes[0].grau);
     let numTipo = parseInt(formacoes[0].tipo);
 
-    document.querySelector('[name=form-nome-1').children[numFormacao].setAttribute('selected', 'selected');
-    document.querySelector('[name=form-tipo-1').children[numTipo].setAttribute('selected', 'selected');
-    document.querySelector('[name=form-status-1').children[numStatus].setAttribute('selected', 'selected');
-    document.querySelector('[name=form-grau-1').children[numGrau].setAttribute('selected', 'selected');
+    document.querySelector('[name=form-nome-1]').children[numFormacao].setAttribute('selected', 'selected');
+    document.querySelector('[name=form-tipo-1]').children[numTipo].setAttribute('selected', 'selected');
+    document.querySelector('[name=form-status-1]').children[numStatus].setAttribute('selected', 'selected');
+    document.querySelector('[name=form-grau-1]').children[numGrau].setAttribute('selected', 'selected');
 
 
     for(let cont = 1; cont < formacoes.length; cont++) {
@@ -602,7 +602,7 @@ function insereCompetenciaPerfil() {
         divComp.children[1].children[0].children[numCompetencia].setAttribute('selected', 'selected');
 
         divComp.children[1].children[1].children[numGrau].setAttribute('selected', 'selected');
-        
+
         divComp.children[2].children[0].children[0].children[numStatus].setAttribute('selected', 'selected');
 
         //incrementa número da competencia
@@ -675,5 +675,37 @@ function insereFormacaoPerfil() {
 
         //remove os botões antigos
         //removeBtnForm();
+    }
+}
+
+function insereInfoPerfil() {
+    document.querySelector('[name=sexo]').children[sexo-1].setAttribute('selected', 'selected');
+    document.querySelector('[name=tipo_pessoa]').children[tipoPessoa-1].setAttribute('selected', 'selected');
+    document.querySelector('[name=c_status]').children[status_c-1].setAttribute('selected', 'selected');
+    let cont = 0;
+    while(true) {
+        let city = document.querySelector('[name=cidade]').children[cont]
+        if(city != null && city != undefined) {
+            if(city.value == cidade) {
+                document.querySelector('[name=cidade]').children[cont].setAttribute('selected', 'selected');
+            }
+        } else {
+            break;
+        }
+        cont++;
+    }
+    
+    cont = 0;
+
+    while(true) {
+        let state = document.querySelector('[name=estado]').children[cont]
+        if(state != null && state != undefined) {
+            if(state.value == estado) {
+                document.querySelector('[name=estado]').children[cont].setAttribute('selected', 'selected');
+            }
+        } else {
+            break;
+        }
+        cont++;
     }
 }

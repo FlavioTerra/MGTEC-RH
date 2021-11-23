@@ -309,7 +309,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
 
             <!--Vagas-->
             <div class="job-area" id="jobs">
@@ -320,31 +320,34 @@
                 <div class="right-btn" onclick="nextCard()"></div>
 
                 <div class="carrousel">
-                    <div class="card vaga" id="1">
-                        <div class="title-card-area">
-                            <h1 class="title-card" id="">
-                                Engenheiro Elétrico Júnior 1
-                            </h1>
-                        </div>
+                    <?php $cont = 1;
+                        foreach($this->view->vagasDivulgar as $key => $vaga) { 
+                    ?>
+                        <div class="card vaga" id="<?=$cont?>">
+                            <div class="title-card-area">
+                                <h1 class="title-card" id=""><?= $vaga->nome_cargo?></h1>
+                            </div>
 
-                        <div class="text-card-area">
-                            <p class="text-card">
-                                Sorocaba - SP
-                            </p>
-                        </div>
+                            <div class="text-card-area">
+                                <p class="text-card">
+                                    Sorocaba - SP
+                                </p>
+                            </div>
 
-                        <div class="text-card-area">
-                            <p class="text-card">Salário: <label>R$ X</label></p>
-                        </div>
+                            <div class="text-card-area">
+                                <p class="text-card">Salário: <label>R$ <?= $vaga->salario?></label></p>
+                            </div>
 
-                        <div class="text-card-area">
-                            <p class="text-card">Vagas Abertas: <label>X</label></p>
-                        </div>
+                            <div class="text-card-area">
+                                <p class="text-card">Vagas Abertas: <label><?= $vaga->num_vagas ?></label></p>
+                            </div>
 
-                        <button class="btn-view-job">Visualizar</button>
-                    </div>
+                            <button class="btn-view-job">Visualizar</button>
+                        </div>
+                    <?php $cont++;} ?>
                 </div>
             </div>
+            
 
             <!--Contact us-->
             <div class="contact-area">

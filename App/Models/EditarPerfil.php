@@ -226,6 +226,8 @@
 
             $query = 'select    can.id_candidato,
                                 can.id_proc,
+                                can.id_cidade,
+                                est.id_estado,
                                 cid.nome cidade,
                                 est.nome estado,
                                 can.nome,

@@ -16,7 +16,7 @@
         let competencias =  <?php echo json_encode($this->view->perfilCompetencia) ?>;
         let formacoes =  <?php echo json_encode($this->view->perfilFormacao) ?>;
     </script>
-
+                
 </head>
 
 <body>
@@ -33,12 +33,13 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link" aria-current="page" href="/">Home</a>
-                    <a class="nav-link active" href="#">Perfil</a>
-                    <a class="nav-link" href="#">Sobre</a>
-                    <a class="nav-link" href="#">Quem Somos</a>
-                    <a class="nav-link" href="#">Nossos Líderes</a>
-                    <a class="nav-link" href="#">Trabalhe Conosco</a>
-                    <a class="nav-link" href="#">Contato</a>
+                    <a class="nav-link active" href="/perfil_ver">Perfil</a>
+                    <a class="nav-link" href="/#sobre_nos">Sobre</a>
+                    <a class="nav-link" href="/#quem_somos">Quem Somos</a>
+                    <a class="nav-link" href="/#nossa_equipe">Nossos Líderes</a>
+                    <a class="nav-link" href="/#vagas_abertas">Trabalhe Conosco</a>
+                    <a class="nav-link" href="/#contate_nos">Contato</a>
+                    <a class="nav-link" href="/usuario_sair">Sair</a>
                 </div>
             </div>
         </div>
@@ -61,14 +62,16 @@
                 </div>
 
                 <p class="mb-3 descricao-perfil">
-                    <?= $this->view->detalhesPerfilCandidato->sobre ?>
+                    <?= isset($this->view->detalhesPerfilCandidato->sobre) ? $this->view->detalhesPerfilCandidato->sobre : ''; ?>
                 </p>
 
                 <div class="buttons">
                     <a href="/editar_perfil">
                         <button type="button" class="btn btn-outline-primary mb-2">Editar Perfil</button>
                     </a>
-                    <button type="button" class="btn btn-outline-primary mb-2">Vagas Candidatadas</button>
+                    <a href="/vaga_candidatada_ver">
+                        <button type="button" class="btn btn-outline-primary mb-2">Vagas Candidatadas</button>
+                    </a>
                 </div>
             </div>
 
@@ -85,7 +88,7 @@
                 <label for="colFormLabel" class="colsm-2 form-label">Data de Nascimento</label>
                 <div class="col-sm-10">
                     <input type="date" class="form-control" id="colFormLabel" placeholder="" name="data-de-nascimento"
-                        readonly value="<?=$this->view->detalhesPerfilCandidato->data_nasc?>">
+                        readonly value="<?= isset($this->view->detalhesPerfilCandidato->data_nasc) ? $this->view->detalhesPerfilCandidato->data_nasc : ''; ?>">
                 </div>
             </div>
 
@@ -93,12 +96,12 @@
                 <label for="colFormLabel" class="colsm-2 form-label">Sexo</label>
                 <div class="col-sm-10">
                     <?php
-                        $sexo = null;
-                        if($this->view->detalhesPerfilCandidato->sexo == 1) {
+                        $sexo = isset($this->view->detalhesPerfilCandidato->sexo) ? $this->view->detalhesPerfilCandidato->sexo : '';
+                        if($sexo== 1) {
                             $sexo = 'Masculino';
-                        } else if($this->view->detalhesPerfilCandidato->sexo = 2) {
+                        } else if($sexo == 2) {
                             $sexo = 'Feminino';
-                        }
+                        } 
                     ?>
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="sexo" 
                     readonly value="<?=$sexo?>">
@@ -109,7 +112,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">CPF</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cpf" 
-                    readonly value="<?= $this->view->detalhesPerfilCandidato->cpf?>">
+                    readonly value="<?= isset($this->view->detalhesPerfilCandidato->cpf) ? $this->view->detalhesPerfilCandidato->cpf : ''; ?>">
                 </div>
             </div>
 
@@ -117,7 +120,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">CNPJ</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cnpj" readonly
-                    value="<?= $this->view->detalhesPerfilCandidato->cnpf?>">
+                    value="<?= isset($this->view->detalhesPerfilCandidato->cnpf) ? $this->view->detalhesPerfilCandidato->cnpf : ''; ?>">
                 </div>
             </div>
 
@@ -125,7 +128,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Disponibilidade</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="disponibilidade"
-                        readonly value="<?= $this->view->detalhesPerfilCandidato->disponibilidade?>">
+                        readonly value="<?= isset($this->view->detalhesPerfilCandidato->disponibilidade) ? $this->view->detalhesPerfilCandidato->disponibilidade : ''; ?>">
                 </div>
             </div>
 
@@ -133,10 +136,10 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Status</label>
                 <div class="col-sm-10">
                     <?php
-                        $status = null;
-                        if($this->view->detalhesPerfilCandidato->c_status == 1) {
+                        $status = isset($this->view->detalhesPerfilCandidato->c_status) ? $this->view->detalhesPerfilCandidato->c_status : '';
+                        if($status== 1) {
                             $status = 'Desempregado';
-                        } else if($this->view->detalhesPerfilCandidato->c_status == 2) {
+                        } else if($status == 2) {
                             $status = 'Trabalhando';
                         }
                     ?>
@@ -155,7 +158,7 @@
                 <label for="colFormLabel" class="colsm-2 form-label">Telefone</label>
                 <div class="col-sm-10">
                     <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="telefone" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->telefone?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->telefone) ? $this->view->detalhesPerfilCandidato->telefone : '';?>">
                 </div>
             </div>
 
@@ -163,7 +166,7 @@
                 <label for="colFormLabel" class="colsm-2 form-label">Celular</label>
                 <div class="col-sm-10">
                     <input type="tel" class="form-control" id="colFormLabel" placeholder="" name="celular" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->celular?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->celular) ? $this->view->detalhesPerfilCandidato->celular : ''; ?>">
                 </div>
             </div>
 
@@ -171,7 +174,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">E-mail</label>
                 <div class="col-sm-10">
                     <input type="email" class="form-control" id="colFormLabel" placeholder="" name="email" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->email?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->email) ? $this->view->detalhesPerfilCandidato->email : ''; ?>">
                 </div>
             </div>
 
@@ -185,7 +188,7 @@
                 <label for="colFormLabel" class="colsm-2 form-label">CEP</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cep" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->cep?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->cep) ? $this->view->detalhesPerfilCandidato->cep : ''; ?>">
                 </div>
             </div>
 
@@ -193,7 +196,7 @@
                 <label for="colFormLabel" class="colsm-2 form-label">Estado</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="estado" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->estado?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->estado) ? $this->view->detalhesPerfilCandidato->estado : ''; ?>">
                 </div>
             </div>
 
@@ -201,7 +204,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Cidade</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->cidade?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->cidade) ? $this->view->detalhesPerfilCandidato->cidade : ''; ?>">
                 </div>
             </div>
 
@@ -209,7 +212,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Bairro</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="bairro" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->bairro?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->bairro) ? $this->view->detalhesPerfilCandidato->bairro : ''; ?>">
                 </div>
             </div>
 
@@ -217,7 +220,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Rua</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="colFormLabel" placeholder="" name="rua" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->rua?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->rua) ? $this->view->detalhesPerfilCandidato->rua : ''; ?>">
                 </div>
             </div>
 
@@ -225,7 +228,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Número</label>
                 <div class="col-sm-10 mb-3">
                     <input type="number" class="form-control" id="colFormLabel" placeholder="" name="cidade" readonly
-                        value="<?= $this->view->detalhesPerfilCandidato->num_casa?>">
+                        value="<?= isset($this->view->detalhesPerfilCandidato->num_casa) ? $this->view->detalhesPerfilCandidato->num_casa : ''; ?>">
                 </div>
             </div>
 
