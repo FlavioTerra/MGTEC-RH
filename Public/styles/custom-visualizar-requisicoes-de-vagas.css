@@ -41,15 +41,15 @@
     max-width: 28%;
 }
 
-.vaga-per-41{
+.vaga-per-59{
     max-width: 50%;
 }
 
-.vaga-per-59{
+.vaga-per-77{
     max-width: 72%;
 }
 
-.vaga-per-77{
+.vaga-per-100{
     max-width: 100%;
 }
 
@@ -62,15 +62,15 @@
         max-width: 27%;
     }
     
-    .vaga-per-41{
+    .vaga-per-59{
         max-width: 50%;
     }
     
-    .vaga-per-59{
+    .vaga-per-77{
         max-width: 73%;
     }
     
-    .vaga-per-77{
+    .vaga-per-100{
         max-width: 100%;
     }
 }
