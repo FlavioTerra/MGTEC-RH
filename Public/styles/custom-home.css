@@ -1135,9 +1135,10 @@ body, html{
     background-color: #ffffff;
     color: rgb(100, 100, 100);
     border-radius: 30px;
-    padding: 5px 0;
+    padding: 10px 10px;
     width: 100px;
     transition: .5s;
+    text-decoration: none;
 }
 
 .job-area .card:hover .btn-view-job, .job-area .card label:hover .btn-view-job{

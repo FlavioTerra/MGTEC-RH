@@ -154,19 +154,6 @@
             $this->render('recuperar-senha-security'); 
         }
 
-        public function gerenciarCandidato() {
-            session_start();
-
-            if(empty($_SESSION['tipo_user'])) {
-                $_SESSION['tipo_user'] = 0;
-            }
-            $candidatos = Container::getModel('UsuarioCadastrar');
-
-            $this->view->todosCandidatos = $candidatos->getAll();
-
-            $this->render('gerenciar-candidato');
-        }
-
     }   
 
 ?>

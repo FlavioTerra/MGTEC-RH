@@ -196,6 +196,17 @@
                 'action'=>'realizarTeste'
             );
 
+            $routes['visualizar_vaga_candidato'] = array(
+                'route'=>'/visualizar_vaga_candidato',
+                'controller'=>'CandidateScreensController',
+                'action'=>'visualizarVaga'
+            );
+
+            $routes['candidatarse_vaga'] = array(
+                'route'=>'/candidatarse_vaga',
+                'controller'=>'CandidateScreensController',
+                'action'=>'candidatar'
+            );
 
             // Cadastro Usuário
             $routes['usuario_cadastrar'] = array(
@@ -280,7 +291,7 @@
 
             $routes['gerenciar_candidato'] = array(
                 'route'=>'/gerenciar_candidato',
-                'controller'=>'GeneralScreensController',
+                'controller'=>'EmployeeScreensController',
                 'action'=>'gerenciarCandidato'
             );
 

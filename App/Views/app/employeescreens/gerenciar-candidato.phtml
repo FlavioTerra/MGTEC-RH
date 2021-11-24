@@ -71,18 +71,19 @@
         <hr>
 
         <!--Parte de baixo-->
+        <?php foreach($this->view->todosCandidatos as $key => $candidato) { ?>
         <div class="bottom-area">
             <div class="candidato">
                 <div class="card">
                     <div class="card-img"></div>
 
                     <div class="card-body">
-                        <h4 class="card-title">Nome do Candidato
+                        <h4 class="card-title"><?=$candidato->nome?>
                             <!-- $processoSeletivo->nome_departamento -->
                         </h4>
                         <h6 class="card-text">
                             <span>
-                                Processo Seletivo: Recrutador de RH
+                                Processo Seletivo: <?=$candidato->titulo_proc?>
                             </span>
 
                             <span>
@@ -95,6 +96,7 @@
                 <button type="button" class="btn btn-outline-primary mb-4">Visualizar</button>
             </div>
         </div>
+        <?php } ?>
 
         <hr>
 

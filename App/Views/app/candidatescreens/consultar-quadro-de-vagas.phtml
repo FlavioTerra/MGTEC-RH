@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap / CSS -->
+    <link rel="stylesheet" href="/styles/custom-consultar-quadro-de-vagas-candidato.css">
+    <link rel="stylesheet" href="/styles/pop-up.css">
+
+    <title>Consultar Quadro de Vagas Candidato</title>
+
+    <script type="text/javascript">
+        let experiencias = <?php echo json_encode($this->view->vagaDetalhesCandExperiencia) ?>;
+        let competencias =  <?php echo json_encode($this->view->vagaDetalhesCandCompetencia) ?>;
+        let formacoes =  <?php echo json_encode($this->view->vagaDetalhesCandFormacao) ?>;
+        
+        let vinculoSalvo = <?php echo json_encode($this->view->vagaDetalhesCand->vinculo_emp) ?>;
+    </script>
+
+</head>
+
+<body>
+    <!--Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="header">
+        <div class="container-fluid background-navbar">
+            <a class="navbar-brand" href="#"><img src="/images/global/logo.svg" alt=""></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <img src="/images/global/navbar-button.svg" class="navbar-button">
+            </button>
+            <?php if($_SESSION['tipo_user'] == 1){ ?>
+                <!-- Usuário comum -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="/home">Home</a>
+                        <a class="nav-link" href="/perfil_ver">Candidato</a>
+                        <a class="nav-link" href="/#sobre_nos">Sobre</a>
+                        <a class="nav-link" href="/#quem_somos">Quem Somos</a>
+                        <a class="nav-link" href="/#nossa_equipe">Nossos Líderes</a>
+                        <a class="nav-link active" href="/#vagas_abertas">Trabalhe Conosco</a>
+                        <a class="nav-link" href="/#contate_nos">Contato</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
+                </div>
+            <?php } elseif($_SESSION['tipo_user'] == 2) { ?>
+                <!-- Usuário funcionário -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="">Funcionário</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
+                </div>
+            <?php } elseif($_SESSION['tipo_user'] == 3) { ?>
+                <!-- Usuário gestor -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="">Gestor</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } elseif($_SESSION['tipo_user'] == 4) { ?>
+                <!-- Usuário Chefe -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="">Líder</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>               
+                    </div>
+                </div>
+            <?php } elseif($_SESSION['tipo_user'] == 5) { ?>
+                <!-- Usuário adm -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="/home">Home</a>
+                        <a class="nav-link" href="">Admin</a>
+                        <a class="nav-link" href="/gerenciar_candidato">Candidatos</a>
+                        <a class="nav-link" href="/requisicoes_vaga">Requisições</a>
+                        <a class="nav-link" href="/gerenciar_vaga">Vagas</a>
+                        <a class="nav-link" href="/gerenciar_processo_seletivo">Processos Seletivos</a>
+                        <a class="nav-link" href="/gerenciar_entrevista_candidato">Entrevistas</a>
+                        <a class="nav-link" href="/gerar_relatorio">Relatórios</a>
+                        <a class="nav-link" href="/usuario_sair">Sair</a>
+                    </div>
+                </div>
+            <?php } else { ?>    
+                <!-- Usuário sem identificação -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="/home">Home</a>
+                        <a class="nav-link" href="/usuario_entrar">Entrar</a>
+                        <a class="nav-link" href="/#sobre_nos">Sobre</a>
+                        <a class="nav-link" href="/#quem_somos">Quem Somos</a>
+                        <a class="nav-link" href="/#nossa_equipe">Nossos Líderes</a>
+                        <a class="nav-link active" href="/#vagas_abertas">Trabalhe Conosco</a>
+                        <a class="nav-link" href="/#contate_nos">Contato</a>
+                    </div>
+                </div>
+            <?php } ?>   
+        </div>
+    </nav>
+
+    <!--Pop-up area-->
+    <div class="popup-container" id="popup-info">
+        <!--onclick="Open('popup-info')"-->
+        <!--<link rel="stylesheet" href="../../../../Public/styles/pop-up.css">-->
+        <!--<script src="../../../../Public/scripts/general-scripts/pop-up.js"></script>-->
+        <div class="popup-content">
+            <div class="popup-close" title="Close" onclick="Close(this)">
+                <img src="/images/global/close.svg">
+            </div>
+
+            <img src="/images/pop-up/info.svg" class="popup-img">
+
+            <h1 class="popup-title">Vaga em Aberto</h1>
+
+            <p class="popup-description">É desejado que você tenha os requisitos mínimos que colocamos em
+                "Experiências", "Competências" e "Formações" para trabalhar conosco. Caso tenha alguma dúvida entre em
+                contato com a gente na aba
+                "contato" do menu.</p>
+
+            <button type="button" class="popup-btn popup-btn-width" onclick="Close(this)">
+                Entendi!
+            </button>
+        </div>
+    </div>
+
+    <!--Page user-->
+    <form action="requisitante.php" method="post" id="formulario">
+        <div class="container">
+
+            <div class="title">
+                <h1 class="title-1">Vaga em Aberto</h1>
+            </div>
+
+            <!--Dados de Vaga-->
+            <div class="title">
+                <h2 class="title-2">Informações da Vaga</h2>
+                <img src="/images/global/info.svg" class="info-click" onclick="Open('popup-info')">
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Cargo</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="cargo" readonly
+                        tabindex="-1" value="<?= $this->view->vagaDetalhesCand->nome_cargo?>">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Departamento</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="colFormLabel" placeholder="" name="departamento"
+                        readonly tabindex="-1" value="<?= $this->view->vagaDetalhesCand->nome_departamento?>">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Vínculo Empregatício</label>
+                <div class="col-sm-10">
+                    <select class="col form-select form1" aria-label="Formação" name="vinculo_empregaticio" readonly>
+                        <option value="0">--Selecione--</option>
+                        <option value="1">CLT</option>
+                        <option value="2">PJ</option>
+                        <option value="3">Estágio</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Salário</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="salario"
+                        readonly value="<?= $this->view->vagaDetalhesCand->salario?>">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Horário de Trabalho</label>
+                <div class="col-sm-10 input-1 hour">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-inicio"
+                        readonly tabindex="-1" value="<?= $this->view->vagaDetalhesCand->hora_inicio?>">
+                </div>
+                <label for="colFormLabel" class="col label-middle">à</label>
+                <div class="col-sm-10 input-2 hour">
+                    <input type="time" class="form-control" id="colFormLabel" placeholder="" name="hora-trab-fim"
+                        readonly tabindex="-1" value="<?= $this->view->vagaDetalhesCand->hora_fim?>">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Número de Vagas</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="colFormLabel" placeholder="" name="numero-de-vagas"
+                        min="0" readonly tabindex="-1" value="<?= $this->view->vagaDetalhesCand->num_vagas?>">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
+                <div class="col-sm-12 mb-3">
+                    <textarea type="text" class="form-control" id="textarea" rows="3" name="funcao" readonly
+                        tabindex="-1" placeholder=""><?= $this->view->vagaDetalhesCand->funcao?></textarea>
+                </div>
+            </div>
+
+            <!--Experiências-->
+            <div class="title">
+                <h2 class="title-2">Experiências</h2>
+            </div>
+
+            <div id="Exp">
+                <div class="subtitle">
+                    <h3 class="title-3">Experiência</h3>
+                    <h3 class="numExp">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-exp-formacao edit form3" aria-label="Formação"
+                        name="exp-fomacao-1" readonly>
+                        <option value="0">Experiência</option>
+                        <option value="1">Administrativa</option>
+                        <option value="2">Elétrica</option>
+                        <option value="3">Eletrônica</option>
+                        <option value="4">Recursos Humanos</option>
+                        <option value="5">Redes</option>
+                        <option value="6">Contábil</option>
+                        <option value="7">Programação</option>
+                        <option value="8">Logística</option>
+                    </select>
+
+                    <select class="col form-select cl-exp-status edit form3" aria-label="Status" name="exp-status-1" readonly>
+                        <option value="0">Status</option>
+                        <option value="1">Experiência Qualquer</option>
+                        <option value="2">Júnior</option>
+                        <option value="3">Pleno</option>
+                        <option value="4">Sênior</option>
+                    </select>
+                </div>
+
+                <div class="row mb-4">
+                    <label for="colFormLabel" class="col-sm-2 form-label exp-label">Anos de Experiência:</label>
+                    <div class="col number">
+                        <input type="number" class="form-control cl-exp-anos-experiencia" id="colFormLabel"
+                            placeholder="" name="exp-anos-experiencia-1" readonly tabindex="-1">
+                        </input>
+                    </div>
+                </div>
+            </div>
+
+            <!--Competências-->
+            <div class="title">
+                <h2 class="title-2">Competências</h2>
+            </div>
+
+            <div id="Comp">
+                <div class="subtitle">
+                    <h3 class="title-3">Competência</h3>
+                    <h3 class="numComp">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-comp-nome edit form3" aria-label="Nome" name="comp-nome-1" readonly>
+                        <option value="0">Nome</option>
+                        <option value="1">Gestão de Pessoas</option>
+                        <option value="2">Análise de Requisitos</option>
+                        <option value="3">Java</option>
+                        <option value="4">ERP</option>
+                        <option value="5">Prestações de Contas</option>
+                        <option value="6">Escrituração Fiscal</option>
+                        <option value="7">Manutenção de Motores Trifásicos</option>
+                        <option value="8">Gestão de Projetos</option>
+                        <option value="9">Planejamento de Armazenagem de Mercadorias</option>
+                        <option value="10">Inglês</option>
+                    </select>
+
+                    <select class="col form-select cl-comp-grau edit form3" aria-label="Grau" name="comp-grau-1" readonly>
+                        <option value="0">Grau</option>
+                        <option value="1">Básico</option>
+                        <option value="2">Intermediário</option>
+                        <option value="3">Avançado</option>
+                    </select>
+                </div>
+
+                <div class="row mb-4">
+                    <select class="col form-select cl-comp-status edit form4" aria-label="Status" name="comp-status-1" readonly>
+                        <option value="0">Status</option>
+                        <option value="1">Iniciante</option>
+                        <option value="2">Em Desenvolvimento</option>
+                        <option value="3">Concluído</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Formações-->
+            <div class="title">
+                <h2 class="title-2">Formações</h2>
+            </div>
+
+            <div id="Form">
+                <div class="subtitle">
+                    <h3 class="title-3">Formação</h3>
+                    <h3 class="numForm">1</h3>
+                </div>
+
+                <div class="row mb-3">
+                    <select class="col form-select cl-form-tipo edit form3" aria-label="Tipo" name="form-tipo-1" readonly>
+                        <option value="0">Tipo</option>
+                        <option value="1">Fundamental</option>
+                        <option value="2">Ensino médio</option>
+                        <option value="3">Técnico</option>
+                        <option value="4">Superior</option>
+                    </select>
+
+                    <select class="col form-select cl-form-status edit form3" aria-label="Status" name="form-status-1" readonly>
+                        <option value="0">Status</option>
+                        <option value="1">Completo</option>
+                        <option value="2">Em Andamento</option>
+                        <option value="3">Incompleto</option>
+                    </select>
+                </div>
+
+                <div class="row mb-4">
+                    <select class="col form-select cl-form-nome edit form3" aria-label="Nome" name="form-nome-1" readonly>
+                        <option value="0">Nome</option>
+                        <option value="1">Análise e Desenvolvimento de Sistemas</option>
+                        <option value="2">Redes</option>
+                        <option value="3">Ciência da Computação</option>
+                        <option value="4">Logística</option>
+                        <option value="5">Contabilidade</option>
+                        <option value="6">Engenharia Elétrica</option>
+                        <option value="7">Engenharia Eletrônica</option>
+                        <option value="8">Engenharia de Automação</option>
+                        <option value="9">Recursos Humanos</option>
+                        <option value="10">Administração</option>
+                    </select>
+
+                    <select class="col form-select cl-form-grau edit form3" aria-label="Grau" name="form-grau-1" readonly>
+                        <option value="0">Grau</option>
+                        <option value="1">Tecnólogo</option>
+                        <option value="2">Graduação</option>
+                        <option value="3">Pôs-graduação</option>
+                        <option value="4">Mestrado</option>
+                        <option value="4">Doutorado</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a href="/">
+                    <button type="button" class="btn btn-outline-primary mb-5">Voltar</button>
+                </a>
+                <?php if($_SESSION['tipo_user'] == 1) {?>
+                    <a href="/candidatarse_vaga?proc=<?=$this->view->vagaDetalhesCand->id_proc?>">
+                        <button type="button" class="btn btn-outline-primary mb-5">Candidatar-se</button>
+                    </a>
+                <?php } ?>
+            </div>
+        </div>
+    </form>
+
+    <!--Footer-->
+    <footer class="footer">
+        <img src="/images/global/linkedin.svg" class="img-footer" onclick="">
+        <img src="/images/global/facebook.svg" class="img-footer" onclick="">
+        <img src="./images/global/email.svg" class="img-footer" onclick="">
+        <label class="label-footer">+55 (15) 5555-5555</label>
+    </footer>
+
+    <!--Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+    <script src="/scripts/manager-scripts/gerar-requisicao-de-vaga.js"></script>
+    <script src="/scripts/general-scripts/pop-up.js"></script>
+
+    <script>
+        //renderizaInformacoes();
+        insereExperienciaVagaCand();
+        insereCompetenciaVagaCand();
+        insereFormacaoVagaCand();
+        renderizaVagaCand();
+    </script>
+</body>
+
+</html>

@@ -152,6 +152,38 @@
             $this->render('vagas-candidatadas');
         }
 
+        public function visualizarVaga() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
+            $vaga = Container::getModel('GerarVaga');
+
+            $vaga->__set('id_vaga', $_GET['vaga']);
+
+            $this->view->vagaDetalhesCand = $vaga->getVaga();
+            $this->view->vagaDetalhesCandExperiencia = $vaga->getVagaExperiencia();
+            $this->view->vagaDetalhesCandCompetencia = $vaga->getVagaCompetencia();
+            $this->view->vagaDetalhesCandFormacao = $vaga->getVagaFormacao();
+
+            $this->render('consultar-quadro-de-vagas');
+        }
+
+        public function candidatar() {
+            session_start();
+
+            $candidatarse = Container::getModel('EditarPerfil');
+
+            $candidatarse->__set('id_proc', $_GET['proc']);
+            $candidatarse->__set('id_perfil', $_SESSION['id_usuario']);
+
+            $candidatarse->candidatarse();
+
+            header('Location: /');
+        }
+
         public function realizarTeste() {
             session_start();
 

@@ -60,6 +60,19 @@
                 $this->__set('login_user', $user->login_user);  
             }
         }
+
+        public function getAllCandidatos() {
+            $query = 'select *
+                        from tb_candidato tc
+                  inner join tb_processo_seletivo tps on tc.id_proc = tps.id_proc 
+                       where tc.id_proc is not null';
+
+            $stmt = $this->db->prepare($query);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_OBJ);
+        } 
     }
 
 ?>

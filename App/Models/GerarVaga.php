@@ -250,7 +250,10 @@
         public function getVaga() {
             $query = "select v.id_vaga,
                              v.id_cargo,
+                             v.id_proc,
+                             c.nome_cargo,
                              c.id_departamento,
+                             td.nome_departamento,
                              u.nome,
                              v.titulo_vaga,
                              v.num_vagas,
@@ -265,6 +268,7 @@
                         from tb_vaga v 
                   left join tb_cargo c on v.id_cargo = c.id_cargo
                   left join tb_usuario u on v.id_solicitante = u.id_user
+                  left join tb_departamento td on c.id_departamento = td.id_departamento
                        where v.id_vaga = :id_vaga";
                 
             $stmt = $this->db->prepare($query);

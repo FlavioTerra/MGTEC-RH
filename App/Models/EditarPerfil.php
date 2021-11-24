@@ -321,6 +321,19 @@
 
             return $stmt->fetchAll(\PDO::FETCH_OBJ);     
         }
+
+        public function candidatarse() {
+            $query = 'update tb_candidato
+                         set id_proc = :id_proc
+                       where id_perfil = :id_perfil';
+                       
+            $stmt = $this->db->prepare($query);
+
+            $stmt->bindValue(':id_proc',$this->__get('id_proc'));
+            $stmt->bindValue(':id_perfil',$this->__get('id_perfil'));
+
+            $stmt->execute();  
+        }
     }
 
 ?>

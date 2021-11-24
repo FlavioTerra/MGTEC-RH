@@ -253,7 +253,7 @@
         }
 
 
-        // Relat�rios
+        // Relatórios
         public function gerarRelatorio() {
             session_start();
 
@@ -314,6 +314,20 @@
             $this->view->todasVagas = $vagas->getAll();
 
             $this->render('gerenciar-vaga');
+        }
+
+        public function gerenciarCandidato() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+         
+            $candidatos = Container::getModel('UsuarioCadastrar');
+
+            $this->view->todosCandidatos = $candidatos->getAllCandidatos();
+
+            $this->render('gerenciar-candidato');
         }
 
     }   

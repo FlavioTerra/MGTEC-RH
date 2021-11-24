@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/styles/custom-home.css">
 
     <title>Home</title>
+
 </head>
 
 <body>
@@ -28,12 +29,12 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="/home">Home</a>
-                        <a class="nav-link" href="perfil_ver">Candidato</a>
-                        <a class="nav-link" href="#sobre_nos">Sobre</a>
-                        <a class="nav-link" href="#quem_somos">Quem Somos</a>
-                        <a class="nav-link" href="#nossa_equipe">Nossos Líderes</a>
-                        <a class="nav-link" href="#vagas_abertas">Trabalhe Conosco</a>
-                        <a class="nav-link" href="#contate_nos">Contato</a>
+                        <a class="nav-link" href="/perfil_ver">Candidato</a>
+                        <a class="nav-link" href="/#sobre_nos">Sobre</a>
+                        <a class="nav-link" href="/#quem_somos">Quem Somos</a>
+                        <a class="nav-link" href="/#nossa_equipe">Nossos Líderes</a>
+                        <a class="nav-link" href="/#vagas_abertas">Trabalhe Conosco</a>
+                        <a class="nav-link" href="/#contate_nos">Contato</a>
                         <a class="nav-link" href="/usuario_sair">Sair</a>
                     </div>
                 </div>
@@ -52,7 +53,7 @@
                     </div>
                 </div>
             <?php } elseif($_SESSION['tipo_user'] == 3) { ?>
-                <!-- Usu�rio gestor -->
+                <!-- Usuário gestor -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" href="/home">Home</a>
@@ -96,11 +97,11 @@
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="/home">Home</a>
                         <a class="nav-link" href="/usuario_entrar">Entrar</a>
-                        <a class="nav-link" href="#sobre_nos">Sobre</a>
-                        <a class="nav-link" href="#quem_somos">Quem Somos</a>
-                        <a class="nav-link" href="#nossa_equipe">Nossos Líderes</a>
-                        <a class="nav-link" href="#vagas_abertas">Trabalhe Conosco</a>
-                        <a class="nav-link" href="#contate_nos">Contato</a>
+                        <a class="nav-link" href="/#sobre_nos">Sobre</a>
+                        <a class="nav-link" href="/#quem_somos">Quem Somos</a>
+                        <a class="nav-link" href="/#nossa_equipe">Nossos Líderes</a>
+                        <a class="nav-link" href="/#vagas_abertas">Trabalhe Conosco</a>
+                        <a class="nav-link" href="/#contate_nos">Contato</a>
                     </div>
                 </div>
             <?php } ?>    
@@ -341,13 +342,11 @@
                             <div class="text-card-area">
                                 <p class="text-card">Vagas Abertas: <label><?= $vaga->num_vagas ?></label></p>
                             </div>
-
-                            <button class="btn-view-job">Visualizar</button>
+                            <a href="/visualizar_vaga_candidato?vaga=<?=$vaga->id_vaga?>" class="btn-view-job">Visualizar</a>
                         </div>
                     <?php $cont++;} ?>
                 </div>
             </div>
-            
 
             <!--Contact us-->
             <div class="contact-area">
@@ -359,13 +358,13 @@
                         <div class="inputs">
                             <div class="form-row">
                                 <div class="input-data">
-                                    <input type="text" required>
+                                    <input type="text">
                                     <div class="underline"></div>
                                     <label>Primeiro Nome</label>
                                 </div>
 
                                 <div class="input-data">
-                                    <input type="text" required>
+                                    <input type="text">
                                     <div class="underline"></div>
                                     <label>Último Nome</label>
                                 </div>
@@ -373,13 +372,13 @@
 
                             <div class="form-row">
                                 <div class="input-data">
-                                    <input type="email" id="email" onmouseout="verificar()" required>
+                                    <input type="email" id="email" onmouseout="verificar()">
                                     <div class="underline"></div>
                                     <label id="label-email">E-mail</label>
                                 </div>
 
                                 <div class="input-data">
-                                    <input type="text" required>
+                                    <input type="text">
                                     <div class="underline"></div>
                                     <label>Assunto</label>
                                 </div>
@@ -387,7 +386,7 @@
 
                             <div class="form-row text-area">
                                 <div class="input-data textarea">
-                                    <textarea cols="30" rows="10" required></textarea>
+                                    <textarea cols="30" rows="10"></textarea>
                                     <div class="underline"></div>
                                     <label>Escreva sua mensagem</label>
                                 </div>
