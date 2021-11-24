@@ -316,6 +316,26 @@
             $this->render('gerenciar-vaga');
         }
 
+        public function divulgarProcessoSeletivo(){
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
+            $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
+
+            $viewProcessoSeletivo->__set('id_proc', $_POST['id_proc']);
+
+            // var_dump($_POST);
+
+            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->alterarStatusProcessoSeletivo();
+
+            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
+
+            $this->render('divulgar-processo-seletivo'); 
+        }
+
     }   
 
 ?>

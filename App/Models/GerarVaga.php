@@ -395,14 +395,13 @@
         }
 
         public function alterStatusVagaAprovar() {
-            $comentario = $this->__get('comentario');
-            var_dump($comentario);
             $query = "update tb_vaga v
-                    set v.comentario = '.$comentario.' 
+                    set v.comentario = :comentario 
                        where v.id_vaga = :id_vaga";
 
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+            $stmt->bindValue(':comentario',$this->__get('comentario'));
         
             $stmt->execute();
 
@@ -418,6 +417,7 @@
             
             return $stmt->fetch(\PDO::FETCH_OBJ);
         }
+        
     }
 
 ?>

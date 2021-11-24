@@ -55,6 +55,16 @@
             $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
 
             $stmt->execute();
+
+            $query = "update tb_vaga v
+                    set v.status_vaga = 'Vaga Criada'
+                       where v.id_vaga = :id_vaga
+                       and v.status_vaga = 'Aprovada' ";
+                
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_vaga',$this->__get('id_vaga'));
+        
+            $stmt->execute();
                          
         }
 
@@ -97,6 +107,18 @@
             $stmt->execute();
             
             return $stmt->fetch(\PDO::FETCH_OBJ);
+        }
+
+        public function alterarStatusProcessoSeletivo(){
+            $query = "update tb_processo_seletivo pc
+                    set pc.status_proc = 'Divulgado' 
+                       where pc.id_proc = :id_proc
+                       and pc.status_proc = 'Aberto' ";
+                
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(':id_proc',$this->__get('id_proc'));
+        
+            $stmt->execute();
         }
     }
 

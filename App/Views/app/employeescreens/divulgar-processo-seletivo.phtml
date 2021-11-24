@@ -1,0 +1,38 @@
+<?php
+require_once('src/PHPMailer.php');
+require_once('src/SMTP.php');
+require_once('src/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+$mail = new PHPMailer(true);
+
+try {
+	$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+	$mail->isSMTP();
+	$mail->Host = 'smtp.gmail.com';
+	$mail->SMTPAuth = true;
+	$mail->Username = 'Mogetec.Engenharia@gmail.com';
+	$mail->Password = 'recrutamento123';
+	$mail->Port = 587;
+
+	$mail->setFrom('Mogetec.Engenharia@gmail.com');
+	$mail->addAddress('fernandoklinke01@gmail.com');
+
+	$mail->isHTML(true);
+	$mail->Subject = 'Divulgação do Processo Seletivo';
+	$mail->Body = 'Olá';
+
+	if($mail->send()) {
+		echo 'Email enviado com sucesso';
+	} else {
+		echo 'Email nao enviado';
+	}
+} catch (Exception $e) {
+	echo "Erro ao divulgar processo seletivo: {$mail->ErrorInfo}";
+}
+// echo $this->view->detalhesProcessoSeletivo->id_proc;
+header('Location:/gerenciar_processo_seletivo');
+?>
