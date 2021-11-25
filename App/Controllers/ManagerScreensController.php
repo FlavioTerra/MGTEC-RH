@@ -220,7 +220,7 @@
 
             $alterarVaga->alterStatusVagaAprovar(); 
 
-            // header('Location:/requisicoes_vaga');
+            header('Location:/requisicoes_vaga');
 
         }
 

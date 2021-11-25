@@ -45,6 +45,12 @@
                 'action'=>'visualizarProcessoSeletivo'
             );
 
+            $routes['divulgar_processo_seletivo'] = array(
+                'route'=>'/divulgar_processo_seletivo',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'divulgarProcessoSeletivo'
+            );
+
 
             //Registrar Entrevista
             $routes['entrevista_registrar'] = array(

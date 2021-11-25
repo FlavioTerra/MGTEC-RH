@@ -150,25 +150,26 @@
                             </span>
 
                             <span>
-                                - <?= $processoSeletivo->status_proc ?>
+                                - <?= $processoSeletivo->status_proc?>
                             </span>
                         </h6>
 
                     </div>
                 </div>
                 <!-- <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button> -->
-                <?php if($processoSeletivo->status_proc != 'Aberto'){ ?>
                 <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
-                <button type="button" class="btn btn-outline-primary mb-4" disabled>Divulgar</button>
                 <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
-                <?php } else {?>
-                <button type="submit" class="btn btn-outline-primary mb-4">Visualizar</button>
-                <button type="button" class="btn btn-outline-primary mb-4">Divulgar</button>
-                <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
-                <?php } ?>
             </div>
         </form>
-        <?php } ?>
+        <form action="/divulgar_processo_seletivo" method="post">
+            <?php if($processoSeletivo->status_proc != 'Aberto'){ ?>
+                    <button type="submit" class="btn btn-outline-primary mb-4" disabled>Divulgar</button>
+                    <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
+                    <?php } else {?>
+                    <button type="submit" class="btn btn-outline-primary mb-4">Divulgar</button>
+                    <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
+                    <?php } ?>
+            <?php } ?>
 
         <hr>
 

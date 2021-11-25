@@ -30,26 +30,18 @@
 }
 
 .vaga-per-24{
-    max-width: 24%;
+    max-width: 28%;
 }
 
 .vaga-per-41{
-    max-width: 41%;
+    max-width: 50%;
 }
 
 .vaga-per-59{
-    max-width: 59%;
+    max-width: 72%;
 }
 
 .vaga-per-77{
-    max-width: 77%;
-}
-
-.vaga-per-94{
-    max-width: 94%;
-}
-
-.vaga-per-100{
     max-width: 100%;
 }
 
@@ -165,88 +157,106 @@
     }
     
     .vaga-per-24{
-        max-width: 23%;
+        max-width: 27%;
+    }
+    
+    .vaga-per-41{
+        max-width: 50%;
+    }
+    
+    .vaga-per-59{
+        max-width: 73%;
     }
     
     .vaga-per-77{
-        max-width: 78%;
-    }
-    
-    .vaga-per-94{
-        max-width: 97%;
-    }
-
-    .text-box{
-        font-size: 12px;
+        max-width: 100%;
     }
 }
 
 @media screen and (min-width:700px){
     .vaga-per-6{
-        max-width: 3%;
+        max-width: 4%;
     }
     
     .vaga-per-24{
-        max-width: 22%;
+        max-width: 27%;
+    }
+    
+    .vaga-per-41{
+        max-width: 50%;
     }
     
     .vaga-per-59{
-        max-width: 59.5%;
-    }
-
-    .vaga-per-77{
-        max-width: 78.5%;
+        max-width: 73%;
     }
     
-    .vaga-per-94{
-        max-width: 97.5%;
+    .vaga-per-77{
+        max-width: 100%;
     }
 }
 
 @media screen and (min-width:900px){
     .vaga-per-6{
+        max-width: 3%;
+    }
+    
+    .vaga-per-24{
+        max-width: 26%;
+    }
+    
+    .vaga-per-41{
+        max-width: 50%;
+    }
+    
+    .vaga-per-59{
+        max-width: 74%;
+    }
+    
+    .vaga-per-77{
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width:1000px){
+    .vaga-per-6{
         max-width: 2%;
     }
     
     .vaga-per-24{
-        max-width: 21.5%;
+        max-width: 26%;
     }
-
+    
     .vaga-per-41{
-        max-width: 40.5%;
+        max-width: 50%;
     }
-
+    
     .vaga-per-59{
-        max-width: 60%;
+        max-width: 74%;
     }
     
     .vaga-per-77{
-        max-width: 79%;
-    }
-    
-    .vaga-per-94{
-        max-width: 98%;
-    }
-
-    .vagas{
-        width: 103%;
+        max-width: 100%;
     }
 }
 
 @media screen and (min-width:1250px){
     .vaga-per-6{
-        max-width: 1.5%;
+        max-width: 2%;
     }
     
     .vaga-per-24{
-        max-width: 21%;
+        max-width: 26%;
+    }
+    
+    .vaga-per-41{
+        max-width: 50%;
+    }
+    
+    .vaga-per-59{
+        max-width: 74%;
     }
     
     .vaga-per-77{
-        max-width: 79.2%;
-    }
-    
-    .vaga-per-94{
-        max-width: 98.5%;
+        max-width: 100%;
     }
 }
