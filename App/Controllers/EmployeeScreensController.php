@@ -338,7 +338,7 @@
 
             // var_dump($_POST);
 
-            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->alterarStatusProcessoSeletivo();
+            // $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->alterarStatusProcessoSeletivo();
 
             $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
 

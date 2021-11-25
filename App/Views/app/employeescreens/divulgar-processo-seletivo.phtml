@@ -23,7 +23,16 @@ try {
 
 	$mail->isHTML(true);
 	$mail->Subject = 'Divulgação do Processo Seletivo';
-	$mail->Body = 'Olá';
+	$mail->Body = '<div style="text-align: left;">
+						<h1">Processo Seletivo: '.$this->view->detalhesProcessoSeletivo->titulo_proc.'</h1>
+						<p>Olá, Funcionário, tudo bom?</p>
+						<br>
+						<p>Há um novo processo seletivo aberto na empresa!</p>
+						<br>
+						<p>Para mais detalhes acesse o site do empresa</p>
+						<br>
+						<a href="http://localhost:3000/home#vagas_abertas"><button>Acessar Site</button></a>
+				   </div>';
 
 	if($mail->send()) {
 		echo 'Email enviado com sucesso';
