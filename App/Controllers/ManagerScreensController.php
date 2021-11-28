@@ -211,7 +211,7 @@
             if(empty($_SESSION['tipo_user'])) {
                 $_SESSION['tipo_user'] = 0;
             }
-
+            // var_dump($_POST);
             $alterarVaga = Container::getModel('GerarVaga');
 
             $alterarVaga->__set('id_vaga', $_POST['id_vaga']);

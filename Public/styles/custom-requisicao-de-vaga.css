@@ -1,0 +1,104 @@
+@import url(./bootstrap.min.css);
+@import url(./global.css);
+
+/*Experiências / Competências / Formações*/
+.add-div-exp, .add-div-comp, .add-div-form{
+    margin-top: 30px;
+}
+
+.numExp, .numComp, .numForm{
+    color: #7a2cb6;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.number{
+    flex-grow: 0.28;
+}
+
+.exp-label{
+    margin-bottom: 0;
+    margin-left: -8px;
+}
+
+.btn-area-exp, .btn-area-comp, .btn-area-form{
+    margin-top: 0;
+    margin-bottom: 3.5vh;
+}
+
+.add-form-select{
+    margin-top: 1vh;
+    margin-bottom: 3.5vh;
+}
+
+.form-select{
+    margin-left: 0;
+}
+
+.form-label{
+    width: 180px;
+}
+
+.form1{
+    max-width: 180px;
+}
+
+.form2, .input-1, .input-2{
+    max-width: 85px;
+}
+
+.form3{
+    max-width: 249px;
+}
+
+.form4{
+    max-width: 519px;
+}
+
+textarea{
+    max-width: 516px;
+}
+
+.cl-exp-anos-experiencia{
+    margin-left: -20px;
+}
+
+#Exp .row, #Comp .row, #Form .row{
+    margin-left: 0px;
+}
+
+.footer{
+    position: relative;
+}
+
+.container{
+    min-height: 100vh;
+}
+
+@media screen and (min-width:576px){
+    /*forms*/
+    .dual{
+        margin-left: 0;
+    }
+
+    .add, .add-form-select{
+        margin-top: 1vh;
+    }
+
+    .form-select{
+        margin-left: 10px;
+    }
+
+    .form-label{
+        margin-right: 0;
+    }
+
+    #Exp .row, #Comp .row, #Form .row{
+        margin-left: -12px;
+    }
+
+    .exp-label{
+        margin-left: 1px;
+    }
+}

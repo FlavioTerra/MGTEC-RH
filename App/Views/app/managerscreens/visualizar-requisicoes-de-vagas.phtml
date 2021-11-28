@@ -175,10 +175,10 @@
 
             <div class="row mb-3 vagas">
                 <!--6%-->
+                <div class="title">
+                    <h2 class="title-2">Status</h2>
+                </div>
                 <div class="mb-3 vaga" id="1-etapa">
-                    <div class="title">
-                        <h2 class="title-2">Status</h2>
-                    </div>
 
                     <div class="vaga-bar">
                         <div class="vaga-per-6" per="6%"></div>
@@ -212,10 +212,10 @@
                     </div>
                 </div>
 
-                <!--28%-->
+                <!--24%-->
                 <div class="mb-3 vaga" id="2-etapa">
                     <div class="vaga-bar">
-                        <div class="vaga-per-24" per="28%"></div>
+                        <div class="vaga-per-24" per="24%"></div>
                     </div>
 
                     <div class="mb-3 texts">
@@ -247,10 +247,45 @@
 
                 </div>
 
-                <!--72%-->
+                <!--59%-->
                 <div class="mb-3 vaga" id="3-etapa">
                     <div class="vaga-bar">
-                        <div class="vaga-per-59" per="72%"></div>
+                        <div class="vaga-per-59" per="59%"></div>
+                    </div>
+
+                    <div class="mb-3 texts">
+                        <div class="text-box">
+                            <span>Aberta</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Em Análise</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Aprovada</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Vaga Criada</span>
+                            <img src="">
+                        </div>
+
+                        <div class="text-box">
+                            <span>Finalizada</span>
+                            <img src="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--77%-->
+                <div class="vaga" id="4-etapa">
+                    <div class="vaga-bar">
+                        <div class="vaga-per-77" per="77%"></div>
                     </div>
 
                     <div class="mb-3 texts">
@@ -283,9 +318,9 @@
                 </div>
 
                 <!--100%-->
-                <div class="vaga" id="4-etapa">
+                <div class="vaga" id="5-etapa">
                     <div class="vaga-bar">
-                        <div class="vaga-per-77" per="100%"></div>
+                        <div class="vaga-per-100" per="100%"></div>
                     </div>
 
                     <div class="mb-3 texts">
@@ -598,7 +633,7 @@
 </body>
 <?php } elseif($_SESSION['tipo_user'] == 4) { ?>
 
-<body>
+    <body>
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-dark" id="header">
         <div class="container-fluid background-navbar">
@@ -643,7 +678,7 @@
 
             <p class="popup-description">Tem certeza que deseja aprovar essa requisição?</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Confirm(this)">
+            <button class="popup-btn popup-btn-width" onclick="Confirm(this, '/vaga_aprovar')">
                 Confirmar
             </button>
 
@@ -738,8 +773,7 @@
                 <label for="colFormLabel" class="col-sm-2 form-label">Data de Solicitação</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control edit form1" id="colFormLabel" placeholder=""
-                        name="data-de-solicitacao" readonly value="<?= $this->view->detalhesVaga->data_solic ?>"
-                        disabled>
+                        name="data-de-solicitacao" readonly value="<?= $this->view->detalhesVaga->data_solic ?>" disabled>
                 </div>
             </div>
 
@@ -1004,8 +1038,8 @@
             <div class="row mb-3">
                 <label for="colFormLabel" class="col-sm-2 form-label">Função</label>
                 <div class="col-sm-12 mb-3">
-                    <textarea type="text" class="form-control edit" id="textarea" rows="3" name="funcao"
-                        disabled><?= $this->view->detalhesVaga->funcao ?></textarea>
+                    <textarea type="text" class="form-control edit" id="textarea" rows="3"
+                        name="funcao" disabled><?= $this->view->detalhesVaga->funcao ?></textarea>
                 </div>
             </div>
 
@@ -1021,8 +1055,8 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-exp-formacao edit form3" aria-label="Formação"
-                        name="exp-fomacao-1" disabled>
+                    <select class="col form-select cl-exp-formacao edit form3" aria-label="Formação" disabled
+                        name="exp-fomacao-1">
                         <option value="0">Experiência</option>
                         <option value="1">Administrativa</option>
                         <option value="2">Elétrica</option>
@@ -1034,8 +1068,7 @@
                         <option value="8">Logística</option>
                     </select>
 
-                    <select class="col form-select cl-exp-status edit form3" aria-label="Status" name="exp-status-1"
-                        disabled>
+                    <select class="col form-select cl-exp-status edit form3" aria-label="Status" name="exp-status-1" disabled>
                         <option value="0">Status</option>
                         <option value="1">Experiência Qualquer</option>
                         <option value="2">Júnior</option>
@@ -1052,7 +1085,7 @@
                     </div>
                 </div>
 
-
+                
             </div>
 
             <!--Competências-->
@@ -1067,8 +1100,7 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-comp-nome edit form3" aria-label="Nome" name="comp-nome-1"
-                        disabled>
+                    <select class="col form-select cl-comp-nome edit form3" aria-label="Nome" name="comp-nome-1" disabled>
                         <option value="0">Nome</option>
                         <option value="1">Gestão de Pessoas</option>
                         <option value="2">Análise de Requisitos</option>
@@ -1082,8 +1114,7 @@
                         <option value="10">Inglês</option>
                     </select>
 
-                    <select class="col form-select cl-comp-grau edit form3" aria-label="Grau" name="comp-grau-1"
-                        disabled>
+                    <select class="col form-select cl-comp-grau edit form3" aria-label="Grau" name="comp-grau-1" disabled>
                         <option value="0">Grau</option>
                         <option value="1">Básico</option>
                         <option value="2">Intermediário</option>
@@ -1092,8 +1123,7 @@
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-comp-status edit form4" aria-label="Status" name="comp-status-1"
-                        disabled>
+                    <select class="col form-select cl-comp-status edit form4" aria-label="Status" name="comp-status-1" disabled>
                         <option value="0">Status</option>
                         <option value="1">Iniciante</option>
                         <option value="2">Em Desenvolvimento</option>
@@ -1101,7 +1131,7 @@
                     </select>
                 </div>
 
-
+                
             </div>
 
             <!--Formações-->
@@ -1116,8 +1146,7 @@
                 </div>
 
                 <div class="row mb-3">
-                    <select class="col form-select cl-form-tipo edit form3" aria-label="Tipo" name="form-tipo-1"
-                        disabled>
+                    <select class="col form-select cl-form-tipo edit form3" aria-label="Tipo" name="form-tipo-1" disabled>
                         <option value="0">Tipo</option>
                         <option value="1">Fundamental</option>
                         <option value="2">Ensino médio</option>
@@ -1125,8 +1154,7 @@
                         <option value="4">Superior</option>
                     </select>
 
-                    <select class="col form-select cl-form-status edit form3" aria-label="Status" name="form-status-1"
-                        disabled>
+                    <select class="col form-select cl-form-status edit form3" aria-label="Status" name="form-status-1" disabled>
                         <option value="0">Status</option>
                         <option value="1">Completo</option>
                         <option value="2">Em Andamento</option>
@@ -1135,8 +1163,7 @@
                 </div>
 
                 <div class="row">
-                    <select class="col form-select cl-form-nome edit form3" aria-label="Nome" name="form-nome-1"
-                        disabled>
+                    <select class="col form-select cl-form-nome edit form3" aria-label="Nome" name="form-nome-1" disabled>
                         <option value="0">Nome</option>
                         <option value="1">Análise e Desenvolvimento de Sistemas</option>
                         <option value="2">Redes</option>
@@ -1150,8 +1177,7 @@
                         <option value="10">Administração</option>
                     </select>
 
-                    <select class="col form-select cl-form-grau edit form3" aria-label="Grau" name="form-grau-1"
-                        disabled>
+                    <select class="col form-select cl-form-grau edit form3" aria-label="Grau" name="form-grau-1" disabled>
                         <option value="0">Grau</option>
                         <option value="1">Tecnólogo</option>
                         <option value="2">Graduação</option>
@@ -1161,6 +1187,7 @@
                     </select>
                 </div>
 
+                
             </div>
 
             <hr>
@@ -1173,15 +1200,16 @@
             <div class="row mb-3">
                 <div class="col-sm-12 mb-3">
                     <textarea type="text" class="form-control edit" id="textarea" rows="3" name="comentario"
-                        tabindex="-1"></textarea>
+                        tabindex="-1"><?= $this->view->detalhesVaga->comentario ?></textarea>
+                    <input type="hidden" name="id_vaga" value="<?= $this->view->detalhesVaga->id_vaga ?>" readonly>
                 </div>
             </div>
-
+                            
             <div class="buttons">
                 <button type="button" class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</button>
                 <button type="button" class="btn excluir btn-outline-primary mb-5"
                     onclick="Open('popup-confirm-2')">Reprovar</button>
-                <button type="submit" class="btn aprovar btn-outline-primary mb-5"
+                <button type="button" class="btn aprovar btn-outline-primary mb-5"
                     onclick="Open('popup-confirm')">Aprovar</button>
             </div>
         </div>

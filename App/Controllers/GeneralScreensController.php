@@ -47,15 +47,17 @@
             }
             
             $usuario = Container::getModel('UsuarioCadastrar');
+
+            var_dump($_POST);
           
             $usuario->__set('login_user',$_POST['login']);
             $usuario->__set('email_user',$_POST['email']);
             $usuario->__set('senha_user',$_POST['senha']);
             $usuario->__set('nome',$_POST['nome']);
 
-            $usuario->save();
+            // $usuario->save();
 
-            header('Location:/usuario_cadastrar?usuarioCadastrar=sucess');   
+            // header('Location:/usuario_cadastrar?usuarioCadastrar=sucess');   
         }
 
         public function usuarioEntrarValidar(){

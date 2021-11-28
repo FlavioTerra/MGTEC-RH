@@ -331,18 +331,18 @@
                 $_SESSION['tipo_user'] = 0;
             }
         
-
             $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
 
-            $viewProcessoSeletivo->__set('id_proc', $_POST['id_proc']);
+            $viewProcessoSeletivo->__set('id_proc', $_GET['id_proc']);
 
             // var_dump($_POST);
 
-            // $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->alterarStatusProcessoSeletivo();
+            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->alterarStatusProcessoSeletivo();
 
             $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
 
             $this->render('divulgar-processo-seletivo'); 
+            
         }
 
     }   

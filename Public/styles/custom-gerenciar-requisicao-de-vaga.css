@@ -1,0 +1,15 @@
+@import url(./custom-requisicoes-de-vagas-aprovadas-e-reprovadas.css);
+
+/*tittle*/
+.title{
+    width: 90%;
+}
+
+.container{
+    height: auto;
+}
+
+form{
+    height: auto;
+    min-height: 95vh;
+}

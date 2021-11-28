@@ -1,0 +1,91 @@
+@import url(./custom-vagas-candidatadas.css);
+@import url(./custom-requisicao-de-vaga.css);
+
+/*titles*/
+.title{
+    width: 100%;
+}
+
+.vagas .title{
+    margin-bottom: 30px;
+}
+
+.excluir{
+    border-color: rgb(175, 14, 14);
+}
+
+.excluir:hover, .excluir:active{
+    background-color: rgb(175, 14, 14);
+    border-color: rgb(175, 14, 14);
+}
+
+.aprovar{
+    border-color: rgb(1, 173, 10);
+}
+
+.aprovar:hover, .aprovar:active{
+    background-color: rgb(1, 173, 10);
+    border-color: rgb(1, 173, 10);
+}
+
+#Exp #colFormLabel, #Comp #colFormLabel, #Form #colFormLabel{
+    max-width: 70px;
+}
+
+/*bars*/
+.vaga-per-6{
+    max-width: 6%;
+}
+
+.vaga-per-24{
+    max-width: 28%;
+}
+
+.vaga-per-59{
+    max-width: 50%;
+}
+
+.vaga-per-77{
+    max-width: 72%;
+}
+
+.vaga-per-100{
+    max-width: 100%;
+}
+
+@media screen and (min-width:576px){
+    .vaga-per-6{
+        max-width: 4%;
+    }
+    
+    .vaga-per-24{
+        max-width: 27%;
+    }
+    
+    .vaga-per-59{
+        max-width: 50%;
+    }
+    
+    .vaga-per-77{
+        max-width: 73%;
+    }
+    
+    .vaga-per-100{
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width:700px){
+    .vagas{
+        width: 546px;
+    }
+}
+
+/*forms
+.edit{
+    color: #B8B8B8;
+}
+
+.edit:focus{
+    color: #212529;
+}*/

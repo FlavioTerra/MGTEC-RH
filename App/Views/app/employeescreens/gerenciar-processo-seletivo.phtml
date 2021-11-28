@@ -161,16 +161,12 @@
                 <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
             </div>
         </form>
-        <form action="/divulgar_processo_seletivo" method="post">
             <?php if($processoSeletivo->status_proc != 'Aberto'){ ?>
-                    <button type="submit" class="btn btn-outline-primary mb-4" disabled>Divulgar</button>
-                    <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
-                    <?php } else {?>
-                    <button type="submit" class="btn btn-outline-primary mb-4">Divulgar</button>
-                    <input type="hidden" name="id_proc" value="<?= $processoSeletivo->id_proc ?>">
-                    <?php } ?>
+                <button id="divulgarDis" type="submit" class="btn btn-outline-primary mb-4" disabled>Divulgar</button>     
+            <?php } else {?>
+                <a href="/divulgar_processo_seletivo?id_proc=<?= $processoSeletivo->id_proc ?>"><button id="divulgar" type="submit" class="btn btn-outline-primary mb-4">Divulgar</button></a> 
             <?php } ?>
-
+        <?php } ?>
         <hr>
 
         <div id="btnGerenciar" class="buttons">

@@ -1,0 +1,22 @@
+@import url(./custom-requisicoes-de-vagas-aprovadas-e-reprovadas.css);
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
+}
+
+@media (min-width: 1072px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+}

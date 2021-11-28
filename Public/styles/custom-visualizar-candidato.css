@@ -1,0 +1,76 @@
+@import url(custom-perfil.css);
+
+/*btns*/
+.buttons-bottom{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    margin: 25px 10vw 0 10vw;
+}
+
+.btn-excluir{
+    border-color: red;
+}
+
+.btn-excluir:hover{
+    background-color: red;
+    border-color: red;
+}
+
+@media screen and (min-width:576px){
+    .buttons{
+        display: flex;
+        text-align: left;
+    }
+
+    .perfil-box .btn{
+        margin-right: 2px;
+    }
+
+    .form-align{
+        padding-right: 20px;
+        padding-left: 2px;
+    }
+
+    .buttons-bottom{
+        display: flex;
+        text-align: right;
+        justify-content: right;
+        margin-right: 0;
+    }
+
+    .btn-excluir{
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width:769px){
+    .area-btn{
+        padding-left: 5px;
+    }
+
+    .perfil-box .btn{
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
+}
+
+@media (min-width: 1072px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+}
