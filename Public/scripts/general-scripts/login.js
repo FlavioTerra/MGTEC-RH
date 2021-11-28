@@ -76,3 +76,7 @@ function verificar() {
 function entrar() {
     document.getElementById('myForm').submit();
 }
+
+function cadastrar() {
+    document.getElementById('myForm').submit();
+}

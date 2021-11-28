@@ -413,16 +413,12 @@
                     </div>
                 </div>
             </div>
-
-            <form action="/atribuir_teste" method="post">
+            <?php echo $this->view->idTeste->$id_teste; ?>
                 <?php if(1 == 2){ ?>
-                        <button type="submit" class="btn btn-outline-primary mb-5" disabled>Atribuir Teste</button>
-                        <input type="hidden" name="id_proc">
-                        <?php } else {?>
-                        <button type="submit" class="btn btn-outline-primary mb-5">Atribuir Teste</button>
-                        <input type="hidden" name="id_proc">
-                    <?php } ?>
-            </form>
+                        <a href=""><button id="divulgar" type="submit" class="btn btn-outline-primary mb-4" disabled>Atribuir Teste</button></a>
+                <?php } else {?>
+                        <a href="/atribuir_teste?id_proc=<?= $this->view->detalhesProcessoSeletivo->id_proc ?>"><button type="submit" class="btn btn-outline-primary mb-4">Atribuir Teste</button></a> 
+            <?php } ?>
             
             <form action="/liberar_teste" method="post">
                 <?php if(1){ ?>

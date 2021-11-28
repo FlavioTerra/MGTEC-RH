@@ -32,11 +32,13 @@
             $query = 'insert into tb_teste (id_teste,
                                             id_proc,
                                             tipo_teste,
-                                            descricao)
+                                            descricao,
+                                            status_teste)
                                     values (null,
                                             :id_proc,
                                             :tipo_teste,
-                                            :descricao)';
+                                            :descricao,
+                                            "Criado")';
 
             $stmt = $this->db->prepare($query);
 
@@ -79,6 +81,25 @@
             $stmt->bindValue(':resposta_er3',$this->__get('resposta_er3'));
 
             $stmt->execute();
+        }
+
+        public function getIdTeste() {
+            $query = "select t.id_teste,
+                            t.id_proc, 
+                            t.status_teste 
+                            from tb_teste t
+                            inner join tb_processo_seletivo on t.id_proc = id_proc  
+                            where t.id_proc = :id_proc";
+
+                            
+
+            $stmt = $this->db->prepare($query);
+            
+            $stmt->bindValue(':id_proc',$this->__get('id_proc'));
+        
+            $stmt->execute();
+            
+            return $stmt->fetch(\PDO::FETCH_OBJ);
         }
     }
 

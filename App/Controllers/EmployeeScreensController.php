@@ -40,6 +40,12 @@
 
             $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
 
+            $idTeste = Container::getModel('AtribuirTeste');
+
+            $idTeste->__set('id_proc', $_POST['id_proc']);
+
+            $this->view->idTeste = $viewIdTeste->getIdTeste(); 
+
             $this->render('visualizar-processo-seletivo');
         }
 
@@ -187,11 +193,16 @@
                 $_SESSION['tipo_user'] = 0;
             }
             $teste = Container::getModel('AtribuirTeste');
+            $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
 
-            $teste->__set('id_proc', 1); //<- Ver como pegar o id do processo seletivo
+            $viewProcessoSeletivo->__set('id_proc', $_POST['id_proc']);
+
+            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
+            // var_dump($_GET);
+            $teste->__set('id_proc', $_POST['id_proc']);
             $teste->__set('tipo_teste', $_POST['test_Title']);
             $teste->__set('descricao', $_POST['description']);
-
+            
             $idTeste = $teste->saveTeste();
             
             $cont = 1;
@@ -218,7 +229,7 @@
                 $cont++;
                 $teste->savePerguntas();
 
-                header('Location:/atribuir_teste?atribuir_teste=sucess');   
+                header('Location:/gerenciar_processo_seletivo');   
             }
         }
 
@@ -248,6 +259,12 @@
             if(empty($_SESSION['tipo_user'])) {
                 $_SESSION['tipo_user'] = 0;
             }
+
+            $viewProcessoSeletivo = Container::getModel('ProcessoSeletivo');
+
+            $viewProcessoSeletivo->__set('id_proc', $_GET['id_proc']);
+
+            $this->view->detalhesProcessoSeletivo = $viewProcessoSeletivo->getProcessoSeletivo(); 
 
             $this->render('atribuir-teste');
         }

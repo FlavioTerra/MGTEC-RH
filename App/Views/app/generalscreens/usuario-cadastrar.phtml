@@ -50,7 +50,7 @@
     ?>
 
     <!--body-->
-    <form action="/usuario_cadastrar_salvar" method="post" id="formulario">
+    <form action="/usuario_cadastrar_salvar" method="post" id="myForm">
         <div class="container">
             <div class="login-content">
                 <h1>Registro</h1>
@@ -87,13 +87,13 @@
                     <img src="/images/login/eye-off.svg" id="eye-img-2" class="eye">
                 </div>
 
-                <!-- <a class="btn-link" onclick="enviar()">
-                    <div class="effect">
-                        <span>Cadastrar</span>
-                        <input class="btn" type="submit">
-                    </div>
-                </a> -->
-                <button type="submit">Cadastrar</button>
+                <a class="btn-link" onclick="cadastrar()">
+                        <div class="effect">
+                            <span>Cadastrar</span>
+                            <input class="btn" type="submit" value="Cadastrar">
+                        </div>
+                </a>
+
                 <a class="btn-link" href="/usuario_entrar">
                     <div class="effect">
                         <span>Voltar</span>

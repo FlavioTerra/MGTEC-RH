@@ -104,7 +104,7 @@
             <p class="popup-description">Tem certeza que deseja cancelar a atribuição? Após voltar para a tela
                 anterior, todas as perguntas e respostas inseridas serão perdidas.</p>
 
-            <button class="popup-btn popup-btn-width" onclick="Back(this, '/visualizar_processo_seletivo')">
+            <button class="popup-btn popup-btn-width" onclick="Back(this, '/gerenciar_processo_seletivo')">
                 Confirmar
             </button>
 
@@ -206,11 +206,13 @@
                     <img src="/images/custom-requisicao-de-vaga/minus.svg" class="btn-form" onclick="removePergunta()">
                 </div>
             </div>
+            <input type="hidden" name="id_proc" value="<?= $this->view->detalhesProcessoSeletivo->id_proc ?>" readonly>
             <div class="buttons">
                 <a class="btn btn-outline-primary mb-5" onclick="Open('popup-back')">Voltar</a>
                 <button type="button" class="btn btn-outline-primary mb-5"
                     onclick="Open('popup-confirm')">Atribuir</button>
             </div>
+            <!--  -->
         </div>
     </form>
 

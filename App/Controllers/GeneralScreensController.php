@@ -55,9 +55,9 @@
             $usuario->__set('senha_user',$_POST['senha']);
             $usuario->__set('nome',$_POST['nome']);
 
-            // $usuario->save();
+            $usuario->save();
 
-            // header('Location:/usuario_cadastrar?usuarioCadastrar=sucess');   
+            header('Location:/usuario_entrar');   
         }
 
         public function usuarioEntrarValidar(){
