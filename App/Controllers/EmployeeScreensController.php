@@ -44,9 +44,47 @@
 
             $idTeste->__set('id_proc', $_POST['id_proc']);
 
-            $this->view->idTeste = $viewIdTeste->getIdTeste(); 
+            if($idTeste->getIdTeste())
+                $this->view->idTeste = $idTeste->getIdTeste();
+            else   
+                $this->view->idTeste = $idTeste->getStatus();
 
             $this->render('visualizar-processo-seletivo');
+        }
+
+        public function liberarTeste() {
+            session_start();
+
+            if(empty($_SESSION['tipo_user'])) {
+                $_SESSION['tipo_user'] = 0;
+            }
+
+            $processosSeletivos = Container::getModel('ProcessoSeletivo');
+
+            $departametos = Container::getModel('InformacoesGlobais');
+            $this->view->departamentos = $departametos->getDepartamentos();
+
+            $cargos = Container::getModel('InformacoesGlobais');
+            $this->view->cargos = $cargos->getCargos();
+
+            $usuarios = Container::getModel('InformacoesGlobais');
+            $this->view->usuarios = $usuarios->getUsuarios();
+
+            $this->view->todosProcessoSeletivos = $processosSeletivos->getAll();
+
+            $idTeste = Container::getModel('AtribuirTeste');
+
+            $idTeste->__set('id_teste', $_GET['id_teste']);
+
+            $idTeste->__set('id_proc', $_GET['id_proc']);
+
+            $this->view->idTeste = $idTeste->getIdTeste();
+            
+            // var_dump($_GET);
+
+            $idTeste->trocaStatusTeste();
+
+            $this->render('gerenciar-processo-seletivo');
         }
 
         public function gerenciarProcessoSeletivo() {

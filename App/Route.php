@@ -165,6 +165,12 @@
                 'action'=>'cadastrarTeste'
             );
 
+            $routes['liberar_teste'] = array(
+                'route'=>'/liberar_teste',
+                'controller'=>'EmployeeScreensController',
+                'action'=>'liberarTeste'
+            );
+
             $routes['realizar_teste'] = array(
                 'route'=>'/realizar_teste',
                 'controller'=>'CandidateScreensController',

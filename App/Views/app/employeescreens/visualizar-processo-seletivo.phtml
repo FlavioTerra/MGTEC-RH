@@ -413,22 +413,19 @@
                     </div>
                 </div>
             </div>
-            <?php echo $this->view->idTeste->$id_teste; ?>
-                <?php if(1 == 2){ ?>
+                <?php if($this->view->idTeste->status_teste == 'Criado' || $this->view->idTeste->status_teste == 'Liberado'){ ?>
                         <a href=""><button id="divulgar" type="submit" class="btn btn-outline-primary mb-4" disabled>Atribuir Teste</button></a>
                 <?php } else {?>
                         <a href="/atribuir_teste?id_proc=<?= $this->view->detalhesProcessoSeletivo->id_proc ?>"><button type="submit" class="btn btn-outline-primary mb-4">Atribuir Teste</button></a> 
             <?php } ?>
             
-            <form action="/liberar_teste" method="post">
-                <?php if(1){ ?>
+
+                <?php if($this->view->idTeste->status_teste == 'Liberado' && $this->view->detalhesProcessoSeletivo->id_proc != 'Divulgado'){ ?>
                         <button id="testeDis" type="submit" class="btn btn-outline-primary mb-5" disabled>Liberar Teste</button>
-                        <input type="hidden" name="id_proc">
+                        <input type="hidden" name="id_teste">
                         <?php } else {?>
-                        <button id="teste" type="submit" class="btn btn-outline-primary mb-5">Liberar Teste</button>
-                        <input type="hidden" name="id_proc">
+                            <a href="/liberar_teste?id_teste=<?= $this->view->idTeste->id_teste ?>&id_proc=<?= $this->view->detalhesProcessoSeletivo->id_proc ?>"><button id="teste" type="submit" class="btn btn-outline-primary mb-4">Liberar Teste</button></a> 
                     <?php } ?>
-            </form>
             <hr />
 
             <div class="buttons">
