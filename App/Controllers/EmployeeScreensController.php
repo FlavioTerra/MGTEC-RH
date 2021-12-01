@@ -326,6 +326,10 @@
                 $_SESSION['tipo_user'] = 0;
             }
 
+            $relatorio = Container::getModel('GerarRelatorio');
+
+            // $this->view->todosDados = $relatorio->getAll();
+
             $this->render('relatorio-indicadores-desempenho');
         }
 
